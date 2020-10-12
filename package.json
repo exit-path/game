@@ -1,0 +1,6 @@
+{
+  "name": "@exit-path/game",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "license": "MIT"
+}
