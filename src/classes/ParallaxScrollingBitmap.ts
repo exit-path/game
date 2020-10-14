@@ -26,13 +26,16 @@ export class ParallaxScrollingBitmap extends lib.flash.display.Bitmap {
     camHeight: number,
     textureWidth: number = -1
   ) {
-    super(new lib.flash.display.BitmapData(w, camHeight, true, 0));
+    super(
+      new lib.flash.display.BitmapData(
+        textureWidth > 0 ? textureWidth : texture.height,
+        camHeight,
+        true,
+        0
+      )
+    );
     this._mustRender = false;
     this._texture = texture;
-    var w: number = this._texture.height;
-    if (textureWidth > 0) {
-      w = textureWidth;
-    }
     this._cameraHeight = camHeight;
     this._cameraY = camHeight;
     this._oldCamY = 0;
