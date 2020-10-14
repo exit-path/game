@@ -1,0 +1,76 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 824,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 825,
+          "matrix": [1, 0, 0, 1, 4075, 1490],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 826,
+          "matrix": [1, 0, 0, 1, 8239, 1530],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 828,
+          "matrix": [4.2446441650390625, 0, 0, 4.2446441650390625, 5949, 2301],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 829,
+          "matrix": [1, 0, 0, 1, 7219, 2200],
+          "name": "levelNum",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 830,
+          "matrix": [1, 0, 0, 1, 5939, 4510],
+          "name": "levelStr",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 11,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 834,
+          "matrix": [1, 0, 0, 1, 7009, 5631],
+          "name": "okayButton",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "numFrames": 15,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 291,
+          "matrix": [
+            -0.993438720703125,
+            0.0909881591796875,
+            0.0909881591796875,
+            0.993438720703125,
+            237,
+            -446
+          ],
+          "name": "body",
+          "filters": []
+        }
+      ],
+      "label": "idle"
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 236,
+          "matrix": [-1, 0, 0, 1, 250, -459],
+          "ratio": 1,
+          "name": "body",
+          "filters": []
+        }
+      ],
+      "label": "run"
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 292,
+          "matrix": [-1, 0, 0, 1, 250, -459],
+          "ratio": 2,
+          "name": "body",
+          "filters": []
+        }
+      ],
+      "label": "jump"
+    },
+    {
+      "frame": 4,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 293,
+          "matrix": [-1, 0, 0, 1, 250, -459],
+          "ratio": 3,
+          "name": "body",
+          "filters": []
+        }
+      ],
+      "label": "duck"
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 294,
+          "matrix": [
+            -0.99359130859375,
+            -0.109771728515625,
+            -0.109771728515625,
+            0.99359130859375,
+            275,
+            -425
+          ],
+          "ratio": 4,
+          "name": "body",
+          "filters": []
+        }
+      ],
+      "label": "sprint"
+    },
+    {
+      "frame": 6,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        }
+      ]
+    }
+  ]
+}

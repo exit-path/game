@@ -1,0 +1,66 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 346,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 347,
+          "matrix": [1, 0, 0, 1, 12702, 600],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 281,
+          "matrix": [1, 0, 0, 1, 5631, 8631],
+          "name": "backToButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 348,
+          "matrix": [1, 0, 0, 1, 40, 40],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 299,
+          "matrix": [0.2581329345703125, 0, 0, 0.2581329345703125, 12798, 80],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 49,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 353,
+          "matrix": [1, 0, 0, 1, 15640, 1160],
+          "name": "scrollBar_mc",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 240,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 34,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "clipDepth": 13,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 160,
+          "matrix": [2.84478759765625, 0, 0, 2.84478759765625, 218, 354],
+          "colorTransform": [0, 0, 0, 1, 204, 204, 204, 0],
+          "name": "head",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 160,
+          "matrix": [2.84478759765625, 0, 0, 2.84478759765625, 218, 354],
+          "colorTransform": [0, 0, 0, 1, 255, 255, 255, 0],
+          "name": "head2",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 11,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 250,
+          "matrix": [1, 0, 0, 1, 398, 474],
+          "colorTransform": [0, 0, 0, 1, 255, 255, 255, 0],
+          "name": "handGear",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

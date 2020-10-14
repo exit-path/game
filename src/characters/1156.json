@@ -1,0 +1,57 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1146,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1149,
+          "matrix": [1, 0, 0, 1, 0, 40],
+          "name": "flowInside",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1150,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1151,
+          "matrix": [1, 0, 0, 1, -2160, 111],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1155,
+          "matrix": [1, 0, 0, 1, 2163, 195],
+          "name": "flowReady",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

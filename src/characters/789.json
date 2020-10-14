@@ -1,0 +1,186 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 770,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "side",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 771,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 773,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "backdrop",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 774,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 776,
+          "matrix": [1, 0, 0, 1, 1620, -50],
+          "name": "playerInfo",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 777,
+          "matrix": [1, 0, 0, 1, -928, 310],
+          "name": "levelNum",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 778,
+          "matrix": [1, 0, 0, 1, 4700, 30],
+          "name": "levelTitle",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 11,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 779,
+          "matrix": [1, 0, 0, 1, 140, 390],
+          "name": "xp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 780,
+          "matrix": [1, 0, 0, 1, 6867, 475],
+          "name": "kudos",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 781,
+          "matrix": [1, 0, 0, 1, 3616, 465],
+          "name": "matchNum",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 14,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 782,
+          "matrix": [1, 0, 0, 1, 5353, 490],
+          "name": "wins",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 15,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 784,
+          "matrix": [0.61151123046875, 0, 0, 0.61151123046875, 6613, 491],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 18,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 785,
+          "matrix": [1, 0, 0, 1, 830, 70],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 295,
+          "matrix": [1.3123016357421875, 0, 0, 1.3123016357421875, 500, 585],
+          "name": "skinner",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 21,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 786,
+          "matrix": [1, 0, 0, 1, 8699, 372],
+          "name": "kudosThisRound",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 22,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 787,
+          "matrix": [1, 0, 0, 1, 9497, 65],
+          "name": "xpThisRound",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 368,
+          "matrix": [1, 0, 0, 1, 9861, 351],
+          "name": "kudoImage",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 26,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 788,
+          "matrix": [1, 0, 0, 1, 9861, 351],
+          "name": "giveKudo",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

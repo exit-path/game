@@ -1,0 +1,86 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 875,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "clipDepth": 10,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 883,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 878,
+          "matrix": [1, 0, 0, 1, 2285, 560],
+          "colorTransform": [0, 0, 0, 1, 204, 204, 204, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 878,
+          "matrix": [1, 0, 0, 1, 1388, 560],
+          "colorTransform": [0, 0, 0, 1, 175, 175, 175, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 878,
+          "matrix": [1, 0, 0, 1, 491, 560],
+          "colorTransform": [0, 0, 0, 1, 153, 153, 153, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 879,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 11,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 884,
+          "matrix": [1, 0, 0, 1, 450, 4760],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 880,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

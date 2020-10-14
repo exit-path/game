@@ -1,0 +1,62 @@
+{
+  "numFrames": 3,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 174,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "preloader",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 21,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 175,
+          "matrix": [1, 0, 0, 1, 464, -3120],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 1,
+          "depth": 21
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1187,
+          "matrix": [1, 0, 0, 1, 4500, -1360],
+          "ratio": 1,
+          "filters": []
+        }
+      ],
+      "label": "intro"
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1843 @@
+{
+  "numFrames": 24,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.3164520263671875,
+            0.94677734375,
+            -0.94677734375,
+            -0.3164520263671875,
+            206,
+            319
+          ],
+          "name": "db",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            0.4409027099609375,
+            -0.8955841064453125,
+            0.895599365234375,
+            0.4409027099609375,
+            140,
+            358
+          ],
+          "name": "da",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [1, 0, 0, 1, 250, 343],
+          "name": "cb",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.126953125,
+            -0.9260711669921875,
+            0.9260711669921875,
+            -0.126953125,
+            255,
+            395
+          ],
+          "name": "ca",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 110,
+          "matrix": [1, 0, 0, 1, 148, 95],
+          "name": "body",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 160,
+          "matrix": [1, 0, 0, 1, 95, 0],
+          "name": "head",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.255340576171875,
+            0.78814697265625,
+            -0.9477691650390625,
+            -0.3070831298828125,
+            213,
+            111
+          ],
+          "name": "ba",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            0.4329833984375,
+            -0.1354522705078125,
+            0.226898193359375,
+            0.7252655029296875,
+            59,
+            229
+          ],
+          "name": "bb",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.8264617919921875,
+            -0.4815216064453125,
+            0.4815216064453125,
+            -0.8264617919921875,
+            346,
+            231
+          ],
+          "name": "aa",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.115966796875,
+            -0.43988037109375,
+            0.73681640625,
+            -0.194305419921875,
+            342,
+            272
+          ],
+          "name": "ab",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 235,
+          "matrix": [
+            0.9659271240234375,
+            0.258819580078125,
+            -0.258819580078125,
+            0.9659271240234375,
+            84,
+            245
+          ],
+          "name": "handGear",
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.33673095703125,
+            0.940185546875,
+            -0.940185546875,
+            0.33673095703125,
+            214,
+            296
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.1940765380859375,
+            -0.97918701171875,
+            0.9792022705078125,
+            0.1940765380859375,
+            155,
+            363
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.990325927734375,
+            -0.135498046875,
+            0.135498046875,
+            0.990325927734375,
+            170,
+            324
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.5650634765625,
+            -0.744598388671875,
+            0.744598388671875,
+            0.5650634765625,
+            142,
+            354
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 100],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, 5],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.0183868408203125,
+            0.8306121826171875,
+            -0.9988555908203125,
+            -0.0220794677734375,
+            201,
+            115
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.244476318359375,
+            -0.3828582763671875,
+            0.64129638671875,
+            0.409515380859375,
+            129,
+            295
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.0037689208984375,
+            -0.9564971923828125,
+            0.9564971923828125,
+            0.0037689208984375,
+            169,
+            285
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.3948822021484375,
+            -0.2258758544921875,
+            0.378387451171875,
+            0.6614227294921875,
+            114,
+            289
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.997833251953125,
+            -0.0489349365234375,
+            0.0489349365234375,
+            0.997833251953125,
+            143,
+            308
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.5685882568359375,
+            0.8209991455078125,
+            -0.82098388671875,
+            0.5685882568359375,
+            258,
+            303
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.321502685546875,
+            -0.945037841796875,
+            0.9450531005859375,
+            -0.3215179443359375,
+            234,
+            363
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 135, 305],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.75347900390625,
+            -0.5500335693359375,
+            0.5500335693359375,
+            0.75347900390625,
+            115,
+            318
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 105],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, 10],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.7700958251953125,
+            0.3106231689453125,
+            -0.37353515625,
+            0.9260711669921875,
+            188,
+            110
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.0203094482421875,
+            -0.4537811279296875,
+            0.7601165771484375,
+            0.0339813232421875,
+            278,
+            258
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.2512054443359375,
+            -0.9229278564453125,
+            0.9229278564453125,
+            0.2512054443359375,
+            84,
+            268
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.3948822021484375,
+            -0.2258758544921875,
+            0.378387451171875,
+            0.6614227294921875,
+            30,
+            276
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.40576171875,
+            -0.9114532470703125,
+            0.9114532470703125,
+            0.40576171875,
+            308,
+            239
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.7617034912109375,
+            0.645843505859375,
+            -0.645843505859375,
+            0.7617034912109375,
+            307,
+            318
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.6702880859375,
+            -0.738189697265625,
+            0.738189697265625,
+            -0.6703033447265625,
+            309,
+            392
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [0.5, 0.86602783203125, -0.86602783203125, 0.5, 122, 254],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.8992767333984375,
+            -0.2536468505859375,
+            0.2536468505859375,
+            0.8992767333984375,
+            107,
+            261
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 99],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, 4],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.7972869873046875,
+            0.2310638427734375,
+            -0.2778472900390625,
+            0.958770751953125,
+            178,
+            100
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.0978240966796875,
+            -0.443572998046875,
+            0.743011474609375,
+            -0.163909912109375,
+            294,
+            252
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.492919921875,
+            -0.8178558349609375,
+            0.8178558349609375,
+            0.492919921875,
+            55,
+            233
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.4364013671875,
+            0.125823974609375,
+            -0.210693359375,
+            0.730987548828125,
+            11,
+            198
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.2279815673828125,
+            -0.970672607421875,
+            0.970672607421875,
+            0.2279815673828125,
+            317,
+            226
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9825897216796875,
+            0.178466796875,
+            -0.178466796875,
+            0.9825897216796875,
+            315,
+            338
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.6959686279296875,
+            -0.7134857177734375,
+            0.7135009765625,
+            -0.69598388671875,
+            322,
+            387
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [0, 1, -1, 0, 168, 282],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.8155517578125,
+            -0.4546051025390625,
+            0.4546051025390625,
+            0.8155517578125,
+            111,
+            285
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 94],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, -1],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.8203887939453125,
+            0.124176025390625,
+            -0.149322509765625,
+            0.986541748046875,
+            186,
+            100
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.2093048095703125,
+            -0.4031524658203125,
+            0.6752777099609375,
+            -0.3506317138671875,
+            327,
+            234
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.6084747314453125,
+            -0.7353515625,
+            0.7353515625,
+            0.6084747314453125,
+            43,
+            210
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.44757080078125,
+            0.0758209228515625,
+            -0.126922607421875,
+            0.7497100830078125,
+            -3,
+            179
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.036895751953125,
+            -0.995513916015625,
+            0.995513916015625,
+            -0.036895751953125,
+            341,
+            207
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9953155517578125,
+            -0.0819244384765625,
+            0.0819244384765625,
+            0.9953155517578125,
+            277,
+            346
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.43048095703125,
+            -0.8993988037109375,
+            0.8994140625,
+            -0.430511474609375,
+            271,
+            402
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.4145660400390625,
+            0.909423828125,
+            -0.909423828125,
+            -0.4145660400390625,
+            160,
+            306
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.7632904052734375,
+            -0.5371551513671875,
+            0.5371551513671875,
+            0.7632904052734375,
+            109,
+            295
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 91],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, -4],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.8080291748046875,
+            0.1898040771484375,
+            -0.228240966796875,
+            0.9716796875,
+            181,
+            93
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.0978240966796875,
+            -0.4435882568359375,
+            0.7430267333984375,
+            -0.163909912109375,
+            298,
+            231
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.4815216064453125,
+            -0.8264617919921875,
+            0.82647705078125,
+            0.4815216064453125,
+            51,
+            229
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.4398956298828125,
+            -0.115966796875,
+            0.1943206787109375,
+            0.73681640625,
+            0,
+            225
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.28582763671875,
+            -0.9532623291015625,
+            0.9532623291015625,
+            0.28582763671875,
+            321,
+            207
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.3164520263671875,
+            0.94677734375,
+            -0.94677734375,
+            -0.3164520263671875,
+            206,
+            319
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.4409027099609375,
+            -0.8955841064453125,
+            0.895599365234375,
+            0.4409027099609375,
+            140,
+            358
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 250, 343],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.126953125,
+            -0.9260711669921875,
+            0.9260711669921875,
+            -0.126953125,
+            255,
+            395
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 95],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.73138427734375,
+            0.3924713134765625,
+            -0.471954345703125,
+            0.8795013427734375,
+            197,
+            97
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.0203094482421875,
+            -0.4537811279296875,
+            0.7601318359375,
+            0.0339813232421875,
+            272,
+            266
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.1867828369140625,
+            -0.9375,
+            0.9375,
+            0.1867828369140625,
+            91,
+            263
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.299896240234375,
+            -0.341705322265625,
+            0.5723876953125,
+            0.5023193359375,
+            61,
+            285
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.5628204345703125,
+            -0.819580078125,
+            0.819580078125,
+            0.5628204345703125,
+            299,
+            244
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.33673095703125,
+            0.940185546875,
+            -0.940185546875,
+            0.33673095703125,
+            214,
+            296
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.1940765380859375,
+            -0.97918701171875,
+            0.9792022705078125,
+            0.1940765380859375,
+            161,
+            360
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.990325927734375,
+            -0.135498046875,
+            0.135498046875,
+            0.990325927734375,
+            170,
+            324
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.5650634765625,
+            -0.744598388671875,
+            0.744598388671875,
+            0.5650634765625,
+            142,
+            354
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 100],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, 5],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.5662384033203125,
+            0.605133056640625,
+            -0.727691650390625,
+            0.680938720703125,
+            228,
+            112
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.1978759765625,
+            -0.40826416015625,
+            0.6839141845703125,
+            0.331390380859375,
+            238,
+            290
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.3069915771484375,
+            -0.9052886962890625,
+            0.905303955078125,
+            -0.3069915771484375,
+            190,
+            290
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.029541015625,
+            -0.453704833984375,
+            0.75994873046875,
+            -0.049530029296875,
+            193,
+            335
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.8116302490234375,
+            -0.5723724365234375,
+            0.5723724365234375,
+            0.8116302490234375,
+            272,
+            282
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.5685882568359375,
+            0.8209991455078125,
+            -0.82098388671875,
+            0.5685882568359375,
+            258,
+            303
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.321502685546875,
+            -0.945037841796875,
+            0.9450531005859375,
+            -0.3215179443359375,
+            234,
+            363
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 135, 305],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.75347900390625,
+            -0.5500335693359375,
+            0.5500335693359375,
+            0.75347900390625,
+            115,
+            318
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 105],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, 10],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.400390625,
+            0.7271728515625,
+            -0.8744354248046875,
+            0.481475830078125,
+            219,
+            115
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.3352508544921875,
+            -0.3065185546875,
+            0.5134735107421875,
+            0.5615234375,
+            180,
+            279
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.7193145751953125,
+            -0.62896728515625,
+            0.62896728515625,
+            -0.7193145751953125,
+            262,
+            262
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.0303497314453125,
+            -0.45343017578125,
+            0.7595367431640625,
+            -0.0509033203125,
+            244,
+            313
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9131927490234375,
+            -0.38800048828125,
+            0.3880157470703125,
+            0.9131927490234375,
+            204,
+            283
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.7617034912109375,
+            0.645843505859375,
+            -0.645843505859375,
+            0.7617034912109375,
+            307,
+            318
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.6702880859375,
+            -0.738189697265625,
+            0.738189697265625,
+            -0.6703033447265625,
+            309,
+            392
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [0.5, 0.86602783203125, -0.86602783203125, 0.5, 122, 254],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.8992767333984375,
+            -0.2536468505859375,
+            0.2536468505859375,
+            0.8992767333984375,
+            107,
+            261
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 99],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, 4],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.3249053955078125,
+            0.7641754150390625,
+            -0.9189605712890625,
+            0.3907012939453125,
+            206,
+            110
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.3352508544921875,
+            -0.3065185546875,
+            0.5134735107421875,
+            0.5615234375,
+            164,
+            279
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.8133697509765625,
+            -0.500518798828125,
+            0.500518798828125,
+            -0.8133697509765625,
+            286,
+            254
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.10516357421875,
+            -0.441864013671875,
+            0.7401580810546875,
+            -0.1762237548828125,
+            278,
+            307
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.91998291015625,
+            -0.371734619140625,
+            0.3717498779296875,
+            0.91998291015625,
+            196,
+            288
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9825897216796875,
+            0.178466796875,
+            -0.178466796875,
+            0.9825897216796875,
+            315,
+            338
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.6959686279296875,
+            -0.7134857177734375,
+            0.7135009765625,
+            -0.69598388671875,
+            322,
+            387
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [0, 1, -1, 0, 168, 282],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.8155517578125,
+            -0.4546051025390625,
+            0.4546051025390625,
+            0.8155517578125,
+            111,
+            285
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 94],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, -1],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.0183868408203125,
+            0.8306121826171875,
+            -0.9988555908203125,
+            -0.0220794677734375,
+            212,
+            101
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.244476318359375,
+            -0.3828582763671875,
+            0.64129638671875,
+            0.409515380859375,
+            133,
+            280
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.8866119384765625,
+            -0.3549041748046875,
+            0.3549041748046875,
+            -0.8866119384765625,
+            303,
+            207
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.0646209716796875,
+            -0.4495849609375,
+            0.753082275390625,
+            -0.108306884765625,
+            287,
+            259
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.880889892578125,
+            -0.4532012939453125,
+            0.4532318115234375,
+            0.880889892578125,
+            167,
+            279
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9953155517578125,
+            -0.0819244384765625,
+            0.0819244384765625,
+            0.9953155517578125,
+            277,
+            346
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.43048095703125,
+            -0.8993988037109375,
+            0.8994140625,
+            -0.430511474609375,
+            271,
+            402
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.4145660400390625,
+            0.909423828125,
+            -0.909423828125,
+            -0.4145660400390625,
+            160,
+            306
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.7632904052734375,
+            -0.5371551513671875,
+            0.5371551513671875,
+            0.7632904052734375,
+            109,
+            295
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 148, 91],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 95, -4],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.1923980712890625,
+            0.805511474609375,
+            -0.9686737060546875,
+            -0.2313690185546875,
+            201,
+            101
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.420806884765625,
+            -0.1690673828125,
+            0.2832183837890625,
+            0.7048797607421875,
+            67,
+            231
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.8264617919921875,
+            -0.4815216064453125,
+            0.4815216064453125,
+            -0.8264617919921875,
+            336,
+            227
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            -0.2258758544921875,
+            -0.394866943359375,
+            0.6614227294921875,
+            -0.378387451171875,
+            359,
+            265
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9890899658203125,
+            -0.089874267578125,
+            0.0898895263671875,
+            0.9890899658203125,
+            95,
+            248
+          ],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

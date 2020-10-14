@@ -1,0 +1,22 @@
+{
+  "bounds": [-40, -40, 3641, 320],
+  "isWordWrap": false,
+  "isMultiline": false,
+  "isPassword": false,
+  "isReadonly": true,
+  "isAutoSize": false,
+  "noSelect": true,
+  "border": false,
+  "wasStatic": false,
+  "isHTML": true,
+  "useOutlines": true,
+  "fontID": 88,
+  "fontHeight": 240,
+  "textColor": 4291611852,
+  "align": 1,
+  "leftMargin": 0,
+  "rightMargin": 0,
+  "indent": 0,
+  "leading": 40,
+  "initialText": "<p align=\"right\"><font face=\"Helvetica\" size=\"12\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"1\">The Apocalypse</font></p>"
+}

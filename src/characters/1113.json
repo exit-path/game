@@ -1,0 +1,152 @@
+{
+  "numFrames": 99,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1097,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "block",
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1099,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 1,
+          "name": "block",
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1101,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 2,
+          "name": "block",
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1099,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 3,
+          "name": "block",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1103,
+          "matrix": [1, 0, 0, 1, 0, -2500],
+          "ratio": 3,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 1,
+          "depth": 3
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1112,
+          "matrix": [-1, 0, 0, 1, 500, 0],
+          "ratio": 4,
+          "name": "block",
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "frame": 99,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1097,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 98,
+          "name": "block",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

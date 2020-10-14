@@ -1,0 +1,57 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 962,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 963,
+          "matrix": [1, 0, 0, 1, 4235, 3060],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 964,
+          "matrix": [1, 0, 0, 1, 4255, 4180],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 834,
+          "matrix": [1, 0, 0, 1, 4949, 5252],
+          "name": "okayButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 968,
+          "matrix": [1, 0, 0, 1, 7340, 5252],
+          "name": "noThankYouButton",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

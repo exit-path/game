@@ -1,0 +1,847 @@
+{
+  "numFrames": 40,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1125,
+          "matrix": [1, 0, 0, 1, 953, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1125,
+          "matrix": [1, 0, 0, 1, 353, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 968, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 368, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 984, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 384, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 999, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 399, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1015, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 415, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1030, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 430, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1045, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 445, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1061, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 461, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1076, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 476, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1091, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 491, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1107, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 507, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1122, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 522, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1138, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 538, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1153, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 553, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1168, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 568, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1184, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 584, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1199, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 599, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1215, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 615, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1230, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 630, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1245, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 645, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1261, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 661, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1276, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 676, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1291, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 691, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1307, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 707, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1322, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 722, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1338, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 738, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1353, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 753, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1368, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 768, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1384, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 784, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1399, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 799, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1415, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 815, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1430, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 830, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1445, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 845, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1461, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 861, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1476, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 876, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1491, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 891, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1507, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 907, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1522, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 922, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1538, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 938, 109],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 1553, 109],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [1, 0, 0, 1, 953, 109],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

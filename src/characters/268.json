@@ -1,0 +1,40 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 263,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "clipDepth": 7,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 265,
+          "matrix": [1, 0, 0, 1, -134, -164],
+          "name": "parts1",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 267,
+          "matrix": [1, 0, 0, 1, -134, -164],
+          "name": "parts2",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

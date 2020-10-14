@@ -1,0 +1,22 @@
+{
+  "bounds": [-40, -40, 6200, 540],
+  "isWordWrap": true,
+  "isMultiline": true,
+  "isPassword": false,
+  "isReadonly": true,
+  "isAutoSize": false,
+  "noSelect": false,
+  "border": false,
+  "wasStatic": false,
+  "isHTML": true,
+  "useOutlines": true,
+  "fontID": 39,
+  "fontHeight": 460,
+  "textColor": 4291875024,
+  "align": 0,
+  "leftMargin": 0,
+  "rightMargin": 0,
+  "indent": 0,
+  "leading": 40,
+  "initialText": "<p align=\"left\"><font face=\"Helvetica\" size=\"23\" color=\"#d0d0d0\" letterSpacing=\"0.000000\" kerning=\"1\"><b>Welcome back, John!</b></font></p>"
+}

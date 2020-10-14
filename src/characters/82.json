@@ -1,0 +1,43 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 79,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 81,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "bar",
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 6,
+              "blurY": 6,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.69921875,
+              "inner": false,
+              "knockout": false,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

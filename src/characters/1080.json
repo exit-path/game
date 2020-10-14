@@ -1,0 +1,25 @@
+{
+  "trackAsMenu": false,
+  "characters": [
+    {
+      "hitTest": true,
+      "down": true,
+      "over": true,
+      "up": true,
+      "characterId": 831,
+      "depth": 1,
+      "matrix": [1, 0, 0, 1, 0, 0],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "hitTest": true,
+      "down": true,
+      "over": true,
+      "up": true,
+      "characterId": 1079,
+      "depth": 2,
+      "matrix": [1, 0, 0, 1, 648, 220],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    }
+  ]
+}

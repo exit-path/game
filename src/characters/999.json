@@ -1,0 +1,22 @@
+{
+  "bounds": [-40, -40, 15599, 480],
+  "isWordWrap": true,
+  "isMultiline": true,
+  "isPassword": false,
+  "isReadonly": true,
+  "isAutoSize": false,
+  "noSelect": false,
+  "border": false,
+  "wasStatic": false,
+  "isHTML": true,
+  "useOutlines": true,
+  "fontID": 88,
+  "fontHeight": 400,
+  "textColor": 4287730065,
+  "align": 2,
+  "leftMargin": 0,
+  "rightMargin": 0,
+  "indent": 0,
+  "leading": 40,
+  "initialText": "<p align=\"center\"><font face=\"Helvetica\" size=\"20\" color=\"#919191\" letterSpacing=\"0.000000\" kerning=\"1\">3/4 Players Found</font></p>"
+}

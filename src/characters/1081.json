@@ -1,0 +1,57 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1076,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1077,
+          "matrix": [1, 0, 0, 1, 4039, 3190],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1078,
+          "matrix": [1, 0, 0, 1, 4039, 4010],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 281,
+          "matrix": [1, 0, 0, 1, 7500, 5490],
+          "name": "noButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1080,
+          "matrix": [1, 0, 0, 1, 4048, 5450],
+          "name": "yesButton",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

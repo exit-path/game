@@ -1,0 +1,22 @@
+{
+  "bounds": [-40, -40, 1878, 420],
+  "isWordWrap": true,
+  "isMultiline": true,
+  "isPassword": false,
+  "isReadonly": true,
+  "isAutoSize": false,
+  "noSelect": false,
+  "border": false,
+  "wasStatic": false,
+  "isHTML": true,
+  "useOutlines": true,
+  "fontID": 39,
+  "fontHeight": 340,
+  "textColor": 4291348680,
+  "align": 0,
+  "leftMargin": 0,
+  "rightMargin": 0,
+  "indent": 0,
+  "leading": 40,
+  "initialText": "<p align=\"left\"><font face=\"Helvetica\" size=\"17\" color=\"#c8c8c8\" letterSpacing=\"0.000000\" kerning=\"1\"><b>0/30</b></font></p>"
+}

@@ -1,0 +1,218 @@
+{
+  "numFrames": 11,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 933,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "colorTransform": [0, 0, 0, 1, 255, 255, 255, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.109375,
+            0.109375,
+            0.109375,
+            0.890625,
+            227,
+            227,
+            227,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.22265625,
+            0.22265625,
+            0.22265625,
+            0.77734375,
+            198,
+            198,
+            198,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.33203125,
+            0.33203125,
+            0.33203125,
+            0.66796875,
+            170,
+            170,
+            170,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.4453125,
+            0.4453125,
+            0.4453125,
+            0.5546875,
+            142,
+            142,
+            142,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.5546875,
+            0.5546875,
+            0.5546875,
+            0.4453125,
+            113,
+            113,
+            113,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.66796875,
+            0.66796875,
+            0.66796875,
+            0.33203125,
+            85,
+            85,
+            85,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.77734375,
+            0.77734375,
+            0.77734375,
+            0.22265625,
+            57,
+            57,
+            57,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [
+            0.890625,
+            0.890625,
+            0.890625,
+            0.109375,
+            28,
+            28,
+            28,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        }
+      ]
+    }
+  ]
+}

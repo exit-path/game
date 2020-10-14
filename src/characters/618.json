@@ -1,0 +1,89 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 404,
+          "matrix": [1, 0, 0, 1, -43, 28],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4278190080,
+              "blurX": 5,
+              "blurY": 15,
+              "angle": 0.7853851318359375,
+              "distance": 5,
+              "strength": 1,
+              "inner": false,
+              "knockout": false,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 616,
+          "matrix": [1, 0, 0, 1, 240, 607],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [1, 0, 0, 1, 374, -127],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [1, 0, 0, 1, 566, 25],
+          "colorTransform": [1, 1, 1, 0.48828125, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [1, 0, 0, 1, 1774, -127],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [1, 0, 0, 1, 1966, 25],
+          "colorTransform": [1, 1, 1, 0.48828125, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 617,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

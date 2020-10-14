@@ -1,0 +1,149 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1137,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1138,
+          "matrix": [1, 0, 0, 1, 12010, 80],
+          "name": "levDisplay",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1139,
+          "matrix": [1, 0, 0, 1, 12319, 340],
+          "name": "levName",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1140,
+          "matrix": [1, 0, 0, 1, 11357, 9326],
+          "name": "timeDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1141,
+          "matrix": [1, 0, 0, 1, -2016, 680],
+          "name": "buildVersion",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1145,
+          "matrix": [1, 0, 0, 1, 12000, 1320],
+          "name": "placing",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1156,
+          "matrix": [1, 0, 0, 1, 4020, 135],
+          "name": "flow",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 21,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1158,
+          "matrix": [1, 0, 0, 1, -880, -1000],
+          "name": "bordering",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1162,
+          "matrix": [1, 0, 0, 1, 104, 5240],
+          "name": "exitButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 25,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1166,
+          "matrix": [1, 0, 0, 1, 104, 4840],
+          "name": "muteButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1170,
+          "matrix": [1, 0, 0, 1, 104, 4023],
+          "name": "pauseButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 29,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1174,
+          "matrix": [1, 0, 0, 1, 104, 4443],
+          "name": "qualityButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1176,
+          "matrix": [1, 0, 0, 1, 15059, 8129],
+          "name": "caution",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 34,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1179,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "arrowKeysToPan",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

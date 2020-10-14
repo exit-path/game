@@ -1,0 +1,272 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 706,
+          "matrix": [1, 0, 0, 1, -34, 51],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4278190080,
+              "blurX": 5,
+              "blurY": 15,
+              "angle": 0.7853851318359375,
+              "distance": 5,
+              "strength": 1,
+              "inner": false,
+              "knockout": false,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 707,
+          "matrix": [1, 0, 0, 1, 220, 460],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 708,
+          "matrix": [1, 0, 0, 1, 300, 980],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 709,
+          "matrix": [1, 0, 0, 1, 300, 5320],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 710,
+          "matrix": [1, 0, 0, 1, 300, 6090],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 711,
+          "matrix": [1, 0, 0, 1, 300, 6860],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 712,
+          "matrix": [1, 0, 0, 1, 300, 7630],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 713,
+          "matrix": [1, 0, 0, 1, 300, 8400],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 1087, -342],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 1599, 64],
+          "colorTransform": [1, 1, 1, 0.83984375, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 14,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 6890, -342],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 16,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 7402, 64],
+          "colorTransform": [1, 1, 1, 0.83984375, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 18,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 12693, -342],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 20,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 13205, 64],
+          "colorTransform": [1, 1, 1, 0.83984375, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 22,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 24299, -342],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 24,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 24811, 64],
+          "colorTransform": [1, 1, 1, 0.83984375, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 26,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 18496, -342],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 28,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [2.6699676513671875, 0, 0, 2.6699676513671875, 19008, 64],
+          "colorTransform": [1, 1, 1, 0.83984375, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 30,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 714,
+          "matrix": [1, 0, 0, 1, 20800, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 715,
+          "matrix": [1, 0, 0, 1, 6086, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 32,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 716,
+          "matrix": [1, 0, 0, 1, 8351, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 33,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 717,
+          "matrix": [1, 0, 0, 1, 10616, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 34,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 718,
+          "matrix": [1, 0, 0, 1, 13162, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 719,
+          "matrix": [1, 0, 0, 1, 18254, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 36,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 720,
+          "matrix": [1, 0, 0, 1, 15708, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 37,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 721,
+          "matrix": [1, 0, 0, 1, 3540, 187],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 38,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 722,
+          "matrix": [1, 0, 0, 1, 23065, 187],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

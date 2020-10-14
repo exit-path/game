@@ -1,0 +1,2202 @@
+{
+  "numFrames": 96,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 166,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 171,
+          "matrix": [1, 0, 0, 1, 4826, 2190],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 0,
+              "blurY": 0,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 2
+            }
+          ]
+        },
+        {
+          "kind": 2,
+          "characterId": 172,
+          "soundInfo": {
+            "syncStop": false,
+            "syncNoMultiple": false
+          }
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 0.7956390380859375,
+              "blurY": 0.7956390380859375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.01953125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 1.5918731689453125,
+              "blurY": 1.5918731689453125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.046875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 2.38751220703125,
+              "blurY": 2.38751220703125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.078125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 3.183746337890625,
+              "blurY": 3.183746337890625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.09765625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 3.9793853759765625,
+              "blurY": 3.9793853759765625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.12890625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 4.7756195068359375,
+              "blurY": 4.7756195068359375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.15625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 5.571258544921875,
+              "blurY": 5.571258544921875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.1796875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 6.36749267578125,
+              "blurY": 6.36749267578125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.20703125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 7.1631317138671875,
+              "blurY": 7.1631317138671875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.23828125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 7.9593658447265625,
+              "blurY": 7.9593658447265625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.2578125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 8.7550048828125,
+              "blurY": 8.7550048828125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.2890625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 9.551239013671875,
+              "blurY": 9.551239013671875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.31640625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 10.346878051757812,
+              "blurY": 10.346878051757812,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.34765625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 11.143112182617188,
+              "blurY": 11.143112182617188,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.3671875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 11.938751220703125,
+              "blurY": 11.938751220703125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.3984375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 12.7349853515625,
+              "blurY": 12.7349853515625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.4296875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 13.530624389648438,
+              "blurY": 13.530624389648438,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.44921875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 14.326263427734375,
+              "blurY": 14.326263427734375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.4765625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 15.12249755859375,
+              "blurY": 15.12249755859375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.5078125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 15.918136596679688,
+              "blurY": 15.918136596679688,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.52734375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 16.714370727539062,
+              "blurY": 16.714370727539062,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.55859375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 17.510009765625,
+              "blurY": 17.510009765625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.58984375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 18.306243896484375,
+              "blurY": 18.306243896484375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.609375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 19.101882934570312,
+              "blurY": 19.101882934570312,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.63671875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 19.898117065429688,
+              "blurY": 19.898117065429688,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.66796875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 20.693756103515625,
+              "blurY": 20.693756103515625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.69921875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 21.489990234375,
+              "blurY": 21.489990234375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.71875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 22.285629272460938,
+              "blurY": 22.285629272460938,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.75,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 23.081863403320312,
+              "blurY": 23.081863403320312,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.77734375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 23.87750244140625,
+              "blurY": 23.87750244140625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.796875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 24.673736572265625,
+              "blurY": 24.673736572265625,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.828125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 25.469375610351562,
+              "blurY": 25.469375610351562,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.859375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 26.2650146484375,
+              "blurY": 26.2650146484375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.87890625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 27.061248779296875,
+              "blurY": 27.061248779296875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.90625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 27.856887817382812,
+              "blurY": 27.856887817382812,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.9375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 28.653121948242188,
+              "blurY": 28.653121948242188,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.95703125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 29.448760986328125,
+              "blurY": 29.448760986328125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.98828125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 30.2449951171875,
+              "blurY": 30.2449951171875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.01953125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 31.040634155273438,
+              "blurY": 31.040634155273438,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.046875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 31.836868286132812,
+              "blurY": 31.836868286132812,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.06640625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 32.63250732421875,
+              "blurY": 32.63250732421875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.09765625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 33.428741455078125,
+              "blurY": 33.428741455078125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.12890625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 34.22438049316406,
+              "blurY": 34.22438049316406,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.1484375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 35.02061462402344,
+              "blurY": 35.02061462402344,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.1796875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 35.816253662109375,
+              "blurY": 35.816253662109375,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.20703125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 36.61248779296875,
+              "blurY": 36.61248779296875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.2265625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 37.40812683105469,
+              "blurY": 37.40812683105469,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.2578125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 38.20436096191406,
+              "blurY": 38.20436096191406,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.2890625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 39,
+              "blurY": 39,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.31640625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.94921875, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294180339,
+              "blurX": 37.54991149902344,
+              "blurY": 37.54991149902344,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.27734375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.8984375, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4293327590,
+              "blurX": 36.099822998046875,
+              "blurY": 36.099822998046875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.25,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.8515625, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4292475097,
+              "blurX": 34.650177001953125,
+              "blurY": 34.650177001953125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.21875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.80078125, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4291687885,
+              "blurX": 33.20008850097656,
+              "blurY": 33.20008850097656,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.1875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.75, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4290835392,
+              "blurX": 31.75,
+              "blurY": 31.75,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.15625,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.69921875, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4289982643,
+              "blurX": 30.299911499023438,
+              "blurY": 30.299911499023438,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.1171875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 57,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.6484375, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4289130150,
+              "blurX": 28.849822998046875,
+              "blurY": 28.849822998046875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.08984375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 58,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.6015625, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4288342938,
+              "blurX": 27.400177001953125,
+              "blurY": 27.400177001953125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.05859375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 59,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.55078125, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4287490445,
+              "blurX": 25.950088500976562,
+              "blurY": 25.950088500976562,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1.02734375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 60,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.5, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4286637696,
+              "blurX": 24.5,
+              "blurY": 24.5,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 61,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.44921875, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4285784947,
+              "blurX": 23.049911499023438,
+              "blurY": 23.049911499023438,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.95703125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 62,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.3984375, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4284932454,
+              "blurX": 21.599822998046875,
+              "blurY": 21.599822998046875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.9296875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 63,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.3515625, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4284145242,
+              "blurX": 20.150177001953125,
+              "blurY": 20.150177001953125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.8984375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.30078125, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4283292749,
+              "blurX": 18.700088500976562,
+              "blurY": 18.700088500976562,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.8671875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 65,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.25, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4282440000,
+              "blurX": 17.25,
+              "blurY": 17.25,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.83984375,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 66,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.19921875, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4281587507,
+              "blurX": 15.799911499023438,
+              "blurY": 15.799911499023438,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.796875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 67,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.1484375, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4280800295,
+              "blurX": 14.349822998046875,
+              "blurY": 14.349822998046875,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.76953125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 68,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.1015625, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4279947802,
+              "blurX": 12.900177001953125,
+              "blurY": 12.900177001953125,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.73828125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 69,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.05078125, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4279095053,
+              "blurX": 11.450088500976562,
+              "blurY": 11.450088500976562,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.70703125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 70,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 3,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0, 0, 0, 0, 0],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4278242304,
+              "blurX": 10,
+              "blurY": 10,
+              "angle": 0,
+              "distance": 0,
+              "strength": 0.6796875,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 71,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 3
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.9609375, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 72,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.921875, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 73,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.87890625, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 74,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.83984375, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 75,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.80078125, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 76,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.76171875, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 77,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.71875, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 78,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.6796875, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 79,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.640625, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 80,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.6015625, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 81,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.55859375, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 82,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.51953125, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 83,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.48046875, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 84,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.44140625, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 85,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.3984375, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 86,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.359375, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 87,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.3203125, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 88,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.28125, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 89,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.23828125, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 90,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.19921875, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 91,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.16015625, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 92,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.12109375, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 93,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.078125, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 94,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0.0390625, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 95,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "colorTransform": [1, 1, 1, 0, 0, 0, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 96,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        }
+      ]
+    }
+  ]
+}

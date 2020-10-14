@@ -1,0 +1,60 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 305,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 80,
+          "matrix": [1.8159942626953125, 0, 0, 1.8159942626953125, 227, 454],
+          "clipDepth": 5,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 312,
+          "matrix": [1, 0, 0, 1, 298, 367],
+          "colorTransform": [0, 0, 0, 1, 255, 255, 255, 0],
+          "name": "arm",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 308,
+          "matrix": [1, 0, 0, 1, 15, 15],
+          "name": "whiteOutline",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 310,
+          "matrix": [0.284332275390625, 0, 0, 0.284332275390625, 140, 174],
+          "name": "lock",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

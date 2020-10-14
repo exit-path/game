@@ -1,0 +1,27 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 479,
+          "matrix": [
+            0.9999847412109375,
+            0,
+            0.0000152587890625,
+            0.9999847412109375,
+            1139,
+            0
+          ],
+          "name": "axe",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

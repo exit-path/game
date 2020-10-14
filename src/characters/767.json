@@ -1,0 +1,110 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 760,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "clipDepth": 20,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 762,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 764,
+          "matrix": [
+            0.254913330078125,
+            -0.254913330078125,
+            0.6760101318359375,
+            0.6760101318359375,
+            388,
+            6700
+          ],
+          "colorTransform": [1, 1, 1, 0.41015625, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [1, 0, 0, 1, 10251, 8354],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [-0.7582855224609375, 0, 0, 0.7582855224609375, 9398, 8354],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 766,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 14,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 764,
+          "matrix": [
+            0.7071075439453125,
+            0.7071075439453125,
+            -0.7071075439453125,
+            0.7071075439453125,
+            8062,
+            -5302
+          ],
+          "colorTransform": [1, 1, 1, 0.12109375, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 16,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 319,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "cB",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 18,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 319,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "cA",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

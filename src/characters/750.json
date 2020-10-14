@@ -1,0 +1,127 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 747,
+          "matrix": [1, 0, 0, 1, -43, 28],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4278190080,
+              "blurX": 5,
+              "blurY": 15,
+              "angle": 0.7853851318359375,
+              "distance": 5,
+              "strength": 1,
+              "inner": false,
+              "knockout": false,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [1, 0, 0, 1, 8132, -567],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [1, 0, 0, 1, 8324, -415],
+          "colorTransform": [1, 1, 1, 0.48828125, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [1, 0, 0, 1, 5472, -567],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [1, 0, 0, 1, 5664, -415],
+          "colorTransform": [1, 1, 1, 0.48828125, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 11,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 377,
+          "matrix": [1, 0, 0, 1, 2720, -567],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 407,
+          "matrix": [1, 0, 0, 1, 2912, -415],
+          "colorTransform": [1, 1, 1, 0.48828125, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 15,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 53,
+          "matrix": [0.6436309814453125, 0, 0, 0.6436309814453125, 2590, 517],
+          "name": "TICKERAB",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 748,
+          "matrix": [1, 0, 0, 1, 3441, -141],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 18,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 749,
+          "matrix": [1, 0, 0, 1, 3381, 2060],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 558,
+          "matrix": [1, 0, 0, 1, 3381, 2870],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

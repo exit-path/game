@@ -1,0 +1,49 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 992,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 993,
+          "matrix": [1, 0, 0, 1, -2651, 40],
+          "name": "nameOf",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 994,
+          "matrix": [1, 0, 0, 1, -2969, 360],
+          "name": "timeOf",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 995,
+          "matrix": [1, 0, 0, 1, -2280, 120],
+          "name": "posOf",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

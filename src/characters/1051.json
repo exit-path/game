@@ -1,0 +1,286 @@
+{
+  "numFrames": 7,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1021,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [1, 0, 0, 1, 10623, 4979],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [-0.7582855224609375, 0, 0, 0.7582855224609375, 9770, 4979],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1022,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1023,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "clipDepth": 18,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 14,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1026,
+          "matrix": [1, 0, 0, 1, 8035, 9281],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 4
+        },
+        {
+          "kind": 1,
+          "depth": 5
+        },
+        {
+          "kind": 1,
+          "depth": 7
+        },
+        {
+          "kind": 1,
+          "depth": 12
+        },
+        {
+          "kind": 1,
+          "depth": 13
+        },
+        {
+          "kind": 1,
+          "depth": 14
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1027,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "characterId": 1029,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 319,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 2,
+          "name": "cB",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 319,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 2,
+          "name": "cA",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [
+            2.3077545166015625,
+            0,
+            0,
+            2.3077545166015625,
+            15709,
+            11294
+          ],
+          "ratio": 2,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [-1.74993896484375, 0, 0, 1.74993896484375, 13740, 11294],
+          "ratio": 2,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [
+            -2.3077545166015625,
+            0,
+            0,
+            2.3077545166015625,
+            32947,
+            11294
+          ],
+          "ratio": 2,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 14,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 626,
+          "matrix": [1.74993896484375, 0, 0, 1.74993896484375, 34916, 11294],
+          "ratio": 2,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 4
+        },
+        {
+          "kind": 1,
+          "depth": 6
+        },
+        {
+          "kind": 1,
+          "depth": 8
+        },
+        {
+          "kind": 1,
+          "depth": 10
+        },
+        {
+          "kind": 1,
+          "depth": 12
+        },
+        {
+          "kind": 1,
+          "depth": 14
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": true,
+          "characterId": 1031,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 3
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1048,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 4,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 1
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1049,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 3
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 1050,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 6,
+          "filters": [],
+          "cacheAsBitmap": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 938,
+          "matrix": [1, 0, 0, 2.0788421630859375, 0, 870],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 945,
+          "matrix": [1, 0, 0, 1, 395, 2785],
+          "name": "playerInfo",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 56,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 946,
+          "matrix": [1, 0, 0, 1, 300, 1760],
+          "name": "nameDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 57,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 947,
+          "matrix": [1, 0, 0, 1, 1045, 6771],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 58,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 951,
+          "matrix": [1, 0, 0, 1, 387, 6011],
+          "name": "qp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 60,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 952,
+          "matrix": [1, 0, 0, 1, 12842, 800],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 61,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 281,
+          "matrix": [1, 0, 0, 1, 6088, 8580],
+          "name": "backToMenuButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 64,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 956,
+          "matrix": [1, 0, 0, 1, 12568, 1780],
+          "name": "customizeButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 67,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 957,
+          "matrix": [1, 0, 0, 1, 638, 5200],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 68,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 958,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 69,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 959,
+          "matrix": [1, 0, 0, 1, 180, 240],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 70,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 299,
+          "matrix": [0.2581329345703125, 0, 0, 0.2581329345703125, 12938, 280],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 112,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 296,
+          "matrix": [1, 0, 0, 1, 11236, 1779],
+          "name": "runnerBar",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

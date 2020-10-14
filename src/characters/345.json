@@ -1,0 +1,64 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 251,
+          "matrix": [0.4792938232421875, 0, 0, 0.4792938232421875, 16, -4],
+          "name": "headgear",
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294953984,
+              "blurX": 5,
+              "blurY": 5,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1,
+              "inner": false,
+              "knockout": false,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        },
+        {
+          "kind": 0,
+          "depth": 15,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 343,
+          "matrix": [1, 0, 0, 1, 430, -41],
+          "name": "nam",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 16,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 344,
+          "matrix": [1, 0, 0, 1, 460, 259],
+          "name": "desc",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 310,
+          "matrix": [0.284332275390625, 0, 0, 0.284332275390625, 100, 114],
+          "name": "lock",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

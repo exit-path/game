@@ -1,0 +1,61 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 755,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "clipDepth": 7,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 756,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 758,
+          "matrix": [
+            0.254913330078125,
+            -0.254913330078125,
+            0.6760101318359375,
+            0.6760101318359375,
+            388,
+            6700
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 758,
+          "matrix": [
+            0.7071075439453125,
+            0.7071075439453125,
+            -0.7071075439453125,
+            0.7071075439453125,
+            13999,
+            -12895
+          ],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

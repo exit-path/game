@@ -1,0 +1,79 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 976,
+          "matrix": [1, 0, 0, 1, -100, 0],
+          "name": "playerBorder",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 34,
+          "matrix": [2.0975799560546875, 0, 0, 0.5177459716796875, -718, 50],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 977,
+          "matrix": [1, 0, 0, 1, -638, 70],
+          "name": "placingNum",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 789,
+          "matrix": [1, 0, 0, 1, 6, 3],
+          "name": "boxy",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 32,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 982,
+          "matrix": [0.6381683349609375, 0, 0, 0.6381683349609375, 13417, 20],
+          "name": "kudosButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 983,
+          "matrix": [1, 0, 0, 1, 10519, 100],
+          "name": "timeDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 40,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 986,
+          "matrix": [1, 0, 0, 1, -670, 420],
+          "name": "sMute",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

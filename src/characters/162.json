@@ -1,0 +1,38 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 102,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 161,
+          "matrix": [-2.468353271484375, 0, 0, 2.468353271484375, 890, 226],
+          "colorTransform": [0, 0, 0, 1, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 38,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 116,
+          "matrix": [1.9120025634765625, 0, 0, 0.2859954833984375, 1000, 430],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

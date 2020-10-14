@@ -1,0 +1,94 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 997,
+          "matrix": [1, 0, 0, 1, 12842, 800],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 281,
+          "matrix": [1, 0, 0, 1, 11988, 6780],
+          "name": "backToMenuButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 998,
+          "matrix": [1, 0, 0, 1, 241, 2480],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 999,
+          "matrix": [1, 0, 0, 1, 241, 3800],
+          "name": "playerCountText",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1000,
+          "matrix": [1, 0, 0, 1, 520, 6321],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1001,
+          "matrix": [1, 0, 0, 1, 520, 6842],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1002,
+          "matrix": [1, 0, 0, 1, 180, 240],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 299,
+          "matrix": [0.2581329345703125, 0, 0, 0.2581329345703125, 12938, 280],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 52,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1011,
+          "matrix": [1, 0, 0, 1, 1830, 4700],
+          "name": "connectionMeter",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

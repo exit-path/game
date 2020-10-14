@@ -1,0 +1,527 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 340,
+          "matrix": [1, 0, 0, 1, 441, 1969],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 341,
+          "matrix": [1, 0, 0, 1, 441, 9940],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 342,
+          "matrix": [1, 0, 0, 1, 1536, 1380],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 2702],
+          "name": "s0",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 22,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 3544],
+          "name": "s1",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 40,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 4386],
+          "name": "s2",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 58,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 5228],
+          "name": "s3",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 76,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 6070],
+          "name": "s4",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 94,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 6912],
+          "name": "s5",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 112,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 7754],
+          "name": "s6",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 130,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 8596],
+          "name": "s7",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 148,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 2702],
+          "name": "s8",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 166,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 3544],
+          "name": "s9",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 184,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 4386],
+          "name": "s10",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 202,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 5228],
+          "name": "s11",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 220,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 6070],
+          "name": "s12",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 238,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 6912],
+          "name": "s13",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 256,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 7754],
+          "name": "s14",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 274,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 8596],
+          "name": "s15",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 292,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 2702],
+          "name": "s16",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 310,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 3544],
+          "name": "s17",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 328,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 4386],
+          "name": "s18",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 346,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 5228],
+          "name": "s19",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 364,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 6070],
+          "name": "s20",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 382,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 6912],
+          "name": "s21",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 400,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 7754],
+          "name": "s22",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 418,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 8596],
+          "name": "s23",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 436,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 10673],
+          "name": "s24",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 454,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 11515],
+          "name": "s25",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 472,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 12357],
+          "name": "s26",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 490,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 13199],
+          "name": "s27",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 508,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 14041],
+          "name": "s28",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 526,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 14883],
+          "name": "s29",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 544,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 15725],
+          "name": "s30",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 562,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 402, 16567],
+          "name": "s31",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 580,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 10673],
+          "name": "s32",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 598,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 11515],
+          "name": "s33",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 616,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 12357],
+          "name": "s34",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 634,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 13199],
+          "name": "s35",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 652,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 14041],
+          "name": "s36",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 670,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 14883],
+          "name": "s37",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 688,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 15725],
+          "name": "s38",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 706,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 5462, 16567],
+          "name": "s39",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 724,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 10673],
+          "name": "s40",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 742,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 11515],
+          "name": "s41",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 760,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 12357],
+          "name": "s42",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 778,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 13199],
+          "name": "s43",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 796,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 14041],
+          "name": "s44",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 814,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 14883],
+          "name": "s45",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 832,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 15725],
+          "name": "s46",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 850,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 345,
+          "matrix": [1, 0, 0, 1, 10662, 16567],
+          "name": "s47",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 868,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 354,
+          "matrix": [1, 0, 0, 1, 140, 200],
+          "name": "holder",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

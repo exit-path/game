@@ -1,0 +1,4476 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 745,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 333,
+          "matrix": [1, 0, 0, 1, 48000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 383,
+          "matrix": [1, 0, 0, 1, 1000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1500, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 14,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 0, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 16,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 0, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 18,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 0, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 20,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 0, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 22,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 0, 1000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 24,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 26,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 28,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 30,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 32,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 19000, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 34,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 19000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 36,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 27500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 38,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 27000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 40,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 26500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 42,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 26000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 44,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 46,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 31000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 48,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 30500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 50,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 30000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 52,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 29500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 54,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 29000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 56,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 28500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 58,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 28000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 60,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 62,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 64,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 66,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 68,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 70,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 72,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 74,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 76,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 27500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 78,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 27000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 80,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 31000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 82,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 30500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 84,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 86,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 26500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 88,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 29500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 90,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 29000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 92,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 28500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 94,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 28000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 96,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 26000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 98,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 30000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 100,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 102,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 104,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 106,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 108,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 110,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 112,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 27500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 114,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 27000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 116,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 31000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 118,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 30500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 120,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 122,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 26500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 124,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 29500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 126,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 29000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 128,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 28500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 130,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 28000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 132,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 26000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 134,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 30000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 136,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 138,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 140,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 142,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 144,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 146,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 148,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 3000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 150,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 152,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 4000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 154,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 3500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 156,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 5000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 158,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 4500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 160,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 6000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 162,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 5500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 164,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 6500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 166,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 7500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 168,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 7000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 170,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 172,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 9000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 174,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 176,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 9000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 178,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 180,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 10000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 182,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 9500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 184,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 11000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 186,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 10500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 188,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 11500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 190,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 12500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 192,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 12000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 194,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 13000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 196,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 14000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 198,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 13500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 200,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 15000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 202,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 14500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 204,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 16000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 206,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 15500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 208,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 17000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 210,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 16500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 212,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 17500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 214,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 18500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 216,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 18000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 218,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 19000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 220,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 222,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 19500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 224,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 226,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 228,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 10500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 230,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 11000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 232,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 11500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 234,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 12500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 236,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 12000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 238,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 13000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 240,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 14000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 242,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 13500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 244,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 15000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 246,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 14500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 248,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 16000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 250,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 15500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 252,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 17000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 254,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 16500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 256,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 17500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 258,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 18500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 260,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 18000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 262,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 19000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 264,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 266,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 19500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 268,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 10500, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 270,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 475,
+          "matrix": [1, 0, 0, 1, 11000, 1000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 272,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 475,
+          "matrix": [-0.563385009765625, 0, 0, 0.563385009765625, 12800, 2440],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 274,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 475,
+          "matrix": [0.563385009765625, 0, 0, 0.563385009765625, 14000, 1420],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 276,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 278,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 420,
+          "matrix": [1, 0, 0, 1, 20000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 280,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 282,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 284,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 286,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 288,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 290,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21500, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 292,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 294,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 296,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 298,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20000, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 300,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20500, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 302,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21000, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 304,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 20000, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 306,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 21500, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 308,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 310,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 312,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 3500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 314,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 4000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 316,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 7500, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 318,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 7000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 320,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 6500, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 322,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 6000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 324,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 5500, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 326,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 5000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 328,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 4500, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 330,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 332,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 334,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1000, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 336,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1000, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 338,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1000, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 340,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 1000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 342,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 3000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 345,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 3500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 348,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 4000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 351,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 4500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 354,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 5000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 357,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 5500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 360,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 6000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 363,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 6500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 366,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 7000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 369,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 7500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 372,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 8000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 375,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 8500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 378,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 9000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 381,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 484,
+          "matrix": [1, 0, 0, 1, 9500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 384,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 16500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 387,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 17000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 390,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 17500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 393,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 18000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 396,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 18500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 399,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 19000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 402,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 19500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 405,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 20000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 408,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 20500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 411,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 21000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 414,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 490,
+          "matrix": [1, 0, 0, 1, 21500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 417,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 419,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 421,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 22000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 423,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 475,
+          "matrix": [1, 0, 0, 1, 23000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 425,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 24562, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 427,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 25062, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 429,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 25562, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 431,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 475,
+          "matrix": [1, 0, 0, 1, 26500, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 433,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 482,
+          "matrix": [1, 0, 0, 1, 9037, 4449],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 435,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 482,
+          "matrix": [1, 0, 0, 1, 2700, 6950],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 437,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 4000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 439,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 5000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 441,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 4500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 443,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 6000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 445,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 5500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 447,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 6500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 449,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 7500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 451,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 7000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 453,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 455,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 4000, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 457,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 459,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8000, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 461,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 542,
+          "matrix": [
+            -0.5327301025390625,
+            0.8438568115234375,
+            -0.8438720703125,
+            -0.53271484375,
+            7289,
+            289
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 465,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 3000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 467,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 33000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 469,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 32500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 471,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 32000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 473,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 31500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 475,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 477,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 479,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 481,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 483,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 34500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 485,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 34000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 487,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 33500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 489,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 33000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 491,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 32500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 493,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 495,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 497,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 32000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 499,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 501,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 34500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 503,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 34000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 505,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 33500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 507,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 31500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 509,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 511,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 33000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 513,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 32500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 515,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 517,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 519,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 32000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 521,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 523,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 34500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 525,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 34000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 527,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 33500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 529,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 31500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 531,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 533,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 535,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 537,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 539,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 541,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 543,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 545,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 547,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 549,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 551,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 553,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 555,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 557,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 559,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 561,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 563,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 565,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 567,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 569,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 571,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 573,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 575,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 577,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 579,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 581,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 583,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 585,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 587,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 589,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 591,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 593,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 595,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 597,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 599,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 43500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 601,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 43000, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 603,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 10000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 605,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 43500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 607,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 43000, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 609,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 9500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 611,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 43500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 613,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 43000, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 615,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 617,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 619,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 621,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 623,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 625,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 627,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 629,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 631,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 633,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 635,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 637,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 639,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 641,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 643,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 645,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 647,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 649,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 651,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 653,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 655,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 657,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 659,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 661,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 663,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 665,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 667,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 669,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 671,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 673,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 675,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 677,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 679,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 681,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 683,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 685,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 687,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 689,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 691,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 693,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 695,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 697,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 699,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 701,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 703,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 705,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 707,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 709,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 3000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 711,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 713,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 715,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 717,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 719,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 721,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 723,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 725,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 727,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 729,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 731,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 733,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 735,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 1000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 737,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 1000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 739,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 1000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 741,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 1000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 743,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 745,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 747,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 749,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 751,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 753,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46500, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 755,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47000, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 757,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 759,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 761,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 763,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 765,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 767,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 769,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 771,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 773,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 775,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 777,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 41500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 779,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 781,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 783,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 785,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 787,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 789,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 791,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 40500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 793,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 795,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 797,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 799,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 801,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 38500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 803,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 39000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 805,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 807,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 809,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 811,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 813,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 815,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 37500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 817,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 819,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 821,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 35500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 823,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 36000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 825,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 827,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 829,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 831,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 833,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 835,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 837,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 839,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 841,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 843,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 845,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 847,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 849,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 851,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 4000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 853,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42000, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 855,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 42500, 3500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 857,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 5000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 859,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 4500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 861,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 6000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 863,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 5500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 865,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 46000, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 867,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 869,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 871,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45000, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 873,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45500, 7000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 875,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44500, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 877,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45000, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 879,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 45500, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 881,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 44000, 6500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 883,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 47500, 9000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 885,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2000, 2500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 887,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 2000, 2000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 889,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8000, 1000],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 891,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 385,
+          "matrix": [1, 0, 0, 1, 8000, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 893,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 9504, 4499],
+          "name": "p47",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 895,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 9944, 4499],
+          "name": "p45",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 897,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 10384, 4499],
+          "name": "p43",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 899,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 10824, 4499],
+          "name": "p41",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 901,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 11264, 4499],
+          "name": "p39",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 903,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 11704, 4499],
+          "name": "p37",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 905,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 12144, 4499],
+          "name": "p35",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 907,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 12584, 4499],
+          "name": "p33",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 909,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 13024, 4499],
+          "name": "p31",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 911,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 13464, 4499],
+          "name": "p29",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 913,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 13904, 4499],
+          "name": "p27",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 915,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 14344, 4499],
+          "name": "p25",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 917,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 14784, 4499],
+          "name": "p23",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 919,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 15224, 4499],
+          "name": "p21",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 921,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 15664, 4499],
+          "name": "p19",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 923,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 16104, 4499],
+          "name": "p17",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 925,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 16544, 4499],
+          "name": "p15",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 927,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 16984, 4499],
+          "name": "p13",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 929,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 17424, 4499],
+          "name": "p11",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 931,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 17864, 4499],
+          "name": "p9",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 933,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 18304, 4499],
+          "name": "p7",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 935,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 18744, 4499],
+          "name": "p5",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 937,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 19184, 4499],
+          "name": "p3",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 939,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, 1, 19624, 4499],
+          "name": "p1",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 941,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 10684, 4491],
+          "name": "p42",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 943,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 11124, 4491],
+          "name": "p40",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 945,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 11564, 4491],
+          "name": "p38",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 947,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 12004, 4491],
+          "name": "p36",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 949,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 12444, 4491],
+          "name": "p34",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 951,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 12884, 4491],
+          "name": "p32",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 953,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 13324, 4491],
+          "name": "p30",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 955,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 13764, 4491],
+          "name": "p28",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 957,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 14204, 4491],
+          "name": "p26",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 959,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 14644, 4491],
+          "name": "p24",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 961,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 15084, 4491],
+          "name": "p22",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 963,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 15524, 4491],
+          "name": "p20",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 965,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 15964, 4491],
+          "name": "p18",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 967,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 16404, 4491],
+          "name": "p16",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 969,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 16844, 4491],
+          "name": "p14",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 971,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 17284, 4491],
+          "name": "p12",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 973,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 17724, 4491],
+          "name": "p10",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 975,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 18164, 4491],
+          "name": "p8",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 977,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 18604, 4491],
+          "name": "p6",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 979,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 19044, 4491],
+          "name": "p4",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 981,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 391,
+          "matrix": [1, 0, 0, -1, 19484, 4491],
+          "name": "p2",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 983,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 396,
+          "matrix": [1, 0, 0, 1, 20692, 3847],
+          "name": "ta1",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 988,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 396,
+          "matrix": [1, 0, 0, 1, 1779, 6847],
+          "name": "ta2",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 993,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 381,
+          "matrix": [1, 0, 0, 1, 20582, 2608],
+          "name": "cautionSign",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 995,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 4569, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1004,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 5059, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1013,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 5549, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1022,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 6039, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1031,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 6529, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1040,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 7019, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1049,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 7509, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1058,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 498,
+          "matrix": [-1, 0, 0, -1, 7999, 3505],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 1067,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 750,
+          "matrix": [1, 0, 0, 1, 33464, 3962],
+          "name": "sign",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

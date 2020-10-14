@@ -1,0 +1,48 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 239,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 251,
+          "matrix": [1, 0, 0, 1, 135, 126],
+          "name": "box",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 16,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 252,
+          "matrix": [1, 0, 0, 1, 920, 510],
+          "name": "achTitle",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 253,
+          "matrix": [1, 0, 0, 1, 900, 130],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

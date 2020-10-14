@@ -1,0 +1,119 @@
+{
+  "numFrames": 6,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 169,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9981231689453125,
+            -0.052337646484375,
+            0.052337646484375,
+            0.9981231689453125,
+            0,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9935302734375,
+            -0.1045074462890625,
+            0.1045074462890625,
+            0.9935302734375,
+            0,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9862060546875,
+            -0.1563262939453125,
+            0.1563262939453125,
+            0.9862060546875,
+            0,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.9761810302734375,
+            -0.20770263671875,
+            0.20770263671875,
+            0.9761810302734375,
+            0,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": true,
+          "matrix": [
+            0.964263916015625,
+            -0.25872802734375,
+            0.25872802734375,
+            0.964263916015625,
+            0,
+            0
+          ],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

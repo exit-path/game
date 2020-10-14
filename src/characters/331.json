@@ -1,0 +1,48 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 327,
+          "matrix": [1, 0, 0, 1, -1419, 101],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 328,
+          "matrix": [1, 0, 0, 1, 160, 620],
+          "name": "whoBeat",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 4,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 329,
+          "matrix": [1, 0, 0, 1, 100, 1260],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 330,
+          "matrix": [1, 0, 0, 1, 11943, 960],
+          "name": "timeOf",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

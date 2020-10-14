@@ -1,0 +1,30 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 116,
+          "matrix": [1, 0, 0, 31.720001220703125, 0, -15340],
+          "clipDepth": 8,
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 497,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "spikeIn",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

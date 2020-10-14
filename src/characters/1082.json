@@ -1,0 +1,219 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1052,
+          "matrix": [1, 0, 0, 1, 12842, 800],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 956,
+          "matrix": [1, 0, 0, 1, 12808, 1781],
+          "name": "customizeButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1053,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1054,
+          "matrix": [1, 0, 0, 1, 1045, 5531],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 7,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1055,
+          "matrix": [1, 0, 0, 1, 1045, 7112],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1059,
+          "matrix": [1, 0, 0, 1, 387, 4811],
+          "name": "viewButt",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 10,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1063,
+          "matrix": [1, 0, 0, 1, 401, 6351],
+          "name": "eraseButt",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1064,
+          "matrix": [1, 0, 0, 1, 1045, 4030],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1067,
+          "matrix": [1, 0, 0, 1, 387, 3310],
+          "name": "playButt",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 15,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1068,
+          "matrix": [1, 0, 0, 1, 180, 240],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 16,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 299,
+          "matrix": [0.2581329345703125, 0, 0, 0.2581329345703125, 12938, 280],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 58,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 296,
+          "matrix": [1, 0, 0, 1, 11236, 1979],
+          "name": "runnerBar",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 62,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1069,
+          "matrix": [1, 0, 0, 1, 300, 1760],
+          "name": "nameDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 63,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 938,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 64,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 281,
+          "matrix": [1, 0, 0, 1, 6088, 8580],
+          "name": "backToButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 67,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1070,
+          "matrix": [1, 0, 0, 1, 1080, 2560],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 68,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1071,
+          "matrix": [1, 0, 0, 1, 2992, 2560],
+          "name": "bestTime",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 69,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1072,
+          "matrix": [1, 0, 0, 1, 5520, 2560],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 70,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1073,
+          "matrix": [1, 0, 0, 1, 11204, 2559],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 71,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1074,
+          "matrix": [1, 0, 0, 1, 8579, 2580],
+          "name": "currentProgress",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 72,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1075,
+          "matrix": [1, 0, 0, 1, 14021, 2560],
+          "name": "signsCollected",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 73,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 1081,
+          "matrix": [1, 0, 0, 1, 0, -1],
+          "name": "deleteSure",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

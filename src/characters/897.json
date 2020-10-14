@@ -1,0 +1,51 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 894,
+          "matrix": [
+            0.922576904296875,
+            -0.3827972412109375,
+            0.3827972412109375,
+            0.922576904296875,
+            -8,
+            -458
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 894,
+          "matrix": [
+            -0.9046783447265625,
+            -0.423126220703125,
+            -0.423126220703125,
+            0.9046783447265625,
+            26,
+            -340
+          ],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 896,
+          "matrix": [1, 0, 0, 1, -10, -764],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "numFrames": 2,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 373,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "name": "gunBarrel",
+          "filters": []
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 371,
+          "matrix": [0.892852783203125, 0, 0, 0.312408447265625, -3, 1500],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

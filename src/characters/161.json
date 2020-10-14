@@ -1,0 +1,180 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.3164520263671875,
+            0.94677734375,
+            -0.94677734375,
+            -0.3164520263671875,
+            110,
+            335
+          ],
+          "name": "db",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            0.6576690673828125,
+            -0.750946044921875,
+            0.7509613037109375,
+            0.6576690673828125,
+            45,
+            352
+          ],
+          "name": "da",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            0.33880615234375,
+            0.9396514892578125,
+            -0.9396514892578125,
+            0.33880615234375,
+            252,
+            304
+          ],
+          "name": "cb",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.30584716796875,
+            -0.8826446533203125,
+            0.8826446533203125,
+            -0.30584716796875,
+            225,
+            383
+          ],
+          "name": "ca",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 17,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 110,
+          "matrix": [
+            0.9659271240234375,
+            0.258819580078125,
+            -0.258819580078125,
+            0.9659271240234375,
+            121,
+            105
+          ],
+          "name": "body",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 160,
+          "matrix": [
+            0.9659271240234375,
+            0.258819580078125,
+            -0.258819580078125,
+            0.9659271240234375,
+            87,
+            0
+          ],
+          "name": "head",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 23,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.4506378173828125,
+            0.6952056884765625,
+            -0.83599853515625,
+            -0.5419158935546875,
+            163,
+            126
+          ],
+          "name": "ba",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 27,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            0.4419403076171875,
+            -0.10137939453125,
+            0.1697998046875,
+            0.7402496337890625,
+            0,
+            211
+          ],
+          "name": "bb",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 31,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.8809967041015625,
+            -0.3637237548828125,
+            0.3637237548828125,
+            -0.8809967041015625,
+            289,
+            222
+          ],
+          "name": "aa",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 107,
+          "matrix": [
+            -0.0631103515625,
+            -0.4499969482421875,
+            0.7537841796875,
+            -0.1057281494140625,
+            271,
+            266
+          ],
+          "name": "ab",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

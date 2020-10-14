@@ -1,0 +1,19 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 116,
+          "matrix": [32.00199890136719, 0, 0, 20, 0, 0],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

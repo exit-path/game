@@ -1,0 +1,246 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 767,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 22,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 759,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "colorTransform": [1, 1, 1, 0, 0, 0, 0, 0],
+          "filters": [],
+          "blendMode": 2
+        },
+        {
+          "kind": 0,
+          "depth": 30,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 752,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "colorTransform": [1, 1, 1, 0, 0, 0, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 32,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 836,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 33,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 837,
+          "matrix": [1, 0, 0, 1, 180, 240],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 34,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 838,
+          "matrix": [1, 0, 0, 1, 12733, 1060],
+          "name": "kudosLeft",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 35,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 839,
+          "matrix": [1, 0, 0, 1, 457, -7637],
+          "name": "levelName",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 36,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 840,
+          "matrix": [1, 0, 0, 1, 80, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 37,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 841,
+          "matrix": [1, 0, 0, 1, 1220, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 38,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 842,
+          "matrix": [1, 0, 0, 1, 10560, 1500],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 39,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 843,
+          "matrix": [1, 0, 0, 1, 14495, 1520],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 40,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 281,
+          "matrix": [1, 0, 0, 1, 11788, 9131],
+          "name": "backToMenuButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 43,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 844,
+          "matrix": [1, 0, 0, 1, 12306, 303],
+          "name": "nextInfo",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 44,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 845,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 45,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 846,
+          "matrix": [1, 0, 0, 1, 2275, 7676],
+          "name": "texter",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 46,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 850,
+          "matrix": [1, 0, 0, 1, 1023, 7620],
+          "name": "sendButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 49,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 851,
+          "matrix": [1, 0, 0, 1, 1138, 7000],
+          "name": "xpAndLevel",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 50,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 828,
+          "matrix": [1, 0, 0, 1, 763, 6984],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 5,
+              "blurY": 5,
+              "angle": 0,
+              "distance": 0,
+              "strength": 1,
+              "inner": false,
+              "knockout": false,
+              "compositeSource": true,
+              "passes": 1
+            }
+          ]
+        },
+        {
+          "kind": 0,
+          "depth": 53,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 856,
+          "matrix": [1, 0, 0, 1, 1950, 6970],
+          "name": "xpBar",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 59,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 857,
+          "matrix": [1, 0, 0, 1, 11114, 7250],
+          "name": "xpDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 60,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 858,
+          "matrix": [1, 0, 0, 1, 1963, 7250],
+          "name": "xpTill",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 61,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 291,
+          "matrix": [1, 0, 0, 1, 14611, 6991],
+          "colorTransform": [0, 0, 0, 1, 204, 204, 204, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 99,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 859,
+          "matrix": [1, 0, 0, 1, 5282, 7250],
+          "name": "levelRank",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

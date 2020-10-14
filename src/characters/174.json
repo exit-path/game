@@ -1,0 +1,138 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 2,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 3,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 82,
+          "matrix": [1, 0, 0, 1, 500, 6130],
+          "name": "bar",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 6,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 87,
+          "matrix": [1, 0, 0, 1, 130, 100],
+          "name": "muteButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 8,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 89,
+          "matrix": [1, 0, 0, 1, 9639, 6320],
+          "name": "l",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 9,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 93,
+          "matrix": [1, 0, 0, 1, 6960, 6520],
+          "name": "playB",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 11,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 94,
+          "matrix": [1, 0, 0, 1, 5039, 8940],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 95,
+          "matrix": [1, 0, 0, 1, -2838, -2620],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 100,
+          "matrix": [0.6766815185546875, 0, 0, 0.6766815185546875, 14460, 9379],
+          "colorTransform": [0, 0, 0, 1, 102, 102, 102, 0],
+          "name": "agButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 15,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 101,
+          "matrix": [1, 0, 0, 1, 5006, 9510],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 16,
+          "version": 3,
+          "moveCharacter": false,
+          "characterId": 163,
+          "matrix": [1, 0, 0, 1, 6500, 2090],
+          "filters": [
+            {
+              "id": 0,
+              "color": 4294967295,
+              "blurX": 149,
+              "blurY": 149,
+              "angle": 0,
+              "distance": 0,
+              "strength": 5.45703125,
+              "inner": false,
+              "knockout": true,
+              "compositeSource": true,
+              "passes": 2
+            }
+          ]
+        },
+        {
+          "kind": 0,
+          "depth": 18,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 165,
+          "matrix": [1, 0, 0, 1, -1183, 8589],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 19,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 173,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "bounds": [-173, -40, 3130, 480],
+  "isWordWrap": true,
+  "isMultiline": true,
+  "isPassword": false,
+  "isReadonly": true,
+  "isAutoSize": false,
+  "noSelect": true,
+  "border": false,
+  "wasStatic": false,
+  "isHTML": true,
+  "useOutlines": true,
+  "fontID": 88,
+  "fontHeight": 400,
+  "textColor": 4288848546,
+  "align": 1,
+  "leftMargin": 0,
+  "rightMargin": 0,
+  "indent": 0,
+  "leading": 40,
+  "initialText": "<p align=\"right\"><font face=\"Helvetica\" size=\"20\" color=\"#a2a2a2\" letterSpacing=\"0.000000\" kerning=\"1\">143 Kudos</font></p>"
+}

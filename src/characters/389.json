@@ -1,0 +1,29 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 386,
+          "matrix": [1, 0, 0, 1.582916259765625, 0, -130],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 388,
+          "matrix": [1.1199951171875, 0, 0, 2.3674468994140625, 67, 441],
+          "name": "hitA",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

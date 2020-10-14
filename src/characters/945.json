@@ -1,0 +1,99 @@
+{
+  "numFrames": 1,
+  "frames": [
+    {
+      "frame": 1,
+      "actions": [
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 939,
+          "matrix": [1, 0, 0, 1, 415, 40],
+          "name": "xpAndLevel",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 2,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 828,
+          "matrix": [1, 0, 0, 1, 20, 4],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 5,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 856,
+          "matrix": [1, 0, 0, 1, 27, 570],
+          "name": "xpBar",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 11,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 940,
+          "matrix": [1, 0, 0, 1, 9191, 850],
+          "name": "xpDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 12,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 941,
+          "matrix": [1, 0, 0, 1, 40, 850],
+          "name": "xpTill",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 13,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 291,
+          "matrix": [1, 0, 0, 1, 12030, 51],
+          "colorTransform": [0, 0, 0, 1, 204, 204, 204, 0],
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 51,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 942,
+          "matrix": [1, 0, 0, 1, 9512, 1310],
+          "name": "kudosDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 52,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 943,
+          "matrix": [1, 0, 0, 1, 40, 1250],
+          "name": "matchDisp",
+          "filters": []
+        },
+        {
+          "kind": 0,
+          "depth": 53,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 944,
+          "matrix": [1, 0, 0, 1, 40, 1650],
+          "name": "winDisp",
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

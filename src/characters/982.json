@@ -1,0 +1,75 @@
+{
+  "trackAsMenu": false,
+  "characters": [
+    {
+      "hitTest": false,
+      "down": false,
+      "over": false,
+      "up": true,
+      "characterId": 978,
+      "depth": 1,
+      "matrix": [1, 0, 0, 1, 0, 0],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "hitTest": false,
+      "down": true,
+      "over": true,
+      "up": true,
+      "characterId": 979,
+      "depth": 2,
+      "matrix": [1, 0, 0, 1, 265, 791],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "hitTest": false,
+      "down": true,
+      "over": true,
+      "up": true,
+      "characterId": 368,
+      "depth": 3,
+      "matrix": [1.953826904296875, 0, 0, 1.953826904296875, 278, 177],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "hitTest": true,
+      "down": true,
+      "over": true,
+      "up": true,
+      "characterId": 980,
+      "depth": 6,
+      "matrix": [1, 0, 0, 1, 1056, 195],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "hitTest": false,
+      "down": true,
+      "over": true,
+      "up": false,
+      "characterId": 981,
+      "depth": 1,
+      "matrix": [1, 0, 0, 1, 0, 0],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "hitTest": true,
+      "down": false,
+      "over": false,
+      "up": false,
+      "characterId": 981,
+      "depth": 1,
+      "matrix": [1, 0, 0, 1, 0, 0],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "hitTest": true,
+      "down": false,
+      "over": false,
+      "up": false,
+      "characterId": 367,
+      "depth": 3,
+      "matrix": [1.953826904296875, 0, 0, 1.953826904296875, 278, 177],
+      "colorTransform": [1, 1, 1, 1, 0, 0, 0, 0]
+    }
+  ]
+}

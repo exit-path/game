@@ -1,0 +1,22 @@
+{
+  "bounds": [1435, -40, 2030, 440],
+  "isWordWrap": true,
+  "isMultiline": true,
+  "isPassword": false,
+  "isReadonly": true,
+  "isAutoSize": false,
+  "noSelect": false,
+  "border": false,
+  "wasStatic": false,
+  "isHTML": true,
+  "useOutlines": true,
+  "fontID": 88,
+  "fontHeight": 360,
+  "textColor": 4291611852,
+  "align": 0,
+  "leftMargin": 0,
+  "rightMargin": 0,
+  "indent": 0,
+  "leading": 40,
+  "initialText": "<p align=\"left\"><font face=\"Helvetica\" size=\"18\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"1\">25,500 XP</font></p>"
+}
