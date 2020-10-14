@@ -1,6 +1,6 @@
 import lib from "swf-lib";
 import { IFocusManager } from "./IFocusManager";
-import { Button } from "../controls/Button";
+import type { Button } from "../controls/Button";
 import { IFocusManagerComponent } from "./IFocusManagerComponent";
 import { IFocusManagerGroup } from "./IFocusManagerGroup";
 import { UIComponent } from "../core/UIComponent";

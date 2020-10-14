@@ -126,9 +126,9 @@ export class Ticker extends lib.flash.display.MovieClip {
     }
   }
 
-  public getPosition(let: string): any {
+  public getPosition($let: string): any {
     for (var i: any = 0; i < this.characters.length; i++) {
-      if (let == this.characters[i]) {
+      if ($let == this.characters[i]) {
         return i;
       }
     }
