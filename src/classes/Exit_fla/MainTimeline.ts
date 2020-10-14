@@ -86,8 +86,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public declare multiplayer: Multiplayer;
 
-  public declare my_cMenu: lib.flash.ui.ContextMenu;
-
   public declare myCountry: string;
 
   public declare notLoggedIn: NotLoggedIn;
@@ -237,9 +235,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       0,
       true
     );
-    this.my_cMenu = new lib.flash.ui.ContextMenu();
-    this.my_cMenu.hideBuiltInItems();
-    this.contextMenu = this.my_cMenu;
     this.stop();
     this.url = this.stage.loaderInfo.url;
     this.urlStart = this.url.indexOf("://") + 3;
@@ -254,11 +249,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       "armorgames.com" == this.domain || "minoviacay.com" == this.domain;
     if (this.agDomain) {
     }
-    Log.View(
-      434,
-      "051e93a9-f39f-47e6-8e67-34ea9e748fd8",
-      this.root.loaderInfo.loaderURL
-    );
     DebugUtil.init("Exit-Path", false, true);
     DebugUtil.out("Debug Console Ready.");
   }
@@ -430,24 +420,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.rewind = new Rewind();
     this.psb = new ParallaxScrollingBitmap(this.bitmapData, 500, 800);
     this.clearBitmap = new lib.flash.display.BitmapData(800, 500, true, 0);
-    this.agi_url = "http://cache.armorgames.com/assets/agi/AGI.swf";
-    lib.flash.system.Security.allowDomain(this.agi_url);
-    lib.flash.system.Security.allowInsecureDomain(this.agi_url);
-    this.devKey = "f916ce353fbd89ab40ccb881545cb2c5";
-    this.gameKey = "exit-path-release";
-    this.urlRequest = new lib.flash.net.URLRequest(this.agi_url);
-    this.loader = new lib.flash.display.Loader();
-    this.loader.contentLoaderInfo.addEventListener(
-      lib.flash.events.Event.COMPLETE,
-      this.loadComplete
-    );
-    this.loader.load(this.urlRequest);
-    this.highScoreArray = new Array<any>({
-      descending: false,
-      format: "time",
-      type: "Uniplayer",
-    });
-    this.isHS = false;
   }
 
   public getAGIName(): any {
