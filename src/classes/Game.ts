@@ -610,36 +610,32 @@ export class Game extends lib.flash.display.MovieClip {
         xR2 = vel * Math.sin((Math.PI / 180) * curCannon.rotation);
         yR2 = 0 - vel * Math.cos((Math.PI / 180) * curCannon.rotation);
         j = 3;
-        while (true) {
-          if (j < iter) {
-            curX = xR2 * j + curCannon.x;
-            curY = yR2 * j + curCannon.y;
-            if (
-              Math2.dist(curX, curY, this.player.x, this.player.y) < 10 &&
-              !this.player.rewinding
-            ) {
-              break;
-            }
-            if (this.level.canvas.getAlpha(curX, curY) > 0) {
-              totalDist = Math2.dist(curCannon.x, curCannon.y, curX, curY) - 30;
-              curCannon.beam.height = totalDist;
-              for (k = 0; k < 5; k++) {
-                ws = new WhiteSquare();
-                ws.x = curX + Math2.range(5);
-                ws.y = curY + Math2.range(2);
-                ws.scaleX = Math.random() * 0.5 + 0.5;
-                ws.scaleY = Math.random() * 0.5 + 0.5;
-                this.addChild(ws);
-                this.emit.manage(ws);
-              }
-            } else {
-              j++;
-              continue;
-            }
+        while (j < iter) {
+          curX = xR2 * j + curCannon.x;
+          curY = yR2 * j + curCannon.y;
+          if (
+            Math2.dist(curX, curY, this.player.x, this.player.y) < 10 &&
+            !this.player.rewinding
+          ) {
+            this.kill();
+            return;
           }
+          if (this.level.canvas.getAlpha(curX, curY) > 0) {
+            totalDist = Math2.dist(curCannon.x, curCannon.y, curX, curY) - 30;
+            curCannon.beam.height = totalDist;
+            for (k = 0; k < 5; k++) {
+              ws = new WhiteSquare();
+              ws.x = curX + Math2.range(5);
+              ws.y = curY + Math2.range(2);
+              ws.scaleX = Math.random() * 0.5 + 0.5;
+              ws.scaleY = Math.random() * 0.5 + 0.5;
+              this.addChild(ws);
+              this.emit.manage(ws);
+            }
+            break;
+          }
+          j++;
         }
-        this.kill();
-        return;
       }
     }
   }
