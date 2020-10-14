@@ -86,6 +86,9 @@ export class Level extends lib.flash.display.MovieClip {
 
   public constructor() {
     super();
+  }
+
+  __preInit() {
     this.tMaxX = 100;
     this.tMaxY = 50;
     this.levelName = "Multiplayer";
@@ -118,6 +121,7 @@ export class Level extends lib.flash.display.MovieClip {
     this.bouncers = new Array<any>();
     this.laserCannons = new Array<any>();
     this.checkPoints = new Array<any>();
+    super.__preInit();
   }
 
   public addCheckpoint(mov: lib.flash.display.MovieClip): any {
