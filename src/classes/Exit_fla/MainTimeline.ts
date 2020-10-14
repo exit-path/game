@@ -849,55 +849,25 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   public loadGamez(): any {
     lib.__internal.avm2.Runtime.trace("LOAD GAME FROM HISTORY!");
     this.playerObj.userName = this.getRandomName();
-    this.playerObj.colour = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.colour)
-    );
-    this.playerObj.colour2 = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.colour2)
-    );
-    this.playerObj.headType = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.headType)
-    );
-    this.playerObj.handType = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.handType)
-    );
-    this.playerObj.xp = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.xp)
-    );
-    this.playerObj.kudos = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.kudos)
-    );
-    this.playerObj.matches = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.matches)
-    );
-    this.playerObj.wins = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.wins)
-    );
-    this.playerObj.jumps = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.jumps)
-    );
-    this.playerObj.deaths = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.deaths)
-    );
-    this.playerObj.gameDeaths = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.gameDeaths)
-    );
-    this.playerObj.gameLevel = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.gameLevel)
-    );
-    this.playerObj.gameTime = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.gameTime)
-    );
+    this.playerObj.colour = Number(this.savedGame.data.saveObj.colour);
+    this.playerObj.colour2 = Number(this.savedGame.data.saveObj.colour2);
+    this.playerObj.headType = Number(this.savedGame.data.saveObj.headType);
+    this.playerObj.handType = Number(this.savedGame.data.saveObj.handType);
+    this.playerObj.xp = Number(this.savedGame.data.saveObj.xp);
+    this.playerObj.kudos = Number(this.savedGame.data.saveObj.kudos);
+    this.playerObj.matches = Number(this.savedGame.data.saveObj.matches);
+    this.playerObj.wins = Number(this.savedGame.data.saveObj.wins);
+    this.playerObj.jumps = Number(this.savedGame.data.saveObj.jumps);
+    this.playerObj.deaths = Number(this.savedGame.data.saveObj.deaths);
+    this.playerObj.gameDeaths = Number(this.savedGame.data.saveObj.gameDeaths);
+    this.playerObj.gameLevel = Number(this.savedGame.data.saveObj.gameLevel);
+    this.playerObj.gameTime = Number(this.savedGame.data.saveObj.gameTime);
     if (this.savedGame.data.saveObj.gameName == null) {
       this.playerObj.gameName = "01234567";
     } else {
-      this.playerObj.gameName = Number(
-        Compressor.uncompress(this.savedGame.data.saveObj.gameName)
-      );
+      this.playerObj.gameName = String(this.savedGame.data.saveObj.gameName);
     }
-    this.playerObj.bestTime = Number(
-      Compressor.uncompress(this.savedGame.data.saveObj.bestTime)
-    );
+    this.playerObj.bestTime = Number(this.savedGame.data.saveObj.bestTime);
     this.playerObj.signs = this.savedGame.data.saveObj.signs;
     this.playerObj.achs = this.savedGame.data.saveObj.achs;
     this.playerObj.ping = 0;
@@ -1074,21 +1044,21 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public saveGame(): any {
     var saveObj: any = new Object();
-    saveObj.colour = Compressor.compress(String(this.playerObj.colour));
-    saveObj.colour2 = Compressor.compress(String(this.playerObj.colour2));
-    saveObj.headType = Compressor.compress(String(this.playerObj.headType));
-    saveObj.handType = Compressor.compress(String(this.playerObj.handType));
-    saveObj.xp = Compressor.compress(String(this.playerObj.xp));
-    saveObj.kudos = Compressor.compress(String(this.playerObj.kudos));
-    saveObj.matches = Compressor.compress(String(this.playerObj.matches));
-    saveObj.wins = Compressor.compress(String(this.playerObj.wins));
-    saveObj.jumps = Compressor.compress(String(this.playerObj.jumps));
-    saveObj.deaths = Compressor.compress(String(this.playerObj.deaths));
-    saveObj.gameDeaths = Compressor.compress(String(this.playerObj.gameDeaths));
-    saveObj.gameLevel = Compressor.compress(String(this.playerObj.gameLevel));
-    saveObj.gameName = Compressor.compress(String(this.playerObj.gameName));
-    saveObj.gameTime = Compressor.compress(String(this.playerObj.gameTime));
-    saveObj.bestTime = Compressor.compress(String(this.playerObj.bestTime));
+    saveObj.colour = String(this.playerObj.colour);
+    saveObj.colour2 = String(this.playerObj.colour2);
+    saveObj.headType = String(this.playerObj.headType);
+    saveObj.handType = String(this.playerObj.handType);
+    saveObj.xp = String(this.playerObj.xp);
+    saveObj.kudos = String(this.playerObj.kudos);
+    saveObj.matches = String(this.playerObj.matches);
+    saveObj.wins = String(this.playerObj.wins);
+    saveObj.jumps = String(this.playerObj.jumps);
+    saveObj.deaths = String(this.playerObj.deaths);
+    saveObj.gameDeaths = String(this.playerObj.gameDeaths);
+    saveObj.gameLevel = String(this.playerObj.gameLevel);
+    saveObj.gameName = String(this.playerObj.gameName);
+    saveObj.gameTime = String(this.playerObj.gameTime);
+    saveObj.bestTime = String(this.playerObj.bestTime);
     saveObj.signs = this.playerObj.signs;
     saveObj.achs = this.playerObj.achs;
     this.savedGame.data.hasSaved = true;
@@ -1178,25 +1148,25 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       return;
     }
     this.playerObj.userName = this.getAGIName();
-    this.playerObj.colour = Number(Compressor.uncompress(myObj.colour));
-    this.playerObj.colour2 = Number(Compressor.uncompress(myObj.colour2));
-    this.playerObj.headType = Number(Compressor.uncompress(myObj.headType));
-    this.playerObj.handType = Number(Compressor.uncompress(myObj.handType));
-    this.playerObj.xp = Number(Compressor.uncompress(myObj.xp));
-    this.playerObj.kudos = Number(Compressor.uncompress(myObj.kudos));
-    this.playerObj.matches = Number(Compressor.uncompress(myObj.matches));
-    this.playerObj.wins = Number(Compressor.uncompress(myObj.wins));
-    this.playerObj.jumps = Number(Compressor.uncompress(myObj.jumps));
-    this.playerObj.deaths = Number(Compressor.uncompress(myObj.deaths));
-    this.playerObj.gameDeaths = Number(Compressor.uncompress(myObj.gameDeaths));
+    this.playerObj.colour = Number(myObj.colour);
+    this.playerObj.colour2 = Number(myObj.colour2);
+    this.playerObj.headType = Number(myObj.headType);
+    this.playerObj.handType = Number(myObj.handType);
+    this.playerObj.xp = Number(myObj.xp);
+    this.playerObj.kudos = Number(myObj.kudos);
+    this.playerObj.matches = Number(myObj.matches);
+    this.playerObj.wins = Number(myObj.wins);
+    this.playerObj.jumps = Number(myObj.jumps);
+    this.playerObj.deaths = Number(myObj.deaths);
+    this.playerObj.gameDeaths = Number(myObj.gameDeaths);
     if (myObj.gameName == null) {
       this.playerObj.gameName = "01234567";
     } else {
-      this.playerObj.gameName = Number(Compressor.uncompress(myObj.gameName));
+      this.playerObj.gameName = String(myObj.gameName);
     }
-    this.playerObj.gameLevel = Number(Compressor.uncompress(myObj.gameLevel));
-    this.playerObj.gameTime = Number(Compressor.uncompress(myObj.gameTime));
-    this.playerObj.bestTime = Number(Compressor.uncompress(myObj.bestTime));
+    this.playerObj.gameLevel = Number(myObj.gameLevel);
+    this.playerObj.gameTime = Number(myObj.gameTime);
+    this.playerObj.bestTime = Number(myObj.bestTime);
     this.playerObj.ping = 0;
     this.playerObj.signs = myObj.signs;
     this.playerObj.achs = myObj.achs;
