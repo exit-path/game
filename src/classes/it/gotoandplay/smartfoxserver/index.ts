@@ -1,10 +1,2 @@
 export { SFSEvent } from "./SFSEvent";
 export { SmartFoxClient } from "./SmartFoxClient";
-import * as data from "./data";
-export { data };
-import * as handlers from "./handlers";
-export { handlers };
-import * as http from "./http";
-export { http };
-import * as util from "./util";
-export { util };

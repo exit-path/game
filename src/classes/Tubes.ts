@@ -7,8 +7,6 @@ import { SoundBox } from "./john/SoundBox";
 import { AchEvent } from "./AchEvent";
 import { LevelUpWindow } from "./LevelUpWindow";
 import { Relay } from "./john/Relay";
-import { DebugUtil } from "./betz/DebugUtil";
-import { Log } from "./SWFStats/Log";
 import { Key } from "./john/Key";
 
 export class Tubes extends lib.flash.display.MovieClip {
@@ -675,9 +673,7 @@ export class Tubes extends lib.flash.display.MovieClip {
   }
 
   private onPrivateMessageHandler(evt: SFSEvent): void {
-    var playerStuff: any = this.com.adobe.serialization.json.JSON.decode(
-      evt.params.message
-    );
+    var playerStuff: any = JSON.parse(evt.params.message);
     for (var i: any = 0; i < this.players.length; i++) {
       if (
         this.players[i].userName == evt.params.sender.getName() &&
@@ -898,7 +894,7 @@ export class Tubes extends lib.flash.display.MovieClip {
     var v: any = null;
     var changedVars: any[] = evt.params.changedVars;
     for (v in changedVars) {
-      DebugUtil.out(
+      lib.__internal.avm2.Runtime.trace(
         v +
           " room variable was updated; new value is: " +
           evt.params.room.getVariable(v)
@@ -919,11 +915,6 @@ export class Tubes extends lib.flash.display.MovieClip {
       this.player.ping = this.currentPing;
       if (this.firstTimeSend && this.currentPing != 0) {
         this.firstTimeSend = false;
-        Log.LevelAverageMetric(
-          "ping-" + this.parent.parent["myCountry"],
-          0,
-          this.currentPing
-        );
       }
     }
     if (this.locate == "Game") {
@@ -963,7 +954,7 @@ export class Tubes extends lib.flash.display.MovieClip {
     obj.handType = this.player.handType;
     obj.host = this.player.host;
     obj.ping = this.player.ping;
-    var myStr: string = this.com.adobe.serialization.json.JSON.encode(obj);
+    var myStr: string = JSON.stringify(obj);
     this.sendPrivateMessage(myStr, evt.params.user.getId());
   }
 
@@ -1318,7 +1309,7 @@ export class Tubes extends lib.flash.display.MovieClip {
   }
 
   public setRoomVariable(vari: string, valu: string): any {
-    DebugUtil.out("SET ROOM VARIABLE", vari, valu);
+    lib.__internal.avm2.Runtime.trace("SET ROOM VARIABLE", vari, valu);
     var rVars: any[] = new Array<any>();
     rVars.push({ name: vari, val: valu, persistent: true });
     this.sfs.setRoomVariables(rVars);

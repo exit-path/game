@@ -13,8 +13,6 @@ import { AchEvent } from "../AchEvent";
 import { Achievement } from "../Achievement";
 import { SoundBox } from "../john/SoundBox";
 import { Math2 } from "../john/Math2";
-import { Log } from "../SWFStats/Log";
-import { DebugUtil } from "../betz/DebugUtil";
 import { Key } from "../john/Key";
 import { Ach } from "../Ach";
 import { Relay } from "../john/Relay";
@@ -25,7 +23,6 @@ import { MultiplayerMenu } from "../MultiplayerMenu";
 import { SinglePlayerMenu } from "../SinglePlayerMenu";
 import { Game } from "../Game";
 import { AGIcon } from "../AGIcon";
-import { Compressor } from "../betz/Compressor";
 
 export class MainTimeline extends lib.flash.display.MovieClip {
   public declare achievements: any[];
@@ -249,13 +246,10 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       "armorgames.com" == this.domain || "minoviacay.com" == this.domain;
     if (this.agDomain) {
     }
-    DebugUtil.init("Exit-Path", false, true);
-    DebugUtil.out("Debug Console Ready.");
   }
 
   public frame2(): any {
     this.play();
-    Log.Play();
   }
 
   public frame3(): any {
@@ -648,7 +642,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.singlePlayerMenu.init(this.playerObj);
           break;
         case "StartGame":
-          Log.CustomMetric("SP");
           this.endMenus();
           this.multiplayer.singlePlayerMenu.kill();
           this.multiplayer.removeChild(this.multiplayer.singlePlayerMenu);
@@ -719,7 +712,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.quickPlayLobby.kill();
           this.multiplayer.removeChild(this.multiplayer.quickPlayLobby);
           this.multiplayer.quickPlayLobby = null;
-          Log.CustomMetric("MP");
           this.multiplayer.game.reset();
           this.multiplayer.addChild(this.multiplayer.game);
           this.multiplayer.game.countdownStart();

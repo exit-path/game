@@ -31,7 +31,6 @@ import { Relay } from "./john/Relay";
 import { Key } from "./john/Key";
 import { Math2 } from "./john/Math2";
 import { WhiteSquare } from "./WhiteSquare";
-import { DebugUtil } from "./betz/DebugUtil";
 import { YouArrow } from "./YouArrow";
 import { FinalA } from "./FinalA";
 import { FinalC } from "./FinalC";
@@ -680,7 +679,6 @@ export class Game extends lib.flash.display.MovieClip {
   public iAmDone(str: string): any {
     var playerBar: any = null;
     lib.__internal.avm2.Runtime.trace(str, " is done");
-    DebugUtil.out(str, " is done");
     for (var i: any = 0; i < this.players.length; i++) {
       if (this.players[i].userName == str) {
         lib.__internal.avm2.Runtime.trace(

@@ -5,11 +5,9 @@ import { Tubes } from "./Tubes";
 import { Placing } from "./Placing";
 import { Relay } from "./john/Relay";
 import { AchEvent } from "./AchEvent";
-import { DebugUtil } from "./betz/DebugUtil";
 import { Key } from "./john/Key";
 import { Text2 } from "./john/Text2";
 import { Anim } from "./john/Anim";
-import { Log } from "./SWFStats/Log";
 
 export class Lobby extends lib.flash.display.MovieClip {
   public declare backToMenuButton: lib.flash.display.SimpleButton;
@@ -275,7 +273,6 @@ export class Lobby extends lib.flash.display.MovieClip {
         if (this.players[i].host) {
           this.tubes.setRoomVariable("state", "Lobby");
           this.tubes.resetTimeToGo();
-          Log.CustomMetric("MPGame");
         }
         this.tubes.playerObject.matches++;
         this.dispatchEvent(new AchEvent(AchEvent.SEND, 15));
