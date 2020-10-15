@@ -17,6 +17,12 @@
         "esModuleInterop": true,
         "inlineSourceMap": true,
         "declaration": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "swf-lib/*": [
+                "@exit-path/swf-lib/*"
+            ]
+        }
     }
 }

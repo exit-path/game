@@ -10,7 +10,7 @@
     "start": "webpack serve --mode=development"
   },
   "dependencies": {
-    "swf-lib": "npm:@exit-path/swf-lib"
+    "@exit-path/swf-lib": "0.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.11.6",

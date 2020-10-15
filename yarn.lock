@@ -896,6 +896,13 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@exit-path/swf-lib@0.1.0":
+  version "0.1.0"
+  resolved "https://npm.pkg.github.com/download/@exit-path/swf-lib/0.1.0/171f409bff5cc5b15dac41981481e1c870efbd17bf1fbe6955b15040da0a4465#f6666269eec7309652fc46d1f405d52af251b529"
+  integrity sha512-bMdwxD3VmHRtTD6czHapZnYHuH7rietk0Tx+AeBlXRIbZcOCteM1aQAGSabuEfbbI/XioQ8m7S/+Sb0kB8Fpyg==
+  dependencies:
+    gl-matrix "3.3.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -5920,13 +5927,6 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
-
-"swf-lib@npm:@exit-path/swf-lib":
-  version "0.1.0"
-  resolved "https://npm.pkg.github.com/download/@exit-path/swf-lib/0.1.0/171f409bff5cc5b15dac41981481e1c870efbd17bf1fbe6955b15040da0a4465#f6666269eec7309652fc46d1f405d52af251b529"
-  integrity sha512-bMdwxD3VmHRtTD6czHapZnYHuH7rietk0Tx+AeBlXRIbZcOCteM1aQAGSabuEfbbI/XioQ8m7S/+Sb0kB8Fpyg==
-  dependencies:
-    gl-matrix "3.3.0"
 
 table-layout@^1.0.0:
   version "1.0.1"

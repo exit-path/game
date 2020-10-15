@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+          always-auth: true
+      - run: |
+          echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+          yarn install --frozen-lockfile
+          yarn build
+        env:
+          NPM_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          CI: true
+      - name: Install SSH Client
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          SSH: true
+          REPOSITORY_NAME: exit-path/exit-path.github.io
+          BRANCH: gh-pages
+          FOLDER: dist
+          GIT_CONFIG_NAME: exit-path-bot
+          GIT_CONFIG_EMAIL: 72936815+exit-path-bot@users.noreply.github.com

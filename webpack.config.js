@@ -30,6 +30,9 @@ const config = {
   },
   resolve: {
     extensions: [".ts", ".js"],
+    alias: {
+      "swf-lib": "@exit-path/swf-lib",
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
