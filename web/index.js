@@ -1,7 +1,7 @@
 import lib from "swf-lib";
+import * as game from "../src/index";
 
 window.onload = async () => {
-    const game = await import("../src/index");
     const library = await game.__library();
 
     const props = game.__properties;

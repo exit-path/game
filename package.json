@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc -p tsconfig.json",
     "format": "prettier --write -l 'src/**/*.ts'",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "start": "webpack serve --mode=development"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "file-loader": "6.1.1",
     "html-webpack-plugin": "4.5.0",
     "prettier": "2.1.2",
+    "source-map-loader": "1.1.1",
     "typescript": "4.0.3",
     "webpack": "5.1.0",
     "webpack-cli": "4.0.0",
