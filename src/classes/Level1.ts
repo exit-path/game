@@ -1,5 +1,6 @@
 import lib from "swf-lib";
 import { Level } from "./Level";
+import { TickerWord } from "./TickerWord";
 import { Turnstile } from "./Turnstile";
 
 export class Level1 extends Level {
@@ -7,7 +8,9 @@ export class Level1 extends Level {
 
   public declare cautionSign: lib.flash.display.MovieClip;
 
-  public declare sign: lib.flash.display.MovieClip;
+  public declare sign: lib.flash.display.MovieClipT<{
+    TICKERAB: TickerWord;
+  }>;
 
   public declare touching: boolean;
 

@@ -20,8 +20,8 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "swf-lib/*": [
-                "@exit-path/swf-lib/*"
+            "swf-lib": [
+                "node_modules/@exit-path/swf-lib"
             ]
         }
     }

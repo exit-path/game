@@ -2,11 +2,17 @@ import lib from "swf-lib";
 import { Math2 } from "./john/Math2";
 
 export class Ticker extends lib.flash.display.MovieClip {
-  public declare above: lib.flash.display.MovieClip;
+  public declare above: lib.flash.display.MovieClipT<{
+    let: lib.flash.text.TextField;
+  }>;
 
-  public declare belowNow: lib.flash.display.MovieClip;
+  public declare belowNow: lib.flash.display.MovieClipT<{
+    let: lib.flash.text.TextField;
+  }>;
 
-  public declare bottomBack: lib.flash.display.MovieClip;
+  public declare bottomBack: lib.flash.display.MovieClipT<{
+    let: lib.flash.text.TextField;
+  }>;
 
   public declare characters: any[];
 
@@ -24,7 +30,9 @@ export class Ticker extends lib.flash.display.MovieClip {
 
   public declare startingCharacter: number;
 
-  public declare topBack: lib.flash.display.MovieClip;
+  public declare topBack: lib.flash.display.MovieClipT<{
+    let: lib.flash.text.TextField;
+  }>;
 
   public constructor(letter: string = null, bool: boolean = false) {
     super();

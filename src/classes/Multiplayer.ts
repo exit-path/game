@@ -3,6 +3,7 @@ import { CharacterSelection } from "./CharacterSelection";
 import { Game } from "./Game";
 import { Lobby } from "./Lobby";
 import { MultiplayerMenu } from "./MultiplayerMenu";
+import { PlayerObject } from "./PlayerObject";
 import { QuickPlayLobby } from "./QuickPlayLobby";
 import { SinglePlayerMenu } from "./SinglePlayerMenu";
 import { Tubes } from "./Tubes";
@@ -20,7 +21,7 @@ export class Multiplayer extends lib.flash.display.MovieClip {
 
   public declare multiplayerMenu: MultiplayerMenu;
 
-  public declare playerObject: any;
+  public declare playerObject: PlayerObject;
 
   public declare quickPlayLobby: QuickPlayLobby;
 
@@ -115,7 +116,7 @@ export class Multiplayer extends lib.flash.display.MovieClip {
 
   public gotRoomList(): any {}
 
-  public init(playerOb: any): any {
+  public init(playerOb: PlayerObject): any {
     lib.__internal.avm2.Runtime.trace("MP-> INIT");
     this.initRanks();
     this.playerObject = playerOb;

@@ -19,6 +19,8 @@ jobs:
       - run: |
           echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
           yarn install --frozen-lockfile
+          yarn format:check
+          yarn tsc
           yarn build
         env:
           NPM_TOKEN: ${{ secrets.ACCESS_TOKEN }}

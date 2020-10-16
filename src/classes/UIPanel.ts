@@ -3,6 +3,7 @@ import { HandyCam } from "./john/HandyCam";
 import { Player } from "./Player";
 import { Anim } from "./john/Anim";
 import { SoundBox } from "./john/SoundBox";
+import { Exit_fla } from ".";
 
 export class UIPanel extends lib.flash.display.MovieClip {
   public declare arrowKeysToPan: lib.flash.display.MovieClip;
@@ -11,11 +12,16 @@ export class UIPanel extends lib.flash.display.MovieClip {
 
   public declare buildVersion: lib.flash.text.TextField;
 
-  public declare caution: lib.flash.display.MovieClip;
+  public declare caution: Exit_fla.cautionSign_anim_444;
 
   public declare exitButton: lib.flash.display.SimpleButton;
 
-  public declare flow: lib.flash.display.MovieClip;
+  public declare flow: lib.flash.display.MovieClipT<{
+    flowInside: lib.flash.display.MovieClipT<{
+      flowBar: lib.flash.display.MovieClip;
+    }>;
+    flowReady: lib.flash.display.MovieClipT<{}>;
+  }>;
 
   public declare flowCount: number;
 
@@ -31,7 +37,11 @@ export class UIPanel extends lib.flash.display.MovieClip {
 
   public declare pauseButton: lib.flash.display.SimpleButton;
 
-  public declare placing: lib.flash.display.MovieClip;
+  public declare placing: lib.flash.display.MovieClipT<{
+    positionNum: lib.flash.text.TextField;
+    totalPlayers: lib.flash.text.TextField;
+    nth: lib.flash.text.TextField;
+  }>;
 
   public declare player: Player;
 

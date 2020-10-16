@@ -7,6 +7,7 @@ import { AchEvent } from "./AchEvent";
 import { Key } from "./john/Key";
 import { Relay } from "./john/Relay";
 import { Anim } from "./john/Anim";
+import { Tile } from "./Tile";
 
 export class Player extends TileObject {
   public declare beltSpeed: number;
@@ -455,7 +456,7 @@ export class Player extends TileObject {
     }
   }
 
-  public touchBlock(mov: lib.flash.display.MovieClip): any {
+  public touchBlock(mov: Tile) {
     if (mov.typeOf == 5) {
       this.xVel = this.xVel + (0 - this.beltSpeed);
     } else if (mov.typeOf == 6) {

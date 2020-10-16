@@ -1,6 +1,7 @@
 import lib from "swf-lib";
 import { TileObject } from "./john/TileObject";
 import { Math2 } from "./john/Math2";
+import { Tile } from "./Tile";
 
 export class Robot extends TileObject {
   public declare beltSpeed: number;
@@ -196,7 +197,7 @@ export class Robot extends TileObject {
     }
   }
 
-  public touchBlock(mov: lib.flash.display.MovieClip): any {
+  public touchBlock(mov: Tile) {
     if (mov.typeOf == 5) {
       this.xVel = this.xVel + (0 - this.beltSpeed);
     } else if (mov.typeOf == 6) {

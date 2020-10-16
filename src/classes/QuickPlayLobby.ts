@@ -5,7 +5,9 @@ import { Anim } from "./john/Anim";
 export class QuickPlayLobby extends lib.flash.display.MovieClip {
   public declare backToMenuButton: lib.flash.display.SimpleButton;
 
-  public declare connectionMeter: lib.flash.display.MovieClip;
+  public declare connectionMeter: lib.flash.display.MovieClipT<{
+    matcher: lib.flash.display.MovieClip;
+  }>;
 
   public declare gameReady: boolean;
 

@@ -2,13 +2,17 @@ import lib from "swf-lib";
 import { Level } from "./Level";
 import { FreedomSequence } from "./FreedomSequence";
 import { Turnstile } from "./Turnstile";
+import { TickerWord } from "./TickerWord";
 
 export class Level30 extends Level {
   public declare ending: FreedomSequence;
 
   public declare hasTouched: boolean;
 
-  public declare sign: lib.flash.display.MovieClip;
+  public declare sign: lib.flash.display.MovieClipT<{
+    TICKERA: TickerWord;
+    TICKERB: TickerWord;
+  }>;
 
   public declare touching: boolean;
 

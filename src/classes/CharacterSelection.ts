@@ -2,6 +2,8 @@ import lib from "swf-lib";
 import { ColorPicker } from "./fl/controls/ColorPicker";
 import { ColorPickerEvent } from "./fl/events/ColorPickerEvent";
 import { Relay } from "./john/Relay";
+import { PlayerObject } from "./PlayerObject";
+import { Runner } from "./Runner";
 
 export class CharacterSelection extends lib.flash.display.MovieClip {
   public declare backToMenuButton: lib.flash.display.SimpleButton;
@@ -110,13 +112,15 @@ export class CharacterSelection extends lib.flash.display.MovieClip {
 
   public declare pickerB: ColorPicker;
 
-  public declare playerObject: any;
+  public declare playerObject: PlayerObject;
 
-  public declare runnerBar: lib.flash.display.MovieClip;
+  public declare runnerBar: lib.flash.display.MovieClipT<{
+    runner: Runner;
+  }>;
 
   public declare tagOf: lib.flash.text.TextField;
 
-  public constructor(playerObj: any) {
+  public constructor(playerObj: PlayerObject) {
     super();
     this.colour = 0;
     this.colour2 = 0;
@@ -222,12 +226,13 @@ export class CharacterSelection extends lib.flash.display.MovieClip {
   }
 
   public roll(e: ColorPickerEvent = null): any {
-    if (e.currentTarget == this.pickerA) {
-      this.runnerBar.runner.colour = e.currentTarget.selectedColor;
-      this.playerObject.colour = e.currentTarget.selectedColor;
+    const picker = e.currentTarget as ColorPicker;
+    if (picker == this.pickerA) {
+      this.runnerBar.runner.colour = picker.selectedColor;
+      this.playerObject.colour = picker.selectedColor;
     } else {
-      this.runnerBar.runner.colour2 = e.currentTarget.selectedColor;
-      this.playerObject.colour2 = e.currentTarget.selectedColor;
+      this.runnerBar.runner.colour2 = picker.selectedColor;
+      this.playerObject.colour2 = picker.selectedColor;
     }
   }
 }

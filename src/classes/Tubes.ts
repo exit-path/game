@@ -16,7 +16,9 @@ export class Tubes extends lib.flash.display.MovieClip {
 
   public declare currentPing: number;
 
-  public declare debuggy: lib.flash.display.MovieClip;
+  public declare debuggy: lib.flash.display.MovieClipT<{
+    txt: lib.flash.text.TextField;
+  }>;
 
   public declare finalList: any[];
 
@@ -52,7 +54,7 @@ export class Tubes extends lib.flash.display.MovieClip {
 
   public declare playerObject: any;
 
-  public declare players: any[];
+  public declare players: PlayerShell[];
 
   public declare sfs: SmartFoxClient;
 
@@ -382,8 +384,8 @@ export class Tubes extends lib.flash.display.MovieClip {
 
   public debugTrace(msg: string): void {
     this.debuggy.txt.htmlText = this.debuggy.txt.htmlText + msg;
-    this.debuggy.txt.appendText(this.NEWLINE);
-    this.debuggy.txt.scrollV = this.debuggy.txt.maxScrollV;
+    // this.debuggy.txt.appendText(this.NEWLINE);
+    // this.debuggy.txt.scrollV = this.debuggy.txt.maxScrollV;
   }
 
   public disconnect(): any {

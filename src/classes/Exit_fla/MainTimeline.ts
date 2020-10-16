@@ -22,10 +22,10 @@ import { QuickPlayLobby } from "../QuickPlayLobby";
 import { MultiplayerMenu } from "../MultiplayerMenu";
 import { SinglePlayerMenu } from "../SinglePlayerMenu";
 import { Game } from "../Game";
-import { AGIcon } from "../AGIcon";
+import { PlayerObject } from "../PlayerObject";
 
 export class MainTimeline extends lib.flash.display.MovieClip {
-  public declare achievements: any[];
+  public declare achievements: Ach[];
 
   public declare agDomain: boolean;
 
@@ -37,7 +37,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public declare agIntro: AGIntro;
 
-  public declare animals: any[];
+  public declare animals: string[];
 
   public declare armorGamesLink: lib.flash.net.URLRequest;
 
@@ -87,11 +87,19 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public declare notLoggedIn: NotLoggedIn;
 
-  public declare peopleNames: any[];
+  public declare peopleNames: string[];
 
-  public declare playerObj: any;
+  public declare playerObj: PlayerObject;
 
-  public declare preloader: lib.flash.display.MovieClip;
+  public declare preloader: lib.flash.display.MovieClipT<{
+    bar: lib.flash.display.MovieClipT<{
+      bar: lib.flash.display.MovieClip;
+    }>;
+    l: lib.flash.text.TextField;
+    muteButton: lib.flash.display.SimpleButton;
+    playB: lib.flash.display.SimpleButton;
+    agButton: lib.flash.display.SimpleButton;
+  }>;
 
   public declare psb: ParallaxScrollingBitmap;
 
@@ -103,7 +111,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public declare timeOutWindow: TimeOutWindow;
 
-  public declare titles: any[];
+  public declare titles: string[];
 
   public declare twitterLink: lib.flash.net.URLRequest;
 
@@ -123,7 +131,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public achCenter(e: AchEvent = null): any {
-    var achieve: any = null;
+    var achieve: Achievement = null;
     if (this.achievements[e.achNum].got == false) {
       this.achievements[e.achNum].got = true;
       this.playerObj.achs[e.achNum] = true;
@@ -256,7 +264,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     Key.initialize(this.stage, true);
     this.stop();
     this.myCountry = "Other";
-    this.achievements = new Array<any>();
+    this.achievements = new Array<Ach>();
     this.achievements.push(
       new Ach("Underground", "Finish the underground portion")
     );
@@ -324,7 +332,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.achievements.push(new Ach("Breakneck", "Reach Level 38"));
     this.achievements.push(new Ach("Runmaster", "Reach Level 39"));
     this.achievements.push(new Ach("Grandmaster", "Reach Level 40"));
-    this.peopleNames = new Array<any>(
+    this.peopleNames = new Array<string>(
       "John",
       "Tony",
       "Dan",
@@ -337,7 +345,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       "Louissi",
       "Justin"
     );
-    this.titles = new Array<any>(
+    this.titles = new Array<string>(
       "Rifle",
       "Cannon",
       "Frostbite",
@@ -371,7 +379,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       "Dolphin",
       "Swordfish"
     );
-    this.playerObj = new Object();
+    this.playerObj = new PlayerObject();
     this.playerObj.ping = 0;
     this.savedGame = lib.flash.net.SharedObject.getLocal("Exit-Path");
     this.loadGame();
@@ -404,13 +412,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.addEventListener(Relay.SEND, this.messageCenter, false, 0, true);
     this.addEventListener(AchEvent.SEND, this.achCenter, false, 0, true);
     this.bitmapData = new lib.flash.display.BitmapData(800, 500);
-    this.bitmapData.draw(
-      this.multiplayer,
-      null,
-      null,
-      null,
-      new lib.flash.geom.Rectangle(0, 0, 800, 500)
-    );
+    this.bitmapData.draw(this.multiplayer, null, null, null);
     this.rewind = new Rewind();
     this.psb = new ParallaxScrollingBitmap(this.bitmapData, 500, 800);
     this.clearBitmap = new lib.flash.display.BitmapData(800, 500, true, 0);
@@ -420,7 +422,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     var tempPlayerObj: any = null;
     if (this.agi) {
       tempPlayerObj = this.agi.getUserProfile();
-      DebugUtil.out(tempPlayerObj.username);
+      console.log(tempPlayerObj.username);
       return tempPlayerObj.username;
     }
     return this.getRandomName();
@@ -813,16 +815,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     }
   }
 
-  public loadComplete(e: lib.flash.events.Event): void {
-    this.agi = e.currentTarget.content;
-    this.addChild(this.agi);
-    this.agi.init(this.devKey, this.gameKey);
-    this.agi.initAGUI({
-      onClose: this.closeHandler,
-      iconGraphic: new AGIcon(),
-    });
-  }
-
   public loadGame(): any {
     if (this.isLoggedIn) {
       this.agi.retrieveUserData(this.yumyum);
@@ -1068,13 +1060,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       this.clearBitmap.rect,
       new lib.flash.geom.Point()
     );
-    this.psb._texture.draw(
-      this.multiplayer,
-      null,
-      null,
-      null,
-      new lib.flash.geom.Rectangle(0, 0, 800, 500)
-    );
+    this.psb._texture.draw(this.multiplayer, null, null, null);
     this.psb.render();
     this.psb.cameraY = this.psb.cameraY - (490 + Math2.random(20));
   }

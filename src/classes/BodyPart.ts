@@ -1,5 +1,6 @@
 import lib from "swf-lib";
 import { TileObject } from "./john/TileObject";
+import { Tile } from "./Tile";
 
 export class BodyPart extends TileObject {
   public declare colour: number;
@@ -32,5 +33,5 @@ export class BodyPart extends TileObject {
     this.updateTileInteraction();
   }
 
-  public touchBlock(mov: lib.flash.display.MovieClip): any {}
+  public touchBlock(mov: Tile): any {}
 }

@@ -898,8 +898,8 @@
 
 "@exit-path/swf-lib@0.1.0":
   version "0.1.0"
-  resolved "https://npm.pkg.github.com/download/@exit-path/swf-lib/0.1.0/1a4e263b289e837aeda2f628331680885c3f18f1f27241fb41d6b3441b8a41ab#ca3eccc98032ef0b521273f3a0d226a9b24f40bd"
-  integrity sha512-Qcd5EVXYAPOmnLI6GPwg+Wc3zJE8O3NFn/dVvv9ECb9vEJGmh8xclkZQa9Wkpx51617bP/AMZYul7TmCGN8YUQ==
+  resolved "https://npm.pkg.github.com/download/@exit-path/swf-lib/0.1.0/f13cd38be99891f724b7f3af392e956d051cc350ed65a9a9be9af92dab696159#c99dbe3dbe93c0d9122e19368ef55471321f0c3a"
+  integrity sha512-u4mNAlB28+/PQiK5C6rBTunOIrbxJpKzk4XTsK0A21pNpf6pHylmnLBL11FuMRTGnTwlA52lmoN73gJ7QlXC3Q==
   dependencies:
     gl-matrix "3.3.0"
 

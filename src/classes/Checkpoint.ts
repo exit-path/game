@@ -3,12 +3,16 @@ import { CheckpointFlag } from "./CheckpointFlag";
 import { Anim } from "./john/Anim";
 import { Relay } from "./john/Relay";
 
+interface CheckpointPlayer extends lib.flash.display.MovieClip {
+  isMain: boolean;
+}
+
 export class Checkpoint extends lib.flash.display.MovieClip {
-  public declare checkPointFlags: any[];
+  public declare checkPointFlags: CheckpointFlag[];
 
   public declare id: number;
 
-  public declare playerList: any[];
+  public declare playerList: CheckpointPlayer[];
 
   public constructor() {
     super();
@@ -17,11 +21,7 @@ export class Checkpoint extends lib.flash.display.MovieClip {
     this.playerList = new Array<any>();
   }
 
-  public addFlag(
-    mov: lib.flash.display.MovieClip,
-    colour: number,
-    colour2: number
-  ): any {
+  public addFlag(mov: CheckpointPlayer, colour: number, colour2: number): any {
     var flag: any = null;
     for (var i: any = 0; i < this.playerList.length; i++) {
       if (mov == this.playerList[i]) {

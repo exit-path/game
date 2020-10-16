@@ -3,6 +3,7 @@ import { Level } from "./Level";
 import { PopSpikes } from "./PopSpikes";
 import { Teleporter } from "./Teleporter";
 import { SoundBox } from "./john/SoundBox";
+import { TickerWord } from "./TickerWord";
 
 export class Level9 extends Level {
   public declare cautionSign: lib.flash.display.MovieClip;
@@ -97,7 +98,9 @@ export class Level9 extends Level {
 
   public declare p9: PopSpikes;
 
-  public declare sign: lib.flash.display.MovieClip;
+  public declare sign: lib.flash.display.MovieClipT<{
+    TICKERAB: TickerWord;
+  }>;
 
   public declare ta1: Teleporter;
 

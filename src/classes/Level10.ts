@@ -2,6 +2,7 @@ import lib from "swf-lib";
 import { Level } from "./Level";
 import { Turnstile } from "./Turnstile";
 import { Math2 } from "./john/Math2";
+import { TickerWord } from "./TickerWord";
 
 export class Level10 extends Level {
   public declare b0: lib.flash.display.MovieClip;
@@ -26,7 +27,9 @@ export class Level10 extends Level {
 
   public declare redPing: lib.flash.display.MovieClip;
 
-  public declare sign: lib.flash.display.MovieClip;
+  public declare sign: lib.flash.display.MovieClipT<{
+    TICKE: TickerWord;
+  }>;
 
   public declare slidingDoor: lib.flash.display.MovieClip;
 

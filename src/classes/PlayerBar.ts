@@ -1,9 +1,10 @@
 import lib from "swf-lib";
+import { PlayerShell } from "./PlayerShell";
 
 export class PlayerBar extends lib.flash.display.MovieClip {
   public declare nameOf: lib.flash.text.TextField;
 
-  public declare player: lib.flash.display.MovieClip;
+  public declare player: PlayerShell;
 
   public declare posOf: lib.flash.text.TextField;
 

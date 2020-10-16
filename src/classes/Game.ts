@@ -12,7 +12,6 @@ import { LevelStart } from "./LevelStart";
 import { Logger } from "./john/Logger";
 import { Morgue } from "./Morgue";
 import { Player } from "./Player";
-import { Skin } from "./Skin";
 import { SkyLine } from "./SkyLine";
 import { Static } from "./Static";
 import { StopWatch } from "./john/StopWatch";
@@ -44,6 +43,9 @@ import { SkylineB } from "./SkylineB";
 import { StadiumA } from "./StadiumA";
 import { StadiumC } from "./StadiumC";
 import { StadiumB } from "./StadiumB";
+import { PlayerShell } from "./PlayerShell";
+import { PlayerObject } from "./PlayerObject";
+import { LaserCannon } from "./LaserCannon";
 
 export class Game extends lib.flash.display.MovieClip {
   public declare bg: BitmapCanvas;
@@ -112,13 +114,13 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare player: Player;
 
-  public declare playerBars: any[];
+  public declare playerBars: PlayerBar[];
 
-  public declare playerObject: any;
+  public declare playerObject: PlayerObject;
 
-  public declare players: any[];
+  public declare players: PlayerShell[];
 
-  public declare playerSkins: any[];
+  public declare playerSkins: Runner[];
 
   public declare rewindCounter: number;
 
@@ -132,7 +134,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare singlePlayer: boolean;
 
-  private declare skin: Skin;
+  private declare skin: Runner;
 
   public declare skinLayer: lib.flash.display.MovieClip;
 
@@ -703,7 +705,7 @@ export class Game extends lib.flash.display.MovieClip {
     }
   }
 
-  public init(tuber: Tubes, playerObj: any): any {
+  public init(tuber: Tubes, playerObj: PlayerObject) {
     this.addChild(this.skyLine);
     this.playerObject = playerObj;
     if (this.singlePlayer) {
@@ -840,7 +842,7 @@ export class Game extends lib.flash.display.MovieClip {
         this.addChild(newYouArrow);
       } else {
         this.players[i].time = 0;
-        this.playerSkins.push(0);
+        this.playerSkins.push(null);
         this.skin.x = this.player.x;
         this.skin.y = this.player.y;
       }
@@ -1553,7 +1555,7 @@ export class Game extends lib.flash.display.MovieClip {
     }
   }
 
-  public tMarkTime(plyr: lib.flash.display.MovieClip, str: any): any {
+  public tMarkTime(plyr: Player, str: any): any {
     plyr.completedLevel = true;
     plyr.time = Number(str);
   }

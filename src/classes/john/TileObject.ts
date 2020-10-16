@@ -1,17 +1,18 @@
 import lib from "swf-lib";
 import { Level } from "../Level";
+import { Tile } from "../Tile";
 import { Math2 } from "./Math2";
 
 export class TileObject extends lib.flash.display.MovieClip {
-  public declare bl: lib.flash.display.MovieClip;
+  public declare bl: Tile;
 
-  public declare bm: lib.flash.display.MovieClip;
+  public declare bm: Tile;
 
   public declare bounce: number;
 
   public declare bounceTolerance: number;
 
-  public declare br: lib.flash.display.MovieClip;
+  public declare br: Tile;
 
   public declare cblx: number;
 
@@ -89,9 +90,9 @@ export class TileObject extends lib.flash.display.MovieClip {
 
   public declare lastY: number;
 
-  public declare lm: lib.flash.display.MovieClip;
+  public declare lm: Tile;
 
-  public declare mb: lib.flash.display.MovieClip;
+  public declare mb: Tile;
 
   public declare modX: number;
 
@@ -99,7 +100,7 @@ export class TileObject extends lib.flash.display.MovieClip {
 
   public declare playerSize: number;
 
-  public declare rm: lib.flash.display.MovieClip;
+  public declare rm: Tile;
 
   public declare rotSpeed: number;
 
@@ -109,11 +110,11 @@ export class TileObject extends lib.flash.display.MovieClip {
 
   public declare tileSize: number;
 
-  public declare tl: lib.flash.display.MovieClip;
+  public declare tl: Tile;
 
-  public declare tm: lib.flash.display.MovieClip;
+  public declare tm: Tile;
 
-  public declare tr: lib.flash.display.MovieClip;
+  public declare tr: Tile;
 
   public declare typeOf: string;
 
@@ -640,55 +641,55 @@ export class TileObject extends lib.flash.display.MovieClip {
         Math.floor(this.ctlx / this.tileSize) +
         "x" +
         Math.floor(this.ctly / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.tr = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.ctrx / this.tileSize) +
         "x" +
         Math.floor(this.ctry / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.br = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.cbrx / this.tileSize) +
         "x" +
         Math.floor(this.cbry / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.bl = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.cblx / this.tileSize) +
         "x" +
         Math.floor(this.cbly / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.tm = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.ctmx / this.tileSize) +
         "x" +
         Math.floor(this.ctmy / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.lm = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.clmx / this.tileSize) +
         "x" +
         Math.floor(this.clmy / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.bm = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.cbmx / this.tileSize) +
         "x" +
         Math.floor(this.cbmy / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.rm = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.crmx / this.tileSize) +
         "x" +
         Math.floor(this.crmy / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     this.mb = this.curLevel.getChildByName(
       "tile" +
         Math.floor(this.cbmx / this.tileSize) +
         "x" +
         Math.floor(this.cbly / this.tileSize)
-    ) as lib.flash.display.MovieClip;
+    ) as Tile;
     if (this.tl) {
       if (this.tl.type == 1) {
         this.guyTL = true;
@@ -855,7 +856,7 @@ export class TileObject extends lib.flash.display.MovieClip {
           this.xLove = 3;
         }
       }
-      if (this.xLove == 3 && this.xLove == 0 && !this.holdUp) {
+      if (this.xLove == 3 && !this.holdUp) {
         this.xLove = 0;
         this.holdCounter = 0;
       }

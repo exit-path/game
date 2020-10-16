@@ -1,13 +1,19 @@
 import lib from "swf-lib";
 import { Relay } from "./john/Relay";
 import { ScrollEvent } from "./fl/events/ScrollEvent";
+import { scrollBar } from "./scrollBar";
+import { PlayerObject } from "./PlayerObject";
+import { Ach } from "./Ach";
 
 export class FlairMenu extends lib.flash.display.MovieClip {
-  public declare achievements: any[];
+  public declare achievements: Ach[];
 
-  public declare holder: lib.flash.display.MovieClip;
+  public declare holder: lib.flash.display.MovieClipT<{
+    backToButton: lib.flash.display.SimpleButton;
+    scrollBar_mc: scrollBar;
+  }>;
 
-  public declare playerObject: any;
+  public declare playerObject: PlayerObject;
 
   public declare s0: lib.flash.display.MovieClip;
 
@@ -140,12 +146,12 @@ export class FlairMenu extends lib.flash.display.MovieClip {
     this.y = 0 + this.holder.scrollBar_mc.percent * -scrollHeight;
   }
 
-  public init(playerOb: any, achs: any[]): any {
-    var ach: any = null;
+  public init(playerOb: PlayerObject, achs: Ach[]): any {
+    var ach: Ach = null;
     this.playerObject = playerOb;
     this.achievements = achs;
     this.addListeners();
-    for (var i: any = 0; i < 48; i++) {
+    for (var i = 0; i < 48; i++) {
       ach = achs[i];
       this["s" + i].nam.text = ach.achName;
       this["s" + i].desc.text = ach.description;

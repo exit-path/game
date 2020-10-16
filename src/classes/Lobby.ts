@@ -8,11 +8,12 @@ import { AchEvent } from "./AchEvent";
 import { Key } from "./john/Key";
 import { Text2 } from "./john/Text2";
 import { Anim } from "./john/Anim";
+import { PlayerShell } from "./PlayerShell";
 
 export class Lobby extends lib.flash.display.MovieClip {
   public declare backToMenuButton: lib.flash.display.SimpleButton;
 
-  public declare bars: any[];
+  public declare bars: Placing[];
 
   public declare kudosLeft: lib.flash.text.TextField;
 
@@ -32,7 +33,7 @@ export class Lobby extends lib.flash.display.MovieClip {
 
   private declare oldXP: number;
 
-  public declare players: any[];
+  public declare players: PlayerShell[];
 
   public declare ranking: any[];
 
@@ -50,7 +51,9 @@ export class Lobby extends lib.flash.display.MovieClip {
 
   public declare xpAndLevel: lib.flash.text.TextField;
 
-  public declare xpBar: lib.flash.display.MovieClip;
+  public declare xpBar: lib.flash.display.MovieClipT<{
+    barIn: lib.flash.display.MovieClip;
+  }>;
 
   public declare xpDisp: lib.flash.text.TextField;
 
@@ -119,7 +122,10 @@ export class Lobby extends lib.flash.display.MovieClip {
   public giveKudo(e: lib.flash.events.MouseEvent): any {
     var j: any = NaN;
     for (var i: any = 0; i < this.bars.length; i++) {
-      if (this.bars[i] == e.currentTarget.parent) {
+      if (
+        this.bars[i] ==
+        (e.currentTarget as lib.flash.display.DisplayObject).parent
+      ) {
         this.tubes.sendMessage("kudokudo" + this.players[i].userName);
       }
       if (this.players[i].isPlayer) {
@@ -165,7 +171,7 @@ export class Lobby extends lib.flash.display.MovieClip {
       0,
       true
     );
-    this.texter.setSelection(0, 0);
+    // this.texter.setSelection(0, 0);
     this.stage.focus = this.texter;
     this.texter.text = "";
     this.players = this.tubes.players;
@@ -197,24 +203,24 @@ export class Lobby extends lib.flash.display.MovieClip {
   }
 
   public mouseClick(e: lib.flash.events.MouseEvent = null): any {
-    DebugUtil.out("CLICK!");
-    DebugUtil.out("barskebgth!", this.bars.length);
+    console.log("CLICK!");
+    console.log("barskebgth!", this.bars.length);
     for (var i: any = 0; i < this.bars.length; i++) {
       if (this.bars[i].sMute.hitTestPoint(this.mouseX, this.mouseY)) {
-        DebugUtil.out("HIT " + this.bars[i]);
+        console.log("HIT " + this.bars[i]);
         if (this.tubes.isPlayerMuted(this.players[i].userName)) {
-          DebugUtil.out("Player is muted, will unmute");
+          console.log("Player is muted, will unmute");
           this.tubes.unMutePlayer(this.players[i].userName);
           this.bars[i].sMute.gotoAndStop(1);
           return;
         }
-        DebugUtil.out("Player is unmuted, will mute");
+        console.log("Player is unmuted, will mute");
         this.tubes.mutePlayer(this.players[i].userName);
         this.bars[i].sMute.gotoAndStop(2);
         return;
       }
     }
-    DebugUtil.out("NO HIT!");
+    console.log("NO HIT!");
   }
 
   public ping(e: lib.flash.events.Event = null): any {
@@ -446,8 +452,8 @@ export class Lobby extends lib.flash.display.MovieClip {
 
   public updateBar(pos: number): any {
     var i: number = pos;
-    var disp: lib.flash.display.MovieClip = this.bars[i];
-    var player: lib.flash.display.MovieClip = this.players[i];
+    var disp = this.bars[i];
+    var player = this.players[i];
     if (!disp || !player) {
       return;
     }

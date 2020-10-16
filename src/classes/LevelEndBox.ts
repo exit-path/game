@@ -2,6 +2,7 @@ import lib from "swf-lib";
 import { Runner } from "./Runner";
 import { Text2 } from "./john/Text2";
 import { Anim } from "./john/Anim";
+import { PlayerShell } from "./PlayerShell";
 
 export class LevelEndBox extends lib.flash.display.MovieClip {
   public declare backdrop: lib.flash.display.MovieClip;
@@ -22,7 +23,7 @@ export class LevelEndBox extends lib.flash.display.MovieClip {
 
   public declare matchNum: lib.flash.text.TextField;
 
-  public declare player: lib.flash.display.MovieClip;
+  public declare player: PlayerShell;
 
   public declare playerInfo: lib.flash.text.TextField;
 
@@ -47,7 +48,7 @@ export class LevelEndBox extends lib.flash.display.MovieClip {
     this.xpRound = 0;
   }
 
-  public init(plyr: lib.flash.display.MovieClip): any {
+  public init(plyr: PlayerShell): any {
     this.player = plyr;
     this.updateBox();
   }

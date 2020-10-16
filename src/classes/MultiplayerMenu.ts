@@ -1,6 +1,7 @@
 import lib from "swf-lib";
 import { Relay } from "./john/Relay";
 import { Text2 } from "./john/Text2";
+import { Runner } from "./Runner";
 
 export class MultiplayerMenu extends lib.flash.display.MovieClip {
   public declare backToMenuButton: lib.flash.display.SimpleButton;
@@ -9,13 +10,25 @@ export class MultiplayerMenu extends lib.flash.display.MovieClip {
 
   public declare nameDisp: lib.flash.text.TextField;
 
-  public declare playerInfo: lib.flash.display.MovieClip;
+  public declare playerInfo: lib.flash.display.MovieClipT<{
+    xpAndLevel: lib.flash.text.TextField;
+    xpBar: lib.flash.display.MovieClipT<{
+      barIn: lib.flash.display.MovieClip;
+    }>;
+    xpDisp: lib.flash.text.TextField;
+    xpTill: lib.flash.text.TextField;
+    kudosDisp: lib.flash.text.TextField;
+    matchDisp: lib.flash.text.TextField;
+    winDisp: lib.flash.text.TextField;
+  }>;
 
   public declare playerObject: any;
 
   public declare qp: lib.flash.display.SimpleButton;
 
-  public declare runnerBar: lib.flash.display.MovieClip;
+  public declare runnerBar: lib.flash.display.MovieClipT<{
+    runner: Runner;
+  }>;
 
   public constructor() {
     super();

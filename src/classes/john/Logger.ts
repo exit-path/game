@@ -1,4 +1,5 @@
 import lib from "swf-lib";
+import { Runner } from "../Runner";
 
 export class Logger {
   public declare curLog: any[];
@@ -46,7 +47,7 @@ export class Logger {
     }
   }
 
-  public setFromLog(mov: lib.flash.display.MovieClip): any {
+  public setFromLog(mov: Runner): any {
     mov.x = this.curLog[this.playHead][0];
     mov.y = this.curLog[this.playHead][1];
     mov.gotoAndPlay(this.curLog[this.playHead][2]);

@@ -12,31 +12,40 @@ import { StartPointHolder } from "./StartPointHolder";
 import { TileHolder } from "./TileHolder";
 import { Tile } from "./Tile";
 import { TileOpaque } from "./TileOpaque";
+import { SwingingAxe } from "./SwingingAxe";
+import { LaserCannon } from "./LaserCannon";
+import { LaserGun } from "./LaserGun";
+import { PopSpikes } from "./PopSpikes";
+import { Bouncer } from "./Bouncer";
+import { SpikeFall } from "./SpikeFall";
+import { Grinder } from "./Grinder";
+import { Plate } from "./Plate";
+import { Teleporter } from "./Teleporter";
 
 export class Level extends lib.flash.display.MovieClip {
   public declare arrayMode: boolean;
 
-  public declare bouncers: any[];
+  public declare bouncers: Bouncer[];
 
   public declare canvas: BitmapCanvas;
 
   public declare checkPointID: number;
 
-  public declare checkPoints: any[];
+  public declare checkPoints: Checkpoint[];
 
   public declare createdArray: boolean;
 
   public declare endPoint: lib.flash.display.MovieClip;
 
-  public declare fallingSpikes: any[];
+  public declare fallingSpikes: SpikeFall[];
 
-  public declare grinders: any[];
+  public declare grinders: Grinder[];
 
-  public declare halfTiles: any[];
+  public declare halfTiles: Tile[];
 
-  public declare laserCannons: any[];
+  public declare laserCannons: LaserCannon[];
 
-  public declare laserGuns: any[];
+  public declare laserGuns: LaserGun[];
 
   public declare lastX: number;
 
@@ -56,23 +65,23 @@ export class Level extends lib.flash.display.MovieClip {
 
   public declare obstacleColour: number;
 
-  public declare plates: any[];
+  public declare plates: Plate[];
 
   public declare player: Player;
 
-  public declare popSpikes: any[];
+  public declare popSpikes: PopSpikes[];
 
-  public declare spikes: any[];
+  public declare spikes: Spike[];
 
   public declare startPoint: lib.flash.display.MovieClip;
 
-  public declare swingingAxes: any[];
+  public declare swingingAxes: SwingingAxe[];
 
   public declare tArr: number[][];
 
-  public declare teleporters: any[];
+  public declare teleporters: Teleporter[];
 
-  public declare tiles: any[];
+  public declare tiles: Tile[];
 
   public declare timeRank: string;
 
@@ -82,7 +91,7 @@ export class Level extends lib.flash.display.MovieClip {
 
   public declare tMaxY: number;
 
-  public declare toPush: any[];
+  public declare toPush: Array<[lib.flash.display.MovieClip, number]>;
 
   public constructor() {
     super();
@@ -104,23 +113,23 @@ export class Level extends lib.flash.display.MovieClip {
     this.levelHeight = 800;
     this.levelType = "SP";
     this.tArr = new Array<number[]>();
-    this.toPush = new Array<any>();
+    this.toPush = new Array();
     this.canvas = new BitmapCanvas();
     this.timeString = "";
     this.timeRank = "";
-    this.popSpikes = new Array<any>();
-    this.tiles = new Array<any>();
-    this.halfTiles = new Array<any>();
-    this.plates = new Array<any>();
-    this.laserGuns = new Array<any>();
-    this.spikes = new Array<any>();
-    this.swingingAxes = new Array<any>();
-    this.teleporters = new Array<any>();
-    this.fallingSpikes = new Array<any>();
-    this.grinders = new Array<any>();
-    this.bouncers = new Array<any>();
-    this.laserCannons = new Array<any>();
-    this.checkPoints = new Array<any>();
+    this.popSpikes = new Array();
+    this.tiles = new Array();
+    this.halfTiles = new Array();
+    this.plates = new Array();
+    this.laserGuns = new Array();
+    this.spikes = new Array();
+    this.swingingAxes = new Array();
+    this.teleporters = new Array();
+    this.fallingSpikes = new Array();
+    this.grinders = new Array();
+    this.bouncers = new Array();
+    this.laserCannons = new Array();
+    this.checkPoints = new Array();
     super.__preInit();
   }
 
@@ -151,61 +160,61 @@ export class Level extends lib.flash.display.MovieClip {
     this.addChild(this.canvas);
   }
 
-  public createBouncer(mov: lib.flash.display.MovieClip): any {
+  public createBouncer(mov: Bouncer) {
     this.bouncers.push(mov);
     this.createTileAt(mov, 99);
     this.applyObstacleColour(mov);
     lib.__internal.avm2.Runtime.trace("BOUNCER!", mov);
   }
 
-  public createEndPoint(mov: EndPointHolder): any {
+  public createEndPoint(mov: EndPointHolder) {
     this.createTileAt(mov, 4);
   }
 
-  public createFallingSpike(mov: lib.flash.display.MovieClip): any {
+  public createFallingSpike(mov: SpikeFall) {
     this.fallingSpikes.push(mov);
     this.applyObstacleColour(mov);
   }
 
-  public createGrinder(mov: lib.flash.display.MovieClip): any {
+  public createGrinder(mov: Grinder) {
     this.grinders.push(mov);
     this.applyObstacleColour(mov);
   }
 
-  public createHalfBlock(mov: HalfBlockHolder): any {
+  public createHalfBlock(mov: HalfBlockHolder) {
     this.createTileAt(mov, 3);
   }
 
-  public createInvisibleBlock(mov: InvisibleTileHolder): any {
+  public createInvisibleBlock(mov: InvisibleTileHolder) {
     this.createTileAt(mov, 98);
   }
 
-  public createLaserCannon(mov: lib.flash.display.MovieClip): any {
+  public createLaserCannon(mov: LaserCannon) {
     this.laserCannons.push(mov);
     this.applyObstacleColour(mov.barrel);
   }
 
-  public createLaserGun(mov: lib.flash.display.MovieClip): any {
+  public createLaserGun(mov: LaserGun) {
     this.laserGuns.push(mov);
     this.applyObstacleColour(mov.gunBarrel);
   }
 
-  public createPlate(mov: lib.flash.display.MovieClip): any {
+  public createPlate(mov: Plate) {
     this.plates.push(mov);
     this.applyObstacleColour(mov);
   }
 
-  public createPopSpikes(mov: lib.flash.display.MovieClip): any {
+  public createPopSpikes(mov: PopSpikes) {
     this.popSpikes.push(mov);
     mov.inside.spikes.hitA.visible = false;
     this.applyObstacleColour(mov);
   }
 
-  public createSpike(mov: SpikesHolder): any {
+  public createSpike(mov: SpikesHolder) {
     this.createSpikeAt(mov);
   }
 
-  public createSpikeAt(mov: lib.flash.display.MovieClip): any {
+  public createSpikeAt(mov: SpikesHolder) {
     var spike: Spike = new Spike();
     spike.x = Math.round(mov.x);
     spike.y = Math.round(mov.y);
@@ -217,31 +226,28 @@ export class Level extends lib.flash.display.MovieClip {
     mov.visible = false;
   }
 
-  public createStartPoint(mov: StartPointHolder): any {
+  public createStartPoint(mov: StartPointHolder) {
     this.createTileAt(mov, 2);
   }
 
-  public createSwingingAxe(mov: lib.flash.display.MovieClip): any {
+  public createSwingingAxe(mov: SwingingAxe) {
     this.swingingAxes.push(mov);
     mov.axe.side0.visible = false;
     mov.axe.side1.visible = false;
     this.applyObstacleColour(mov);
   }
 
-  public createTeleporter(mov: lib.flash.display.MovieClip): any {
+  public createTeleporter(mov: Teleporter) {
     this.teleporters.push(mov);
     this.applyObstacleColour(mov);
   }
 
-  public createTile(mov: TileHolder): any {
+  public createTile(mov: TileHolder) {
     this.createTileAt(mov, 1);
   }
 
-  public createTileAt(
-    mov: lib.flash.display.MovieClip,
-    tileType: number = 1
-  ): any {
-    this.toPush.push(new Array<any>(mov, tileType));
+  public createTileAt(mov: lib.flash.display.MovieClip, tileType: number = 1) {
+    this.toPush.push([mov, tileType]);
   }
 
   public createTreadmillBlock(

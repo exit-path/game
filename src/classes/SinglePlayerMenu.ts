@@ -1,6 +1,8 @@
 import lib from "swf-lib";
 import { Relay } from "./john/Relay";
 import { StopWatch } from "./john/StopWatch";
+import { PlayerObject } from "./PlayerObject";
+import { Runner } from "./Runner";
 
 export class SinglePlayerMenu extends lib.flash.display.MovieClip {
   public declare backToButton: lib.flash.display.SimpleButton;
@@ -11,7 +13,10 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
 
   public declare customizeButton: lib.flash.display.SimpleButton;
 
-  public declare deleteSure: lib.flash.display.MovieClip;
+  public declare deleteSure: lib.flash.display.MovieClipT<{
+    noButton: lib.flash.display.SimpleButton;
+    yesButton: lib.flash.display.SimpleButton;
+  }>;
 
   public declare eraseButt: lib.flash.display.SimpleButton;
 
@@ -19,9 +24,11 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
 
   public declare playButt: lib.flash.display.SimpleButton;
 
-  public declare playerObject: any;
+  public declare playerObject: PlayerObject;
 
-  public declare runnerBar: lib.flash.display.MovieClip;
+  public declare runnerBar: lib.flash.display.MovieClipT<{
+    runner: Runner;
+  }>;
 
   public declare signsCollected: lib.flash.text.TextField;
 
@@ -116,7 +123,7 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
     }
   }
 
-  public init(playerOb: any): any {
+  public init(playerOb: PlayerObject): any {
     this.playerObject = playerOb;
     this.addListeners();
     this.nameDisp.text = "Welcome, " + this.playerObject.userName + "!";
