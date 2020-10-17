@@ -67,8 +67,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public declare gameKey: string;
 
-  public declare highScoreArray: any[];
-
   public declare isHS: boolean;
 
   public declare isLoggedIn: boolean;
@@ -446,20 +444,9 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     );
   }
 
-  public highscoresHandler(): any {
-    this.addChild(this.agi);
-    this.agi.showScoreboardList(this.highScoreArray);
-    this.isHS = true;
-  }
+  public highscoresHandler() {}
 
-  public highscoreSub(): any {
-    lib.__internal.avm2.Runtime.trace("SUBMIT!");
-    this.addChild(this.agi);
-    var score: number = this.lastScore;
-    var modeStr: string = "Uniplayer";
-    this.agi.showScoreboardSubmit(score, null, modeStr, this.highScoreArray);
-    this.isHS = true;
-  }
+  public highscoreSub() {}
 
   public hub(e: Relay): any {
     var _loc2_: number = NaN;
@@ -651,7 +638,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.startSinglePlayer();
           break;
         case "ViewHighscores":
-          this.multiplayer.singlePlayerMenu.kill();
           this.highscoresHandler();
           break;
         case "CharacterSelection":
