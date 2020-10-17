@@ -248,10 +248,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.domain = this.domain.substring(this.domEnd, this.domain.length);
     lib.__internal.avm2.Runtime.trace("DOMAIN = " + this.domain);
     this.currentDomain = this.domain;
-    this.agDomain =
-      "armorgames.com" == this.domain || "minoviacay.com" == this.domain;
-    if (this.agDomain) {
-    }
+    this.agDomain = true;
   }
 
   public frame2(): any {
