@@ -8,6 +8,10 @@ export class ag_intro_mc_459 extends lib.flash.display.MovieClip {
   }
 
   public frame1(): any {
+    if (process.env.NODE_ENV !== "production") {
+      this.gotoAndPlay(300);
+      return;
+    }
     this.gotoAndPlay(2);
   }
 
