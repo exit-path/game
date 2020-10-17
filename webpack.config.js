@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const config = {
   mode: isProduction ? "production" : "development",
   entry: "./web/index.js",
-  devtool: false,
+  devtool: isProduction ? "source-map" : "cheap-module-source-map",
   output: {
     filename: "[name].[contenthash:8].js",
     chunkFilename: "[name].[contenthash:8].chunk.js",
