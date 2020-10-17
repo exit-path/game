@@ -896,10 +896,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@kiootic/swf-lib@0.1.0":
-  version "0.1.0"
-  resolved "https://npm.pkg.github.com/download/@kiootic/swf-lib/0.1.0/21fb6155d286dbbd1ad5975ff46bb9b93d8ab0bb3b5a71e307761c1ae1de8809#206bb0dd3e945e39a9cd8ec6f9389868d75a7420"
-  integrity sha512-oz4YLNZncB8aKllLjAOv7mOnTvJfhk0Opi5cRH1+XwhIie1et5ARs4zFGacfqsqcCIvov3gBsKhg7rACvNJ02g==
+"@kiootic/swf-lib@0.1.1":
+  version "0.1.1"
+  resolved "https://npm.pkg.github.com/download/@kiootic/swf-lib/0.1.1/f1778fecba2ecc3923dd9cc586188496356e436b938844620047224824c2dcf7#0e990853c53eadfc8ac9c20024807bbe51a05029"
+  integrity sha512-IFboCtYanHqhQJ1AziY7HboE2fTwD8s8PTwJdnntagDwXIejh5wfC1HYONZJZLiild10ewX6KjxWjrwj6ocbBw==
   dependencies:
     gl-matrix "3.3.0"
 

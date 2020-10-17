@@ -6,7 +6,7 @@ window.onload = async () => {
 
     const props = game.__properties;
     const stage = new lib.flash.display.Stage(props);
-    document.getElementById("root").appendChild(stage.__canvas.element);
+    document.getElementById("root").appendChild(stage.__canvas.container);
 
     stage.addChild(library.instantiateCharacter(0));
 };
