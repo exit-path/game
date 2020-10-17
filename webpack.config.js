@@ -44,7 +44,7 @@ const config = {
   resolve: {
     extensions: [".ts", ".js"],
     alias: {
-      "swf-lib": "@exit-path/swf-lib",
+      "swf-lib": "@kiootic/swf-lib",
     },
   },
   plugins: [

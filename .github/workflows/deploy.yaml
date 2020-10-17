@@ -16,15 +16,15 @@ jobs:
         with:
           node-version: "12"
           always-auth: true
+          registry-url: 'https://npm.pkg.github.com/'
       - run: |
-          echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
           yarn install --frozen-lockfile
           yarn format:check
           yarn tsc
           yarn build
         env:
-          NPM_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           CI: true
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install SSH Client
         uses: webfactory/ssh-agent@v0.4.1
         with:
