@@ -1,23 +1,21 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "rootDir": "src",
+    "rootDir": ".",
     "target": "es2018",
     "lib": ["DOM", "ES2019"],
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "inlineSourceMap": true,
-    "declaration": true,
-    "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "swf-lib": ["node_modules/@kiootic/swf-lib"]
+      "swf-lib": ["../node_modules/@kiootic/swf-lib"]
     }
-  }
+  },
+  "references": [{ "path": "../game" }]
 }

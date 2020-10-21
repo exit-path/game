@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "target": "es2018",
+    "lib": ["DOM", "ES2019"],
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "swf-lib": ["../node_modules/@kiootic/swf-lib"]
+    }
+  }
+}

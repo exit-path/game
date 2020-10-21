@@ -1,17 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === "production";
 
 const config = {
   mode: isProduction ? "production" : "development",
-  entry: "./web/index.js",
+  entry: "./web/index.ts",
   devtool: isProduction ? "source-map" : "cheap-module-source-map",
   output: {
     filename: "[name].[contenthash:8].js",
-    chunkFilename: "[name].[contenthash:8].chunk.js",
     path: path.resolve(__dirname, "dist"),
-    pathinfo: false,
   },
   devServer: {
     contentBase: "./dist",
@@ -28,17 +27,6 @@ const config = {
         use: "babel-loader",
         exclude: /node_modules/,
       },
-      {
-        test: /\.(png|jpeg|mp3)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "assets/[hash].[ext]",
-            },
-          },
-        ],
-      },
     ],
   },
   resolve: {
@@ -48,6 +36,7 @@ const config = {
     },
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "web/index.html",
     }),
