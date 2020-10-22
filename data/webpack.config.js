@@ -6,69 +6,63 @@ class ExtractDataPlugin {
   apply(compiler) {
     compiler.hooks.compilation.tap("ExtractDataPlugin", (compilation) => {
       compilation.hooks.processAssets.tap("ExtractDataPlugin", () => {
-        const bundle = compilation.getAsset("data.js");
-        const code = String(bundle.source.source());
-        const exports = {};
-        new Function("exports", code + "")(exports);
+        function runModule(name) {
+          const code = String(compilation.getAsset(name).source.source());
+          const exports = {};
+          new Function("exports", code)(exports);
+          return exports;
+        }
 
-        compilation.deleteAsset("data.js");
+        const dataBundle = Buffer.from(
+          JSON.stringify(runModule("data.js").bundle)
+        );
+        const assets = runModule("assets.js").assets;
+
+        const sizes = {};
+        sizes["data"] = dataBundle.length;
+        for (const [key, url] of Object.entries(assets)) {
+          sizes[key] = Number(url.hash.slice(1));
+        }
+
+        for (const i of compilation.getAssets()) {
+          compilation.deleteAsset(i.name);
+        }
         compilation.emitAsset(
           "data.json",
-          new webpack.sources.RawSource(JSON.stringify(exports.bundle))
+          new webpack.sources.RawSource(dataBundle)
+        );
+        compilation.emitAsset(
+          "sizes.json",
+          new webpack.sources.RawSource(JSON.stringify(sizes))
         );
       });
     });
   }
 }
 
-const config = {
+module.exports = {
   entry: {
     data: path.resolve(__dirname, "characters"),
-    index: { import: path.resolve(__dirname, "index.js"), depend: "data" },
+    assets: path.resolve(__dirname, "assets"),
   },
-  target: "node",
+  target: "es5",
   devtool: false,
   output: {
-    filename: "index.js",
-    library: "manifest",
+    filename: "[name].js",
     libraryTarget: "commonjs",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
     rules: [
       {
-        test: /\.(ts|js)$/,
-        use: "babel-loader",
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(png|jpeg|mp3)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: "assets",
-              publicPath: (u) => path.basename(u),
-            },
-          },
-        ],
+        include: [path.resolve(__dirname, "assets")],
+        exclude: [path.resolve(__dirname, "assets", "index.js")],
+        type: "asset/inline",
+        generator: {
+          dataUrl: (content) => `file://#${content.length}`,
+        },
       },
     ],
   },
   plugins: [new CleanWebpackPlugin(), new ExtractDataPlugin()],
 };
-
-module.exports = [
-  {
-    name: "data",
-    entry: path.resolve(__dirname, "characters"),
-    target: "node",
-    devtool: false,
-    output: {
-      filename: "data.js",
-      libraryTarget: "commonjs",
-      path: path.resolve(__dirname, "dist"),
-    },
-    plugins: [new CleanWebpackPlugin(), new ExtractDataPlugin()],
-  },
-];
