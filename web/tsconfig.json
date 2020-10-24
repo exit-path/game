@@ -4,6 +4,7 @@
     "rootDir": ".",
     "target": "es2018",
     "lib": ["DOM", "ES2019"],
+    "jsx": "react",
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

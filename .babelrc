@@ -1,21 +1,8 @@
 {
-    "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "modules": false,
-                "targets": "supports webgl2 and supports async-functions"
-            }
-        ]
-    ],
-    "plugins": [
-        [
-            "@babel/plugin-transform-typescript",
-            {
-                "allowDeclareFields": true
-            }
-        ],
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-transform-runtime"
-    ]
+  "presets": [
+    ["@babel/preset-env", { "shippedProposals": true }],
+    "@babel/preset-react",
+    ["@babel/preset-typescript", { "allowDeclareFields": true }]
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
 }
