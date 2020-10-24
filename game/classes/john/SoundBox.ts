@@ -25,7 +25,7 @@ export class SoundBox {
       str
     ) as lib.__internal.avm2.Class;
     var mySound: any = new TempClass() as lib.flash.media.Sound;
-    var sChannel: lib.flash.media.SoundChannel = mySound.play(0, 999999);
+    mySound.play(0, 999999);
   }
 
   public static playSound(str: string): any {
@@ -33,7 +33,7 @@ export class SoundBox {
       str
     ) as lib.__internal.avm2.Class;
     var mySound: any = new TempClass() as lib.flash.media.Sound;
-    var sChannel: lib.flash.media.SoundChannel = mySound.play(0, 1);
+    mySound.play(0, 1);
   }
 
   public static stopAllSounds(): any {

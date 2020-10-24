@@ -207,7 +207,6 @@ export class TileObject extends lib.flash.display.MovieClip {
   }
 
   public bounding(): any {
-    1;
     if (this.yVel < 0) {
       if (this.checkTile(this.x, this.y + this.yVel, 0, this.curLevel)) {
         this.y = this.y + this.yVel;
@@ -439,7 +438,6 @@ export class TileObject extends lib.flash.display.MovieClip {
   }
 
   private checkArray(xPos: any, yPos: any, dir: any, holder: any): any {
-    null;
     this.guyTL = false;
     this.guyTR = false;
     this.guyBL = false;
@@ -491,9 +489,6 @@ export class TileObject extends lib.flash.display.MovieClip {
     ];
     var pRM: number = this.curLevel.tArr[Math.floor(this.crmy / this.tileSize)][
       Math.floor(this.crmx / this.tileSize)
-    ];
-    var pMB: number = this.curLevel.tArr[Math.floor(this.cbly / this.tileSize)][
-      Math.floor(this.cbmx / this.tileSize)
     ];
     if (pTL > 0) {
       if (pTL == 1) {
@@ -607,7 +602,6 @@ export class TileObject extends lib.flash.display.MovieClip {
   }
 
   private checkTile(xPos: any, yPos: any, dir: any, holder: any): any {
-    var foundWhat: any = null;
     this.guyTL = false;
     this.guyTR = false;
     this.guyBL = false;
@@ -693,7 +687,6 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.tl) {
       if (this.tl.type == 1) {
         this.guyTL = true;
-        foundWhat = this.tl;
         this.pass(this.tl);
       } else {
         this.guyTL = false;
@@ -702,7 +695,6 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.tr) {
       if (this.tr.type == 1) {
         this.guyTR = true;
-        foundWhat = this.tr;
         this.pass(this.tr);
       } else {
         this.guyTR = false;
@@ -711,11 +703,9 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.br) {
       if (this.br.type == 1) {
         this.guyBR = true;
-        foundWhat = this.br;
         this.pass(this.br);
       } else if (this.br.type == 2 && this.yVel > 0) {
         this.guyBR = true;
-        foundWhat = this.br;
       } else {
         this.guyBR = false;
       }
@@ -723,11 +713,9 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.bl) {
       if (this.bl.type == 1) {
         this.guyBL = true;
-        foundWhat = this.bl;
         this.pass(this.bl);
       } else if (this.bl.type == 2 && this.yVel > 0) {
         this.guyBL = true;
-        foundWhat = this.bl;
       } else {
         this.guyBL = false;
       }
@@ -735,7 +723,6 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.tm) {
       if (this.tm.type == 1) {
         this.guyTM = true;
-        foundWhat = this.tm;
         this.pass(this.tm);
       } else {
         this.guyTM = false;
@@ -744,7 +731,6 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.bm) {
       if (this.bm.type == 1) {
         this.guyBM = true;
-        foundWhat = this.bm;
         this.pass(this.bm);
       } else {
         this.guyBM = false;
@@ -753,7 +739,6 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.lm) {
       if (this.lm.type == 1) {
         this.guyLM = true;
-        foundWhat = this.lm;
         this.pass(this.lm);
       } else {
         this.guyLM = false;
@@ -762,7 +747,6 @@ export class TileObject extends lib.flash.display.MovieClip {
     if (this.rm) {
       if (this.rm.type == 1) {
         this.guyRM = true;
-        foundWhat = this.rm;
         this.pass(this.rm);
       } else {
         this.guyRM = false;

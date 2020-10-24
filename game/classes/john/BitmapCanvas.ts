@@ -25,7 +25,6 @@ export class BitmapCanvas extends lib.flash.display.MovieClip {
   }
 
   public alphaFader(): any {
-    0.99;
     var ct: lib.flash.geom.ColorTransform = new lib.flash.geom.ColorTransform(
       1,
       1,

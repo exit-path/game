@@ -12,11 +12,9 @@ export class Ghosting extends lib.flash.display.MovieClip {
   }
 
   public addGhosts(): any {
-    var totalGhostLogs: number = NaN;
     var ghost: any = null;
     for (var i: any = 0; i < this.logs.length; i++) {
       if (i != this.logs.length - 1) {
-        totalGhostLogs = ((this.logs.length - 1) * 0.8) / i;
         ghost = new Runner();
         this.addChild(ghost);
         this.ghosts.push(ghost);

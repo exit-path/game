@@ -88,7 +88,6 @@ export class MultiplayerMenu extends lib.flash.display.MovieClip {
     var nextLevelXP: number = this.parent["ranks"][curLevel + 1];
     var curLevelXP: number = this.parent["ranks"][curLevel];
     var nextXP: number = nextLevelXP - this.playerObject.xp;
-    var levelProgXP: number = curLevelXP - nextXP;
     this.playerInfo.xpAndLevel.text = curLevel + " " + curRank;
     this.playerInfo.xpTill.text =
       Text2.commaSnob(nextXP) + " XP until the next Level";

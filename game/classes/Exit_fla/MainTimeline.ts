@@ -428,11 +428,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     }
   }
 
-  public getMyStuff(obj: any): any {
-    obj.success;
-    obj.data;
-  }
-
   public getRandomName(): any {
     return (
       "Guest_" +

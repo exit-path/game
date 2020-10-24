@@ -181,7 +181,6 @@ export class Tubes extends lib.flash.display.MovieClip {
     var shortSend: boolean = false;
     var shortString: any = null;
     var tot: number = 0;
-    var f: any = undefined;
     this.tCounter = 6;
     this.tCounterGoal = 6;
     if (!this.player) {
@@ -306,10 +305,7 @@ export class Tubes extends lib.flash.display.MovieClip {
         this.updaters.yPos = this.player.yPos;
         uVars.yPos = this.player.yPos;
       }
-      tot = 0;
-      for (f in uVars) {
-        tot++;
-      }
+      tot = Object.keys(uVars).length;
       if (shortSend) {
         shortSend = false;
         this.sendMessage(shortString);
@@ -700,7 +696,6 @@ export class Tubes extends lib.flash.display.MovieClip {
 
   private onPublicMessageHandler(evt: SFSEvent): void {
     var giveTo: any = null;
-    var oldXP: number = NaN;
     var oldLevel: number = NaN;
     var levelTitle: any = null;
     var levelNum: number = NaN;
@@ -718,7 +713,6 @@ export class Tubes extends lib.flash.display.MovieClip {
         this.parent["lobby"].exchangeKudos(giveTo, evt.params.sender.getName());
       }
       if (giveTo == this.player.userName) {
-        oldXP = this.playerObject.xp;
         oldLevel = this.parent["getLevelByXP"](this.playerObject.xp);
         SoundBox.playSound("GetKudos");
         this.debugTrace(
@@ -983,10 +977,6 @@ export class Tubes extends lib.flash.display.MovieClip {
   }
 
   public onUserVariablesUpdateHandler(evt: SFSEvent): void {
-    var foundXData: boolean = false;
-    var foundYData: boolean = false;
-    var frameTimeBetweenCalls: number = NaN;
-    var v: any = undefined;
     var ob: any = evt.params;
     var changedVars: any[] = ob.changedVars;
     for (var i: any = 0; i < this.players.length; i++) {
@@ -994,9 +984,6 @@ export class Tubes extends lib.flash.display.MovieClip {
         if (this.players[i].isPlayer) {
           return;
         }
-        foundXData = false;
-        foundYData = false;
-        frameTimeBetweenCalls = this.players[i].timer.getFrameTime();
         for (var _loc11_ in changedVars) {
           switch (_loc11_) {
             case "pX":
@@ -1057,11 +1044,9 @@ export class Tubes extends lib.flash.display.MovieClip {
               continue;
             case "xPos":
               this.players[i].xPos = ob.user.getVariable("xPos");
-              foundXData = true;
               continue;
             case "yPos":
               this.players[i].yPos = ob.user.getVariable("yPos");
-              foundYData = true;
               continue;
             case "time":
               this.players[i].time = ob.user.getVariable("time");
@@ -1233,7 +1218,6 @@ export class Tubes extends lib.flash.display.MovieClip {
     var j: any = NaN;
     var lowestIDSet: boolean = false;
     var lowestID: any = NaN;
-    var hostSet: boolean = false;
     for (var i: any = 0; i < this.players.length; i++) {
       if (this.players[i].userName == playerName) {
         for (j = 0; j < this.players.length; j++) {
@@ -1245,7 +1229,6 @@ export class Tubes extends lib.flash.display.MovieClip {
         if (this.players[i].host) {
           lowestIDSet = false;
           lowestID = 0;
-          hostSet = false;
           for (j = 0; j < this.players.length; j++) {
             if (i != j) {
               if (!lowestIDSet) {
@@ -1253,11 +1236,9 @@ export class Tubes extends lib.flash.display.MovieClip {
                 lowestID = Number(j);
               } else if (this.players[j].ping < this.players[lowestID].ping) {
                 lowestID = Number(j);
-                hostSet = true;
               } else if (this.players[j].ping == this.players[lowestID].ping) {
                 if (this.players[j].id < this.players[lowestID].id) {
                   lowestID = Number(j);
-                  hostSet = true;
                 }
               }
             }

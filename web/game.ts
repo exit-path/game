@@ -1,5 +1,5 @@
 import lib from "swf-lib";
-import { manifest, classes } from "../game";
+import { manifest } from "../game";
 
 export async function start() {
   const loadIndicator = document.getElementById("loading")!;

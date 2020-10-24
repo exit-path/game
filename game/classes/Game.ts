@@ -45,7 +45,6 @@ import { StadiumC } from "./StadiumC";
 import { StadiumB } from "./StadiumB";
 import { PlayerShell } from "./PlayerShell";
 import { PlayerObject } from "./PlayerObject";
-import { LaserCannon } from "./LaserCannon";
 
 export class Game extends lib.flash.display.MovieClip {
   public declare bg: BitmapCanvas;
@@ -541,7 +540,6 @@ export class Game extends lib.flash.display.MovieClip {
     var vel: any = NaN;
     var xR: number = NaN;
     var yR: number = NaN;
-    var dist: any = NaN;
     var iter: any = NaN;
     var willFire: boolean = false;
     var j: any = NaN;
@@ -576,7 +574,6 @@ export class Game extends lib.flash.display.MovieClip {
       vel = 10;
       xR = vel * Math.sin((Math.PI / 180) * curCannon.setAngle);
       yR = 0 - vel * Math.cos((Math.PI / 180) * curCannon.setAngle);
-      dist = 0;
       iter = 50;
       willFire = false;
       for (j = 3; j < iter; j++) {
@@ -1155,7 +1152,6 @@ export class Game extends lib.flash.display.MovieClip {
     var time: number = NaN;
     var i: number = 0;
     var totalTi: any = 0;
-    10;
     for (var j: any = 0; j < 10; j++) {
       time = lib.flash.utils.getTimer();
       for (i = 0; i < 500; i++) {

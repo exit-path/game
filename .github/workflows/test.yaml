@@ -21,6 +21,7 @@ jobs:
           yarn install --frozen-lockfile
           yarn format:check
           yarn tsc
+          yarn lint
           yarn build:data
           yarn build
         env:

@@ -245,7 +245,6 @@ export class Lobby extends lib.flash.display.MovieClip {
     var nextLevelXP: number = this.parent["ranks"][curLevel + 1];
     var curLevelXP: number = this.parent["ranks"][curLevel];
     var nextXP: number = nextLevelXP - this.tubes.playerObject.xp;
-    var levelProgXP: number = curLevelXP - nextXP;
     this.xpAndLevel.text = String(curLevel);
     this.xpTill.text = Text2.commaSnob(nextXP) + " XP until the next Level";
     this.xpBar.barIn.scaleX = Anim.ease(
