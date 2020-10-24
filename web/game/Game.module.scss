@@ -1,0 +1,19 @@
+.game {
+  position: relative;
+  display: grid;
+  width: 800px;
+  height: 500px;
+  grid-template: "cell" 1fr / 1fr;
+
+  > * {
+    grid-area: cell;
+  }
+  .error {
+    color: #d00000;
+    place-self: center;
+  }
+  .loading {
+    color: #a0a0a0;
+    place-self: center;
+  }
+}

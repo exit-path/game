@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@kiootic/swf-lib": "0.2.1",
+    "classnames": "2.2.6",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
@@ -23,6 +24,7 @@
     "@babel/preset-env": "7.11.5",
     "@babel/preset-react": "7.12.1",
     "@babel/preset-typescript": "7.12.1",
+    "@types/classnames": "2.2.10",
     "@types/react": "16.9.53",
     "@types/react-dom": "16.9.8",
     "@types/webpack-env": "1.15.3",

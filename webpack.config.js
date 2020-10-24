@@ -3,8 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const postcssPresetEnv = require("postcss-preset-env");
-const postcssNormalize = require("postcss-normalize");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -19,6 +17,7 @@ const config = {
   },
   devServer: {
     contentBase: "./dist",
+    hot: true,
   },
   optimization: {
     minimize: isProduction,
@@ -59,7 +58,6 @@ const config = {
             options: {
               postcssOptions: {
                 ident: "postcss",
-                plugins: () => [postcssPresetEnv(), postcssNormalize()],
               },
             },
           },
