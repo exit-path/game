@@ -9,12 +9,26 @@ interface GameProps {
   className?: string;
 }
 
+interface StageRef {
+  stage: lib.flash.display.Stage | null;
+}
+
+// Use a standalone function to avoid capturing stage directly in closure,
+// since effect destroy function may be kept internally temporarily.
+function disposeStage(ref: StageRef): () => void {
+  return () => {
+    ref.stage?.__canvas.container.remove();
+    ref.stage?.__dispose();
+    ref.stage = null;
+  };
+}
+
 export const Game: React.FC<GameProps> = (props) => {
   const container = useRef<HTMLDivElement | null>(null);
   const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState<string>("");
   const [library, setLibrary] = useState<lib.__internal.AssetLibrary>();
-  const [stage, setStage] = useState<lib.flash.display.Stage | null>(null);
+  const [stageRef, setStageRef] = useState<StageRef | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -32,24 +46,25 @@ export const Game: React.FC<GameProps> = (props) => {
     }
 
     const stage = new lib.flash.display.Stage(library.properties);
-    setStage(stage);
+    const ref: StageRef = { stage };
+    setStageRef(ref);
 
-    const game: MainTimeline = library.instantiateCharacter(0);
-    stage.addChild(game);
-  }, [library]);
+    stage.__withContext(() => {
+      const game: MainTimeline = library.instantiateCharacter(0);
+      stage.addChild(game);
+    })();
 
-  useEffect(() => {
-    if (stage && container.current) {
-      const elem = stage.__canvas.container;
-      container.current?.appendChild(elem);
-      return () => elem.remove();
+    if (container.current) {
+      container.current?.appendChild(stage.__canvas.container);
     }
-  }, [stage, container]);
+
+    return disposeStage(ref);
+  }, [library]);
 
   let elem: JSX.Element | null = null;
   if (error) {
     elem = <pre className={styles.error}>{error}</pre>;
-  } else if (!stage) {
+  } else if (!stageRef?.stage) {
     const percentage =
       progress != null ? ` ${(progress * 100).toFixed(0)}%` : "";
     elem = <pre className={styles.loading}>Loading{percentage}...</pre>;

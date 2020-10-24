@@ -98,18 +98,16 @@ export class Key {
 
   public static initialize(stage: lib.flash.display.Stage, dual: boolean): any {
     Key.dualKey = dual;
-    if (!Key.initialized) {
-      stage.addEventListener(
-        lib.flash.events.KeyboardEvent.KEY_DOWN,
-        Key.keyPressed
-      );
-      stage.addEventListener(
-        lib.flash.events.KeyboardEvent.KEY_UP,
-        Key.keyReleased
-      );
-      stage.addEventListener(lib.flash.events.Event.DEACTIVATE, Key.clearKeys);
-      Key.initialized = true;
-    }
+    stage.addEventListener(
+      lib.flash.events.KeyboardEvent.KEY_DOWN,
+      Key.keyPressed
+    );
+    stage.addEventListener(
+      lib.flash.events.KeyboardEvent.KEY_UP,
+      Key.keyReleased
+    );
+    stage.addEventListener(lib.flash.events.Event.DEACTIVATE, Key.clearKeys);
+    Key.initialized = true;
   }
 
   public static isDown(keyCode: any): boolean {
