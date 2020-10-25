@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   extends: "react-app",
   parser: "@typescript-eslint/parser",
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "simple-import-sort"],
   env: {
     browser: true,
     es6: true,
@@ -25,6 +25,7 @@ module.exports = {
       rules: {
         eqeqeq: "off",
         "import/first": "off",
+        "simple-import-sort/sort": "off",
         "no-fallthrough": "off",
         "no-new-object": "off",
         "@typescript-eslint/no-useless-constructor": "off",
@@ -35,5 +36,11 @@ module.exports = {
   rules: {
     "react/jsx-uses-vars": "warn",
     "react/jsx-uses-react": "warn",
+    "simple-import-sort/sort": [
+      "error",
+      {
+        groups: [["^react", "^\\u0000", "^@?\\w", "^\\.", "\\.scss$"]],
+      },
+    ],
   },
 };

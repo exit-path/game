@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Game, GameProps } from "./ui/Game";
 import { StoreProvider } from "./store";
 import { RootStore } from "./store/root";
+import { Game, GameProps } from "./ui/Game";
 
 const GameRoot: React.FC<GameProps> = (props) => {
   const [rootStore] = useState(() => new RootStore());

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { observer } from "mobx-react-lite";
 import cn from "classnames";
+import { observer } from "mobx-react-lite";
 import { useStore } from "../store";
 import styles from "./GameArea.module.scss";
 

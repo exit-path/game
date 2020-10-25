@@ -1,11 +1,11 @@
-import { makeAutoObservable, autorun } from "mobx";
+import { autorun, makeAutoObservable } from "mobx";
 import lib from "swf-lib";
-import type { RootStore } from "./root";
 import { MainTimeline } from "../../../game/classes/Exit_fla/MainTimeline";
 import {
   ExternalEvent,
   ExternalEventProps,
 } from "../../../game/classes/ExternalEvent";
+import type { RootStore } from "./root";
 
 export class GameStore {
   container: HTMLElement | null = null;
