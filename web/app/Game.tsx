@@ -14,8 +14,8 @@ export const Game: React.FC<GameProps> = (props) => {
   return (
     <React.Suspense
       fallback={
-        <div className={cn(props.className, styles.placeholder)}>
-          <pre>Loading...</pre>
+        <div className={cn(styles.placeholder, props.className)}>
+          <p>Loading...</p>
         </div>
       }
     >

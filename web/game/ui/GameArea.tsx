@@ -16,6 +16,6 @@ export const GameArea = observer<GameAreaProps>(function GameArea(props) {
   }, [game]);
 
   return (
-    <div className={cn(props.className, styles.game)} ref={game.setContainer} />
+    <div className={cn(styles.game, props.className)} ref={game.setContainer} />
   );
 });

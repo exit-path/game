@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import type { RootStore } from "./root";
 
-type ModalInstance = { id: number } & ModalInstanceProps;
+export type ModalInstance = { id: number } & ModalInstanceProps;
 
 type ModalInstanceProps = { type: "sp-user-level" };
 
