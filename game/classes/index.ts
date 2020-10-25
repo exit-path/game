@@ -30,6 +30,7 @@ export { ColorPicker_textFieldSkin } from "./ColorPicker_textFieldSkin";
 export { ColorPicker_upSkin } from "./ColorPicker_upSkin";
 export { EndCountdown } from "./EndCountdown";
 export { EndPointHolder } from "./EndPointHolder";
+export { ExternalEvent } from "./ExternalEvent";
 export { FadeOut } from "./FadeOut";
 export { FinalA } from "./FinalA";
 export { FinalB } from "./FinalB";
