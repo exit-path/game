@@ -205,6 +205,16 @@
         },
         {
           "kind": 0,
+          "depth": 100,
+          "version": 2,
+          "moveCharacter": false,
+          "characterId": 10000,
+          "matrix": [1, 0, 0, 1, 10500, 1740],
+          "name": "userLevelButton",
+          "filters": []
+        },
+        {
+          "kind": 0,
           "depth": 73,
           "version": 2,
           "moveCharacter": false,

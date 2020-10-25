@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc -b web/tsconfig.json",
-    "format": "prettier --write -l 'game/classes/**/*.{ts,js}' 'web/**/*.{ts,tsx,js,scss}'",
-    "format:check": "prettier --check 'game/classes/**/*.{ts,js}' 'web/**/*.{ts,tsx,js,scss}'",
+    "format": "prettier --write -l 'game/classes/**/*.{ts,js}' 'web/**/*.{ts,tsx,js,scss}' 'data/**/*.js'",
+    "format:check": "prettier --check 'game/classes/**/*.{ts,js}' 'web/**/*.{ts,tsx,js,scss}' 'data/**/*.js'",
     "lint": "eslint '{web,game}/**/*.{ts,tsx}'",
     "build": "NODE_ENV=production webpack",
     "build:data": "webpack --config data/webpack.config.js",
