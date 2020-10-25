@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import lib from "swf-lib";
 import cn from "classnames";
 import { loadLibrary } from "./library";
+import { useStore } from "./store";
 import { MainTimeline } from "../../game/classes/Exit_fla/MainTimeline";
 import styles from "./Game.module.scss";
 
-interface GameProps {
+export interface GameProps {
   className?: string;
 }
 
@@ -24,7 +25,7 @@ function disposeStage(ref: StageRef): () => void {
 }
 
 export const Game: React.FC<GameProps> = (props) => {
-  const container = useRef<HTMLDivElement | null>(null);
+  const { game } = useStore();
   const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState<string>("");
   const [library, setLibrary] = useState<lib.__internal.AssetLibrary>();
@@ -54,12 +55,10 @@ export const Game: React.FC<GameProps> = (props) => {
       stage.addChild(game);
     })();
 
-    if (container.current) {
-      container.current?.appendChild(stage.__canvas.container);
-    }
+    game.containerRef.current?.appendChild(stage.__canvas.container);
 
     return disposeStage(ref);
-  }, [library]);
+  }, [library, game.containerRef]);
 
   let elem: JSX.Element | null = null;
   if (error) {
@@ -71,7 +70,7 @@ export const Game: React.FC<GameProps> = (props) => {
   }
 
   return (
-    <div className={cn(props.className, styles.game)} ref={container}>
+    <div className={cn(props.className, styles.game)} ref={game.containerRef}>
       {elem}
     </div>
   );
