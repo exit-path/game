@@ -72,7 +72,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".scss"],
     alias: {
       "swf-lib": "@kiootic/swf-lib",
     },

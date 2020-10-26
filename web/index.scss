@@ -1,26 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
-@import url("normalize.css/opinionated.css");
+@import "./theme.scss";
 
-html {
-  font-family: "Ubuntu", sans-serif;
+@import "~bootstrap/scss/bootstrap";
+
+.modal-content {
+  background-clip: unset;
 }
 
 html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  background-color: #202020;
-  color: #e0e0e0;
-  margin: 0;
+  letter-spacing: 0.01em;
 }
 
 ::selection {
-  background-color: rgba(96, 96, 96, 0.99);
+  background-color: rgba($gray-600, 0.9);
 }

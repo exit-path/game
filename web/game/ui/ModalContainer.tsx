@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../game/store";
@@ -27,10 +27,16 @@ interface InstanceProps {
 }
 
 const Instance = observer<InstanceProps>(function Instance(props) {
+  const { modal } = useStore();
+
+  const onClose = useCallback(() => {
+    modal.dismiss(props.modal.id);
+  }, [modal, props.modal.id]);
+
   let children: JSX.Element;
   switch (props.modal.type) {
     case "sp-user-level":
-      children = <EnterUserLevel />;
+      children = <EnterUserLevel className={styles.dialog} onClose={onClose} />;
   }
-  return <div className={styles.instance}>{children}</div>;
+  return <div className={styles.overlay}>{children}</div>;
 });

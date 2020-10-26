@@ -14,10 +14,12 @@
   },
   "dependencies": {
     "@kiootic/swf-lib": "0.2.1",
+    "bootstrap": "4.5.3",
     "classnames": "2.2.6",
     "mobx": "6.0.1",
     "mobx-react-lite": "3.0.1",
     "react": "17.0.1",
+    "react-bootstrap": "1.4.0",
     "react-dom": "17.0.1"
   },
   "devDependencies": {
@@ -48,10 +50,8 @@
     "eslint-plugin-simple-import-sort": "5.0.3",
     "html-webpack-plugin": "4.5.0",
     "mini-css-extract-plugin": "1.2.0",
-    "normalize.css": "8.0.1",
     "postcss": "8.1.4",
     "postcss-loader": "4.0.4",
-    "postcss-normalize": "9.0.0",
     "postcss-preset-env": "6.7.0",
     "prettier": "2.1.2",
     "sass": "1.27.0",

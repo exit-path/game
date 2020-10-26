@@ -1,8 +1,10 @@
+@import "../../theme.scss";
+
 .container {
   position: relative;
 }
 
-.instance {
+.overlay {
   position: absolute;
   margin: 0;
   bottom: 0;
@@ -10,5 +12,18 @@
   right: 0;
   top: 0;
 
-  background-color: rgba(0, 0, 0, 0.1);
+  display: grid;
+  background-color: transparentize($modal-backdrop-bg, $modal-backdrop-opacity);
+}
+
+.dialog {
+  place-self: stretch;
+  max-width: 100%;
+  max-height: 100%;
+  margin: $modal-dialog-margin;
+
+  > :global(.modal-content) {
+    height: 100%;
+    background-color: transparentize($modal-content-bg, 0.1);
+  }
 }

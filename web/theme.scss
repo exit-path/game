@@ -1,0 +1,13 @@
+@import "./darkly.scss";
+
+$enable-rounded: false;
+
+$body-bg: $gray-900;
+$body-color: $gray-100;
+$font-family-sans-serif: "Ubuntu", sans-serif;
+
+$modal-header-border-width: 0;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
