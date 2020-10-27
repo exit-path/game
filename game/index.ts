@@ -6,3 +6,7 @@ const manifest = _manifest as lib.__internal.Manifest;
 export { manifest };
 
 lib.__internal.ClassRegistry.instance.addClassRoot(classes);
+
+if (module.hot) {
+  module.hot.decline();
+}

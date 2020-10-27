@@ -1,8 +1,10 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -10,6 +12,7 @@ const config = {
   mode: isProduction ? "production" : "development",
   entry: "./web/index.tsx",
   devtool: isProduction ? "source-map" : "cheap-module-source-map",
+  target: "web", // FIXME: https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/235
   output: {
     filename: "static/[name].[contenthash:8].js",
     assetModuleFilename: "static/assets/[hash][ext][query]",
@@ -41,6 +44,7 @@ const config = {
         exclude: /node_modules/,
         options: {
           compact: isProduction,
+          plugins: [!isProduction && "react-refresh/babel"].filter(Boolean),
         },
       },
       {
@@ -85,7 +89,12 @@ const config = {
     new HtmlWebpackPlugin({
       template: "web/index.html",
     }),
-  ],
+    !isProduction && new webpack.HotModuleReplacementPlugin(),
+    !isProduction &&
+      new ReactRefreshWebpackPlugin({
+        exclude: /(node_modules|swf-lib)/,
+      }),
+  ].filter(Boolean),
 };
 
 module.exports = config;
