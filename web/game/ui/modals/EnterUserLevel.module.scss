@@ -1,0 +1,16 @@
+@import "../../../theme.scss";
+
+.dialog {
+  .codeForm {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  .codeArea {
+    resize: none;
+    font-family: $font-family-monospace;
+    word-break: break-all;
+  }
+}

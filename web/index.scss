@@ -3,8 +3,23 @@
 
 @import "~bootstrap/scss/bootstrap";
 
-.modal-content {
+// ref: https://bugs.chromium.org/p/chromium/issues/detail?id=957946&q=background-clip%20odd&can=2
+.modal-content,
+.form-control {
   background-clip: unset;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant(
+      $value,
+      $value,
+      lighten($value, 7.5%),
+      lighten($value, 10%),
+      lighten($value, 10%),
+      lighten($value, 12.5%)
+    );
+  }
 }
 
 html {
