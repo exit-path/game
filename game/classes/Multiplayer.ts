@@ -184,9 +184,9 @@ export class Multiplayer extends lib.flash.display.MovieClip {
 
   public startSinglePlayer(): any {
     this.game = new Game();
-    this.game.singlePlayer = true;
+    this.game.mode = "SP";
     this.isSinglePlayer = true;
-    this.game.init(this.tubes, this.playerObject);
+    this.game.init(this.tubes, this.playerObject, this.playerObject.gameLevel);
     this.addChild(this.game);
     this.game.startSinglePlayer();
   }

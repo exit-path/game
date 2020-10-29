@@ -733,10 +733,13 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           }
           this.multiplayer.lobby = null;
           this.multiplayer.game = new Game();
-          this.multiplayer.game.singlePlayer = false;
-          this.multiplayer.game.levelNum = this.multiplayer.tubes.myNextLevel;
+          this.multiplayer.game.mode = "MP";
           this.multiplayer.addChild(this.multiplayer.game);
-          this.multiplayer.game.init(this.multiplayer.tubes, this.playerObj);
+          this.multiplayer.game.init(
+            this.multiplayer.tubes,
+            this.playerObj,
+            this.multiplayer.tubes.myNextLevel
+          );
           this.multiplayer.game.countdownStart();
           this.multiplayer.addChild(this.multiplayer.tubes);
           this.multiplayer.game.initMP();
@@ -772,6 +775,16 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.highscoreSub();
           this.saveGame();
           this.startLowMenu();
+          break;
+        case "EndPractice":
+          this.multiplayer.game.endFadeOut(this.multiplayer.game.fadeOut);
+          this.multiplayer.game.killS();
+          this.multiplayer.removeChild(this.multiplayer.game);
+          this.multiplayer.game = null;
+          this.startMenus();
+          this.addChild(this.multiplayer);
+          this.startLowMenu();
+          break;
       }
     }
   }
@@ -1129,5 +1142,14 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     for (var j: any = 0; j < this.playerObj.achs.length; j++) {
       this.achievements[j].got = this.playerObj.achs[j];
     }
+  }
+
+  public startPracticeLevel(level: number) {
+    this.endMenus();
+    this.multiplayer.game = new Game();
+    this.multiplayer.game.mode = "PRACTICE";
+    this.multiplayer.addChild(this.multiplayer.game);
+    this.multiplayer.game.init(null, this.playerObj, level);
+    this.multiplayer.game.countdownStart();
   }
 }

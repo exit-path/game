@@ -131,7 +131,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare sForward: lib.flash.media.Sound;
 
-  public declare singlePlayer: boolean;
+  public declare mode: "SP" | "MP" | "PRACTICE";
 
   private declare skin: Runner;
 
@@ -194,7 +194,7 @@ export class Game extends lib.flash.display.MovieClip {
     this.firstSoundPlay = true;
     this.cUp = false;
     this.updateRate = 7;
-    this.singlePlayer = true;
+    this.mode = "PRACTICE";
     this.songPlaying = "none";
     this.startTheCountdown = false;
     this.levelNum = 0;
@@ -321,7 +321,7 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public countdownStart(): any {
-    this.levelStart = new LevelStart();
+    this.levelStart = new LevelStart(this.mode === "MP");
     this.levelStart.gotoAndPlay(1);
     this.addChild(this.levelStart);
     if (this.uiPanel && this.contains(this.uiPanel)) {
@@ -345,7 +345,7 @@ export class Game extends lib.flash.display.MovieClip {
     this.camera.camY = 0;
     this.x = 0;
     this.y = 0;
-    if (this.singlePlayer) {
+    if (this.mode === "SP") {
       this.uiPanel.placing.visible = false;
     } else {
       this.uiPanel.placing.visible = true;
@@ -448,7 +448,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public finishLevel(): any {
     var i: any = NaN;
-    if (this.singlePlayer) {
+    if (this.mode === "SP" || this.mode === "PRACTICE") {
       this.levelFinished = true;
       this.fadeOut = new FadeOut();
       this.fadeOut.gotoAndPlay(2);
@@ -460,7 +460,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.addChild(this.fadeOut);
       this.fadeOut.x = 0 - this.x;
       this.fadeOut.y = 0 - this.y;
-    } else {
+    } else if (this.mode === "MP") {
       this.uiPanel.arrowKeysToPan.gotoAndStop(2);
       this.levelFinished = true;
       for (i = 0; i < this.players.length; i++) {
@@ -475,8 +475,8 @@ export class Game extends lib.flash.display.MovieClip {
 
   public handleCamera(): any {
     var tempTrans: any = null;
-    if (this.tConnected) {
-      if (this.player.completedLevel) {
+    if (this.mode !== "SP") {
+      if (this.mode === "MP" && this.player.completedLevel) {
         this.xCamX++;
         if (Key.isDown(Key.LEFT)) {
           this.xCamX = this.xCamX + 20;
@@ -702,21 +702,24 @@ export class Game extends lib.flash.display.MovieClip {
     }
   }
 
-  public init(tuber: Tubes, playerObj: PlayerObject) {
+  public init(tuber: Tubes, playerObj: PlayerObject, level: number) {
     this.addChild(this.skyLine);
     this.playerObject = playerObj;
-    if (this.singlePlayer) {
+    if (this.mode === "SP") {
       if (this.playerObject.gameLevel == 0) {
         this.timer.setTimeAsTotalSeconds(0);
       } else {
         this.timer.setTimeAsTotalSeconds(this.playerObject.gameTime);
       }
-      this.levelNum = this.playerObject.gameLevel;
-    } else {
+      this.levelNum = level;
+    } else if (this.mode === "MP") {
       this.tubes = tuber;
       this.tubes.debuggy.txt.text = " ";
       this.updateMethod = 0;
-      this.levelNum = this.tubes.myNextLevel;
+      this.levelNum = level;
+    } else if (this.mode === "PRACTICE") {
+      this.timer.setTimeAsTotalSeconds(0);
+      this.levelNum = level;
     }
     this.setLevel();
     this.player = new Player();
@@ -734,7 +737,7 @@ export class Game extends lib.flash.display.MovieClip {
     this.player.init(this.level);
     this.player.initPlayer();
     this.player.visible = false;
-    if (this.singlePlayer) {
+    if (this.mode !== "MP") {
       this.uiPanel.placing.visible = false;
     } else {
       this.uiPanel.placing.visible = true;
@@ -790,7 +793,7 @@ export class Game extends lib.flash.display.MovieClip {
       0,
       true
     );
-    if (!this.singlePlayer) {
+    if (this.mode === "MP") {
       this.uiPanel.pauseButton.visible = false;
       this.uiPanel.exitButton.visible = false;
     }
@@ -806,7 +809,7 @@ export class Game extends lib.flash.display.MovieClip {
     this.youArrows.push(newYouArrow);
     this.initSounds();
     this.organizeDepth();
-    if (this.singlePlayer) {
+    if (this.mode === "SP") {
       this.chooseSong();
     } else {
       this.chooseMultiplayerSong();
@@ -865,7 +868,11 @@ export class Game extends lib.flash.display.MovieClip {
     if (this.tConnected) {
       this.tubes.sendMessage("die");
     }
-    if (this.levelNum == 16 && this.playerObject.gameDeaths == 0) {
+    if (
+      this.mode === "SP" &&
+      this.levelNum == 16 &&
+      this.playerObject.gameDeaths == 0
+    ) {
       this.dispatchEvent(new AchEvent(AchEvent.SEND, 14));
     }
     this.deathScreens = 0;
@@ -874,10 +881,10 @@ export class Game extends lib.flash.display.MovieClip {
     this.player.burningFlow = false;
     this.skin.filters = new Array<any>();
     this.uiPanel.ping(this.camera, this.player);
-    if (this.singlePlayer) {
+    if (this.mode === "SP") {
       this.playerObject.gameDeaths++;
       this.startRewinding();
-    } else {
+    } else if (this.mode === "MP" || this.mode === "PRACTICE") {
       this.logger.newLog();
       this.skin.visible = true;
       this.player.xVel = 0;
@@ -913,6 +920,11 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public loadNextSinglePlayerLevel(): any {
+    if (this.mode === "PRACTICE") {
+      this.dispatchEvent(new Relay(Relay.GOTO, "Game", "EndPractice"));
+      return;
+    }
+
     var ra: number = NaN;
     this.levelNum++;
     this.chooseSong();
@@ -1018,7 +1030,7 @@ export class Game extends lib.flash.display.MovieClip {
       return;
     }
     this.tryFrame++;
-    if (!this.singlePlayer) {
+    if (this.mode === "MP") {
       this.tUpdateFriendsENT();
     }
     if (this.startTheCountdown) {
@@ -1055,7 +1067,7 @@ export class Game extends lib.flash.display.MovieClip {
     if (!this.levelFinished) {
       if (this.levelNum != 30) {
         this.timer.ping();
-        if (!this.singlePlayer) {
+        if (this.mode === "MP") {
           if (this.tubes.player.host) {
             this.tubes.player.hostTime = this.timer.getFrameTime();
           }
@@ -1079,7 +1091,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.static.x = 0 - this.x;
       this.static.y = 0 - this.y;
     }
-    if (this.singlePlayer) {
+    if (this.mode === "SP") {
       if (this.levelNum < 30) {
         if (
           this.player.hitTestObject(this.level["cautionSign"]) &&
@@ -1163,11 +1175,7 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public setLevel(): any {
-    if (!this.singlePlayer && this.levelNum == 0) {
-      this.levelNum = 100;
-      this.tubes.myNextLevel = this.levelNum;
-    }
-    if (!this.singlePlayer && isNaN(this.levelNum)) {
+    if (this.mode === "MP" && !this.levelNum) {
       this.levelNum = 100;
       this.tubes.myNextLevel = this.levelNum;
     }
@@ -1413,10 +1421,10 @@ export class Game extends lib.flash.display.MovieClip {
     }
     this.updateUISign();
     this.reset();
-    if (!this.singlePlayer) {
+    if (this.mode === "MP") {
       this.tConnected = true;
-      this.organizeDepth();
     }
+    this.organizeDepth();
   }
 
   public startPlayer(mc: lib.flash.display.MovieClip): any {
@@ -1712,7 +1720,7 @@ export class Game extends lib.flash.display.MovieClip {
       }
     }
     this.uiPanel["caution"].signsTot.text = totSigns + "/30";
-    if (this.singlePlayer) {
+    if (this.mode === "SP") {
       if (this.playerObject.signs[this.levelNum]) {
         this.level["cautionSign"].visible = false;
         this.uiPanel["caution"].gotoAndStop(11);
@@ -1720,7 +1728,7 @@ export class Game extends lib.flash.display.MovieClip {
         this.uiPanel["caution"].gotoAndStop(1);
       }
     }
-    if (!this.singlePlayer) {
+    if (this.mode !== "SP") {
       this.uiPanel["caution"].visible = false;
     }
   }

@@ -87,7 +87,9 @@ export class GameStore {
         this.root.modal.present({
           type: "enter-user-level",
           onEnterLevel: (level) => {
-            console.log(level);
+            this.stage?.__withContext(() => {
+              this.main?.startPracticeLevel(101);
+            })();
           },
         });
         break;
