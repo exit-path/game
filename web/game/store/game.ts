@@ -84,7 +84,12 @@ export class GameStore {
   private handleExternalEvent(event: ExternalEventProps) {
     switch (event.type) {
       case "sp-user-level":
-        this.root.modal.present({ type: "sp-user-level" });
+        this.root.modal.present({
+          type: "enter-user-level",
+          onEnterLevel: (level) => {
+            console.log(level);
+          },
+        });
         break;
     }
   }

@@ -14,3 +14,9 @@
     word-break: break-all;
   }
 }
+
+.feedback {
+  display: block;
+  margin: $modal-inner-padding;
+  flex: 1;
+}

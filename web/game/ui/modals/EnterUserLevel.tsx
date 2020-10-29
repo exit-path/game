@@ -1,41 +1,54 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
-import { parse } from "../../../../shared/level";
+import { Level, parse } from "../../../../shared/level";
+import { useStore } from "../../store";
 import styles from "./EnterUserLevel.module.scss";
 
 interface Props {
   className?: string;
-  onClose: () => void;
+  modalId: number;
+  onEnterLevel: (level: Level) => void;
+}
+
+interface FormData {
+  levelCode: string;
 }
 
 export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
-  const [levelCode, setLevelCode] = useState("");
-  const onLevelCodeChanged = useCallback(
-    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      setLevelCode(e.target.value.replace(/\r|\n/g, ""));
+  const { modalId, onEnterLevel } = props;
+  const { modal } = useStore();
+
+  const { register, handleSubmit, errors, formState } = useForm<FormData>();
+
+  const onFormSubmit = useCallback(
+    (data: FormData) => {
+      modal.dismiss(modalId);
+      onEnterLevel(parse(data.levelCode));
     },
-    []
+    [modal, modalId, onEnterLevel]
   );
 
-  const [isFormValidated, setIsFormValidated] = useState(false);
-  const onFormSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      const form = e.currentTarget;
-      if (!form.checkValidity()) {
-        setIsFormValidated(true);
-        return;
-      }
-      console.log(parse(levelCode));
-    },
-    [levelCode]
-  );
+  const onClose = useCallback(() => {
+    modal.dismiss(modalId);
+  }, [modal, modalId]);
+
+  const validateLevelCode = useCallback((levelCode: string):
+    | string
+    | boolean => {
+    try {
+      parse(levelCode);
+      return true;
+    } catch (e) {
+      return String(e);
+    }
+  }, []);
 
   return (
     <Modal.Dialog className={cn(styles.dialog, props.className)}>
-      <Modal.Header closeButton onHide={props.onClose}>
+      <Modal.Header closeButton onHide={onClose}>
         <Modal.Title>User Level</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -43,22 +56,28 @@ export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
           id="levelCode"
           className={styles.codeForm}
           noValidate
-          validated={isFormValidated}
-          onSubmit={onFormSubmit}
+          onSubmit={handleSubmit(onFormSubmit)}
         >
           <Form.Control
+            name="levelCode"
             className={styles.codeArea}
             size="sm"
             as="textarea"
             placeholder="Level Code"
-            required
             spellCheck={false}
-            value={levelCode}
-            onChange={onLevelCodeChanged}
+            isValid={formState.isSubmitted && !errors.levelCode}
+            isInvalid={formState.isSubmitted && !!errors.levelCode}
+            ref={register({ required: true, validate: validateLevelCode })}
           />
         </Form>
       </Modal.Body>
       <Modal.Footer>
+        <Form.Control.Feedback
+          type="invalid"
+          className={errors.levelCode && styles.feedback}
+        >
+          {errors.levelCode?.message}
+        </Form.Control.Feedback>
         <Button variant="primary" type="submit" form="levelCode">
           Enter
         </Button>

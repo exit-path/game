@@ -1,9 +1,15 @@
 import { makeAutoObservable } from "mobx";
+import { Level } from "../../../shared/level";
 import type { RootStore } from "./root";
 
 export type ModalInstance = { id: number } & ModalInstanceProps;
 
-type ModalInstanceProps = { type: "sp-user-level" };
+type ModalInstanceProps = ModalEnterUserLevelProps;
+
+type ModalEnterUserLevelProps = {
+  type: "enter-user-level";
+  onEnterLevel: (level: Level) => void;
+};
 
 export class ModalStore {
   nextInstanceId = 1;
