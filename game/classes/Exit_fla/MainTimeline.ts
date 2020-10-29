@@ -23,6 +23,9 @@ import { MultiplayerMenu } from "../MultiplayerMenu";
 import { SinglePlayerMenu } from "../SinglePlayerMenu";
 import { Game } from "../Game";
 import { PlayerObject } from "../PlayerObject";
+import { Level } from "../Level";
+import { LevelUser } from "../LevelUser";
+import { Level as UserLevel } from "../../../shared/level";
 
 export class MainTimeline extends lib.flash.display.MovieClip {
   public declare achievements: Ach[];
@@ -122,6 +125,8 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   public declare urlRequest: lib.flash.net.URLRequest;
 
   public declare urlStart: number;
+
+  userLevel: UserLevel | null = null;
 
   public constructor() {
     super();
@@ -380,7 +385,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.loadGame();
     this.saveGame();
     this.isLoggedIn = false;
-    this.multiplayer = new Multiplayer();
+    this.multiplayer = new Multiplayer(this);
     this.singlePlayer = true;
     this.agIntro = new AGIntro();
     this.addChild(this.agIntro);
@@ -489,7 +494,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.mainMenu.kill();
           this.removeChild(this.mainMenu);
           this.mainMenu = null;
-          this.multiplayer = new Multiplayer();
+          this.multiplayer = new Multiplayer(this);
           this.addChild(this.multiplayer);
           this.multiplayer.init(this.playerObj);
           if (!this.isLoggedIn) {
@@ -502,7 +507,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.mainMenu.kill();
           this.removeChild(this.mainMenu);
           this.mainMenu = null;
-          this.multiplayer = new Multiplayer();
+          this.multiplayer = new Multiplayer(this);
           this.addChild(this.multiplayer);
           this.multiplayer.init2(this.playerObj);
           break;
@@ -732,7 +737,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
             this.multiplayer.lobby.kill();
           }
           this.multiplayer.lobby = null;
-          this.multiplayer.game = new Game();
+          this.multiplayer.game = new Game(this);
           this.multiplayer.game.mode = "MP";
           this.multiplayer.addChild(this.multiplayer.game);
           this.multiplayer.game.init(
@@ -1144,12 +1149,27 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     }
   }
 
+  public setUserLevel(level: UserLevel) {
+    this.userLevel = level;
+  }
+
   public startPracticeLevel(level: number) {
     this.endMenus();
-    this.multiplayer.game = new Game();
+    this.multiplayer.game = new Game(this);
     this.multiplayer.game.mode = "PRACTICE";
     this.multiplayer.addChild(this.multiplayer.game);
     this.multiplayer.game.init(null, this.playerObj, level);
     this.multiplayer.game.countdownStart();
+  }
+
+  public createLevel(level: number): Level {
+    if (level === 999 && this.userLevel) {
+      return new LevelUser(this.userLevel);
+    }
+
+    const Level = lib.flash.utils.getDefinitionByName(
+      `Level${level}`
+    ) as new () => Level;
+    return new Level();
   }
 }

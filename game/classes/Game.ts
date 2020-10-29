@@ -1,4 +1,5 @@
 import lib from "swf-lib";
+import type { MainTimeline } from "./Exit_fla/MainTimeline";
 import { BitmapCanvas } from "./john/BitmapCanvas";
 import { HandyCam } from "./john/HandyCam";
 import { Level } from "./Level";
@@ -183,7 +184,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare youArrows: any[];
 
-  public constructor() {
+  public constructor(readonly main: MainTimeline) {
     super();
     this.xCamX = 375;
     this.updateMethod = 0;
@@ -439,9 +440,11 @@ export class Game extends lib.flash.display.MovieClip {
 
   public exitOut(e: lib.flash.events.MouseEvent = null): any {
     SoundBox.stopAllSounds();
-    this.playerObject.gameLevel = this.levelNum;
-    if (this.levelNum != 0) {
-      this.playerObject.gameTime = this.timer.getTimeAsTotalSeconds();
+    if (this.mode === "SP") {
+      this.playerObject.gameLevel = this.levelNum;
+      if (this.levelNum != 0) {
+        this.playerObject.gameTime = this.timer.getTimeAsTotalSeconds();
+      }
     }
     this.dispatchEvent(new Relay(Relay.GOTO, "Game", "SinglePlayerMenu"));
   }
@@ -620,6 +623,7 @@ export class Game extends lib.flash.display.MovieClip {
           }
           if (this.level.canvas.getAlpha(curX, curY) > 0) {
             totalDist = Math2.dist(curCannon.x, curCannon.y, curX, curY) - 30;
+            console.log(totalDist);
             curCannon.beam.height = totalDist;
             for (k = 0; k < 5; k++) {
               ws = new WhiteSquare();
@@ -796,6 +800,8 @@ export class Game extends lib.flash.display.MovieClip {
     if (this.mode === "MP") {
       this.uiPanel.pauseButton.visible = false;
       this.uiPanel.exitButton.visible = false;
+    } else if (this.mode === "PRACTICE") {
+      this.uiPanel.pauseButton.visible = false;
     }
     this.camera.init(this);
     this.camera.lockY = true;
@@ -1179,10 +1185,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.levelNum = 100;
       this.tubes.myNextLevel = this.levelNum;
     }
-    var TempClass: any = lib.flash.utils.getDefinitionByName(
-      "Level" + this.levelNum
-    ) as lib.__internal.avm2.Class;
-    this.level = new TempClass() as Level;
+    this.level = this.main.createLevel(this.levelNum);
     this.level.init();
     this.addChild(this.level);
     this.curLevel = this.level;
@@ -1417,7 +1420,7 @@ export class Game extends lib.flash.display.MovieClip {
     } else if (this.levelNum <= 119) {
       this.uiPanel.levName.text = "Treadmillvania";
     } else {
-      this.uiPanel.levName.text = " ";
+      this.uiPanel.levName.text = this.level.name;
     }
     this.updateUISign();
     this.reset();

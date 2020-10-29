@@ -107,6 +107,7 @@ export { Level6 } from "./Level6";
 export { Level7 } from "./Level7";
 export { Level8 } from "./Level8";
 export { Level9 } from "./Level9";
+export { LevelUser } from "./LevelUser";
 export { LevelEnd } from "./LevelEnd";
 export { LevelEndBox } from "./LevelEndBox";
 export { LevelStart } from "./LevelStart";

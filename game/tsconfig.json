@@ -20,5 +20,6 @@
     "paths": {
       "swf-lib": ["../node_modules/@kiootic/swf-lib"]
     }
-  }
+  },
+  "references": [{ "path": "../shared" }]
 }

@@ -88,7 +88,8 @@ export class GameStore {
           type: "enter-user-level",
           onEnterLevel: (level) => {
             this.stage?.__withContext(() => {
-              this.main?.startPracticeLevel(101);
+              this.main?.setUserLevel(level);
+              this.main?.startPracticeLevel(999);
             })();
           },
         });

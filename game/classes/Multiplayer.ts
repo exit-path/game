@@ -1,4 +1,5 @@
 import lib from "swf-lib";
+import type { MainTimeline } from "./Exit_fla/MainTimeline";
 import { CharacterSelection } from "./CharacterSelection";
 import { Game } from "./Game";
 import { Lobby } from "./Lobby";
@@ -35,7 +36,7 @@ export class Multiplayer extends lib.flash.display.MovieClip {
 
   public declare xpLevels: number;
 
-  public constructor() {
+  public constructor(readonly main: MainTimeline) {
     super();
     this.isSinglePlayer = false;
     this.xpLevels = 41;
@@ -183,7 +184,7 @@ export class Multiplayer extends lib.flash.display.MovieClip {
   public startRoom(): any {}
 
   public startSinglePlayer(): any {
-    this.game = new Game();
+    this.game = new Game(this.main);
     this.game.mode = "SP";
     this.isSinglePlayer = true;
     this.game.init(this.tubes, this.playerObject, this.playerObject.gameLevel);
