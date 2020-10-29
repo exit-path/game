@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
+import { parse } from "../../../../shared/level";
 import styles from "./EnterUserLevel.module.scss";
 
 interface Props {
@@ -27,7 +28,7 @@ export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
         setIsFormValidated(true);
         return;
       }
-      console.log(levelCode);
+      console.log(parse(levelCode));
     },
     [levelCode]
   );

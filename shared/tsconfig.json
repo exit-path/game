@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "noEmit": true,
+    "emitDeclarationOnly": true,
+    "composite": true,
+    "outDir": "dist",
     "rootDir": ".",
     "target": "es2018",
     "lib": ["DOM", "ES2019"],
-    "jsx": "react",
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,11 +13,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "swf-lib": ["../node_modules/@kiootic/swf-lib"]
-    }
-  },
-  "references": [{ "path": "../game" }, { "path": "../shared" }]
+    "esModuleInterop": true
+  }
 }
