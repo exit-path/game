@@ -61,7 +61,7 @@ export function parseV1(data: string): Level {
 
   const numMatrix = reader.readInt32();
   const matrixes: Array<[number, number, number, number, number, number]> = [];
-  matrixes.push([0, 0, 0, 0, 0, 0]);
+  matrixes.push([1, 0, 0, 1, 0, 0]);
   for (let i = 0; i < numMatrix; i++) {
     matrixes.push([
       reader.readFloat(),
