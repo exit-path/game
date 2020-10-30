@@ -26,7 +26,7 @@ export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
   const onFormSubmit = useCallback(
     (data: FormData) => {
       modal.dismiss(modalId);
-      onEnterLevel(parse(data.levelCode));
+      onEnterLevel(parse(data.levelCode.replace(/^\s*(!custom)?|\s*$/g, "")));
     },
     [modal, modalId, onEnterLevel]
   );
@@ -39,7 +39,7 @@ export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
     | string
     | boolean => {
     try {
-      parse(levelCode);
+      parse(levelCode.replace(/^\s*(!custom\s*)?|\s*$/g, ""));
       return true;
     } catch (e) {
       return String(e);
