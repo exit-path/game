@@ -52,6 +52,7 @@ export class Level10 extends Level {
   }
 
   public uniqueLevelPing(): any {
+    this.sign.TICKE.ping();
     var i: any = NaN;
     if (!this.touching) {
       if (!this.hasTouched && this.player.hitTestObject(this.turnstile)) {

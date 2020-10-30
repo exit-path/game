@@ -87,13 +87,6 @@ export class Ticker extends lib.flash.display.MovieClip {
     this.prevCharacter = this.startingCharacter - 1;
     this.goalCharacter = Math2.random(this.characters.length - 1);
     this.curChar = this.characters[this.startingCharacter];
-    this.addEventListener(
-      lib.flash.events.Event.ENTER_FRAME,
-      this.ping,
-      false,
-      0,
-      true
-    );
     if (letter == null) {
       this.goalCharacter = this.getPosition(this.name);
     } else {
@@ -159,7 +152,7 @@ export class Ticker extends lib.flash.display.MovieClip {
     }
   }
 
-  public ping(e: lib.flash.events.Event): any {
+  public ping(): any {
     this.checkLetters();
   }
 

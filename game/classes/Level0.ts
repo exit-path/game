@@ -30,4 +30,10 @@ export class Level0 extends Level {
   public uniqueLevelInit(): any {
     this.addChild(this.blackOver);
   }
+
+  uniqueLevelPing() {
+    this.__1532.ping();
+    this._6530.ping();
+    this._OPEN_.ping();
+  }
 }

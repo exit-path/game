@@ -18,5 +18,7 @@ export class Level3 extends Level {
     this.addChild(this.sign);
   }
 
-  public uniqueLevelPing(): any {}
+  public uniqueLevelPing(): any {
+    this.sign.TICKERAB.ping();
+  }
 }

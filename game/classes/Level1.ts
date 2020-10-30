@@ -33,6 +33,7 @@ export class Level1 extends Level {
   }
 
   public uniqueLevelPing(): any {
+    this.sign.TICKERAB.ping();
     if (!this.touching) {
       if (this.player.hitTestObject(this.turnstile)) {
         this.touching = true;

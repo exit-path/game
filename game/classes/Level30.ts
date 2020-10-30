@@ -39,6 +39,8 @@ export class Level30 extends Level {
   }
 
   public uniqueLevelPing(): any {
+    this.sign.TICKERA.ping();
+    this.sign.TICKERB.ping();
     if (!this.touching) {
       if (!this.hasTouched && this.player.hitTestObject(this.turnstile)) {
         this.touching = true;

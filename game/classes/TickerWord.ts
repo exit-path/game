@@ -4,7 +4,7 @@ import { Ticker } from "./Ticker";
 export class TickerWord extends lib.flash.display.MovieClip {
   public declare bg: lib.flash.display.MovieClip;
 
-  public declare tickers: any[];
+  public declare tickers: Ticker[];
 
   public declare word: string;
 
@@ -52,5 +52,11 @@ export class TickerWord extends lib.flash.display.MovieClip {
     }
     lib.__internal.avm2.Runtime.trace("OWRDO", newWord);
     this.word = newWord;
+  }
+
+  public ping(): any {
+    for (const ticker of this.tickers) {
+      ticker.ping();
+    }
   }
 }

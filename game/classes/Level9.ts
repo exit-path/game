@@ -119,6 +119,7 @@ export class Level9 extends Level {
   }
 
   public uniqueLevelPing(): any {
+    this.sign.TICKERAB.ping();
     if (!this.triggeredLight) {
       if (this.player.x > 1775) {
         this.triggeredLight = true;
