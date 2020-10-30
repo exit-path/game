@@ -182,11 +182,14 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare xCamX: number;
 
+  public declare yCamY: number;
+
   public declare youArrows: any[];
 
   public constructor() {
     super();
     this.xCamX = 375;
+    this.yCamY = 375;
     this.updateMethod = 0;
     this.cLeft = false;
     this.fastSound = false;
@@ -465,6 +468,8 @@ export class Game extends lib.flash.display.MovieClip {
       this.fadeOut.y = 0 - this.y;
     } else if (this.mode === "MP") {
       this.uiPanel.arrowKeysToPan.gotoAndStop(2);
+      this.xCamX = this.player.x;
+      this.yCamY = this.player.y;
       this.levelFinished = true;
       for (i = 0; i < this.players.length; i++) {
         if (this.players[i].isPlayer) {
@@ -477,42 +482,44 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public handleCamera(): any {
-    var tempTrans: any = null;
     if (this.mode !== "SP") {
+      const viewWidth = this.level.maxWidth;
+      const viewHeight = Math.max(this.level.maxHeight, 225);
       if (this.mode === "MP" && this.player.completedLevel) {
-        this.xCamX++;
         if (Key.isDown(Key.LEFT)) {
-          this.xCamX = this.xCamX + 20;
+          this.xCamX -= 20;
         }
         if (Key.isDown(Key.RIGHT)) {
-          this.xCamX = this.xCamX - 20;
+          this.xCamX += 20;
         }
-        if (this.xCamX < 350) {
-          this.xCamX = 350;
+        if (Key.isDown(Key.UP)) {
+          this.yCamY -= 20;
         }
-        if (this.xCamX > this.level.maxWidth) {
-          this.xCamX = this.level.maxWidth;
+        if (Key.isDown(Key.DOWN)) {
+          this.yCamY += 20;
         }
+        this.xCamX = Math.min(Math.max(this.xCamX, 400), viewWidth - 400);
+        this.yCamY = Math.min(Math.max(this.yCamY, 250), viewHeight - 225);
         this.camera.limits = new Array<any>(
           400,
-          this.level.maxWidth - 400,
-          0,
-          0
+          viewWidth - 400,
+          250,
+          viewHeight - 225
         );
-        this.camera.ping(this.player.x - this.xCamX, this.player.y);
+        this.camera.ping(this.xCamX, this.yCamY);
       } else {
         this.camera.limits = new Array<any>(
           400,
-          this.level.maxWidth - 400,
-          0,
-          0
+          viewWidth - 400,
+          250,
+          viewHeight - 225
         );
         this.camera.ping(this.player.x, this.player.y);
       }
     } else {
       this.camera.limits = new Array<any>(400, this.level.maxWidth - 400, 0, 0);
       if (this.player.burningFlow) {
-        tempTrans = new lib.flash.geom.ColorTransform();
+        const tempTrans = new lib.flash.geom.ColorTransform();
         tempTrans.color = 16777215;
         this.camera.ping(this.player.x + 200, this.player.y);
         this.skin.filters = new Array<any>(
@@ -804,7 +811,8 @@ export class Game extends lib.flash.display.MovieClip {
       this.uiPanel.pauseButton.visible = false;
     }
     this.camera.init(this);
-    this.camera.lockY = true;
+    this.camera.lockX = this.level.lockCamX;
+    this.camera.lockY = this.level.lockCamY;
     this.addChild(this.uiPanel);
     this.addChild(this.emit);
     this.level.createArray();
@@ -1428,6 +1436,14 @@ export class Game extends lib.flash.display.MovieClip {
       this.tConnected = true;
     }
     this.organizeDepth();
+
+    this.camera.limits = [
+      400,
+      this.level.maxWidth - 375,
+      250,
+      this.level.maxHeight < 225 ? 225 : this.level.maxHeight - 225,
+    ];
+    this.camera.move(this.player.x, this.player.y, false);
   }
 
   public startPlayer(mc: lib.flash.display.MovieClip): any {

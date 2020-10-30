@@ -63,6 +63,8 @@ export class Level extends lib.flash.display.MovieClip {
 
   public declare maxWidth: number;
 
+  public declare maxHeight: number;
+
   public declare obstacleColour: number;
 
   public declare plates: Plate[];
@@ -92,6 +94,10 @@ export class Level extends lib.flash.display.MovieClip {
   public declare tMaxY: number;
 
   public declare toPush: Array<[lib.flash.display.MovieClip, number]>;
+
+  public lockCamX = false;
+
+  public lockCamY = true;
 
   public constructor() {
     super();
@@ -156,7 +162,7 @@ export class Level extends lib.flash.display.MovieClip {
         this.tArr[i].push(lib.__internal.avm2.Runtime.uint(0));
       }
     }
-    this.canvas.init(3000, 1000);
+    this.canvas.init(3000, 3000);
     this.addChild(this.canvas);
   }
 
@@ -267,7 +273,8 @@ export class Level extends lib.flash.display.MovieClip {
     var tile: any = null;
     this.preInitCheck();
     this.maxWidth = 0;
-    this.canvas.init(3000, 1000);
+    this.maxHeight = 0;
+    this.canvas.init(3000, 3000);
     this.addChild(this.canvas);
     for (var i: any = 0; i < this.toPush.length; i++) {
       curTileHolder = this.toPush[i][0];
@@ -281,6 +288,9 @@ export class Level extends lib.flash.display.MovieClip {
       tile.y = Math.round(curTileHolder.y);
       if (tile.x > this.maxWidth) {
         this.maxWidth = tile.x;
+      }
+      if (tile.y > this.maxHeight) {
+        this.maxHeight = tile.y;
       }
       tile.typeOf = tileType;
       if (tile.typeOf != 3) {

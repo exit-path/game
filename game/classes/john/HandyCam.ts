@@ -46,39 +46,41 @@ export class HandyCam {
     this.target = targt;
   }
 
-  public ping(xPos: number, yPos: number): any {
-    var targetX: any = undefined;
-    var limitLeft: number = NaN;
-    var limitRight: number = NaN;
-    var targetY: any = undefined;
-    var limitUp: number = NaN;
-    var limitDown: number = NaN;
-    if (!this.lockX) {
-      targetX = 0 - xPos + this.stageWidth / 2;
-      limitLeft = 0 - this.limits[0] + this.stageWidth / 2;
-      limitRight = 0 - this.limits[1] + this.stageWidth / 2;
-      if (this.enforceLimits && targetX > limitLeft) {
-        this.target.x = Anim.ease(this.target.x, limitLeft, this.driftSpeed);
-      } else if (this.enforceLimits && targetX < limitRight) {
-        this.target.x = Anim.ease(this.target.x, limitRight, this.driftSpeed);
-      } else {
+  public move(xPos: number, yPos: number, animated: boolean) {
+    if (!this.lockX && this.limits[0] < this.limits[1]) {
+      let targetX = -xPos + this.stageWidth / 2;
+      const limitLeft = this.stageWidth / 2 - this.limits[0];
+      const limitRight = this.stageWidth / 2 - this.limits[1];
+      if (this.enforceLimits) {
+        targetX = Math.max(Math.min(targetX, limitLeft), limitRight);
+      }
+
+      if (animated) {
         this.target.x = Anim.ease(this.target.x, targetX, this.driftSpeed);
+      } else {
+        this.target.x = targetX;
       }
     }
     if (!this.lockY) {
-      targetY = 0 - yPos + this.stageHeight / 2;
-      limitUp = 0 - this.limits[2] + this.stageHeight / 2;
-      limitDown = 0 - this.limits[3] + this.stageHeight / 2;
-      if (this.enforceLimits && targetY > limitUp) {
-        this.target.y = Anim.ease(this.target.y, limitUp, this.driftSpeed);
-      } else if (this.enforceLimits && targetY < limitDown) {
-        this.target.y = Anim.ease(this.target.y, limitDown, this.driftSpeed);
-      } else {
+      let targetY = -yPos + this.stageHeight / 2;
+      const limitUp = this.stageHeight / 2 - this.limits[2];
+      const limitDown = this.stageHeight / 2 - this.limits[3];
+      if (this.enforceLimits) {
+        targetY = Math.max(Math.min(targetY, limitUp), limitDown);
+      }
+
+      if (animated) {
         this.target.y = Anim.ease(this.target.y, targetY, this.driftSpeed);
+      } else {
+        this.target.y = targetY;
       }
     }
     this.camX = this.target.x;
     this.camY = this.target.y;
+  }
+
+  public ping(xPos: number, yPos: number): any {
+    this.move(xPos, yPos, true);
   }
 
   public rotateAt(angle: number, originX: number, originY: number): void {

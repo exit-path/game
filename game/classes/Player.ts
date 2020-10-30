@@ -236,7 +236,11 @@ export class Player extends TileObject {
   }
 
   public levelInteraction(): any {
-    if (this.y > 550) {
+    const height = this.curLevel.maxHeight;
+    if (
+      (height <= 550 && this.y > 550) ||
+      (height > 550 && this.y > height + 50)
+    ) {
       this.kill();
     }
     if (this.hitTestObject(this.curLevel.endPoint)) {

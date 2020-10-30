@@ -23,6 +23,8 @@ export class LevelUser extends Level {
     super();
     this.levelType = "MP";
 
+    this.lockCamX = false;
+    this.lockCamY = false;
     this.initUserLevel(userLevel);
   }
 

@@ -20,6 +20,7 @@ export class SkyLine extends lib.flash.display.MovieClip {
       this.x = 0 - this.parent.x / 10;
     } else {
       this.x = 0 - this.parent.x;
+      this.y = 0 - this.parent.y;
     }
     if (this.currentFrame == 3) {
       this.cA.ping();
