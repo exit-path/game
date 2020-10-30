@@ -17,18 +17,6 @@ export class GameStore {
 
     autorun(
       () => {
-        if (!this.container || !this.stage) {
-          return;
-        }
-
-        this.stage.__canvas.container.remove();
-        this.container.appendChild(this.stage.__canvas.container);
-      },
-      { name: "setupStageContainer" }
-    );
-
-    autorun(
-      () => {
         if (this.stage) {
           this.stage.__isActive = this.isActive;
         }
@@ -51,6 +39,8 @@ export class GameStore {
   start() {
     if (!this.root.library.value) {
       throw new Error("library is not loaded yet");
+    } else if (this.stage) {
+      return;
     }
 
     const library = this.root.library.value;
@@ -65,6 +55,9 @@ export class GameStore {
       this.main = main;
       stage.addChild(main);
     })();
+
+    this.stage.__canvas.container.remove();
+    this.container?.appendChild(this.stage.__canvas.container);
   }
 
   dispose() {
@@ -79,6 +72,11 @@ export class GameStore {
 
   setContainer = (container: HTMLDivElement) => {
     this.container = container;
+
+    if (this.stage) {
+      this.stage.__canvas.container.remove();
+      this.container?.appendChild(this.stage.__canvas.container);
+    }
   };
 
   private handleExternalEvent(event: ExternalEventProps) {

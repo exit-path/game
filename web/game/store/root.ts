@@ -1,3 +1,4 @@
+import { action } from "mobx";
 import { GameStore } from "./game";
 import { LibraryStore } from "./library";
 import { ModalStore } from "./modal";
@@ -12,4 +13,12 @@ export class RootStore {
   dispose() {
     this.game.dispose();
   }
+}
+
+if (module.hot) {
+  module.hot.dispose(
+    action(() => {
+      library.value = null;
+    })
+  );
 }
