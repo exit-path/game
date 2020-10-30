@@ -1,4 +1,5 @@
 import lib from "swf-lib";
+import { LevelFlags } from "../../shared/level";
 import { Level } from "./Level";
 import { TickerWord } from "./TickerWord";
 import { Turnstile } from "./Turnstile";
@@ -20,6 +21,7 @@ export class Level1 extends Level {
     super();
     this.touching = false;
     this.turnstile = new Turnstile();
+    this.flags = LevelFlags.FlowDisabled;
   }
 
   public uniqueLevelInit(): any {

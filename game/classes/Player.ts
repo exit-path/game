@@ -8,6 +8,8 @@ import { Key } from "./john/Key";
 import { Relay } from "./john/Relay";
 import { Anim } from "./john/Anim";
 import { Tile } from "./Tile";
+import { main } from "./global";
+import { LevelFlags } from "../../shared/level";
 
 export class Player extends TileObject {
   public declare beltSpeed: number;
@@ -150,14 +152,16 @@ export class Player extends TileObject {
   }
 
   public handleFlow(): any {
-    if (this.levelNum <= 1) {
+    const level = main().multiplayer.game.level;
+    const flowMode = level.flags & LevelFlags.FlowModeMask;
+    if (flowMode === LevelFlags.FlowDisabled) {
       return;
     }
-    if (this.levelNum == 16) {
-      return;
-    }
+
     if (this.burningFlow) {
-      this.flowPoints = this.flowPoints - 5;
+      if (flowMode !== LevelFlags.FlowAlways) {
+        this.flowPoints = this.flowPoints - 5;
+      }
       if (
         !(
           Key.isDown(lib.flash.ui.Keyboard.SPACE) ||
@@ -175,20 +179,25 @@ export class Player extends TileObject {
         }
       }
     } else {
-      if (Math.abs(this.xVel) > 2) {
-        this.flowPoints = this.flowPoints + 2;
-      } else {
-        this.flowPoints = this.flowPoints - 20;
-      }
-      if (this.flowPoints < 0) {
-        this.flowPoints = 0;
-      }
-      if (this.flowPoints > 400) {
+      if (flowMode === LevelFlags.FlowAlways) {
         this.flowPoints = 400;
-        this.dispatchEvent(new AchEvent(AchEvent.SEND, 7));
         this.fullFlow = true;
       } else {
-        this.fullFlow = false;
+        if (Math.abs(this.xVel) > 2) {
+          this.flowPoints = this.flowPoints + 2;
+        } else {
+          this.flowPoints = this.flowPoints - 20;
+        }
+        if (this.flowPoints < 0) {
+          this.flowPoints = 0;
+        }
+        if (this.flowPoints > 400) {
+          this.flowPoints = 400;
+          this.dispatchEvent(new AchEvent(AchEvent.SEND, 7));
+          this.fullFlow = true;
+        } else {
+          this.fullFlow = false;
+        }
       }
       if (
         (Key.isDown(lib.flash.ui.Keyboard.SPACE) ||
@@ -229,6 +238,13 @@ export class Player extends TileObject {
     this.xAcc = 0.8;
     this.normalXAcc = 0.8;
     this.burningXAcc = 1.5;
+
+    const level = main().multiplayer.game.level;
+    const flowMode = level.flags & LevelFlags.FlowModeMask;
+    if (flowMode === LevelFlags.FlowAlways) {
+      this.flowPoints = 400;
+      this.fullFlow = true;
+    }
   }
 
   public kill(): any {

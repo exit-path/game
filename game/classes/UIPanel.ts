@@ -4,6 +4,8 @@ import { Player } from "./Player";
 import { Anim } from "./john/Anim";
 import { SoundBox } from "./john/SoundBox";
 import { Exit_fla } from ".";
+import { main } from "./global";
+import { LevelFlags } from "../../shared/level";
 
 export class UIPanel extends lib.flash.display.MovieClip {
   public declare arrowKeysToPan: lib.flash.display.MovieClip;
@@ -71,16 +73,29 @@ export class UIPanel extends lib.flash.display.MovieClip {
   }
 
   public updateFlow(): any {
-    if (this.levelNum <= 1 || this.levelNum == 16) {
-      this.flow.visible = false;
-      return;
+    const level = main().multiplayer.game.level;
+    const flowMode = level.flags & LevelFlags.FlowModeMask;
+
+    switch (flowMode) {
+      case LevelFlags.FlowDisabled:
+        this.flow.visible = false;
+        return;
+
+      case LevelFlags.FlowNormal:
+        this.flow.visible = true;
+        this.flow.flowInside.flowBar.scaleX = Anim.ease(
+          this.flow.flowInside.flowBar.scaleX,
+          this.player.flowPoints / 400,
+          0.9
+        );
+        break;
+
+      case LevelFlags.FlowAlways:
+        this.flow.visible = true;
+        this.flow.flowInside.flowBar.scaleX = 1;
+        break;
     }
-    this.flow.visible = true;
-    this.flow.flowInside.flowBar.scaleX = Anim.ease(
-      this.flow.flowInside.flowBar.scaleX,
-      this.player.flowPoints / 400,
-      0.9
-    );
+
     if (this.player.burningFlow) {
       this.flowCount++;
       if (this.flowCount == 1) {

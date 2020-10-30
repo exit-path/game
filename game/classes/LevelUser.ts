@@ -30,6 +30,7 @@ export class LevelUser extends Level {
 
   private initUserLevel(userLevel: UserLevel) {
     this.name = userLevel.name;
+    this.flags = userLevel.flags;
     for (const object of userLevel.objects) {
       lib.flash.display.DisplayObject.__initChar(
         () => this.makeObject(object.type),

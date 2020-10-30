@@ -1,4 +1,5 @@
 import lib from "swf-lib";
+import { LevelFlags } from "../../shared/level";
 import { Level } from "./Level";
 
 export class Level16 extends Level {
@@ -11,6 +12,7 @@ export class Level16 extends Level {
   public constructor() {
     super();
     this.triggeredLight = false;
+    this.flags = LevelFlags.FlowDisabled;
   }
 
   public uniqueLevelInit(): any {

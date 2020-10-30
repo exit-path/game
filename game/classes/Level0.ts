@@ -3,6 +3,7 @@ import { Level } from "./Level";
 import { TickerWord } from "./TickerWord";
 import { PopSpikes } from "./PopSpikes";
 import { Teleporter } from "./Teleporter";
+import { LevelFlags } from "../../shared/level";
 
 export class Level0 extends Level {
   public declare __1532: TickerWord;
@@ -23,6 +24,7 @@ export class Level0 extends Level {
 
   public constructor() {
     super();
+    this.flags = LevelFlags.FlowDisabled;
   }
 
   public uniqueLevelInit(): any {

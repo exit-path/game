@@ -8,7 +8,7 @@ export enum LevelFlags {
   FlowNormal = 0,
   FlowDisabled = 1,
   FlowAlways = 2,
-  FlowTypeMask = 3,
+  FlowModeMask = 3,
 
   IsProtected = 4,
   AllowRewind = 8,

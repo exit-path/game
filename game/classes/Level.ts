@@ -21,6 +21,7 @@ import { SpikeFall } from "./SpikeFall";
 import { Grinder } from "./Grinder";
 import { Plate } from "./Plate";
 import { Teleporter } from "./Teleporter";
+import { LevelFlags } from "../../shared/level";
 
 export class Level extends lib.flash.display.MovieClip {
   public declare arrayMode: boolean;
@@ -94,6 +95,8 @@ export class Level extends lib.flash.display.MovieClip {
   public declare tMaxY: number;
 
   public declare toPush: Array<[lib.flash.display.MovieClip, number]>;
+
+  public flags: LevelFlags = 0;
 
   public lockCamX = false;
 

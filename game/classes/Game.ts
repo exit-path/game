@@ -92,7 +92,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare keysPressed: any[];
 
-  private declare level: Level;
+  public declare level: Level;
 
   public declare level30Okay: boolean;
 
