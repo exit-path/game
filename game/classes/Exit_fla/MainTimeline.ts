@@ -385,7 +385,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.loadGame();
     this.saveGame();
     this.isLoggedIn = false;
-    this.multiplayer = new Multiplayer(this);
+    this.multiplayer = new Multiplayer();
     this.singlePlayer = true;
     this.agIntro = new AGIntro();
     this.addChild(this.agIntro);
@@ -494,7 +494,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.mainMenu.kill();
           this.removeChild(this.mainMenu);
           this.mainMenu = null;
-          this.multiplayer = new Multiplayer(this);
+          this.multiplayer = new Multiplayer();
           this.addChild(this.multiplayer);
           this.multiplayer.init(this.playerObj);
           if (!this.isLoggedIn) {
@@ -507,7 +507,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.mainMenu.kill();
           this.removeChild(this.mainMenu);
           this.mainMenu = null;
-          this.multiplayer = new Multiplayer(this);
+          this.multiplayer = new Multiplayer();
           this.addChild(this.multiplayer);
           this.multiplayer.init2(this.playerObj);
           break;
@@ -737,7 +737,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
             this.multiplayer.lobby.kill();
           }
           this.multiplayer.lobby = null;
-          this.multiplayer.game = new Game(this);
+          this.multiplayer.game = new Game();
           this.multiplayer.game.mode = "MP";
           this.multiplayer.addChild(this.multiplayer.game);
           this.multiplayer.game.init(
@@ -1155,7 +1155,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public startPracticeLevel(level: number) {
     this.endMenus();
-    this.multiplayer.game = new Game(this);
+    this.multiplayer.game = new Game();
     this.multiplayer.game.mode = "PRACTICE";
     this.multiplayer.addChild(this.multiplayer.game);
     this.multiplayer.game.init(null, this.playerObj, level);

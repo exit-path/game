@@ -1,5 +1,5 @@
 import lib from "swf-lib";
-import type { MainTimeline } from "./Exit_fla/MainTimeline";
+import { main } from "./global";
 import { BitmapCanvas } from "./john/BitmapCanvas";
 import { HandyCam } from "./john/HandyCam";
 import { Level } from "./Level";
@@ -184,7 +184,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare youArrows: any[];
 
-  public constructor(readonly main: MainTimeline) {
+  public constructor() {
     super();
     this.xCamX = 375;
     this.updateMethod = 0;
@@ -1185,7 +1185,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.levelNum = 100;
       this.tubes.myNextLevel = this.levelNum;
     }
-    this.level = this.main.createLevel(this.levelNum);
+    this.level = main(this).createLevel(this.levelNum);
     this.level.init();
     this.addChild(this.level);
     this.curLevel = this.level;
