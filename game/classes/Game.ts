@@ -1067,6 +1067,10 @@ export class Game extends lib.flash.display.MovieClip {
       }
     }
     if (!this.goAhead) {
+      this.skin.x = this.player.x;
+      this.skin.y = this.player.y;
+      this.gotoAndStop(1);
+      this.skin.fuel();
       return;
     }
     if (this.levelNum == 30 && !this.level30Okay) {
