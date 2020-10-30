@@ -512,7 +512,7 @@ export class Game extends lib.flash.display.MovieClip {
           viewHeight - 225
         );
         this.camera.ping(this.xCamX, this.yCamY);
-      } else {
+      } else if (this.mode === "PRACTICE" && !this.levelFinished) {
         this.camera.limits = new Array<any>(
           400,
           viewWidth - 400,
@@ -867,6 +867,15 @@ export class Game extends lib.flash.display.MovieClip {
       }
     }
     lib.__internal.avm2.Runtime.trace("Final Player Array:", this.playerSkins);
+  }
+
+  public initPractice() {
+    this.bg.ping();
+    this.skyLine.ping();
+    this.uiPanel.ping(this.camera, this.player);
+    this.level.setPlayer(this.player);
+    this.levelStart.x = -this.camera.camX;
+    this.levelStart.y = -this.camera.camY;
   }
 
   public initSounds(): any {
