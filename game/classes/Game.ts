@@ -1193,7 +1193,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.levelNum = 100;
       this.tubes.myNextLevel = this.levelNum;
     }
-    this.level = main(this).createLevel(this.levelNum);
+    this.level = main().createLevel(this.levelNum);
     this.level.init();
     this.addChild(this.level);
     this.curLevel = this.level;
