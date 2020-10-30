@@ -768,7 +768,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           if (_loc2_ < this.playerObj.bestTime) {
             this.playerObj.bestTime = _loc2_;
           }
-          this.multiplayer.game.endFadeOut(this.multiplayer.game.fadeOut);
+          this.multiplayer.game.endFadeOut();
           this.multiplayer.game.killS();
           this.multiplayer.removeChild(this.multiplayer.game);
           this.multiplayer.game = null;
@@ -782,7 +782,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.startLowMenu();
           break;
         case "EndPractice":
-          this.multiplayer.game.endFadeOut(this.multiplayer.game.fadeOut);
+          this.multiplayer.game.endFadeOut();
           this.multiplayer.game.killS();
           this.multiplayer.removeChild(this.multiplayer.game);
           this.multiplayer.game = null;

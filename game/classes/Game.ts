@@ -420,7 +420,10 @@ export class Game extends lib.flash.display.MovieClip {
     this.level30Okay = true;
   }
 
-  public endFadeOut(mov: lib.flash.display.MovieClip): any {
+  public endFadeOut(): any {
+    if (!this.fadeOut) {
+      return;
+    }
     this.fadeOut.stop();
     this.removeChild(this.fadeOut);
     this.fadeOut = null;
@@ -448,8 +451,10 @@ export class Game extends lib.flash.display.MovieClip {
       if (this.levelNum != 0) {
         this.playerObject.gameTime = this.timer.getTimeAsTotalSeconds();
       }
+      this.dispatchEvent(new Relay(Relay.GOTO, "Game", "SinglePlayerMenu"));
+    } else if (this.mode === "PRACTICE") {
+      this.dispatchEvent(new Relay(Relay.GOTO, "Game", "EndPractice"));
     }
-    this.dispatchEvent(new Relay(Relay.GOTO, "Game", "SinglePlayerMenu"));
   }
 
   public finishLevel(): any {
