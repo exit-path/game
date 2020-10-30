@@ -79,12 +79,17 @@ export class GameStore {
     }
   };
 
+  focus() {
+    this.stage?.__canvas.element.focus();
+  }
+
   private handleExternalEvent(event: ExternalEventProps) {
     switch (event.type) {
       case "sp-user-level":
         this.root.modal.present({
           type: "enter-user-level",
           onEnterLevel: (level) => {
+            this.focus();
             this.stage?.__withContext(() => {
               this.main?.setUserLevel(level);
               this.main?.startPracticeLevel(999);
