@@ -377,20 +377,24 @@ export class Player extends TileObject {
         return;
       }
     }
-    for (i = 0; i < this.curLevel.bouncers.length; i++) {
-      if (
-        this.hitTestObject(this.curLevel.bouncers[i]) &&
-        this.curLevel.bouncers[i].currentFrame == 1
-      ) {
-        this.yVel = -20;
-        this.curLevel.bouncers[i].bounces++;
-        if (this.curLevel.bouncers[i].bounces == 10) {
+    for (const bouncer of this.curLevel.bouncers) {
+      if (this.hitTestObject(bouncer) && bouncer.currentFrame == 1) {
+        var angle = bouncer.rotation * (Math.PI / 180);
+        var newX = angle == 0 ? 0 : Math.round(20 * Math.sin(angle));
+        var newY = Math.round(-20 * Math.cos(angle));
+        if (newX != 0) {
+          this.xVel = newX;
+        }
+        this.yVel = newY;
+        this.yLove = this.yVel > 0 ? -1 : 1;
+
+        bouncer.bounces++;
+        if (bouncer.bounces == 10) {
           this.dispatchEvent(new AchEvent(AchEvent.SEND, 10));
         }
         this.playerJump = true;
         this.jumpLevel = false;
-        this.yLove = 1;
-        this.curLevel.bouncers[i].gotoAndPlay(2);
+        bouncer.gotoAndPlay(2);
         SoundBox.playSound("BouncerSound");
         return;
       }
