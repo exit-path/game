@@ -17,6 +17,8 @@ interface FormData {
   levelCode: string;
 }
 
+const levelCodeTrimRegex = /^\s*(!custom)?|\s*$|\r|\n/g;
+
 export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
   const { modalId, onEnterLevel } = props;
   const { modal } = useStore();
@@ -26,7 +28,7 @@ export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
   const onFormSubmit = useCallback(
     (data: FormData) => {
       modal.dismiss(modalId);
-      onEnterLevel(parse(data.levelCode.replace(/^\s*(!custom)?|\s*$/g, "")));
+      onEnterLevel(parse(data.levelCode.replace(levelCodeTrimRegex, "")));
     },
     [modal, modalId, onEnterLevel]
   );
@@ -39,7 +41,7 @@ export const EnterUserLevel = observer<Props>(function EnterUserLevel(props) {
     | string
     | boolean => {
     try {
-      parse(levelCode.replace(/^\s*(!custom\s*)?|\s*$/g, ""));
+      parse(levelCode.replace(levelCodeTrimRegex, ""));
       return true;
     } catch (e) {
       return String(e);
