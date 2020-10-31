@@ -56,6 +56,7 @@ export class UIPanel extends lib.flash.display.MovieClip {
     this.flowCount = 0;
     this.levelNum = 0;
     this.flow.flowInside.flowBar.scaleX = 0;
+    this.flow.flowReady.visible = false;
   }
 
   public movePanel(): any {
@@ -112,7 +113,10 @@ export class UIPanel extends lib.flash.display.MovieClip {
       this.bordering.filters = new Array<any>();
       this.flow.flowInside.filters = new Array<any>();
       if (this.player.flowPoints >= 100) {
-        if (this.flow.flowReady.visible == false) {
+        if (
+          this.flow.flowReady.visible == false &&
+          flowMode !== LevelFlags.FlowAlways
+        ) {
           this.flow.flowReady.visible = true;
           Anim.colourMe(this.flow.flowInside, 16777215);
           this.flow.flowReady.gotoAndPlay(2);
@@ -123,6 +127,7 @@ export class UIPanel extends lib.flash.display.MovieClip {
         Anim.colourMe(this.flow.flowInside, 11184810);
       }
     }
+    this.flowCount = Math.min(this.flowCount, 100);
     if (this.flowCount <= 0) {
       this.flowCount = 0;
       this.bordering.filters = new Array<any>();
