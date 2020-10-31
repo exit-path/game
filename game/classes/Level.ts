@@ -173,7 +173,6 @@ export class Level extends lib.flash.display.MovieClip {
     this.bouncers.push(mov);
     this.createTileAt(mov, 99);
     this.applyObstacleColour(mov);
-    lib.__internal.avm2.Runtime.trace("BOUNCER!", mov);
   }
 
   public createEndPoint(mov: EndPointHolder) {
@@ -354,12 +353,6 @@ export class Level extends lib.flash.display.MovieClip {
       this.teleporters[i].init();
     }
     this.uniqueLevelInit();
-  }
-
-  public getTileArray(): any {
-    for (var i: number = 0; i < this.tMaxX; i++) {
-      lib.__internal.avm2.Runtime.trace(this.tArr[i]);
-    }
   }
 
   public init(): any {

@@ -635,7 +635,6 @@ export class Game extends lib.flash.display.MovieClip {
           }
           if (this.level.canvas.getAlpha(curX, curY) > 0) {
             totalDist = Math2.dist(curCannon.x, curCannon.y, curX, curY) - 30;
-            console.log(totalDist);
             curCannon.beam.height = totalDist;
             for (k = 0; k < 5; k++) {
               ws = new WhiteSquare();
@@ -693,13 +692,8 @@ export class Game extends lib.flash.display.MovieClip {
 
   public iAmDone(str: string): any {
     var playerBar: any = null;
-    lib.__internal.avm2.Runtime.trace(str, " is done");
     for (var i: any = 0; i < this.players.length; i++) {
       if (this.players[i].userName == str) {
-        lib.__internal.avm2.Runtime.trace(
-          i,
-          " is the array index of the done player"
-        );
         if (this.players[i].isPlayer && this.players[i].completedLevel) {
           return;
         }
@@ -845,9 +839,6 @@ export class Game extends lib.flash.display.MovieClip {
     for (var i: any = 0; i < this.players.length; i++) {
       this.players[i].completedLevel = false;
       if (!this.players[i].isPlayer) {
-        lib.__internal.avm2.Runtime.trace(
-          "added to game: " + this.players[i].userName
-        );
         newSkin = new Runner();
         newSkin.x = this.players[i].xPos;
         newSkin.y = this.players[i].yPos;
@@ -866,7 +857,6 @@ export class Game extends lib.flash.display.MovieClip {
         this.skin.y = this.player.y;
       }
     }
-    lib.__internal.avm2.Runtime.trace("Final Player Array:", this.playerSkins);
   }
 
   public initPractice() {
@@ -880,12 +870,6 @@ export class Game extends lib.flash.display.MovieClip {
 
   public initSounds(): any {
     this.soundRatio = this.sForward.length / this.sBackward.length;
-    lib.__internal.avm2.Runtime.trace(
-      "SOUND RATIO:",
-      this.soundRatio,
-      this.sForward.length,
-      this.sBackward.length
-    );
     this.firstSoundPlay = true;
   }
 
@@ -1138,15 +1122,12 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public qualityOut(e: lib.flash.events.MouseEvent = null): any {
-    lib.__internal.avm2.Runtime.trace(this.stage.quality);
     if (this.stage.quality == "LOW") {
       this.stage.quality = "HIGH";
-      lib.__internal.avm2.Runtime.trace(this.stage.quality);
       return;
     }
     if (this.stage.quality == "HIGH") {
       this.stage.quality = "LOW";
-      lib.__internal.avm2.Runtime.trace(this.stage.quality);
       return;
     }
   }
@@ -1203,7 +1184,6 @@ export class Game extends lib.flash.display.MovieClip {
       }
       totalTi = Number(totalTi + (lib.flash.utils.getTimer() - time));
     }
-    lib.__internal.avm2.Runtime.trace("RunTime: ", totalTi / 10);
   }
 
   public setLevel(): any {
@@ -1222,7 +1202,6 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public setPlayerName(str: string): any {
-    lib.__internal.avm2.Runtime.trace("PLAYEROBJECT SET!", str);
     this.playerObject.gameName = str;
     this.player.gameName = str;
   }

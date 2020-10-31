@@ -203,24 +203,18 @@ export class Lobby extends lib.flash.display.MovieClip {
   }
 
   public mouseClick(e: lib.flash.events.MouseEvent = null): any {
-    console.log("CLICK!");
-    console.log("barskebgth!", this.bars.length);
     for (var i: any = 0; i < this.bars.length; i++) {
       if (this.bars[i].sMute.hitTestPoint(this.mouseX, this.mouseY)) {
-        console.log("HIT " + this.bars[i]);
         if (this.tubes.isPlayerMuted(this.players[i].userName)) {
-          console.log("Player is muted, will unmute");
           this.tubes.unMutePlayer(this.players[i].userName);
           this.bars[i].sMute.gotoAndStop(1);
           return;
         }
-        console.log("Player is unmuted, will mute");
         this.tubes.mutePlayer(this.players[i].userName);
         this.bars[i].sMute.gotoAndStop(2);
         return;
       }
     }
-    console.log("NO HIT!");
   }
 
   public ping(e: lib.flash.events.Event = null): any {

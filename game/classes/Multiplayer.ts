@@ -117,7 +117,6 @@ export class Multiplayer extends lib.flash.display.MovieClip {
   public gotRoomList(): any {}
 
   public init(playerOb: PlayerObject): any {
-    lib.__internal.avm2.Runtime.trace("MP-> INIT");
     this.initRanks();
     this.playerObject = playerOb;
     this.multiplayerMenu = new MultiplayerMenu();
@@ -168,7 +167,6 @@ export class Multiplayer extends lib.flash.display.MovieClip {
 
   public rejoin(): any {
     this.step(3);
-    lib.__internal.avm2.Runtime.trace("MP-> REJOIN");
     this.updateUserCount(this.tubes.getRoomCount(), this.tubes.getRoomMax());
   }
 
@@ -192,15 +190,12 @@ export class Multiplayer extends lib.flash.display.MovieClip {
   }
 
   public step(num: number): any {
-    lib.__internal.avm2.Runtime.trace("MP-> QP STEP", num);
     if (this.quickPlayLobby) {
-      lib.__internal.avm2.Runtime.trace("MP-> QP STEP TRIGGER", num);
       this.quickPlayLobby.step = num;
     }
   }
 
   public updateUserCount(num: number, num2: number): any {
-    lib.__internal.avm2.Runtime.trace("MP-> UPDATE USER", num, num2);
     if (this.quickPlayLobby) {
       this.quickPlayLobby.updateUserCount(num, num2);
     }

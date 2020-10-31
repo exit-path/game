@@ -197,7 +197,6 @@ export class CharacterSelection extends lib.flash.display.MovieClip {
         this["item" + i].whiteOutline.hitTestPoint(this.mouseX, this.mouseY)
       ) {
         this.runnerBar.runner.handType = this.playerObject.handType = i + 1;
-        lib.__internal.avm2.Runtime.trace("ELLO");
       }
     }
   }

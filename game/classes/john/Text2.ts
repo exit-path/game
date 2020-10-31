@@ -67,7 +67,6 @@ export class Text2 {
   }
 
   public static hexToString(num: number): string {
-    lib.__internal.avm2.Runtime.trace(num);
     var tempStr: string = "";
     tempStr = String(num);
     return tempStr;

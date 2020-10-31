@@ -171,7 +171,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public closeHandler(): void {
-    lib.__internal.avm2.Runtime.trace("CLOSING!");
     if (this.isHS) {
       if (this.multiplayer && this.contains(this.multiplayer)) {
         this.multiplayer.singlePlayerMenu.addListeners();
@@ -251,7 +250,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.LastDot = this.domain.lastIndexOf(".") - 1;
     this.domEnd = this.domain.lastIndexOf(".", this.LastDot) + 1;
     this.domain = this.domain.substring(this.domEnd, this.domain.length);
-    lib.__internal.avm2.Runtime.trace("DOMAIN = " + this.domain);
     this.currentDomain = this.domain;
     this.agDomain = true;
   }
@@ -422,7 +420,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     var tempPlayerObj: any = null;
     if (this.agi) {
       tempPlayerObj = this.agi.getUserProfile();
-      console.log(tempPlayerObj.username);
       return tempPlayerObj.username;
     }
     return this.getRandomName();
@@ -447,7 +444,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public hub(e: Relay): any {
     var _loc2_: number = NaN;
-    lib.__internal.avm2.Runtime.trace(e.sender, "->", e.msg);
     if (e.sender == "Twitter") {
       lib.flash.net.navigateToURL(this.twitterLink, "_blank");
     }
@@ -827,7 +823,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public loadGamez(): any {
-    lib.__internal.avm2.Runtime.trace("LOAD GAME FROM HISTORY!");
     this.playerObj.userName = this.getRandomName();
     this.playerObj.colour = Number(this.savedGame.data.saveObj.colour);
     this.playerObj.colour2 = Number(this.savedGame.data.saveObj.colour2);
@@ -864,7 +859,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public messageCenter(e: Relay): any {
-    lib.__internal.avm2.Runtime.trace(e.sender, "->", e.msg);
     if (e.sender == "StartBox") {
       switch (e.msg) {
         case "go":
@@ -898,7 +892,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public newGame(): any {
-    lib.__internal.avm2.Runtime.trace("NEW GAME!");
     this.playerObj.userName = this.getRandomName();
     this.playerObj.colour = 3394815;
     this.playerObj.colour2 = 16777215;
@@ -1047,7 +1040,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     if (this.isLoggedIn) {
       this.agi.submitUserDataObject(saveObj);
     }
-    lib.__internal.avm2.Runtime.trace("Game Saved!");
   }
 
   public something(e: lib.flash.events.Event = null): any {
@@ -1115,7 +1107,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public yumyum(obj: any): any {
-    lib.__internal.avm2.Runtime.trace("LOAD GAME FROM AGI");
     var myObj: any = obj.data;
     if (myObj.colour == null) {
       this.saveGame();

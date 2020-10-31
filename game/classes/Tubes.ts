@@ -172,7 +172,6 @@ export class Tubes extends lib.flash.display.MovieClip {
       playerShell.handType = this.playerObject.handType;
       playerShell.ping = this.playerObject.ping;
       this.player = playerShell;
-      lib.__internal.avm2.Runtime.trace("MY ID IS " + playerShell.id);
     }
   }
 
@@ -194,64 +193,52 @@ export class Tubes extends lib.flash.display.MovieClip {
       if (this.updaters.ping != this.currentPing) {
         this.updaters.ping = this.currentPing;
         uVars.ping = this.currentPing;
-        lib.__internal.avm2.Runtime.trace("CPing");
       }
       if (this.player.host) {
         if (this.updaters.hostTime != this.player.hostTime) {
           this.updaters.hostTime = this.player.hostTime;
           uVars.hostTime = this.player.hostTime;
-          lib.__internal.avm2.Runtime.trace("HTime");
         }
       }
       if (this.updaters.xScale != this.player.xScale) {
         this.updaters.xScale = this.player.xScale;
         uVars.scX = this.player.xScale;
-        lib.__internal.avm2.Runtime.trace("xScale");
       }
       if (this.updaters.colour != this.player.colour) {
         this.updaters.colour = this.player.colour;
         uVars.colour = this.player.colour;
-        lib.__internal.avm2.Runtime.trace("colour");
       }
       if (this.updaters.colour2 != this.player.colour2) {
         this.updaters.colour2 = this.player.colour2;
         uVars.colour2 = this.player.colour2;
-        lib.__internal.avm2.Runtime.trace("colour2");
       }
       if (this.updaters.headType != this.player.headType) {
         this.updaters.headType = this.player.headType;
         uVars.pH = this.player.headType;
-        lib.__internal.avm2.Runtime.trace("headType");
       }
       if (this.updaters.handType != this.player.handType) {
         this.updaters.handType = this.player.handType;
         uVars.pI = this.player.handType;
-        lib.__internal.avm2.Runtime.trace("handType");
       }
       if (this.updaters.xp != this.player.xp) {
         this.updaters.xp = this.player.xp;
         uVars.xp = this.player.xp;
-        lib.__internal.avm2.Runtime.trace("xp");
       }
       if (this.updaters.wins != this.player.wins) {
         this.updaters.wins = this.player.wins;
         uVars.wins = this.player.wins;
-        lib.__internal.avm2.Runtime.trace("wins");
       }
       if (this.updaters.matches != this.player.matches) {
         this.updaters.matches = this.player.matches;
         uVars.matches = this.player.matches;
-        lib.__internal.avm2.Runtime.trace("matches");
       }
       if (this.updaters.kudos != this.player.kudos) {
         this.updaters.kudos = this.player.kudos;
         uVars.kudos = this.player.kudos;
-        lib.__internal.avm2.Runtime.trace("kudos");
       }
       if (this.updaters.host != this.player.host) {
         this.updaters.host = this.player.host;
         uVars.host = this.player.host;
-        lib.__internal.avm2.Runtime.trace("host");
       }
       shortString = shortString + "x";
       if (this.updaters.xPos != Math.floor(this.player.xPos)) {
@@ -275,7 +262,6 @@ export class Tubes extends lib.flash.display.MovieClip {
       if (this.updaters.time != this.player.time) {
         this.updaters.time = this.player.time;
         uVars.time = this.player.time;
-        lib.__internal.avm2.Runtime.trace("time");
       }
       if (forcePing) {
         this.updaters.colour = this.player.colour;
@@ -424,14 +410,6 @@ export class Tubes extends lib.flash.display.MovieClip {
           break;
         }
       }
-    }
-    lib.__internal.avm2.Runtime.trace("ARRAY");
-    for (i = 0; i < arr.length; i++) {
-      lib.__internal.avm2.Runtime.trace(arr[i].player.userName);
-    }
-    lib.__internal.avm2.Runtime.trace("FINAL");
-    for (i = 0; i < this.finalList.length; i++) {
-      lib.__internal.avm2.Runtime.trace(this.finalList[i].userName);
     }
     this.timeToGo = this.timeToGoStart;
   }
@@ -890,11 +868,6 @@ export class Tubes extends lib.flash.display.MovieClip {
     var v: any = null;
     var changedVars: any[] = evt.params.changedVars;
     for (v in changedVars) {
-      lib.__internal.avm2.Runtime.trace(
-        v +
-          " room variable was updated; new value is: " +
-          evt.params.room.getVariable(v)
-      );
       if (v == "level") {
         this.myNextLevel = Number(evt.params.room.getVariable(v));
       }
@@ -1112,16 +1085,13 @@ export class Tubes extends lib.flash.display.MovieClip {
     if (wY - wX != 1) {
       playerShe.xPos = Number(str.substr(wX + 1, wY - wX - 1));
       foundXData = true;
-      lib.__internal.avm2.Runtime.trace("xPos" + playerShe.xPos);
     }
     if (wF - wY != 1) {
       playerShe.yPos = Number(str.substr(wY + 1, wF - wY - 1));
       foundYData = true;
-      lib.__internal.avm2.Runtime.trace("yPos" + playerShe.yPos);
     }
     if (wQ - wF != 1) {
       playerShe.fr = Number(str.substr(wF + 1, wQ - wF - 1));
-      lib.__internal.avm2.Runtime.trace("fr" + playerShe.fr);
     }
     playerShe.tCounterGoal = 6 + Math.floor((this.currentPing / 1000) * 30);
     if (foundXData) {
@@ -1292,7 +1262,6 @@ export class Tubes extends lib.flash.display.MovieClip {
   }
 
   public setRoomVariable(vari: string, valu: string): any {
-    lib.__internal.avm2.Runtime.trace("SET ROOM VARIABLE", vari, valu);
     var rVars: any[] = new Array<any>();
     rVars.push({ name: vari, val: valu, persistent: true });
     this.sfs.setRoomVariables(rVars);

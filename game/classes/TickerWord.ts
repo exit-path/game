@@ -50,7 +50,6 @@ export class TickerWord extends lib.flash.display.MovieClip {
       newWord =
         newWord + this.tickers[i].characters[this.tickers[i].goalCharacter];
     }
-    lib.__internal.avm2.Runtime.trace("OWRDO", newWord);
     this.word = newWord;
   }
 
