@@ -20,10 +20,14 @@ export class Teleporter extends lib.flash.display.MovieClip {
     this.letter = this.name.substr(1, 1);
     this.type = this.name.substr(2, 1);
     if (this.type == "1") {
-      this.partner = this.parent["t" + this.letter + "2"];
+      this.partner = this.parent.getChildByName(
+        `t${this.letter}2`
+      ) as Teleporter;
     }
     if (this.type == "2") {
-      this.partner = this.parent["t" + this.letter + "1"];
+      this.partner = this.parent.getChildByName(
+        `t${this.letter}1`
+      ) as Teleporter;
     }
     this.lett.text = this.letter;
   }
