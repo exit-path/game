@@ -73,7 +73,10 @@ export class UIPanel extends lib.flash.display.MovieClip {
   }
 
   public updateFlow(): any {
-    const level = main().multiplayer.game.level;
+    const level = main().multiplayer?.game?.level;
+    if (!level) {
+      return;
+    }
     const flowMode = level.flags & LevelFlags.FlowModeMask;
 
     switch (flowMode) {
