@@ -1,4 +1,6 @@
 import lib from "swf-lib";
+import { LevelFlags } from "../../shared/level";
+import type { Level } from "./Level";
 
 export class Teleporter extends lib.flash.display.MovieClip {
   public declare lett: lib.flash.text.TextField;
@@ -30,5 +32,9 @@ export class Teleporter extends lib.flash.display.MovieClip {
       ) as Teleporter;
     }
     this.lett.text = this.letter;
+
+    if (!((this.parent as Level).flags & LevelFlags.ShowTeleporterName)) {
+      this.lett.visible = false;
+    }
   }
 }

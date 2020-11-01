@@ -13,6 +13,7 @@ export enum LevelFlags {
   IsProtected = 4,
   AllowRewind = 8,
   AllowSuspend = 16,
+  ShowTeleporterName = 32,
 }
 
 export interface LevelObject {

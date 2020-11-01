@@ -96,7 +96,7 @@ export class Level extends lib.flash.display.MovieClip {
 
   public declare toPush: Array<[lib.flash.display.MovieClip, number]>;
 
-  public flags: LevelFlags = 0;
+  public flags: LevelFlags = LevelFlags.ShowTeleporterName;
 
   public lockCamX = false;
 
