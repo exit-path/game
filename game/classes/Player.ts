@@ -340,7 +340,6 @@ export class Player extends TileObject {
   }
 
   public spikeInteraction(): any {
-    var j: number = 0;
     for (var i: any = 0; i < this.curLevel.spikes.length; i++) {
       if (this.hitTestObject(this.curLevel.spikes[i].hitA)) {
         this.kill();
