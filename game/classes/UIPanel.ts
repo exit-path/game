@@ -113,16 +113,16 @@ export class UIPanel extends lib.flash.display.MovieClip {
       this.bordering.filters = new Array<any>();
       this.flow.flowInside.filters = new Array<any>();
       if (this.player.flowPoints >= 100) {
+        Anim.colourMe(this.flow.flowInside, 16777215);
         if (
           this.flow.flowReady.visible == false &&
           flowMode !== LevelFlags.FlowAlways
         ) {
           this.flow.flowReady.visible = true;
-          Anim.colourMe(this.flow.flowInside, 16777215);
           this.flow.flowReady.gotoAndPlay(2);
           SoundBox.playSound("FlowReady");
         }
-      } else if (this.flow.flowReady.visible) {
+      } else {
         this.flow.flowReady.visible = false;
         Anim.colourMe(this.flow.flowInside, 11184810);
       }
