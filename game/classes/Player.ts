@@ -412,42 +412,45 @@ export class Player extends TileObject {
         ].gotoAndStop(1);
       }
     }
-    for (i = 0; i < this.curLevel.fallingSpikes.length; i++) {
-      if (
-        this.curLevel.fallingSpikes[i].rotation == 0 ||
-        this.curLevel.fallingSpikes[i].rotation == 180
-      ) {
-        if (this.curLevel.fallingSpikes[i].smashState == 0) {
-          if (Math.abs(this.x - this.curLevel.fallingSpikes[i].x) < 10) {
-            this.curLevel.fallingSpikes[i].smashState = 1;
-            SoundBox.playSound("SpikeDrop");
-          }
-        } else if (this.curLevel.fallingSpikes[i].smashState == 1) {
-          this.curLevel.fallingSpikes[i].spikeIn.y =
-            this.curLevel.fallingSpikes[i].spikeIn.y - 20;
-          for (j = 0; j < this.curLevel.tiles.length; j++) {
-            if (
-              this.curLevel.tiles[j].hitTestObject(
-                this.curLevel.fallingSpikes[i].spikeIn.hitA
-              )
-            ) {
-              this.curLevel.fallingSpikes[i].smashState = 2;
-              SoundBox.playSound("Thud");
-              break;
-            }
-          }
-        } else if (this.curLevel.fallingSpikes[i].smashState == 2) {
-          this.curLevel.fallingSpikes[i].spikeIn.y =
-            this.curLevel.fallingSpikes[i].spikeIn.y + 10;
-          if (this.curLevel.fallingSpikes[i].spikeIn.y > 0) {
-            this.curLevel.fallingSpikes[i].smashState = 0;
-            this.curLevel.fallingSpikes[i].spikeIn.y = 0;
+    for (const fs of this.curLevel.fallingSpikes) {
+      if (fs.smashState == 0) {
+        let hit = false;
+        const angle = Math.round(fs.rotation);
+        switch (angle) {
+          case 0:
+          case 180:
+          case -180:
+            hit = Math.abs(this.x - fs.x) < 10;
+            break;
+          case 90:
+          case -90:
+            hit = Math.abs(this.y - fs.y) < 10;
+            break;
+        }
+        if (hit) {
+          fs.smashState = 1;
+          SoundBox.playSound("SpikeDrop");
+        }
+      } else if (fs.smashState == 1) {
+        fs.spikeIn.y -= 20;
+        for (const tile of this.curLevel.tiles) {
+          if (tile.hitTestObject(fs.spikeIn.hitA)) {
+            fs.smashState = 2;
+            SoundBox.playSound("Thud");
+            break;
           }
         }
-        if (this.hitTestObject(this.curLevel.fallingSpikes[i].spikeIn.hitA)) {
-          this.kill();
-          return;
+      } else if (fs.smashState == 2) {
+        fs.spikeIn.y += 10;
+        if (fs.spikeIn.y > 0) {
+          fs.smashState = 0;
+          fs.spikeIn.y = 0;
         }
+      }
+
+      if (this.hitTestObject(fs.spikeIn.hitA)) {
+        this.kill();
+        return;
       }
     }
   }

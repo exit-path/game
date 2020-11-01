@@ -17,6 +17,7 @@ import { CheckpointHolder } from "./CheckpointHolder";
 import { Teleporter } from "./Teleporter";
 import { TreadmillLeftHolder } from "./TreadmillLeftHolder";
 import { TreadmillRightHolder } from "./TreadmillRightHolder";
+import { TextPanel } from "./TextPanel";
 
 export class LevelUser extends Level {
   public constructor(userLevel: UserLevel) {
@@ -32,11 +33,14 @@ export class LevelUser extends Level {
     this.name = userLevel.name;
     this.flags = userLevel.flags;
     for (const object of userLevel.objects) {
-      lib.flash.display.DisplayObject.__initChar(
+      const obj = lib.flash.display.DisplayObject.__initChar(
         () => this.makeObject(object.type),
         (obj) => {
           this.addChild(obj);
           obj.name = object.name;
+          if (obj.name !== "") {
+            this[obj.name] = obj;
+          }
           obj.transform.matrix.__value[0] = object.matrix[0];
           obj.transform.matrix.__value[1] = object.matrix[1];
           obj.transform.matrix.__value[2] = object.matrix[2];
@@ -44,11 +48,11 @@ export class LevelUser extends Level {
           obj.transform.matrix.__value[4] = object.matrix[4];
           obj.transform.matrix.__value[5] = object.matrix[5];
           obj.__node.markLayoutDirty();
-          if (obj.name !== "") {
-            this[obj.name] = obj;
-          }
         }
       );
+      if (obj instanceof TextPanel) {
+        obj.txt.text = object.text ?? "";
+      }
     }
   }
 
@@ -87,7 +91,7 @@ export class LevelUser extends Level {
       case "right-treadmill":
         return new TreadmillRightHolder();
       case "text":
-        return new lib.flash.display.MovieClip();
+        return new TextPanel();
     }
   }
 }
