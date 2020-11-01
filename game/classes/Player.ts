@@ -413,19 +413,28 @@ export class Player extends TileObject {
       }
     }
     for (const fs of this.curLevel.fallingSpikes) {
+      const angle = Math.round(fs.rotation);
+      let isVertical: boolean;
+      switch (angle) {
+        case 0:
+        case 180:
+        case -180:
+          isVertical = true;
+          break;
+        case 90:
+        case -90:
+          isVertical = false;
+          break;
+        default:
+          continue;
+      }
+
       if (fs.smashState == 0) {
         let hit = false;
-        const angle = Math.round(fs.rotation);
-        switch (angle) {
-          case 0:
-          case 180:
-          case -180:
-            hit = Math.abs(this.x - fs.x) < 10;
-            break;
-          case 90:
-          case -90:
-            hit = Math.abs(this.y - fs.y) < 10;
-            break;
+        if (isVertical) {
+          hit = Math.abs(this.x - fs.x) < 10;
+        } else {
+          hit = Math.abs(this.y - fs.y) < 10;
         }
         if (hit) {
           fs.smashState = 1;
