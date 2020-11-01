@@ -205,7 +205,7 @@
         },
         {
           "kind": 0,
-          "depth": 100,
+          "depth": 80,
           "version": 2,
           "moveCharacter": false,
           "characterId": 10000,
@@ -215,7 +215,7 @@
         },
         {
           "kind": 0,
-          "depth": 73,
+          "depth": 100,
           "version": 2,
           "moveCharacter": false,
           "characterId": 1081,
