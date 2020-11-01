@@ -13,7 +13,7 @@
     "start": "webpack serve --mode=development"
   },
   "dependencies": {
-    "@kiootic/swf-lib": "0.3.0",
+    "@kiootic/swf-lib": "0.3.1",
     "bootstrap": "4.5.3",
     "classnames": "2.2.6",
     "mobx": "6.0.1",
