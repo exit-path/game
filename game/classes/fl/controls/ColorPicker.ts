@@ -47,9 +47,9 @@ export class ColorPicker extends lib.flash.display.DisplayObject {
   }
 
   private layout() {
-    this.__node.ensureLayout();
-    const x = this.__node.boundsWorld[0];
-    const y = this.__node.boundsWorld[1];
+    const bounds = this.getBounds(this.stage);
+    const x = bounds.x;
+    const y = bounds.y;
     if (this.renderX !== x) {
       this.elem.style.setProperty("left", `${x}px`);
       this.renderX = x;
