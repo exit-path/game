@@ -17,7 +17,6 @@ export class GameController implements Controller {
   async onGameStarted() {
     if (this.isRecorderMode) {
       this.root?.recorder.skipToSPMenu();
-      this.root?.recorder.startSPGame(0);
     }
   }
 }

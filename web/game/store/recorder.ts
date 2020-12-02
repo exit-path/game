@@ -30,7 +30,12 @@ export class RecorderStore {
     }
 
     stage.__withContext(() => {
+      if (mt.multiplayer?.game?.mode === "SP") {
+        mt.dispatchEvent(new Relay(Relay.GOTO, "Game", "SinglePlayerMenu"));
+      }
+
       mt.playerObj.gameLevel = level;
+      mt.playerObj.gameTime = 0;
       mt.dispatchEvent(new Relay(Relay.GOTO, "SinglePlayerMenu", "StartGame"));
     })();
   }

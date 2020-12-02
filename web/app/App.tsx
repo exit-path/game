@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { AppGame } from "./AppGame";
+import { AppRecorder } from "./AppRecorder";
 import { GameController } from "./controller";
-import { Game } from "./Game";
-import styles from "./App.module.scss";
 
 export const App: React.FC = () => {
   const [controller] = useState(() => {
@@ -9,9 +9,9 @@ export const App: React.FC = () => {
     return new GameController(!!params.get("recorder"));
   });
 
-  return (
-    <main className={styles.app}>
-      <Game className={styles.game} controller={controller} />
-    </main>
+  return controller.isRecorderMode ? (
+    <AppRecorder controller={controller} />
+  ) : (
+    <AppGame controller={controller} />
   );
 };

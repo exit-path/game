@@ -1,0 +1,52 @@
+.app {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  grid-template:
+    "gameA gameB" 550px
+    "ctrl ctrl" auto
+    "result result" 1fr /
+    1fr 1fr;
+
+  .gameA {
+    grid-area: gameA;
+    place-self: center;
+  }
+
+  .gameB {
+    grid-area: gameB;
+    place-self: center;
+  }
+
+  .ctrl {
+    grid-area: ctrl;
+    place-self: stretch;
+
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    gap: 16px;
+  }
+
+  .result {
+    grid-area: result;
+    place-self: stretch;
+  }
+
+  .field {
+    display: grid;
+    grid-template-columns: auto 100px;
+    gap: 16px;
+
+    .label {
+      margin: 0;
+      place-self: center end;
+    }
+
+    .input {
+      place-self: stretch stretch;
+    }
+  }
+}
