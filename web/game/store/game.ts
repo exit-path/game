@@ -58,6 +58,8 @@ export class GameStore {
 
     this.stage.__canvas.container.remove();
     this.container?.appendChild(this.stage.__canvas.container);
+
+    this.root.controller?.onGameStarted();
   }
 
   dispose() {

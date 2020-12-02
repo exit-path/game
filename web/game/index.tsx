@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Controller } from "./controller";
 import { StoreProvider } from "./store";
 import { RootStore } from "./store/root";
 import { Game, GameProps } from "./ui/Game";
@@ -24,3 +25,5 @@ const GameRoot: React.FC<GameProps> = (props) => {
 };
 
 export default GameRoot;
+
+export type { Controller };
