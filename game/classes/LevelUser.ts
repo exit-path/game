@@ -45,8 +45,8 @@ export class LevelUser extends Level {
           obj.transform.matrix.__value[1] = object.matrix[1];
           obj.transform.matrix.__value[2] = object.matrix[2];
           obj.transform.matrix.__value[3] = object.matrix[3];
-          obj.transform.matrix.__value[4] = object.matrix[4];
-          obj.transform.matrix.__value[5] = object.matrix[5];
+          obj.transform.matrix.__value[4] = object.matrix[4] * 20;
+          obj.transform.matrix.__value[5] = object.matrix[5] * 20;
           obj.__node.markLayoutDirty();
         }
       );
