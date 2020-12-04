@@ -1,4 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { autorun, runInAction } from "mobx";
+import { observer } from "mobx-react-lite";
 import { GameController } from "./controller";
 import { Game } from "./Game";
 import styles from "./AppRecorder.module.scss";
@@ -7,9 +9,10 @@ interface Props {
   controller: GameController;
 }
 
-export const AppRecorder: React.FC<Props> = (props) => {
+export const AppRecorder: React.FC<Props> = observer((props) => {
   const { controller } = props;
   const [level, setLevel] = useState(1);
+  const [recording, setRecording] = useState("");
 
   const onLevelChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,9 +21,64 @@ export const AppRecorder: React.FC<Props> = (props) => {
     []
   );
 
-  const onStart = useCallback(() => {
-    controller.root?.recorder.startSPGame(level - 1);
-  }, [controller, level]);
+  const onRecordingChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      if (!controller.root?.recorder.mode) {
+        setRecording(e.target.value);
+      }
+    },
+    [controller]
+  );
+
+  const onStartRecord = useCallback(
+    () =>
+      runInAction(() => {
+        if (!controller.root) {
+          return;
+        }
+        controller.root.recorder.startSPGame(level - 1);
+        controller.root.recorder.mode = "recording";
+      }),
+    [controller, level]
+  );
+
+  const onStartReplay = useCallback(
+    () =>
+      runInAction(() => {
+        if (!controller.root) {
+          return;
+        }
+        controller.root.recorder.startSPGame(level - 1);
+        controller.recording = recording;
+        controller.root.recorder.replayIndex = 0;
+        controller.root.recorder.mode = "replaying";
+      }),
+    [controller, recording, level]
+  );
+
+  const onStop = useCallback(
+    () =>
+      runInAction(() => {
+        if (!controller.root) {
+          return;
+        }
+        controller.root.recorder.mode = null;
+      }),
+    [controller]
+  );
+
+  useEffect(
+    () =>
+      autorun(() => {
+        if (!controller.root) {
+          return;
+        }
+        if (controller.root.recorder.mode === "recording") {
+          setRecording(controller.recording);
+        }
+      }),
+    [controller]
+  );
 
   return (
     <main className={styles.app}>
@@ -40,9 +98,18 @@ export const AppRecorder: React.FC<Props> = (props) => {
             onChange={onLevelChange}
           />
         </div>
-        <button onClick={onStart}>Start record</button>
+        <button onClick={onStartRecord}>Start record</button>
+        <button onClick={onStartReplay}>Start replay</button>
+        <button onClick={onStop}>Stop</button>
       </div>
-      <div className={styles.result}></div>
+      <div className={styles.result}>
+        <textarea
+          className={styles.recording}
+          value={recording}
+          disabled={!!controller.root?.recorder.mode}
+          onChange={onRecordingChange}
+        />
+      </div>
     </main>
   );
-};
+});

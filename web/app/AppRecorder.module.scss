@@ -33,6 +33,11 @@
   .result {
     grid-area: result;
     place-self: stretch;
+
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    gap: 16px;
   }
 
   .field {
@@ -48,5 +53,10 @@
     .input {
       place-self: stretch stretch;
     }
+  }
+
+  .recording {
+    flex: 1;
+    font-family: monospace;
   }
 }

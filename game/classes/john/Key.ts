@@ -50,7 +50,7 @@ export class Key {
 
   private static initialized: boolean = false;
 
-  private static keysDown: any = new Object();
+  public static keysDown: any = new Object();
 
   public static LEFT: string = "left";
 
