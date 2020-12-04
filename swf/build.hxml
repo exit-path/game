@@ -1,0 +1,4 @@
+--swf game.swf
+--main Main
+--swf-lib exitpath.swf
+--define flash_use_stage

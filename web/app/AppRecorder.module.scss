@@ -1,7 +1,7 @@
 .app {
   display: grid;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
 
   grid-template:
@@ -18,6 +18,7 @@
   .gameB {
     grid-area: gameB;
     place-self: center;
+    border: none;
   }
 
   .ctrl {
@@ -38,6 +39,7 @@
     flex-direction: row;
     padding: 8px;
     gap: 16px;
+    overflow: hidden;
   }
 
   .field {
@@ -58,5 +60,28 @@
   .recording {
     flex: 1;
     font-family: monospace;
+  }
+}
+
+.positions {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  .frame {
+    width: 400px;
+    height: 20px;
+  }
+  .list {
+    flex: 1 0 0;
+    border: none;
+    outline: none;
+    resize: none;
+    background: transparent;
+    color: #ddd;
+    white-space: pre;
+    overflow: hidden scroll;
+    font-family: monospace;
+    tab-size: 8;
   }
 }

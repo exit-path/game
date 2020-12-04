@@ -3,7 +3,26 @@ import { autorun, runInAction } from "mobx";
 import { observer } from "mobx-react-lite";
 import { GameController } from "./controller";
 import { Game } from "./Game";
+import { decodeRecording, encodeRecording } from "./recording";
+import { SWFRecorder } from "./swf-recorder";
 import styles from "./AppRecorder.module.scss";
+
+interface PositionListProps {
+  source: { replayPositions: [number, number][] } | undefined;
+}
+
+const PositionList: React.FC<PositionListProps> = observer((props) => {
+  const positions = props.source?.replayPositions ?? [];
+  const text = positions
+    .map((p, i) => `${i}\t${p[0].toFixed(2)}\t${p[1].toFixed(2)}`)
+    .join("\n");
+  return (
+    <div className={styles.positions}>
+      <p className={styles.frame}>{positions.length}</p>
+      <textarea className={styles.list} value={text} readOnly={true} />
+    </div>
+  );
+});
 
 interface Props {
   controller: GameController;
@@ -11,6 +30,7 @@ interface Props {
 
 export const AppRecorder: React.FC<Props> = observer((props) => {
   const { controller } = props;
+  const [swfController] = useState(() => new SWFRecorder());
   const [level, setLevel] = useState(1);
   const [recording, setRecording] = useState("");
 
@@ -30,16 +50,22 @@ export const AppRecorder: React.FC<Props> = observer((props) => {
     [controller]
   );
 
-  const onStartRecord = useCallback(
+  const onStartRecordHTML5 = useCallback(
     () =>
       runInAction(() => {
-        if (!controller.root) {
-          return;
-        }
-        controller.root.recorder.startSPGame(level - 1);
-        controller.root.recorder.mode = "recording";
+        controller.root?.recorder.startRecord();
+        controller.root?.recorder.startSPGame(level - 1);
       }),
     [controller, level]
+  );
+
+  const onStartRecordSWF = useCallback(
+    () =>
+      runInAction(() => {
+        swfController.startRecord();
+        swfController.startSPGame(level - 1);
+      }),
+    [swfController, level]
   );
 
   const onStartReplay = useCallback(
@@ -48,41 +74,67 @@ export const AppRecorder: React.FC<Props> = observer((props) => {
         if (!controller.root) {
           return;
         }
-        controller.root.recorder.startSPGame(level - 1);
-        controller.recording = recording;
-        controller.root.recorder.replayIndex = 0;
-        controller.root.recorder.mode = "replaying";
+        controller.root.recorder.recording = decodeRecording(recording);
+        controller.root.recorder.startReplay();
+        swfController.recording = decodeRecording(recording);
+        swfController.startReplay();
+
+        setTimeout(() => {
+          controller.root?.recorder.startSPGame(level - 1);
+          swfController.startSPGame(level - 1);
+        }, 0);
       }),
-    [controller, recording, level]
+    [controller, swfController, recording, level]
   );
 
   const onStop = useCallback(
     () =>
       runInAction(() => {
-        if (!controller.root) {
-          return;
+        if (controller.root?.recorder.mode === "replaying") {
+          controller.root.recorder.stopReplay();
+        } else if (controller.root?.recorder.mode === "recording") {
+          controller.root?.recorder.stopRecord();
         }
-        controller.root.recorder.mode = null;
+        if (swfController.mode === "replaying") {
+          swfController.stopReplay();
+        } else if (swfController.mode === "recording") {
+          swfController.stopRecord();
+        }
       }),
-    [controller]
+    [controller, swfController]
   );
 
   useEffect(
     () =>
       autorun(() => {
-        if (!controller.root) {
-          return;
-        }
-        if (controller.root.recorder.mode === "recording") {
-          setRecording(controller.recording);
+        if (controller.root?.recorder.mode === "recording") {
+          setRecording(encodeRecording(controller.root.recorder.recording));
+        } else if (swfController.mode === "recording") {
+          setRecording(encodeRecording(swfController.recording));
         }
       }),
-    [controller]
+    [controller, swfController]
   );
+
+  const swfMode = swfController.mode;
+  const html5Mode = controller.root?.recorder.mode ?? null;
+  const isBusy = !!(swfMode || html5Mode);
 
   return (
     <main className={styles.app}>
       <Game className={styles.gameA} controller={controller} />
+      <object
+        className={styles.gameB}
+        ref={swfController.setGame}
+        type="application/x-shockwave-flash"
+        data="/game.swf"
+        width="800"
+        height="500"
+      >
+        <param name="wmode" value="direct" />
+        <param name="allowScriptAccess" value="always" />
+      </object>
+
       <div className={styles.ctrl}>
         <div className={styles.field}>
           <label htmlFor="level" className={styles.label}>
@@ -98,17 +150,28 @@ export const AppRecorder: React.FC<Props> = observer((props) => {
             onChange={onLevelChange}
           />
         </div>
-        <button onClick={onStartRecord}>Start record</button>
-        <button onClick={onStartReplay}>Start replay</button>
-        <button onClick={onStop}>Stop</button>
+        <button onClick={onStartRecordHTML5} disabled={isBusy}>
+          Start record (HTML5)
+        </button>
+        <button onClick={onStartRecordSWF} disabled={isBusy}>
+          Start record (SWF)
+        </button>
+        <button onClick={onStartReplay} disabled={isBusy}>
+          Start replay
+        </button>
+        <button onClick={onStop} disabled={!isBusy}>
+          Stop
+        </button>
       </div>
       <div className={styles.result}>
         <textarea
           className={styles.recording}
           value={recording}
-          disabled={!!controller.root?.recorder.mode}
+          disabled={isBusy}
           onChange={onRecordingChange}
         />
+        <PositionList source={controller.root?.recorder} />
+        <PositionList source={swfController} />
       </div>
     </main>
   );

@@ -5,9 +5,15 @@ import { Key } from "../../../game/classes/john/Key";
 import type { RootStore } from "./root";
 
 export class RecorderStore {
-  mode: "recording" | "replaying" | null = null;
+  private _mode: "recording" | "replaying" | null = null;
+  private replayIndex = 0;
+  private doReplay = false;
   recording: number[] = [];
-  replayIndex = 0;
+  replayPositions: [number, number][] = [];
+
+  get mode() {
+    return this._mode;
+  }
 
   constructor(readonly root: RootStore) {
     makeAutoObservable(this);
@@ -18,13 +24,13 @@ export class RecorderStore {
       }
       stage.__withContext(() =>
         stage.addEventListener(
-          lib.flash.events.Event.EXIT_FRAME,
+          lib.flash.events.Event.ENTER_FRAME,
           this.exitFrame
         )
       )();
       return stage.__withContext(() =>
         stage.removeEventListener(
-          lib.flash.events.Event.EXIT_FRAME,
+          lib.flash.events.Event.ENTER_FRAME,
           this.exitFrame
         )
       );
@@ -54,7 +60,7 @@ export class RecorderStore {
     }
 
     stage.__withContext(() => {
-      if (mt.multiplayer?.game?.mode === "SP") {
+      if (mt.multiplayer.game) {
         mt.dispatchEvent(new Relay(Relay.GOTO, "Game", "SinglePlayerMenu"));
       }
 
@@ -62,10 +68,33 @@ export class RecorderStore {
       mt.playerObj.gameTime = 0;
       mt.dispatchEvent(new Relay(Relay.GOTO, "SinglePlayerMenu", "StartGame"));
     })();
+
+    this.doReplay = true;
+  }
+
+  startRecord() {
+    this.recording = [];
+    this._mode = "recording";
+  }
+
+  stopRecord() {
+    this._mode = null;
+  }
+
+  startReplay() {
+    this.replayIndex = 0;
+    this.replayPositions = [];
+    this._mode = "replaying";
+    this.doReplay = false;
+  }
+
+  stopReplay() {
+    Key.keysDown = {};
+    this._mode = null;
   }
 
   private exitFrame = action(() => {
-    switch (this.mode) {
+    switch (this._mode) {
       case "recording": {
         const shift =
           Key.isDown(lib.flash.ui.Keyboard.SPACE) ||
@@ -95,9 +124,12 @@ export class RecorderStore {
         break;
       }
       case "replaying": {
+        if (!this.doReplay) {
+          return;
+        }
         if (this.replayIndex >= this.recording.length) {
           Key.keysDown = {};
-          this.mode = null;
+          this._mode = null;
           return;
         }
 
@@ -118,6 +150,11 @@ export class RecorderStore {
         if (keys & 16) {
           Key.keysDown[lib.flash.ui.Keyboard.DOWN] = true;
         }
+
+        this.replayPositions.push([
+          this.root.game.instance.multiplayer.game.player.x,
+          this.root.game.instance.multiplayer.game.player.y,
+        ]);
         break;
       }
     }

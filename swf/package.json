@@ -1,0 +1,12 @@
+{
+  "name": "swf",
+  "scripts": {
+    "build": "haxe build.hxml"
+  },
+  "devDependencies": {
+    "haxe": "5.2.1"
+  },
+  "haxeDependencies": {
+    "haxe": "4.1.4"
+  }
+}
