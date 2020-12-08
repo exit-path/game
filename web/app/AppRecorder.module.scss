@@ -68,9 +68,15 @@
   flex-direction: column;
   width: 400px;
 
-  .frame {
-    width: 400px;
-    height: 20px;
+  .header {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-items: center;
+
+    .frame {
+      flex: 1 1 0;
+    }
   }
   .list {
     flex: 1 0 0;

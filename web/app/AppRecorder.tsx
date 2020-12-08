@@ -13,12 +13,22 @@ interface PositionListProps {
 
 const PositionList: React.FC<PositionListProps> = observer((props) => {
   const positions = props.source?.replayPositions ?? [];
-  const text = positions
-    .map((p, i) => `${i}\t${p[0].toFixed(2)}\t${p[1].toFixed(2)}`)
-    .join("\n");
+
+  const [text, setText] = useState("");
+  const refresh = useCallback(() => {
+    const positions = props.source?.replayPositions ?? [];
+    const text = positions
+      .map((p, i) => `${i}\t${p[0].toFixed(2)}\t${p[1].toFixed(2)}`)
+      .join("\n");
+    setText(text);
+  }, [props.source]);
+
   return (
     <div className={styles.positions}>
-      <p className={styles.frame}>{positions.length}</p>
+      <div className={styles.header}>
+        <span className={styles.frame}>{positions.length}</span>
+        <button onClick={refresh}>Refresh</button>
+      </div>
       <textarea className={styles.list} value={text} readOnly={true} />
     </div>
   );
