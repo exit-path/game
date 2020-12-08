@@ -46,7 +46,7 @@ export const AppRecorder: React.FC<Props> = observer((props) => {
 
   const onLevelChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      setLevel(Math.min(30, Math.max(1, Number(e.target.value))));
+      setLevel(Number(e.target.value));
     },
     []
   );
@@ -155,7 +155,7 @@ export const AppRecorder: React.FC<Props> = observer((props) => {
             className={styles.input}
             type="number"
             min={1}
-            max={30}
+            max={200}
             value={level}
             onChange={onLevelChange}
           />
