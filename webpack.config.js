@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -88,6 +89,11 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       template: "web/index.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "static" },
+      ],
     }),
     !isProduction && new webpack.HotModuleReplacementPlugin(),
     !isProduction &&

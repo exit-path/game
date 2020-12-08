@@ -10,6 +10,7 @@
     "lint": "eslint '{web,game}/**/*.{ts,tsx}'",
     "build": "NODE_ENV=production webpack",
     "build:data": "webpack --config data/webpack.config.js",
+    "build:swf": "cd swf && yarn install --frozen-lockfile && yarn build",
     "start": "webpack serve --mode=development"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "clean-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "6.4.0",
     "css-loader": "5.0.0",
     "css-minimizer-webpack-plugin": "1.1.5",
     "eslint": "7.12.1",
