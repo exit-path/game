@@ -1,5 +1,6 @@
 import lib from "swf-lib";
 import { CameraFlashSingular } from "./CameraFlashSingular";
+import type { Game } from "./Game";
 
 export class SkyLine extends lib.flash.display.MovieClip {
   public declare cA: CameraFlashSingular;
@@ -16,7 +17,7 @@ export class SkyLine extends lib.flash.display.MovieClip {
   }
 
   public ping(): any {
-    if (this.parent["singlePlayer"]) {
+    if ((this.parent as Game).mode !== "MP") {
       this.x = 0 - this.parent.x / 10;
     } else {
       this.x = 0 - this.parent.x;
