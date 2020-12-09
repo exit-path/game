@@ -17,7 +17,7 @@ export class SkyLine extends lib.flash.display.MovieClip {
   }
 
   public ping(): any {
-    if ((this.parent as Game).mode !== "MP") {
+    if ((this.parent as Game).levelNum < 100) {
       this.x = 0 - this.parent.x / 10;
     } else {
       this.x = 0 - this.parent.x;
