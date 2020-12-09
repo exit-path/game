@@ -13,7 +13,6 @@ class Main extends exit_fla.MainTimeline {
     static var doReplay = false;
     static var replayIndex: Int = 0;
     static var replayRecording: Array<Int> = [];
-    static var player: Player;
 
     function start() {
         mt = this;
@@ -51,7 +50,6 @@ class Main extends exit_fla.MainTimeline {
         mt.playerObj.gameLevel = level;
         mt.playerObj.gameTime = 0;
         mt.dispatchEvent(new Relay(Relay.GOTO, "SinglePlayerMenu", "StartGame"));
-        player = mt.multiplayer.game.player;
         doReplay = true;
     }
 
@@ -62,7 +60,6 @@ class Main extends exit_fla.MainTimeline {
     static function setReplay(value: Array<Int>) {
         replayIndex = 0;
         replayRecording = value;
-        player = null;
         doReplay = false;
     }
 
@@ -134,7 +131,13 @@ class Main extends exit_fla.MainTimeline {
                 mt.stage.dispatchEvent(e);
             }
             
-            ExternalInterface.call("swf.onPlayerPosition", player.x, player.y);
+            var playerX = mt.multiplayer.game.player.x;
+            var playerY = mt.multiplayer.game.player.y;
+            var otherX = 0;
+            var otherY = 0;
+            var a = 0;
+            var b = 0;
+            ExternalInterface.call("swf.onReplayRecord", playerX, playerY, otherX, otherY, a, b);
         }
     }
 }

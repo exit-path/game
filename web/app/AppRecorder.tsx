@@ -7,18 +7,37 @@ import { decodeRecording, encodeRecording } from "./recording";
 import { SWFRecorder } from "./swf-recorder";
 import styles from "./AppRecorder.module.scss";
 
+interface ReplayRecord {
+  playerX: number;
+  playerY: number;
+  otherX: number;
+  otherY: number;
+  a: number;
+  b: number;
+}
+
 interface PositionListProps {
-  source: { replayPositions: [number, number][] } | undefined;
+  source: { replayRecords: ReplayRecord[] } | undefined;
 }
 
 const PositionList: React.FC<PositionListProps> = observer((props) => {
-  const positions = props.source?.replayPositions ?? [];
+  const records = props.source?.replayRecords ?? [];
 
   const [text, setText] = useState("");
   const refresh = useCallback(() => {
-    const positions = props.source?.replayPositions ?? [];
-    const text = positions
-      .map((p, i) => `${i}\t${p[0].toFixed(2)}\t${p[1].toFixed(2)}`)
+    const records = props.source?.replayRecords ?? [];
+    const text = records
+      .map((p, i) =>
+        [
+          i,
+          p.playerX.toFixed(2),
+          p.playerY.toFixed(2),
+          p.otherX.toFixed(2),
+          p.otherY.toFixed(2),
+          p.a.toFixed(20),
+          p.b.toFixed(20),
+        ].join("\t")
+      )
       .join("\n");
     setText(text);
   }, [props.source]);
@@ -26,7 +45,7 @@ const PositionList: React.FC<PositionListProps> = observer((props) => {
   return (
     <div className={styles.positions}>
       <div className={styles.header}>
-        <span className={styles.frame}>{positions.length}</span>
+        <span className={styles.frame}>{records.length}</span>
         <button onClick={refresh}>Refresh</button>
       </div>
       <textarea className={styles.list} value={text} readOnly={true} />

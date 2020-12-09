@@ -1,5 +1,14 @@
 import { makeAutoObservable } from "mobx";
 
+interface ReplayRecord {
+  playerX: number;
+  playerY: number;
+  otherX: number;
+  otherY: number;
+  a: number;
+  b: number;
+}
+
 export interface FlashGame extends HTMLObjectElement {
   startSPGame(level: number): void;
   setMode(mode: string | null): void;
@@ -11,7 +20,7 @@ export class SWFRecorder {
   private game: FlashGame | null = null;
   private _mode: "recording" | "replaying" | null = null;
   recording: number[] = [];
-  replayPositions: [number, number][] = [];
+  replayRecords: ReplayRecord[] = [];
 
   get mode() {
     return this._mode;
@@ -45,7 +54,7 @@ export class SWFRecorder {
     this.game?.setReplay(this.recording);
     this._mode = "replaying";
     this.game?.setMode(this._mode);
-    this.replayPositions = [];
+    this.replayRecords = [];
   }
 
   stopReplay() {
@@ -61,7 +70,14 @@ export class SWFRecorder {
     this._mode = null;
   }
 
-  private onPlayerPosition(x: number, y: number) {
-    this.replayPositions.push([x, y]);
+  private onReplayRecord(
+    playerX: number,
+    playerY: number,
+    otherX: number,
+    otherY: number,
+    a: number,
+    b: number
+  ) {
+    this.replayRecords.push({ playerX, playerY, otherX, otherY, a, b });
   }
 }

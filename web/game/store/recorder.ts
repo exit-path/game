@@ -4,12 +4,21 @@ import { Relay } from "../../../game/classes/john";
 import { Key } from "../../../game/classes/john/Key";
 import type { RootStore } from "./root";
 
+interface ReplayRecord {
+  playerX: number;
+  playerY: number;
+  otherX: number;
+  otherY: number;
+  a: number;
+  b: number;
+}
+
 export class RecorderStore {
   private _mode: "recording" | "replaying" | null = null;
   private replayIndex = 0;
   private doReplay = false;
   recording: number[] = [];
-  replayPositions: [number, number][] = [];
+  replayRecords: ReplayRecord[] = [];
 
   get mode() {
     return this._mode;
@@ -83,7 +92,7 @@ export class RecorderStore {
 
   startReplay() {
     this.replayIndex = 0;
-    this.replayPositions = [];
+    this.replayRecords = [];
     this._mode = "replaying";
     this.doReplay = false;
   }
@@ -151,10 +160,15 @@ export class RecorderStore {
           Key.keysDown[lib.flash.ui.Keyboard.DOWN] = true;
         }
 
-        this.replayPositions.push([
-          this.root.game.instance.multiplayer.game.player.x,
-          this.root.game.instance.multiplayer.game.player.y,
-        ]);
+        const mt = this.root.game.instance;
+        this.replayRecords.push({
+          playerX: mt.multiplayer.game.player.x,
+          playerY: mt.multiplayer.game.player.y,
+          otherX: 0,
+          otherY: 0,
+          a: 0,
+          b: 0,
+        });
         break;
       }
     }
