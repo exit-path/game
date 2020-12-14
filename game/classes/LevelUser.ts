@@ -41,13 +41,14 @@ export class LevelUser extends Level {
           if (obj.name !== "") {
             this[obj.name] = obj;
           }
-          obj.transform.matrix.__value[0] = object.matrix[0];
-          obj.transform.matrix.__value[1] = object.matrix[1];
-          obj.transform.matrix.__value[2] = object.matrix[2];
-          obj.transform.matrix.__value[3] = object.matrix[3];
-          obj.transform.matrix.__value[4] = object.matrix[4] * 20;
-          obj.transform.matrix.__value[5] = object.matrix[5] * 20;
-          obj.__node.markLayoutDirty();
+          const m = new lib.flash.geom.Matrix();
+          m.a = object.matrix[0];
+          m.b = object.matrix[1];
+          m.c = object.matrix[2];
+          m.d = object.matrix[3];
+          m.tx = object.matrix[4];
+          m.ty = object.matrix[5];
+          obj.transform.matrix = m;
         }
       );
       if (obj instanceof TextPanel) {
