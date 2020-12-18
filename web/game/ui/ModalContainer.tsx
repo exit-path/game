@@ -3,6 +3,7 @@ import cn from "classnames";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../game/store";
 import { ModalInstance } from "../../game/store/modal";
+import { ConnectMultiplayer } from "./modals/ConnectMultiplayer";
 import { EnterUserLevel } from "./modals/EnterUserLevel";
 import styles from "./ModalContainer.module.scss";
 
@@ -37,6 +38,16 @@ const Instance = observer<InstanceProps>(function Instance(props) {
           onEnterLevel={props.modal.onEnterLevel}
         />
       );
+      break;
+    case "connect-multiplayer":
+      children = (
+        <ConnectMultiplayer
+          className={styles.dialog}
+          modalId={props.modal.id}
+          onEnterAddress={props.modal.onEnterAddress}
+        />
+      );
+      break;
   }
   return <div className={styles.overlay}>{children}</div>;
 });

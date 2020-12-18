@@ -5,6 +5,7 @@ import {
   ExternalEvent,
   ExternalEventProps,
 } from "../../../game/classes/ExternalEvent";
+import { Relay } from "../../../game/classes/john/Relay";
 import type { RootStore } from "./root";
 
 export class GameStore {
@@ -99,6 +100,18 @@ export class GameStore {
           },
         });
         break;
+      case "connect-multiplayer":
+        this.root.modal.present({
+          type: "connect-multiplayer",
+          onEnterAddress: (address) => {
+            this.focus();
+            this.stage?.__withContext(() => {
+              this.main?.dispatchEvent(
+                new Relay(Relay.GOTO, "MultiplayerMenu", "QuickPlay")
+              );
+            })();
+          },
+        });
     }
   }
 }

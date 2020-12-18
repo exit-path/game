@@ -1,0 +1,22 @@
+@import "../../../theme.scss";
+
+.dialog {
+  .form {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  .address {
+    resize: none;
+    font-family: $font-family-monospace;
+    word-break: break-all;
+  }
+}
+
+.feedback {
+  display: block;
+  margin: $modal-inner-padding;
+  flex: 1;
+}

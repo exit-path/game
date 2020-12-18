@@ -1,4 +1,5 @@
 import lib from "swf-lib";
+import { ExternalEvent } from "./ExternalEvent";
 import { Relay } from "./john/Relay";
 import { Text2 } from "./john/Text2";
 import { Runner } from "./Runner";
@@ -37,9 +38,7 @@ export class MultiplayerMenu extends lib.flash.display.MovieClip {
   public buttons(e: lib.flash.events.MouseEvent): any {
     switch (e.currentTarget) {
       case this.qp:
-        this.dispatchEvent(
-          new Relay(Relay.GOTO, "MultiplayerMenu", "QuickPlay")
-        );
+        this.dispatchEvent(new ExternalEvent({ type: "connect-multiplayer" }));
         break;
       case this.backToMenuButton:
         this.dispatchEvent(new Relay(Relay.GOTO, "MultiplayerMenu", "Back"));

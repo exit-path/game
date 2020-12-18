@@ -4,11 +4,18 @@ import type { RootStore } from "./root";
 
 export type ModalInstance = { id: number } & ModalInstanceProps;
 
-type ModalInstanceProps = ModalEnterUserLevelProps;
+type ModalInstanceProps =
+  | ModalEnterUserLevelProps
+  | ModalConnectMultiplayerProps;
 
 type ModalEnterUserLevelProps = {
   type: "enter-user-level";
   onEnterLevel: (level: Level) => void;
+};
+
+type ModalConnectMultiplayerProps = {
+  type: "connect-multiplayer";
+  onEnterAddress: (address: string) => void;
 };
 
 export class ModalStore {
