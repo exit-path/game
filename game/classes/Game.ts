@@ -929,6 +929,11 @@ export class Game extends lib.flash.display.MovieClip {
       lib.flash.events.MouseEvent.CLICK,
       this.qualityOut
     );
+    this.bg.kill();
+    this.level?.kill();
+    this.soundBackward?.stop();
+    this.soundFast?.stop();
+    this.soundForward?.stop();
   }
 
   public loadNextSinglePlayerLevel(): any {

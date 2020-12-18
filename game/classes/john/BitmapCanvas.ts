@@ -75,6 +75,10 @@ export class BitmapCanvas extends lib.flash.display.MovieClip {
   }
 
   public init(w: number = 550, h: number = 400): any {
+    if (this.bmp) {
+      this.bmpData.dispose();
+      this.removeChild(this.bmp);
+    }
     this.bmpData = new lib.flash.display.BitmapData(w, h, true, 16777215);
     this.bmp = new lib.flash.display.Bitmap(this.bmpData);
     this.addChild(this.bmp);
