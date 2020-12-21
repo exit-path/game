@@ -2,7 +2,8 @@ import lib from "swf-lib";
 
 export type ExternalEventProps =
   | { type: "sp-user-level" }
-  | { type: "connect-multiplayer" };
+  | { type: "connect-multiplayer" }
+  | { type: "disconnect-multiplayer" };
 
 export class ExternalEvent extends lib.flash.events.Event {
   static readonly TYPE = "external-event";

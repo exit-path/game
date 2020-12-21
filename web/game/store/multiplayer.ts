@@ -46,4 +46,8 @@ export class MultiplayerStore {
   public async connect() {
     await this.conn.start();
   }
+
+  public disconnect() {
+    this.conn.stop().catch((err) => console.error(err));
+  }
 }

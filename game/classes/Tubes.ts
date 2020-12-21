@@ -1,8 +1,10 @@
 import lib from "swf-lib";
 import { PlayerShell } from "./PlayerShell";
 import { Math2 } from "./john/Math2";
+import { Relay } from "./john/Relay";
 import { PlayerBar } from "./PlayerBar";
 import { PlayerObject } from "./PlayerObject";
+import { ExternalEvent } from "./ExternalEvent";
 
 export class Tubes extends lib.flash.display.MovieClip {
   public locate = "QPL";
@@ -23,7 +25,17 @@ export class Tubes extends lib.flash.display.MovieClip {
 
   public kill() {}
 
-  public disconnect() {}
+  public disconnect() {
+    this.dispatchEvent(
+      new ExternalEvent({
+        type: "disconnect-multiplayer",
+      })
+    );
+  }
+
+  public onConnectionLost() {
+    this.dispatchEvent(new Relay(Relay.GOTO, "Tubes", "TimeOut"));
+  }
 
   public onDeath() {}
 

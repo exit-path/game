@@ -27,6 +27,22 @@ export class GameStore {
       },
       { name: "bindGameActive" }
     );
+
+    autorun(
+      () => {
+        if (!this.stage || !this.multiplayer) {
+          return;
+        }
+        const handler = this.stage.__withContext((err: unknown) => {
+          if (err) {
+            this.main?.multiplayer?.tubes.onConnectionLost();
+          }
+        });
+        const mp = this.multiplayer;
+        mp.conn.onclose(handler);
+      },
+      { name: "connectionLost" }
+    );
   }
 
   get isActive(): boolean {
@@ -89,6 +105,12 @@ export class GameStore {
     this.stage?.__canvas.element.focus();
   }
 
+  private dispatchMainEvent(e: lib.flash.events.Event) {
+    this.stage?.__withContext(() => {
+      this.main?.dispatchEvent(e);
+    })();
+  }
+
   private handleExternalEvent(event: ExternalEventProps) {
     switch (event.type) {
       case "sp-user-level":
@@ -103,6 +125,7 @@ export class GameStore {
           },
         });
         break;
+
       case "connect-multiplayer":
         this.root.modal.present({
           type: "connect-multiplayer",
@@ -113,11 +136,9 @@ export class GameStore {
               return;
             }
 
-            this.stage?.__withContext(() => {
-              main.dispatchEvent(
-                new Relay(Relay.GOTO, "MultiplayerMenu", "QuickPlay")
-              );
-            })();
+            this.dispatchMainEvent(
+              new Relay(Relay.GOTO, "MultiplayerMenu", "QuickPlay")
+            );
 
             const mp = new MultiplayerStore(this.root, address);
             this.multiplayer = mp;
@@ -127,10 +148,20 @@ export class GameStore {
                 main.multiplayer.quickPlayLobby.step = 2;
               })
               .catch((e) => {
-                console.error(e);
+                if (this.multiplayer) {
+                  alert(`Cannot connect to server: ${e}`);
+                  this.stage?.__withContext(() => {
+                    this.main?.multiplayer.tubes.onConnectionLost();
+                  })();
+                }
               });
           },
         });
+        break;
+
+      case "disconnect-multiplayer":
+        this.multiplayer?.disconnect();
+        this.multiplayer = null;
     }
   }
 }
