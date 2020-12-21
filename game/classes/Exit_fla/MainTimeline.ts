@@ -1089,6 +1089,9 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public startUIBackground(): any {
+    if (this.uiBackground) {
+      this.removeChild(this.uiBackground);
+    }
     this.uiBackground = new UIBackground();
     this.addChild(this.uiBackground);
     this.addEventListener(
