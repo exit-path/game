@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@kiootic/swf-lib": "0.5.0",
+    "@microsoft/signalr": "5.0.1",
     "bootstrap": "4.5.3",
     "classnames": "2.2.6",
     "mobx": "6.0.1",

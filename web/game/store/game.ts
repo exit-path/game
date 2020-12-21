@@ -6,12 +6,15 @@ import {
   ExternalEventProps,
 } from "../../../game/classes/ExternalEvent";
 import { Relay } from "../../../game/classes/john/Relay";
+import { MultiplayerStore } from "./multiplayer";
 import type { RootStore } from "./root";
 
 export class GameStore {
   container: HTMLElement | null = null;
   stage: lib.flash.display.Stage | null = null;
   private main: MainTimeline | null = null;
+
+  multiplayer: MultiplayerStore | null = null;
 
   constructor(readonly root: RootStore) {
     makeAutoObservable(this);
@@ -105,11 +108,27 @@ export class GameStore {
           type: "connect-multiplayer",
           onEnterAddress: (address) => {
             this.focus();
+            const main = this.main;
+            if (!main) {
+              return;
+            }
+
             this.stage?.__withContext(() => {
-              this.main?.dispatchEvent(
+              main.dispatchEvent(
                 new Relay(Relay.GOTO, "MultiplayerMenu", "QuickPlay")
               );
             })();
+
+            const mp = new MultiplayerStore(this.root, address);
+            this.multiplayer = mp;
+            main.multiplayer.quickPlayLobby.step = 1;
+            mp.connect()
+              .then(() => {
+                main.multiplayer.quickPlayLobby.step = 2;
+              })
+              .catch((e) => {
+                console.error(e);
+              });
           },
         });
     }
