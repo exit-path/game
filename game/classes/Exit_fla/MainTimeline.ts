@@ -739,7 +739,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.game.init(
             this.multiplayer.tubes,
             this.playerObj,
-            this.multiplayer.tubes.myNextLevel
+            this.multiplayer.tubes.nextLevel
           );
           this.multiplayer.game.countdownStart();
           this.multiplayer.addChild(this.multiplayer.tubes);

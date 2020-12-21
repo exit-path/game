@@ -151,23 +151,10 @@ export class Multiplayer extends lib.flash.display.MovieClip {
     this.ranks.push(this.ranks[this.ranks.length - 1]);
   }
 
-  public ping(e: lib.flash.events.Event): any {
-    if (this.game) {
-      if (this.game.tConnected) {
-        if (this.tubes) {
-          this.tubes.ping();
-        }
-      }
-    }
-  }
+  public ping(e: lib.flash.events.Event): any {}
 
   public quickJoinRoom(): any {
     this.startGame();
-  }
-
-  public rejoin(): any {
-    this.step(3);
-    this.updateUserCount(this.tubes.getRoomCount(), this.tubes.getRoomMax());
   }
 
   public startGame(): any {}

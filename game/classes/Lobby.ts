@@ -126,7 +126,7 @@ export class Lobby extends lib.flash.display.MovieClip {
         this.bars[i] ==
         (e.currentTarget as lib.flash.display.DisplayObject).parent
       ) {
-        this.tubes.sendMessage("kudokudo" + this.players[i].userName);
+        this.tubes.giveKudo(this.players[i]);
       }
       if (this.players[i].isPlayer) {
         this.players[i].kudosToGive--;
@@ -205,12 +205,12 @@ export class Lobby extends lib.flash.display.MovieClip {
   public mouseClick(e: lib.flash.events.MouseEvent = null): any {
     for (var i: any = 0; i < this.bars.length; i++) {
       if (this.bars[i].sMute.hitTestPoint(this.mouseX, this.mouseY)) {
-        if (this.tubes.isPlayerMuted(this.players[i].userName)) {
-          this.tubes.unMutePlayer(this.players[i].userName);
+        if (this.tubes.isPlayerMuted(this.players[i])) {
+          this.tubes.unMutePlayer(this.players[i]);
           this.bars[i].sMute.gotoAndStop(1);
           return;
         }
-        this.tubes.mutePlayer(this.players[i].userName);
+        this.tubes.mutePlayer(this.players[i]);
         this.bars[i].sMute.gotoAndStop(2);
         return;
       }
@@ -228,22 +228,17 @@ export class Lobby extends lib.flash.display.MovieClip {
       this.nextInfo.text = "Waiting for more players...";
     }
     this.sortPlayers();
-    this.tubes.ping();
-    this.xpDisp.text = Text2.commaSnob(this.tubes.playerObject.xp) + " XP";
-    var curLevel: number = this.parent["getLevelByXP"](
-      this.tubes.playerObject.xp
-    );
-    var curRank: string = this.parent["getRankByXP"](
-      this.tubes.playerObject.xp
-    );
+    this.xpDisp.text = Text2.commaSnob(this.tubes.player.xp) + " XP";
+    var curLevel: number = this.parent["getLevelByXP"](this.tubes.player.xp);
+    var curRank: string = this.parent["getRankByXP"](this.tubes.player.xp);
     var nextLevelXP: number = this.parent["ranks"][curLevel + 1];
     var curLevelXP: number = this.parent["ranks"][curLevel];
-    var nextXP: number = nextLevelXP - this.tubes.playerObject.xp;
+    var nextXP: number = nextLevelXP - this.tubes.player.xp;
     this.xpAndLevel.text = String(curLevel);
     this.xpTill.text = Text2.commaSnob(nextXP) + " XP until the next Level";
     this.xpBar.barIn.scaleX = Anim.ease(
       this.xpBar.barIn.scaleX,
-      (this.tubes.playerObject.xp - curLevelXP) / (nextLevelXP - curLevelXP),
+      (this.tubes.player.xp - curLevelXP) / (nextLevelXP - curLevelXP),
       0.3
     );
     this.levelRank.text = curRank;
@@ -263,17 +258,12 @@ export class Lobby extends lib.flash.display.MovieClip {
 
   public returnFromGame(): any {
     this.returning = true;
-    this.tubes.timeToGo = this.tubes.timeToGoStart;
     for (var i: any = 0; i < this.players.length; i++) {
       this.players[i].matches++;
       if (this.players[i].isPlayer) {
-        this.oldXP = this.tubes.playerObject.xp;
-        this.oldLevel = this.parent["getLevelByXP"](this.tubes.playerObject.xp);
-        if (this.players[i].host) {
-          this.tubes.setRoomVariable("state", "Lobby");
-          this.tubes.resetTimeToGo();
-        }
-        this.tubes.playerObject.matches++;
+        this.oldXP = this.tubes.player.xp;
+        this.oldLevel = this.parent["getLevelByXP"](this.tubes.player.xp);
+        this.tubes.player.matches++;
         this.dispatchEvent(new AchEvent(AchEvent.SEND, 15));
         this.bars[i].kudosButton.visible = false;
       } else {
@@ -287,15 +277,15 @@ export class Lobby extends lib.flash.display.MovieClip {
         this.bars[i].boxy.updateXP(250);
         this.bars[i].boxy.kudosThisRound.text = "0";
         if (this.players[i].isPlayer) {
-          this.tubes.playerObject.xp = this.tubes.playerObject.xp + 250;
-          this.tubes.playerObject.wins++;
-          if (this.tubes.playerObject.wins >= 1) {
+          this.tubes.player.xp = this.tubes.player.xp + 250;
+          this.tubes.player.wins++;
+          if (this.tubes.player.wins >= 1) {
             this.dispatchEvent(new AchEvent(AchEvent.SEND, 24));
           }
-          if (this.tubes.playerObject.wins >= 10) {
+          if (this.tubes.player.wins >= 10) {
             this.dispatchEvent(new AchEvent(AchEvent.SEND, 25));
           }
-          if (this.tubes.playerObject.wins >= 100) {
+          if (this.tubes.player.wins >= 100) {
             this.dispatchEvent(new AchEvent(AchEvent.SEND, 26));
           }
         }
@@ -306,7 +296,7 @@ export class Lobby extends lib.flash.display.MovieClip {
         this.bars[i].boxy.updateXP(150);
         this.bars[i].boxy.kudosThisRound.text = "0";
         if (this.players[i].isPlayer) {
-          this.tubes.playerObject.xp = this.tubes.playerObject.xp + 150;
+          this.tubes.player.xp = this.tubes.player.xp + 150;
         }
       } else if (this.players[i].placing == 2) {
         this.players[i].kudosToGive = this.players[i].kudosToGive + 1;
@@ -315,27 +305,22 @@ export class Lobby extends lib.flash.display.MovieClip {
         this.bars[i].boxy.updateXP(100);
         this.bars[i].boxy.kudosThisRound.text = "0";
         if (this.players[i].isPlayer) {
-          this.tubes.playerObject.xp = this.tubes.playerObject.xp + 100;
+          this.tubes.player.xp = this.tubes.player.xp + 100;
         }
       } else {
         this.players[i].kudosToGive = this.players[i].kudosToGive + 0;
         this.players[i].xp = this.players[i].xp + 25;
-        this.tubes.playerObject.xp = this.tubes.playerObject.xp + 25;
+        this.tubes.player.xp = this.tubes.player.xp + 25;
         this.updateBar(i);
         this.bars[i].boxy.updateXP(25);
         this.bars[i].boxy.kudosThisRound.text = "0";
         if (this.players[i].isPlayer) {
-          this.tubes.playerObject.xp = this.tubes.playerObject.xp + 25;
+          this.tubes.player.xp = this.tubes.player.xp + 25;
         }
       }
     }
-    this.tubes.chooseUserLevel();
-    var levelTitle: string = this.parent["getRankByXP"](
-      this.tubes.playerObject.xp
-    );
-    var levelNum: number = this.parent["getLevelByXP"](
-      this.tubes.playerObject.xp
-    );
+    var levelTitle: string = this.parent["getRankByXP"](this.tubes.player.xp);
+    var levelNum: number = this.parent["getLevelByXP"](this.tubes.player.xp);
     if (levelNum > this.oldLevel) {
       this.levelUpWindow = new LevelUpWindow();
       this.levelUpWindow.init(levelNum, levelTitle);
@@ -345,17 +330,10 @@ export class Lobby extends lib.flash.display.MovieClip {
           this.updateBar(i);
         }
       }
-      this.tubes.sendMessage(
-        "LVX" +
-          this.tubes.playerObject.userName +
-          " has just leveled up to Level " +
-          levelNum +
-          ": " +
-          levelTitle
-      );
+      this.tubes.onPlayerLevelUp(levelNum, levelTitle);
     }
     this.dispatchEvent(new Relay(Relay.GOTO, "SaveGame"));
-    var matches: number = this.tubes.playerObject.matches;
+    var matches: number = this.tubes.player.matches;
     if (matches >= 5) {
       this.dispatchEvent(new AchEvent(AchEvent.SEND, 30));
     }
@@ -406,37 +384,14 @@ export class Lobby extends lib.flash.display.MovieClip {
     }
   }
 
-  public sendMessage(e: lib.flash.events.MouseEvent = null): any {
-    if (
-      this.texter.text == "" ||
-      this.texter.text == " " ||
-      this.texter.text == "\n" ||
-      this.texter.text == " \n" ||
-      this.texter.text.length <= 1
-    ) {
-      this.texter.text = "";
-      this.stage.focus = this.texter;
-      return;
-    }
-    if (Key.isDown(lib.flash.ui.Keyboard.ENTER)) {
-      this.texter.text = this.texter.text.substr(
-        0,
-        this.texter.text.length - 1
-      );
-    } else {
-      this.texter.text = this.texter.text.substr(0, this.texter.text.length);
-    }
-    this.tubes.sendMessage("!!" + this.texter.text);
-    this.texter.text = "";
-    this.stage.focus = this.texter;
-  }
+  public sendMessage(e: lib.flash.events.MouseEvent = null): any {}
 
   public sortPlayers(): any {
     var j: any = NaN;
     for (var i: any = 0; i < this.players.length; i++) {
       this.bars[i].x = 50;
-      for (j = 0; j < this.tubes.finalList.length; j++) {
-        if (this.tubes.finalList[j] == this.players[i]) {
+      for (j = 0; j < this.tubes.rankedPlayers.length; j++) {
+        if (this.tubes.rankedPlayers[j] == this.players[i]) {
           this.bars[i].y = Anim.ease(this.bars[i].y, 100 + j * 50, 0.3);
         }
       }
@@ -476,7 +431,7 @@ export class Lobby extends lib.flash.display.MovieClip {
     } else {
       disp.playerBorder.visible = false;
     }
-    if (this.tubes.isPlayerMuted(player.userName)) {
+    if (this.tubes.isPlayerMuted(player)) {
       disp.sMute.gotoAndStop(2);
     } else {
       disp.sMute.gotoAndStop(1);

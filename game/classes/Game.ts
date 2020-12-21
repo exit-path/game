@@ -260,7 +260,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public checkPoint(): any {
     if (this.tConnected) {
-      this.tubes.sendMessage("CHECK" + this.curLevel.startPoint["id"]);
+      this.tubes.onCheckpoint(this.curLevel.startPoint["id"]);
     }
   }
 
@@ -413,7 +413,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.finalPlacingArray.push(playerBar);
       tempArray.splice(remI, 1);
     }
-    this.tubes.giveFinalList(this.finalPlacingArray);
+    this.tubes.onEndGame(this.finalPlacingArray);
   }
 
   public endEnding(): any {
@@ -479,7 +479,7 @@ export class Game extends lib.flash.display.MovieClip {
       for (i = 0; i < this.players.length; i++) {
         if (this.players[i].isPlayer) {
           this.players[i].time = this.timer.getFrameTime();
-          this.tubes.sendTime();
+          this.tubes.onFinishGame();
           this.iAmDone(this.players[i].userName);
         }
       }
@@ -724,7 +724,6 @@ export class Game extends lib.flash.display.MovieClip {
       this.levelNum = level;
     } else if (this.mode === "MP") {
       this.tubes = tuber;
-      this.tubes.debuggy.txt.text = " ";
       this.updateMethod = 0;
       this.levelNum = level;
     } else if (this.mode === "PRACTICE") {
@@ -878,7 +877,7 @@ export class Game extends lib.flash.display.MovieClip {
       return;
     }
     if (this.tConnected) {
-      this.tubes.sendMessage("die");
+      this.tubes.onDeath();
     }
     if (
       this.mode === "SP" &&
@@ -1088,11 +1087,6 @@ export class Game extends lib.flash.display.MovieClip {
     if (!this.levelFinished) {
       if (this.levelNum != 30) {
         this.timer.ping();
-        if (this.mode === "MP") {
-          if (this.tubes.player.host) {
-            this.tubes.player.hostTime = this.timer.getFrameTime();
-          }
-        }
       }
     }
     if (this.levelNum != 30) {
@@ -1192,10 +1186,6 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public setLevel(): any {
-    if (this.mode === "MP" && !this.levelNum) {
-      this.levelNum = 100;
-      this.tubes.myNextLevel = this.levelNum;
-    }
     this.level = main().createLevel(this.levelNum);
     this.level.init();
     this.addChild(this.level);
@@ -1571,12 +1561,6 @@ export class Game extends lib.flash.display.MovieClip {
         this.playerSkins[i].addCheckPoint(checkID);
         return;
       }
-    }
-  }
-
-  public tDie(id: number, userName: string): any {
-    if (userName == this.tubes.getMyName()) {
-      return;
     }
   }
 
