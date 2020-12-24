@@ -48,8 +48,8 @@ export const Game: React.FC<GameProps> = observer(function Game(props) {
   }
 
   return (
-    <div className={cn(styles.game, props.className)}>
-      <ModalContainer>
+    <div className={cn(styles.root, props.className)}>
+      <ModalContainer className={styles.game}>
         <GameArea />
       </ModalContainer>
     </div>
