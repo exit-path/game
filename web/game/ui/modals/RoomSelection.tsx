@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { autorun } from "mobx";
+import { reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 import { Relay } from "../../../../game/classes/john/Relay";
+import { RemoteRoom, RoomLobbyState } from "../../models/multiplayer";
 import { useStore } from "../../store";
 import styles from "./RoomSelection.module.scss";
-import { RemoteRoom, RoomLobbyState } from "../../models/multiplayer";
 
 interface RoomItemProps {
   room: RemoteRoom;
@@ -14,13 +14,30 @@ interface RoomItemProps {
 
 const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
   const { id, name, numPlayers } = props.room;
-  return <li className={styles.item}>
-    <span>{name}</span>
-    <span>{numPlayers}</span>
-    <div className={styles.actions}>
-      <button className={styles.action}>Join</button>
-    </div>
-  </li>;
+  const { game } = useStore();
+
+  const onJoin = useCallback(() => {
+    game.multiplayer
+      ?.joinRoom(id)
+      .catch((e) => ({ error: String(e) }))
+      .then(({ error }) => {
+        if (error) {
+          alert(error);
+        }
+      });
+  }, [id, game]);
+
+  return (
+    <li className={styles.item}>
+      <span>{name}</span>
+      <span>{numPlayers}</span>
+      <div className={styles.actions}>
+        <button className={styles.action} onClick={onJoin}>
+          Join
+        </button>
+      </div>
+    </li>
+  );
 });
 
 interface RoomListProps {
@@ -30,19 +47,19 @@ interface RoomListProps {
 const RoomList = observer<RoomListProps>(function RoomList(props) {
   return (
     <div className={styles.roomList}>
-    <div className={styles.headerWrapper}>
-      <div className={styles.header}>
-        <span>Name</span>
-        <span>Players</span>
-      </div>
+      <div className={styles.headerWrapper}>
+        <div className={styles.header}>
+          <span>Name</span>
+          <span>Players</span>
+        </div>
         <div className={styles.spacer} />
-    </div>
-    <ul className={styles.list}>
+      </div>
+      <ul className={styles.list}>
         {props.rooms.map((r) => (
           <RoomItem key={r.id} room={r} />
         ))}
-    </ul>
-  </div>
+      </ul>
+    </div>
   );
 });
 
@@ -65,11 +82,15 @@ export const RoomSelection = observer<Props>(function RoomSelection(props) {
 
   useEffect(
     () =>
-      autorun(() => {
-        if (room?.id !== "lobby") {
-          modal.dismiss(modalId);
-        }
-      }),
+      reaction(
+        () => room?.id === "lobby",
+        (isInLobby) => {
+          if (!isInLobby) {
+            modal.dismiss(modalId);
+          }
+        },
+        { fireImmediately: true }
+      ),
     [room, modal, modalId]
   );
 
@@ -81,12 +102,10 @@ export const RoomSelection = observer<Props>(function RoomSelection(props) {
         .then(({ error }) => {
           if (error) {
             setError("roomName", { message: error });
-          } else {
-            modal.dismiss(modalId);
           }
         });
     },
-    [modal, modalId, game.multiplayer, setError]
+    [game.multiplayer, setError]
   );
 
   const onClose = useCallback(() => {

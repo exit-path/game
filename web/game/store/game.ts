@@ -12,7 +12,7 @@ import type { RootStore } from "./root";
 export class GameStore {
   container: HTMLElement | null = null;
   stage: lib.flash.display.Stage | null = null;
-  private main: MainTimeline | null = null;
+  main: MainTimeline | null = null;
 
   multiplayer: MultiplayerStore | null = null;
 
@@ -26,22 +26,6 @@ export class GameStore {
         }
       },
       { name: "bindGameActive" }
-    );
-
-    autorun(
-      () => {
-        if (!this.stage || !this.multiplayer) {
-          return;
-        }
-        const handler = this.stage.__withContext((err: unknown) => {
-          if (err) {
-            this.main?.multiplayer?.tubes.onConnectionLost();
-          }
-        });
-        const mp = this.multiplayer;
-        mp.conn.onclose(handler);
-      },
-      { name: "connectionLost" }
     );
   }
 

@@ -3,7 +3,7 @@ import {
   HubConnectionBuilder,
   LogLevel,
 } from "@microsoft/signalr";
-import { makeAutoObservable } from "mobx";
+import { autorun, makeAutoObservable, reaction } from "mobx";
 import { PlayerData } from "../models/data";
 import {
   JoinRoomMessage,
@@ -34,6 +34,33 @@ export class MultiplayerStore {
     this.conn.on("JoinRoom", this.onJoinRoom);
     this.conn.on("UpdatePlayers", this.onUpdatePlayers);
     this.conn.on("UpdateState", this.onUpdateState);
+
+    autorun(
+      () => {
+        if (!this.root.game.stage) {
+          return;
+        }
+        const handler = this.root.game.stage.__withContext((err: unknown) => {
+          if (err) {
+            this.root.game.main?.multiplayer?.tubes.onConnectionLost();
+          }
+        });
+        this.conn.onclose(handler);
+      },
+      { name: "connectionLost" }
+    );
+
+    reaction(
+      () => this.room && this.room.id !== "lobby",
+      (inGameRoom) => {
+        const main = this.root.game.main;
+        if (main && inGameRoom) {
+          main.multiplayer.quickPlayLobby.step = 4;
+          main.multiplayer.tubes.player = main.playerObj;
+        }
+      },
+      { name: "joinGameRoom" }
+    );
   }
 
   private requestAccessToken = async () => {
@@ -109,5 +136,9 @@ export class MultiplayerStore {
 
   public async createRoom(name: string) {
     return await this.conn.invoke<{ error?: string }>("CreateGameRoom", name);
+  }
+
+  public async joinRoom(roomId: string) {
+    return await this.conn.invoke<{ error?: string }>("JoinRoom", roomId);
   }
 }
