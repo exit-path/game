@@ -11,6 +11,91 @@
 .roomList {
   grid-area: list;
   place-self: stretch;
+  display: flex;
+  flex-direction: column;
+
+  .list {
+    flex: 1 0 0;
+    min-height: 0;
+    overflow-y: scroll;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header,
+  .item {
+    display: grid;
+    grid-template:
+      "name count actions" 1fr /
+      1fr 128px 192px;
+    align-items: center;
+  }
+
+  .headerWrapper {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+
+    .header {
+      flex: 1 0 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #a0a0a0;
+      height: 24px;
+    }
+
+    .spacer {
+      overflow-y: scroll;
+      visibility: hidden;
+    }
+  }
+
+  .item {
+    height: 40px;
+
+    > * {
+      margin: 0 8px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &:focus-within {
+      background: rgba(#ffffff, 0.05);
+    }
+    &:hover {
+      background: rgba(#ffffff, 0.1);
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    place-self: stretch;
+    opacity: 0;
+
+    .action {
+      background: none;
+      border: none;
+      outline: none;
+      color: inherit;
+      padding: 0 16px;
+
+      &:focus,
+      &:hover {
+        background: rgba(#ffffff, 0.05);
+      }
+    }
+  }
+
+  .item:hover,
+  .item:focus-within {
+    .actions {
+      opacity: 1;
+    }
+  }
 }
 
 .createRoom {

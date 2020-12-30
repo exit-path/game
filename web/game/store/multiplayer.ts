@@ -106,4 +106,8 @@ export class MultiplayerStore {
 
     this.room.state = msg.newState;
   };
+
+  public async createRoom(name: string) {
+    return await this.conn.invoke<{ error?: string }>("CreateGameRoom", name);
+  }
 }

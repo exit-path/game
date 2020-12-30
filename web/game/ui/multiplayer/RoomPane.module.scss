@@ -34,12 +34,6 @@
   height: 48px;
   padding: 4px 16px;
 
-  background: none;
-  border: none;
-  outline: none;
-  color: inherit;
-  text-align: inherit;
-
   &:focus-within {
     background: rgba(#ffffff, 0.05);
   }
