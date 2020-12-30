@@ -1,0 +1,34 @@
+@import "../../../theme.scss";
+
+.content {
+  display: grid;
+  grid-template:
+    "list        list list" 1fr
+    "create-room sep  actions" 120px /
+    1fr 32px 1fr;
+}
+
+.roomList {
+  grid-area: list;
+  place-self: stretch;
+}
+
+.createRoom {
+  grid-area: create-room;
+
+  .roomName {
+    flex: 1 0 50%;
+    margin-left: 8px;
+  }
+
+  .feedback {
+    flex: 1 0 50%;
+    display: block;
+  }
+}
+
+.sep {
+  width: 0px;
+  border-left: rgba(#ffffff, 0.2) solid 1px;
+  place-self: stretch center;
+}

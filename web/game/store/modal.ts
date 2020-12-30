@@ -6,7 +6,8 @@ export type ModalInstance = { id: number } & ModalInstanceProps;
 
 type ModalInstanceProps =
   | ModalEnterUserLevelProps
-  | ModalConnectMultiplayerProps;
+  | ModalConnectMultiplayerProps
+  | ModalRoomSelectionProps;
 
 type ModalEnterUserLevelProps = {
   type: "enter-user-level";
@@ -18,9 +19,25 @@ type ModalConnectMultiplayerProps = {
   onEnterAddress: (address: string) => void;
 };
 
+type ModalRoomSelectionProps = {
+  type: "room-selection";
+};
+
 export class ModalStore {
   nextInstanceId = 1;
   instances: ModalInstance[] = [];
+
+  get shouldSuspendGame() {
+    for (const { type } of this.instances) {
+      switch (type) {
+        case "room-selection":
+          continue;
+        default:
+          return true;
+      }
+    }
+    return false;
+  }
 
   constructor(readonly root: RootStore) {
     makeAutoObservable(this);

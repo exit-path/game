@@ -83,6 +83,10 @@ export class MultiplayerStore {
       players: msg.players,
       state: msg.state,
     };
+
+    if (this.room.id === "lobby") {
+      this.root.modal.present({ type: "room-selection" });
+    }
   };
 
   private onUpdatePlayers = (msg: UpdatePlayersMessage) => {

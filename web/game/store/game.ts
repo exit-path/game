@@ -46,7 +46,7 @@ export class GameStore {
   }
 
   get isActive(): boolean {
-    return this.root.modal.instances.length === 0;
+    return !this.root.modal.shouldSuspendGame;
   }
 
   get instance(): MainTimeline {
@@ -105,7 +105,7 @@ export class GameStore {
     this.stage?.__canvas.element.focus();
   }
 
-  private dispatchMainEvent(e: lib.flash.events.Event) {
+  dispatchMainEvent(e: lib.flash.events.Event) {
     this.stage?.__withContext(() => {
       this.main?.dispatchEvent(e);
     })();

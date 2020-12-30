@@ -5,6 +5,7 @@ import { useStore } from "../../game/store";
 import { ModalInstance } from "../../game/store/modal";
 import { ConnectMultiplayer } from "./modals/ConnectMultiplayer";
 import { EnterUserLevel } from "./modals/EnterUserLevel";
+import { RoomSelection } from "./modals/RoomSelection";
 import styles from "./ModalContainer.module.scss";
 
 interface Props {
@@ -46,6 +47,11 @@ const Instance = observer<InstanceProps>(function Instance(props) {
           modalId={props.modal.id}
           onEnterAddress={props.modal.onEnterAddress}
         />
+      );
+      break;
+    case "room-selection":
+      children = (
+        <RoomSelection className={styles.dialog} modalId={props.modal.id} />
       );
       break;
   }
