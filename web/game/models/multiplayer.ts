@@ -4,8 +4,9 @@ export interface RemotePlayer {
   color: number;
 }
 
-export interface Room {
+export interface Room<T = unknown> {
   id: string;
   name: string;
   players: RemotePlayer[];
+  state: T;
 }

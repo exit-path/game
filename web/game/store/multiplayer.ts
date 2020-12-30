@@ -5,7 +5,11 @@ import {
 } from "@microsoft/signalr";
 import { makeAutoObservable } from "mobx";
 import { PlayerData } from "../models/data";
-import { JoinRoomMessage, UpdatePlayersMessage } from "../models/messages";
+import {
+  JoinRoomMessage,
+  UpdatePlayersMessage,
+  UpdateStateMessage,
+} from "../models/messages";
 import { Room } from "../models/multiplayer";
 import type { RootStore } from "./root";
 
@@ -29,6 +33,7 @@ export class MultiplayerStore {
 
     this.conn.on("JoinRoom", this.onJoinRoom);
     this.conn.on("UpdatePlayers", this.onUpdatePlayers);
+    this.conn.on("UpdateState", this.onUpdateState);
   }
 
   private requestAccessToken = async () => {
@@ -76,6 +81,7 @@ export class MultiplayerStore {
       id: msg.id,
       name: msg.name,
       players: msg.players,
+      state: msg.state,
     };
   };
 
@@ -87,5 +93,13 @@ export class MultiplayerStore {
     const players = this.room.players.filter((p) => !msg.exited.includes(p.id));
     players.push(...msg.joined);
     this.room.players = players;
+  };
+
+  private onUpdateState = (msg: UpdateStateMessage) => {
+    if (!this.room) {
+      return;
+    }
+
+    this.room.state = msg.newState;
   };
 }
