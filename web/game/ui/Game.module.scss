@@ -33,3 +33,9 @@
 .game {
   grid-area: game;
 }
+
+.side {
+  grid-area: side;
+  margin: 8px 8px 0 0;
+  min-width: 0;
+}

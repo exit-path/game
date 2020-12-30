@@ -6,6 +6,7 @@ import { Controller } from "../controller";
 import { useStore } from "../store";
 import { GameArea } from "./GameArea";
 import { ModalContainer } from "./ModalContainer";
+import { SidePane } from "./SidePane";
 import styles from "./Game.module.scss";
 
 export interface GameProps {
@@ -52,6 +53,7 @@ export const Game: React.FC<GameProps> = observer(function Game(props) {
       <ModalContainer className={styles.game}>
         <GameArea />
       </ModalContainer>
+      <SidePane className={styles.side} />
     </div>
   );
 });

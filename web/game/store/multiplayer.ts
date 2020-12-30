@@ -4,10 +4,14 @@ import {
   LogLevel,
 } from "@microsoft/signalr";
 import { makeAutoObservable } from "mobx";
+import { JoinRoomMessage, UpdatePlayersMessage } from "../models/messages";
+import { Room } from "../models/multiplayer";
 import type { RootStore } from "./root";
 
 export class MultiplayerStore {
   readonly conn: HubConnection;
+
+  room: Room | null = null;
 
   constructor(
     readonly root: RootStore,
@@ -21,6 +25,9 @@ export class MultiplayerStore {
       .withUrl(url.toString(), { accessTokenFactory: this.requestAccessToken })
       .configureLogging(LogLevel.Information)
       .build();
+
+    this.conn.on("JoinRoom", this.onJoinRoom);
+    this.conn.on("UpdatePlayers", this.onUpdatePlayers);
   }
 
   private requestAccessToken = async () => {
@@ -50,4 +57,22 @@ export class MultiplayerStore {
   public disconnect() {
     this.conn.stop().catch((err) => console.error(err));
   }
+
+  private onJoinRoom = (msg: JoinRoomMessage) => {
+    this.room = {
+      id: msg.id,
+      name: msg.name,
+      players: msg.players,
+    };
+  };
+
+  private onUpdatePlayers = (msg: UpdatePlayersMessage) => {
+    if (!this.room) {
+      return;
+    }
+
+    const players = this.room.players.filter((p) => !msg.exited.includes(p.id));
+    players.push(...msg.joined);
+    this.room.players = players;
+  };
 }

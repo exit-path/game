@@ -1,0 +1,56 @@
+.pane {
+  background: rgba(#808080, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  height: 120px;
+  padding: 16px;
+  border-bottom: rgba(#ffffff, 0.1) solid 1px;
+}
+
+.roomName {
+  font-size: 20px;
+  color: #d0d0d0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.playerList {
+  flex: 1 0 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.playerItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  padding: 4px 16px;
+
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  text-align: inherit;
+
+  &:focus-within {
+    background: rgba(#ffffff, 0.05);
+  }
+  &:hover {
+    background: rgba(#ffffff, 0.1);
+  }
+}
+
+.playerName {
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
