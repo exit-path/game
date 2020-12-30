@@ -4,6 +4,7 @@ import {
   LogLevel,
 } from "@microsoft/signalr";
 import { makeAutoObservable } from "mobx";
+import { PlayerData } from "../models/data";
 import { JoinRoomMessage, UpdatePlayersMessage } from "../models/messages";
 import { Room } from "../models/multiplayer";
 import type { RootStore } from "./root";
@@ -31,6 +32,18 @@ export class MultiplayerStore {
   }
 
   private requestAccessToken = async () => {
+    const player: PlayerData = {
+      displayName: this.root.game.instance.playerObj.userName,
+      primaryColor: this.root.game.instance.playerObj.colour,
+      secondaryColor: this.root.game.instance.playerObj.colour2,
+      headType: this.root.game.instance.playerObj.headType,
+      handType: this.root.game.instance.playerObj.handType,
+      xp: this.root.game.instance.playerObj.xp,
+      kudos: this.root.game.instance.playerObj.kudos,
+      matches: this.root.game.instance.playerObj.matches,
+      wins: this.root.game.instance.playerObj.wins,
+    };
+
     const url = new URL("api/multiplayer/auth", this.address);
     const resp = await fetch(url.toString(), {
       method: "POST",
@@ -38,7 +51,7 @@ export class MultiplayerStore {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        player: { displayName: "test" },
+        player,
         roomId: this.roomId,
       }),
       credentials: "include",
