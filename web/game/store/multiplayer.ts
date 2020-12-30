@@ -18,11 +18,7 @@ export class MultiplayerStore {
 
   room: Room | null = null;
 
-  constructor(
-    readonly root: RootStore,
-    readonly address: string,
-    readonly roomId = "lobby"
-  ) {
+  constructor(readonly root: RootStore, readonly address: string) {
     makeAutoObservable(this);
 
     const url = new URL("api/multiplayer/hub", address);
@@ -84,7 +80,6 @@ export class MultiplayerStore {
       },
       body: JSON.stringify({
         player,
-        roomId: this.roomId,
       }),
       credentials: "include",
     });
