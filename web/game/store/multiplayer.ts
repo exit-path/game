@@ -3,7 +3,7 @@ import {
   HubConnectionBuilder,
   LogLevel,
 } from "@microsoft/signalr";
-import { autorun, makeAutoObservable, reaction } from "mobx";
+import { autorun, makeAutoObservable } from "mobx";
 import { PlayerData } from "../models/data";
 import {
   JoinRoomMessage,
@@ -11,8 +11,10 @@ import {
   UpdateStateMessage,
 } from "../models/messages";
 import {
+  applyGameStateDiff,
   applyLobbyStateDiff,
   Room,
+  RoomGameState,
   RoomLobbyState,
 } from "../models/multiplayer";
 import type { RootStore } from "./root";
@@ -48,18 +50,6 @@ export class MultiplayerStore {
         this.conn.onclose(handler);
       },
       { name: "connectionLost" }
-    );
-
-    reaction(
-      () => this.room && this.room.id !== "lobby",
-      (inGameRoom) => {
-        const main = this.root.game.main;
-        if (main && inGameRoom) {
-          main.multiplayer.quickPlayLobby.step = 4;
-          main.multiplayer.tubes.player = main.playerObj;
-        }
-      },
-      { name: "joinGameRoom" }
     );
   }
 
@@ -112,6 +102,10 @@ export class MultiplayerStore {
 
     if (this.room.id === "lobby") {
       this.root.modal.present({ type: "room-selection" });
+    } else {
+      const main = this.root.game.main!;
+      main.multiplayer.quickPlayLobby.step = 4;
+      main.multiplayer.tubes.player = main.playerObj;
     }
   };
 
@@ -132,6 +126,8 @@ export class MultiplayerStore {
 
     if (this.room.id === "lobby") {
       applyLobbyStateDiff(this.room.state as RoomLobbyState, msg.diff as any);
+    } else {
+      applyGameStateDiff(this.room.state as RoomGameState, msg.diff as any);
     }
   };
 

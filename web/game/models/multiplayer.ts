@@ -1,3 +1,5 @@
+import { PlayerData } from "./data";
+
 export interface RemotePlayer {
   id: string;
   name: string;
@@ -39,5 +41,36 @@ export function applyLobbyStateDiff(
   }
   state.rooms = Array.from(rooms.values()).sort((a, b) =>
     a.name.localeCompare(b.name)
+  );
+}
+
+export interface GamePlayer {
+  id: string;
+  localId: number;
+  data: PlayerData;
+}
+
+export interface RoomGameState {
+  players: GamePlayer[];
+}
+
+interface RoomGameStateDiff {
+  removed?: number[];
+  updated?: GamePlayer[];
+}
+
+export function applyGameStateDiff(
+  state: RoomGameState,
+  diff: RoomGameStateDiff
+) {
+  const players = new Map(state.players.map((p) => [p.localId, p]));
+  for (const id of diff.removed ?? []) {
+    players.delete(id);
+  }
+  for (const player of diff.updated ?? []) {
+    players.set(player.localId, player);
+  }
+  state.players = Array.from(players.values()).sort(
+    (a, b) => a.localId - b.localId
   );
 }
