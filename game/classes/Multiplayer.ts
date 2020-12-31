@@ -152,7 +152,7 @@ export class Multiplayer extends lib.flash.display.MovieClip {
   }
 
   public ping(e: lib.flash.events.Event): any {
-    if (this.tubes && this.lobby) {
+    if (this.tubes?.room) {
       this.tubes.ping();
     }
   }

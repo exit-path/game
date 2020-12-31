@@ -325,7 +325,7 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public countdownStart(): any {
-    this.levelStart = new LevelStart(this.mode === "MP");
+    this.levelStart = new LevelStart(false);
     this.levelStart.gotoAndPlay(1);
     this.addChild(this.levelStart);
     if (this.uiPanel && this.contains(this.uiPanel)) {
@@ -1569,10 +1569,10 @@ export class Game extends lib.flash.display.MovieClip {
     plyr.time = Number(str);
   }
 
-  public tRemovePlayer(userName: string): any {
+  public tRemovePlayer(id: number): any {
     var j: any = undefined;
     for (var i: any = 0; i < this.players.length; i++) {
-      if (this.players[i].userName == userName) {
+      if (this.players[i].id == id) {
         for (j = 0; j < this.youArrows.length; j++) {
           if (this.youArrows[j].skin == this.playerSkins[i]) {
             this.removeChild(this.youArrows[j]);

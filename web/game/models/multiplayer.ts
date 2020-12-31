@@ -52,11 +52,17 @@ export interface GamePlayer {
 
 export interface RoomGameState {
   players: GamePlayer[];
+  phase: "Lobby" | "InGame";
+  timer: number;
+  nextLevel: number;
 }
 
 interface RoomGameStateDiff {
   removed?: number[];
   updated?: GamePlayer[];
+  phase?: "Lobby" | "InGame";
+  timer?: number;
+  nextLevel?: number;
 }
 
 export function applyGameStateDiff(
@@ -73,4 +79,14 @@ export function applyGameStateDiff(
   state.players = Array.from(players.values()).sort(
     (a, b) => a.localId - b.localId
   );
+
+  if (diff.phase != null) {
+    state.phase = diff.phase;
+  }
+  if (diff.timer != null) {
+    state.timer = diff.timer;
+  }
+  if (diff.nextLevel != null) {
+    state.nextLevel = diff.nextLevel;
+  }
 }

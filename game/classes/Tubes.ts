@@ -1,10 +1,10 @@
 import lib from "swf-lib";
 import { PlayerShell } from "./PlayerShell";
-import { Math2 } from "./john/Math2";
 import { Relay } from "./john/Relay";
 import { PlayerBar } from "./PlayerBar";
 import { ExternalEvent } from "./ExternalEvent";
 import type { Multiplayer } from "./Multiplayer";
+import { SoundBox } from "./john/SoundBox";
 
 interface PlayerData {
   displayName: string;
@@ -26,6 +26,9 @@ interface GamePlayer {
 
 interface RoomState {
   players: GamePlayer[];
+  phase: "Lobby" | "InGame";
+  timer: number;
+  nextLevel: number;
 }
 
 export class Tubes extends lib.flash.display.MovieClip {
@@ -35,7 +38,6 @@ export class Tubes extends lib.flash.display.MovieClip {
   public players: PlayerShell[] = [];
   public room: RoomState;
   public playerId: string;
-  public nextLevel = 100 + Math2.random(10);
 
   public get player() {
     return this.room.players.find((p) => p.id === this.playerId).data;
@@ -55,6 +57,7 @@ export class Tubes extends lib.flash.display.MovieClip {
   }
 
   public ping() {
+    let playerShell: PlayerShell;
     for (const { id, localId, data } of this.room.players) {
       let shell = this.players.find((p) => p.id === localId);
       if (!shell) {
@@ -65,8 +68,10 @@ export class Tubes extends lib.flash.display.MovieClip {
         shell.placing = this.players.length;
         this.players.push(shell);
         this.rankedPlayers.push(shell);
-        this.multiplayer.lobby.addBar();
+
+        this.multiplayer.lobby?.addBar();
       }
+
       shell.level = this.multiplayer.getLevelByXP(data.xp);
       shell.xp = data.xp;
       shell.kudos = data.kudos;
@@ -76,6 +81,9 @@ export class Tubes extends lib.flash.display.MovieClip {
       shell.colour2 = data.secondaryColor;
       shell.headType = data.headType;
       shell.handType = data.handType;
+      if (shell.isPlayer) {
+        playerShell = shell;
+      }
     }
     for (let i = 0; i < this.players.length; i++) {
       const shell = this.players[i];
@@ -83,14 +91,38 @@ export class Tubes extends lib.flash.display.MovieClip {
         continue;
       }
 
-      if (this.locate == "Lobby") {
-        this.multiplayer.lobby.removeBar(i);
-      }
+      this.multiplayer.lobby?.removeBar(i);
+      this.multiplayer.game?.tRemovePlayer(shell.id);
+
       this.players.splice(i, 1);
       this.rankedPlayers = this.rankedPlayers.filter((p) => p !== shell);
     }
     for (let i = 0; i < this.players.length; i++) {
-      this.multiplayer.lobby.updateBar(i);
+      this.multiplayer.lobby?.updateBar(i);
+    }
+
+    switch (this.room.phase) {
+      case "Lobby":
+        if (this.locate != "Lobby") {
+          break;
+        }
+        if (this.multiplayer.lobby.timeToGo !== this.room.timer) {
+          this.multiplayer.lobby.timeToGo = this.room.timer;
+          if (this.room.timer <= 5) {
+            SoundBox.playSound("Boop1");
+          }
+        }
+        break;
+
+      case "InGame":
+        if (this.locate != "Game") {
+          playerShell.kudosToGive = 0;
+          SoundBox.playSound("Boop2");
+          this.dispatchEvent(new Relay(Relay.GOTO, "Lobby", "StartGame"));
+          break;
+        }
+
+        break;
     }
   }
 
