@@ -479,8 +479,7 @@ export class Game extends lib.flash.display.MovieClip {
       for (i = 0; i < this.players.length; i++) {
         if (this.players[i].isPlayer) {
           this.players[i].time = this.timer.getFrameTime();
-          this.tubes.onFinishGame();
-          this.iAmDone(this.players[i].userName);
+          this.iAmDone(this.players[i]);
         }
       }
     }
@@ -690,26 +689,20 @@ export class Game extends lib.flash.display.MovieClip {
     }
   }
 
-  public iAmDone(str: string): any {
-    var playerBar: any = null;
-    for (var i: any = 0; i < this.players.length; i++) {
-      if (this.players[i].userName == str) {
-        if (this.players[i].isPlayer && this.players[i].completedLevel) {
-          return;
-        }
-        this.players[i].completedLevel = true;
-        playerBar = new PlayerBar();
-        this.uiPanel.addChild(playerBar);
-        playerBar.x = 800;
-        playerBar.y = 180 + this.playerBars.length * 30;
-        playerBar.timeTotal = this.players[i].time;
-        playerBar.nameOf.text = this.players[i].userName;
-        playerBar.player = this.players[i];
-        this.playerBars.push(playerBar);
-        this.tSortTimes();
-        break;
-      }
+  public iAmDone(player: PlayerShell) {
+    if (player.completedLevel) {
+      return;
     }
+    player.completedLevel = true;
+    const playerBar = new PlayerBar();
+    this.uiPanel.addChild(playerBar);
+    playerBar.x = 800;
+    playerBar.y = 180 + this.playerBars.length * 30;
+    playerBar.timeTotal = player.time;
+    playerBar.nameOf.text = player.userName;
+    playerBar.player = player;
+    this.playerBars.push(playerBar);
+    this.tSortTimes();
   }
 
   public init(tuber: Tubes, playerObj: PlayerObject, level: number) {
@@ -1625,7 +1618,6 @@ export class Game extends lib.flash.display.MovieClip {
         );
         this.addChild(this.endCountdown);
       }
-      this.endCountdown.endNow();
     }
   }
 

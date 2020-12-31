@@ -136,6 +136,7 @@ export class Tubes extends lib.flash.display.MovieClip {
     switch (this.room.phase) {
       case "Lobby":
         if (this.locate != "Lobby") {
+          this.multiplayer.game?.endCountdown?.endNow();
           break;
         }
         if (this.multiplayer.lobby.timeToGo !== this.room.timer) {
@@ -152,6 +153,10 @@ export class Tubes extends lib.flash.display.MovieClip {
           SoundBox.playSound("Boop2");
           this.dispatchEvent(new Relay(Relay.GOTO, "Lobby", "StartGame"));
           break;
+        }
+
+        if (this.multiplayer.game.endCountdown) {
+          this.multiplayer.game.endCountdown.timer = this.room.timer;
         }
 
         const position: GamePlayerPosition = [
@@ -186,7 +191,7 @@ export class Tubes extends lib.flash.display.MovieClip {
           );
         }
 
-        for (const [id, v, x, y, fr, sx] of this.room.positions) {
+        for (const [id, v, x, y, fr, sx, t] of this.room.positions) {
           const shell = this.playerMap.get(id);
           if (!shell || shell === playerShell) {
             continue;
@@ -214,6 +219,11 @@ export class Tubes extends lib.flash.display.MovieClip {
             shell.yV = (shell.yPos - shell.oldY) / shell.tCounterGoal;
           } else {
             shell.yV = 0;
+          }
+
+          shell.time = t;
+          if (shell.time > 0 && !shell.completedLevel) {
+            this.multiplayer.game?.iAmDone(shell);
           }
         }
 
@@ -253,9 +263,17 @@ export class Tubes extends lib.flash.display.MovieClip {
     );
   }
 
-  public onFinishGame() {}
-
-  public onEndGame(placings: PlayerBar[]) {}
+  public onEndGame(placings: PlayerBar[]) {
+    this.rankedPlayers.length = 0;
+    for (let i = 0; i < placings.length; i++) {
+      const player = this.playerMap.get(placings[i].player.id);
+      if (!player) {
+        continue;
+      }
+      player.placing = i;
+      this.rankedPlayers.push(player);
+    }
+  }
 
   public giveKudo(player: PlayerShell) {}
 
