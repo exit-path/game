@@ -217,7 +217,7 @@ export class Lobby extends lib.flash.display.MovieClip {
   }
 
   public ping(e: lib.flash.events.Event = null): any {
-    if (!this.parent) {
+    if (!this.parent || !this.tubes.player) {
       return;
     }
     if (this.players.length > 1) {

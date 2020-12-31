@@ -6,8 +6,6 @@ export class startBox_308 extends lib.flash.display.MovieClip {
     nameOf: lib.flash.text.TextField;
   }>;
 
-  stopAtStep = true;
-
   public constructor() {
     super();
     this.addFrameScript(
@@ -25,21 +23,27 @@ export class startBox_308 extends lib.flash.display.MovieClip {
   }
 
   public frame19(): any {
-    if (this.stopAtStep) {
-      this.stop();
-    }
+    this.stop();
+    setTimeout(
+      this.stage.__withContext(() => this.play()),
+      500
+    );
   }
 
   public frame25(): any {
-    if (this.stopAtStep) {
-      this.stop();
-    }
+    this.stop();
+    setTimeout(
+      this.stage.__withContext(() => this.play()),
+      500
+    );
   }
 
   public frame44(): any {
-    if (this.stopAtStep) {
-      this.stop();
-    }
+    this.stop();
+    setTimeout(
+      this.stage.__withContext(() => this.play()),
+      500
+    );
   }
 
   public frame56(): any {

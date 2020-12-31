@@ -146,6 +146,21 @@ export class GameStore {
       case "disconnect-multiplayer":
         this.multiplayer?.disconnect();
         this.multiplayer = null;
+        break;
+
+      case "report-position": {
+        const [, v, x, y, fr, sx, time] = event.position;
+        this.multiplayer
+          ?.reportPosition(v, x, y, fr, sx, time)
+          .catch((e) => console.log(e));
+        break;
+      }
+
+      case "report-checkpoint":
+        this.multiplayer
+          ?.reportCheckpoint(event.id)
+          .catch((e) => console.log(e));
+        break;
     }
   }
 }

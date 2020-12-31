@@ -24,23 +24,43 @@ interface GamePlayer {
   data: PlayerData;
 }
 
+export type GamePlayerPosition = [
+  id: number,
+  v: number,
+  x: number,
+  y: number,
+  fr: number,
+  sx: number,
+  t: number
+];
+
+export type GamePlayerCheckpoints = [id: number, ...checkpoints: number[]];
+
 interface RoomState {
   players: GamePlayer[];
   phase: "Lobby" | "InGame";
   timer: number;
   nextLevel: number;
+  positions: GamePlayerPosition[];
+  checkpoints: GamePlayerCheckpoints[];
 }
 
 export class Tubes extends lib.flash.display.MovieClip {
   public locate = "QPL";
 
-  public rankedPlayers: PlayerShell[] = [];
-  public players: PlayerShell[] = [];
   public room: RoomState;
   public playerId: string;
+  public readonly players: PlayerShell[] = [];
+  public readonly rankedPlayers: PlayerShell[] = [];
+  public readonly playerMap = new Map<number, PlayerShell>();
+  public readonly positionVersions = new Map<number, number>();
+
+  private ticks: number = 0;
+  private lastReportedPosition: GamePlayerPosition | null = null;
+  private lastReportTick: number = 0;
 
   public get player() {
-    return this.room.players.find((p) => p.id === this.playerId).data;
+    return this.room.players.find((p) => p.id === this.playerId)?.data;
   }
 
   private get multiplayer() {
@@ -54,18 +74,29 @@ export class Tubes extends lib.flash.display.MovieClip {
   public init(room: RoomState, playerId: string) {
     this.room = room;
     this.playerId = playerId;
+
+    this.players.length = 0;
+    this.rankedPlayers.length = 0;
+    this.playerMap.clear();
+    this.positionVersions.clear();
+
+    this.lastReportedPosition = null;
+    this.lastReportTick = 0;
   }
 
   public ping() {
+    this.ticks++;
+
     let playerShell: PlayerShell;
     for (const { id, localId, data } of this.room.players) {
-      let shell = this.players.find((p) => p.id === localId);
+      let shell = this.playerMap.get(localId);
       if (!shell) {
         shell = new PlayerShell();
         shell.userName = data.displayName;
         shell.id = localId;
         shell.isPlayer = id === this.playerId;
         shell.placing = this.players.length;
+        this.playerMap.set(localId, shell);
         this.players.push(shell);
         this.rankedPlayers.push(shell);
 
@@ -95,7 +126,8 @@ export class Tubes extends lib.flash.display.MovieClip {
       this.multiplayer.game?.tRemovePlayer(shell.id);
 
       this.players.splice(i, 1);
-      this.rankedPlayers = this.rankedPlayers.filter((p) => p !== shell);
+      this.rankedPlayers.splice(this.rankedPlayers.indexOf(shell), 1);
+      this.playerMap.delete(shell.id);
     }
     for (let i = 0; i < this.players.length; i++) {
       this.multiplayer.lobby?.updateBar(i);
@@ -122,6 +154,80 @@ export class Tubes extends lib.flash.display.MovieClip {
           break;
         }
 
+        const position: GamePlayerPosition = [
+          playerShell.id,
+          this.ticks,
+          Math.round(playerShell.xPos),
+          Math.round(playerShell.yPos),
+          playerShell.fr,
+          playerShell.xScale,
+          playerShell.time,
+        ];
+        let needReport = false;
+        if (this.lastReportedPosition && this.ticks > this.lastReportTick + 6) {
+          for (let i = 2; i < position.length; i++) {
+            if (position[i] !== this.lastReportedPosition[i]) {
+              needReport = true;
+              break;
+            }
+          }
+        } else if (!this.lastReportedPosition) {
+          needReport = true;
+        }
+
+        if (needReport) {
+          this.lastReportedPosition = position;
+          this.lastReportTick = this.ticks;
+          this.dispatchEvent(
+            new ExternalEvent({
+              type: "report-position",
+              position,
+            })
+          );
+        }
+
+        for (const [id, v, x, y, fr, sx] of this.room.positions) {
+          const shell = this.playerMap.get(id);
+          if (!shell || shell === playerShell) {
+            continue;
+          }
+
+          if (this.positionVersions.get(shell.id) === v) {
+            continue;
+          }
+
+          shell.oldX = shell.xPos;
+          shell.oldY = shell.yPos;
+          shell.xPos = x;
+          shell.yPos = y;
+          shell.fr = fr;
+          shell.xScale = sx;
+          this.positionVersions.set(shell.id, v);
+          shell.tCounter = 0;
+          shell.tCounterGoal = 6;
+          if (shell.xPos !== shell.oldX) {
+            shell.xV = (shell.xPos - shell.oldX) / shell.tCounterGoal;
+          } else {
+            shell.xV = 0;
+          }
+          if (shell.yPos !== shell.oldY) {
+            shell.yV = (shell.yPos - shell.oldY) / shell.tCounterGoal;
+          } else {
+            shell.yV = 0;
+          }
+        }
+
+        for (const [id, ...cps] of this.room.checkpoints) {
+          const shell = this.playerMap.get(id);
+          if (!shell || shell === playerShell) {
+            continue;
+          }
+
+          for (const cp of cps) {
+            this.multiplayer.game?.tCheck(id, cp);
+          }
+        }
+
         break;
     }
   }
@@ -138,9 +244,14 @@ export class Tubes extends lib.flash.display.MovieClip {
     this.dispatchEvent(new Relay(Relay.GOTO, "Tubes", "TimeOut"));
   }
 
-  public onDeath() {}
-
-  public onCheckpoint(id: string) {}
+  public onCheckpoint(id: number) {
+    this.dispatchEvent(
+      new ExternalEvent({
+        type: "report-checkpoint",
+        id,
+      })
+    );
+  }
 
   public onFinishGame() {}
 

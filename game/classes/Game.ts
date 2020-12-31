@@ -325,7 +325,7 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public countdownStart(): any {
-    this.levelStart = new LevelStart(false);
+    this.levelStart = new LevelStart();
     this.levelStart.gotoAndPlay(1);
     this.addChild(this.levelStart);
     if (this.uiPanel && this.contains(this.uiPanel)) {
@@ -512,7 +512,7 @@ export class Game extends lib.flash.display.MovieClip {
           viewHeight - 225
         );
         this.camera.ping(this.xCamX, this.yCamY);
-      } else if (this.mode === "PRACTICE" && !this.levelFinished) {
+      } else if (!this.levelFinished) {
         this.camera.limits = new Array<any>(
           400,
           viewWidth - 400,
@@ -875,9 +875,6 @@ export class Game extends lib.flash.display.MovieClip {
   public kill(): any {
     if (this.player.rewinding) {
       return;
-    }
-    if (this.tConnected) {
-      this.tubes.onDeath();
     }
     if (
       this.mode === "SP" &&
@@ -1555,10 +1552,10 @@ export class Game extends lib.flash.display.MovieClip {
     this.startForwardMusic();
   }
 
-  public tCheck(userNameT: string, checkID: number): any {
-    for (var i: any = 0; i < this.players.length; i++) {
-      if (this.players[i].userName == userNameT) {
-        this.playerSkins[i].addCheckPoint(checkID);
+  public tCheck(id: number, checkpointID: number): any {
+    for (let i = 0; i < this.players.length; i++) {
+      if (this.players[i].id === id) {
+        this.playerSkins[i].addCheckPoint(checkpointID);
         return;
       }
     }

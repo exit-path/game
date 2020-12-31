@@ -141,4 +141,19 @@ export class MultiplayerStore {
   public async joinRoom(roomId: string) {
     return await this.conn.invoke<{ error?: string }>("JoinRoom", roomId);
   }
+
+  public async reportPosition(
+    v: number,
+    x: number,
+    y: number,
+    fr: number,
+    sx: number,
+    t: number
+  ) {
+    return await this.conn.send("ReportPosition", v, x, y, fr, sx, t);
+  }
+
+  public async reportCheckpoint(id: number) {
+    return await this.conn.send("ReportCheckpoint", id);
+  }
 }
