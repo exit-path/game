@@ -13,5 +13,5 @@ export interface UpdatePlayersMessage {
 }
 
 export interface UpdateStateMessage {
-  newState: unknown;
+  diff: unknown;
 }

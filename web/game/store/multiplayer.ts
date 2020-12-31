@@ -10,7 +10,11 @@ import {
   UpdatePlayersMessage,
   UpdateStateMessage,
 } from "../models/messages";
-import { Room } from "../models/multiplayer";
+import {
+  applyLobbyStateDiff,
+  Room,
+  RoomLobbyState,
+} from "../models/multiplayer";
 import type { RootStore } from "./root";
 
 export class MultiplayerStore {
@@ -126,7 +130,9 @@ export class MultiplayerStore {
       return;
     }
 
-    this.room.state = msg.newState;
+    if (this.room.id === "lobby") {
+      applyLobbyStateDiff(this.room.state as RoomLobbyState, msg.diff as any);
+    }
   };
 
   public async createRoom(name: string) {
