@@ -104,8 +104,11 @@ export class MultiplayerStore {
       this.root.modal.present({ type: "room-selection" });
     } else {
       const main = this.root.game.main!;
+      main.multiplayer.tubes.init(
+        this.room.state as RoomGameState,
+        this.conn.connectionId!
+      );
       main.multiplayer.quickPlayLobby.step = 4;
-      main.multiplayer.tubes.player = main.playerObj;
     }
   };
 

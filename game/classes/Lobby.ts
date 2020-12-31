@@ -175,15 +175,6 @@ export class Lobby extends lib.flash.display.MovieClip {
     this.stage.focus = this.texter;
     this.texter.text = "";
     this.players = this.tubes.players;
-    this.initPlayers();
-  }
-
-  private initPlayers(): any {
-    for (var i: any = 0; i < this.players.length; i++) {
-      this.addBar();
-      this.updateBar(i);
-      this.bars[i].kudosButton.visible = false;
-    }
   }
 
   public kill(): any {

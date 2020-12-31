@@ -581,7 +581,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           }
           this.multiplayer.tubes.disconnect();
           this.multiplayer.removeChild(this.multiplayer.tubes);
-          this.multiplayer.tubes.kill();
           this.multiplayer.tubes = null;
           this.startMenus();
           this.addChild(this.multiplayer);
@@ -685,7 +684,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.addChild(this.multiplayer);
           this.multiplayer.tubes.disconnect();
           this.multiplayer.removeChild(this.multiplayer.tubes);
-          this.multiplayer.tubes.kill();
           this.multiplayer.tubes = null;
           break;
         case "StartGame":
@@ -718,7 +716,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.lobby = null;
           this.multiplayer.tubes.disconnect();
           this.multiplayer.removeChild(this.multiplayer.tubes);
-          this.multiplayer.tubes.kill();
           this.multiplayer.tubes = null;
           this.startMenus();
           this.addChild(this.multiplayer);

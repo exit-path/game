@@ -87,7 +87,7 @@ export class Multiplayer extends lib.flash.display.MovieClip {
     );
   }
 
-  public getLevelByXP(num: number): any {
+  public getLevelByXP(num: number): number {
     for (var i: any = 0; i < this.ranks.length; i++) {
       if (num < this.ranks[i]) {
         return i - 1;
@@ -96,7 +96,7 @@ export class Multiplayer extends lib.flash.display.MovieClip {
     return this.ranks.length - 1;
   }
 
-  public getRankByXP(num: number): any {
+  public getRankByXP(num: number): string {
     for (var i: any = 0; i < this.ranks.length; i++) {
       if (num < this.ranks[i]) {
         return this.levelNames[i - 1];
@@ -151,7 +151,11 @@ export class Multiplayer extends lib.flash.display.MovieClip {
     this.ranks.push(this.ranks[this.ranks.length - 1]);
   }
 
-  public ping(e: lib.flash.events.Event): any {}
+  public ping(e: lib.flash.events.Event): any {
+    if (this.tubes && this.lobby) {
+      this.tubes.ping();
+    }
+  }
 
   public quickJoinRoom(): any {
     this.startGame();
@@ -161,7 +165,6 @@ export class Multiplayer extends lib.flash.display.MovieClip {
 
   public startQPM(): any {
     this.tubes = new Tubes();
-    this.tubes.init(this.playerObject);
     this.addChild(this.tubes);
   }
 
