@@ -6,16 +6,6 @@
       "actions": [
         {
           "kind": 0,
-          "depth": 1,
-          "version": 2,
-          "moveCharacter": false,
-          "characterId": 760,
-          "matrix": [1, 0, 0, 1, 0, 0],
-          "clipDepth": 20,
-          "filters": []
-        },
-        {
-          "kind": 0,
           "depth": 3,
           "version": 2,
           "moveCharacter": false,

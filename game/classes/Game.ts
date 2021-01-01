@@ -152,8 +152,6 @@ export class Game extends lib.flash.display.MovieClip {
 
   private declare spaceDown: boolean;
 
-  public declare startTheCountdown: boolean;
-
   private declare static: Static;
 
   public declare tConnected: boolean;
@@ -200,7 +198,6 @@ export class Game extends lib.flash.display.MovieClip {
     this.updateRate = 7;
     this.mode = "PRACTICE";
     this.songPlaying = "none";
-    this.startTheCountdown = false;
     this.levelNum = 0;
     this.tryFrame = 0;
     this.deathScreens = 0;
@@ -373,7 +370,7 @@ export class Game extends lib.flash.display.MovieClip {
     this.emit.manage(startBeam);
   }
 
-  public endCountdownFinish(): any {
+  public endMPGame(): any {
     var nextToGo: any = null;
     var remI: any = NaN;
     var playerBar: any = null;
@@ -1038,10 +1035,8 @@ export class Game extends lib.flash.display.MovieClip {
     if (this.mode === "MP") {
       this.tUpdateFriendsENT();
     }
-    if (this.startTheCountdown) {
-      if (this.endCountdown) {
-        this.endCountdown.ping(0 - this.x, 0 - this.y);
-      }
+    if (this.endCountdown) {
+      this.endCountdown.ping(0 - this.x, 0 - this.y);
     }
     if (!this.goAhead) {
       this.skin.x = this.player.x;
@@ -1604,14 +1599,12 @@ export class Game extends lib.flash.display.MovieClip {
       );
       this.finalPlacingArray[i].posOf.text = String(i + 1);
     }
-    if (!this.startTheCountdown) {
+    if (!this.endCountdown) {
       this.endCountdown = new EndCountdown(this.playerBars[0].player.userName);
       this.addChild(this.endCountdown);
-      this.startTheCountdown = true;
     }
     if (this.finalPlacingArray.length == this.players.length) {
       if (!this.endCountdown) {
-        this.startTheCountdown = true;
         this.endCountdown = new EndCountdown(
           this.playerBars[0].player.userName
         );

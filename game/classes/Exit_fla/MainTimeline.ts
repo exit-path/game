@@ -861,12 +861,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.game.countDownFinish();
       }
     }
-    if (e.sender == "EndCountdown") {
-      switch (e.msg) {
-        case "End":
-          this.multiplayer.game.endCountdownFinish();
-      }
-    }
     if (e.sender == "StartJitter") {
       this.addChild(this.psb);
       this.addChild(this.rewind);

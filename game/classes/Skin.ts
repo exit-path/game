@@ -85,7 +85,7 @@ export class Skin extends lib.flash.display.MovieClip {
   }
 
   public addCheckPoint(checkID: number): any {
-    this.checkPoints[checkID].addFlag(this, this.colour, this.colour2);
+    this.checkPoints[checkID]?.addFlag(this, this.colour, this.colour2);
   }
 
   public duck(): any {

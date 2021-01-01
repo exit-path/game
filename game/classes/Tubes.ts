@@ -97,6 +97,7 @@ export class Tubes extends lib.flash.display.MovieClip {
     this.ticks++;
 
     let playerShell: PlayerShell;
+    let needSave = false;
     for (const { id, localId, data } of this.room.players) {
       let shell = this.playerMap.get(localId);
       if (!shell) {
@@ -129,7 +130,6 @@ export class Tubes extends lib.flash.display.MovieClip {
           this.multiplayer.lobby.checkLevelUp(oldXP, data.xp);
         }
 
-        let needSave = false;
         if (this.multiplayer.playerObject.xp !== shell.xp) {
           this.multiplayer.playerObject.xp = shell.xp;
           needSave = true;
@@ -145,10 +145,6 @@ export class Tubes extends lib.flash.display.MovieClip {
         if (this.multiplayer.playerObject.matches !== shell.matches) {
           this.multiplayer.playerObject.matches = shell.matches;
           needSave = true;
-        }
-
-        if (needSave) {
-          this.dispatchEvent(new Relay(Relay.GOTO, "SaveGame"));
         }
       }
     }
@@ -179,6 +175,10 @@ export class Tubes extends lib.flash.display.MovieClip {
 
     this.checkAcheievements();
 
+    if (needSave) {
+      this.dispatchEvent(new Relay(Relay.GOTO, "SaveGame"));
+    }
+
     for (let i = 0; i < this.players.length; i++) {
       this.multiplayer.lobby?.updateBar(i);
     }
@@ -186,7 +186,9 @@ export class Tubes extends lib.flash.display.MovieClip {
     switch (this.room.phase) {
       case "Lobby":
         if (this.locate != "Lobby") {
-          this.multiplayer.game?.endCountdown?.endNow();
+          if (this.multiplayer.game && !this.multiplayer.game.levelEnd) {
+            this.multiplayer.game.endMPGame();
+          }
           break;
         }
 
@@ -211,14 +213,16 @@ export class Tubes extends lib.flash.display.MovieClip {
           for (const player of this.players) {
             player.time = 0;
           }
+          this.positionVersions.clear();
 
           SoundBox.playSound("Boop2");
           this.dispatchEvent(new Relay(Relay.GOTO, "Lobby", "StartGame"));
           break;
-        }
-
-        if (this.multiplayer.game.endCountdown) {
-          this.multiplayer.game.endCountdown.timer = this.room.timer;
+        } else if (this.multiplayer.game.levelNum !== this.room.nextLevel) {
+          if (this.multiplayer.game && !this.multiplayer.game.levelEnd) {
+            this.multiplayer.game.endMPGame();
+          }
+          break;
         }
 
         const position: GamePlayerPosition = [
@@ -298,6 +302,10 @@ export class Tubes extends lib.flash.display.MovieClip {
           for (const cp of cps) {
             this.multiplayer.game?.tCheck(id, cp);
           }
+        }
+
+        if (this.multiplayer.game.endCountdown) {
+          this.multiplayer.game.endCountdown.timer = this.room.timer;
         }
 
         break;
