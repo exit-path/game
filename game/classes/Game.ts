@@ -1616,7 +1616,7 @@ export class Game extends lib.flash.display.MovieClip {
   public tUpdateFriendsENT(): any {
     var j: any = NaN;
     var position: any = 1;
-    for (var i: any = 0; i < this.players.length; i++) {
+    for (var i: any = 0; i < this.playerSkins.length; i++) {
       if (!this.players[i].isPlayer) {
         this.players[i].tCounter++;
         if (this.players[i].tCounter > this.players[i].tCounterGoal) {
