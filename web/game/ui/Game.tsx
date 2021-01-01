@@ -4,6 +4,7 @@ import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { Controller } from "../controller";
 import { useStore } from "../store";
+import { BottomPane } from "./BottomPane";
 import { GameArea } from "./GameArea";
 import { ModalContainer } from "./ModalContainer";
 import { SidePane } from "./SidePane";
@@ -54,6 +55,7 @@ export const Game: React.FC<GameProps> = observer(function Game(props) {
         <GameArea />
       </ModalContainer>
       <SidePane className={styles.side} />
+      <BottomPane className={styles.bottom} />
     </div>
   );
 });

@@ -1,0 +1,47 @@
+.pane {
+  background: rgba(#808080, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1 1 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.bar {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  background: rgba(#808080, 0.2);
+
+  &:focus-within {
+    background: rgba(#808080, 0.4);
+  }
+}
+
+.input {
+  flex: 1 1 0;
+  background: none;
+  outline: none;
+  border: none;
+  color: inherit;
+  padding: 4px 8px;
+}
+
+.send {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 4px 16px;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    background: rgba(#808080, 0.2);
+  }
+}
