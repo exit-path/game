@@ -5,13 +5,14 @@ export class TextPanel extends lib.flash.display.Sprite {
 
   constructor() {
     super();
-    this.txt.__container.layoutBounds[2] = 50;
-    this.txt.__container.layoutBounds[3] = 50;
+    this.txt.__container.layoutBounds[2] = 1000;
+    this.txt.__container.layoutBounds[3] = 1000;
     this.txt.__container.wordWrap = true;
     this.txt.__container.multiline = true;
     this.txt.__container.defaultTextFormat.color = 0xffffffff;
     this.txt.__container.defaultTextFormat.font = "Bitstream Vera Sans";
     this.txt.__container.defaultTextFormat.size = 12;
+    this.txt.__container.layout();
     this.txt.width = 50;
     this.txt.height = 50;
     this.addChild(this.txt);
