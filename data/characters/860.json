@@ -130,35 +130,6 @@
         },
         {
           "kind": 0,
-          "depth": 44,
-          "version": 2,
-          "moveCharacter": false,
-          "characterId": 845,
-          "matrix": [1, 0, 0, 1, 0, 0],
-          "filters": []
-        },
-        {
-          "kind": 0,
-          "depth": 45,
-          "version": 2,
-          "moveCharacter": false,
-          "characterId": 846,
-          "matrix": [1, 0, 0, 1, 2275, 7676],
-          "name": "texter",
-          "filters": []
-        },
-        {
-          "kind": 0,
-          "depth": 46,
-          "version": 2,
-          "moveCharacter": false,
-          "characterId": 850,
-          "matrix": [1, 0, 0, 1, 1023, 7620],
-          "name": "sendButton",
-          "filters": []
-        },
-        {
-          "kind": 0,
           "depth": 49,
           "version": 2,
           "moveCharacter": false,

@@ -27,10 +27,6 @@ export class Lobby extends lib.flash.display.MovieClip {
 
   public declare ranking: any[];
 
-  public declare sendButton: lib.flash.display.SimpleButton;
-
-  public declare texter: lib.flash.text.TextField;
-
   public declare timer: StopWatch;
 
   public declare timeToGo: number;
@@ -94,13 +90,6 @@ export class Lobby extends lib.flash.display.MovieClip {
       0,
       true
     );
-    this.sendButton.addEventListener(
-      lib.flash.events.MouseEvent.CLICK,
-      this.sendMessage,
-      false,
-      0,
-      true
-    );
     this.addEventListener(
       lib.flash.events.Event.ENTER_FRAME,
       this.ping,
@@ -115,9 +104,6 @@ export class Lobby extends lib.flash.display.MovieClip {
       0,
       true
     );
-    // this.texter.setSelection(0, 0);
-    this.stage.focus = this.texter;
-    this.texter.text = "";
     this.players = this.tubes.players;
     this.initPlayers();
   }
@@ -131,10 +117,6 @@ export class Lobby extends lib.flash.display.MovieClip {
   }
 
   public kill(): any {
-    this.sendButton.removeEventListener(
-      lib.flash.events.MouseEvent.CLICK,
-      this.sendMessage
-    );
     this.backToMenuButton.removeEventListener(
       lib.flash.events.MouseEvent.CLICK,
       this.backTo

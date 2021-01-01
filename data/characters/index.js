@@ -856,9 +856,6 @@ bundle.shapes[833] = character833;
 import character836 from "./836.json";
 bundle.shapes[836] = character836;
 
-import character845 from "./845.json";
-bundle.shapes[845] = character845;
-
 import character847 from "./847.json";
 bundle.shapes[847] = character847;
 
@@ -2434,9 +2431,6 @@ bundle.sprites[1128] = character1128;
 import character1132 from "./1132.json";
 bundle.sprites[1132] = character1132;
 
-import character1135 from "./1135.json";
-bundle.sprites[1135] = character1135;
-
 import character1136 from "./1136.json";
 bundle.sprites[1136] = character1136;
 
@@ -3318,9 +3312,6 @@ bundle.editTexts[1074] = character1074;
 
 import character1075 from "./1075.json";
 bundle.editTexts[1075] = character1075;
-
-import character1134 from "./1134.json";
-bundle.editTexts[1134] = character1134;
 
 import character1138 from "./1138.json";
 bundle.editTexts[1138] = character1138;
