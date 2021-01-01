@@ -15,3 +15,10 @@ export interface UpdatePlayersMessage {
 export interface UpdateStateMessage {
   diff: unknown;
 }
+
+export interface MessageMessage {
+  sender: string;
+  text: string;
+  senderColor: number;
+  textColor: number;
+}

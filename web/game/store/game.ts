@@ -133,10 +133,10 @@ export class GameStore {
               })
               .catch((e) => {
                 if (this.multiplayer) {
-                  alert(`Cannot connect to server: ${e}`);
-                  this.stage?.__withContext(() => {
-                    this.main?.multiplayer.tubes.onConnectionLost();
-                  })();
+                  this.multiplayer.logMessage(
+                    `Cannot connect to server: ${e}`,
+                    0xff0000
+                  );
                 }
               });
           },

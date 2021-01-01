@@ -22,7 +22,7 @@ const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
       .catch((e) => ({ error: String(e) }))
       .then(({ error }) => {
         if (error) {
-          alert(error);
+          game.multiplayer?.logMessage(`Cannot join room: ${error}`, 0xff0000);
         }
       });
   }, [id, game]);

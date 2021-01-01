@@ -12,6 +12,13 @@ export interface RemoteRoom {
   numPlayers: number;
 }
 
+export interface ChatMessage {
+  sender: string;
+  senderColor: number;
+  text: string;
+  textColor: number;
+}
+
 export interface Room<T = unknown> {
   id: string;
   name: string;

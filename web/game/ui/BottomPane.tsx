@@ -10,7 +10,7 @@ export interface BottomPaneProps {
 export const BottomPane = observer<BottomPaneProps>(function BottomPane(props) {
   const { game } = useStore();
 
-  if (game.multiplayer?.room) {
+  if (game.multiplayer) {
     return (
       <ChatPane className={props.className} multiplayer={game.multiplayer} />
     );

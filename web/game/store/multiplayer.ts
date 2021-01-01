@@ -3,16 +3,18 @@ import {
   HubConnectionBuilder,
   LogLevel,
 } from "@microsoft/signalr";
-import { autorun, makeAutoObservable } from "mobx";
+import { autorun, makeAutoObservable, reaction } from "mobx";
 import { PlayerData } from "../models/data";
 import {
   JoinRoomMessage,
+  MessageMessage,
   UpdatePlayersMessage,
   UpdateStateMessage,
 } from "../models/messages";
 import {
   applyGameStateDiff,
   applyLobbyStateDiff,
+  ChatMessage,
   Room,
   RoomGameState,
   RoomLobbyState,
@@ -23,6 +25,8 @@ export class MultiplayerStore {
   readonly conn: HubConnection;
 
   room: Room | null = null;
+
+  readonly messages: ChatMessage[] = [];
 
   constructor(readonly root: RootStore, readonly address: string) {
     makeAutoObservable(this);
@@ -36,6 +40,7 @@ export class MultiplayerStore {
     this.conn.on("JoinRoom", this.onJoinRoom);
     this.conn.on("UpdatePlayers", this.onUpdatePlayers);
     this.conn.on("UpdateState", this.onUpdateState);
+    this.conn.on("Message", this.onMessage);
 
     autorun(
       () => {
@@ -50,6 +55,19 @@ export class MultiplayerStore {
         this.conn.onclose(handler);
       },
       { name: "connectionLost" }
+    );
+
+    reaction(
+      () =>
+        this.room && this.room.id !== "lobby"
+          ? (this.room.state as RoomGameState).phase
+          : null,
+      (phase, prev) => {
+        if (prev === "Lobby" && phase === "InGame") {
+          this.messages.length = 0;
+        }
+      },
+      { name: "clearMessages" }
     );
   }
 
@@ -134,6 +152,24 @@ export class MultiplayerStore {
     }
   };
 
+  private onMessage = (msg: MessageMessage) => {
+    this.messages.push({
+      sender: msg.sender,
+      senderColor: msg.senderColor,
+      text: msg.text,
+      textColor: msg.textColor,
+    });
+  };
+
+  public logMessage(text: string, color = 0xffffff) {
+    this.messages.push({
+      sender: "@SYSTEM",
+      senderColor: color,
+      text: text,
+      textColor: color,
+    });
+  }
+
   public async createRoom(name: string) {
     return await this.conn.invoke<{ error?: string }>("CreateGameRoom", name);
   }
@@ -159,5 +195,12 @@ export class MultiplayerStore {
 
   public async giveKudo(targetId: string) {
     return await this.conn.send("GiveKudo", targetId);
+  }
+
+  public async sendMessage(text: string) {
+    if (!this.conn.connectionId) {
+      return;
+    }
+    return await this.conn.send("SendMessage", text);
   }
 }

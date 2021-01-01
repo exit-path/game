@@ -8,9 +8,18 @@
   flex: 1 1 0;
   min-height: 0;
   margin: 0;
-  padding: 0;
+  padding: 8px;
+  overflow-x: hidden;
   overflow-y: auto;
   list-style: none;
+}
+
+.entry {
+  padding: 4px 0;
+  width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .bar {
@@ -33,7 +42,7 @@
   padding: 4px 8px;
 }
 
-.send {
+.action {
   background: none;
   border: none;
   color: inherit;
