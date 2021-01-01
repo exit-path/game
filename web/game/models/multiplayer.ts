@@ -10,6 +10,7 @@ export interface RemoteRoom {
   id: string;
   name: string;
   numPlayers: number;
+  phase: "Lobby" | "InGame";
 }
 
 export interface ChatMessage {
@@ -82,6 +83,7 @@ export interface RoomGameState {
   phase: "Lobby" | "InGame";
   timer: number;
   nextLevel: number;
+  nextLevelName: string;
   positions: GamePlayerPosition[];
   checkpoints: GamePlayerCheckpoints[];
   rewards: GamePlayerReward[];
@@ -93,6 +95,7 @@ interface RoomGameStateDiff {
   phase?: "Lobby" | "InGame";
   timer?: number;
   nextLevel?: number;
+  nextLevelName?: string;
   positions?: GamePlayerPosition[];
   checkpoints?: GamePlayerCheckpoints[];
   rewards?: GamePlayerReward[];
@@ -121,6 +124,9 @@ export function applyGameStateDiff(
   }
   if (diff.nextLevel != null) {
     state.nextLevel = diff.nextLevel;
+  }
+  if (diff.nextLevelName != null) {
+    state.nextLevelName = diff.nextLevelName;
   }
   if (diff.positions != null) {
     if (diff.positions.length === 0) {

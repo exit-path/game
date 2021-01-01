@@ -18,6 +18,19 @@
   overflow: hidden;
 }
 
+.roomDetails {
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  gap: 0 16px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .playerList {
   flex: 1 0 0;
   list-style: none;

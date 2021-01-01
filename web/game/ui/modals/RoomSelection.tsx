@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import cn from "classnames";
 import { useForm } from "react-hook-form";
 import { reaction } from "mobx";
 import { observer } from "mobx-react-lite";
@@ -13,7 +14,7 @@ interface RoomItemProps {
 }
 
 const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
-  const { id, name, numPlayers } = props.room;
+  const { id, name, numPlayers, phase } = props.room;
   const { game } = useStore();
 
   const onJoin = useCallback(() => {
@@ -28,11 +29,15 @@ const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
   }, [id, game]);
 
   return (
-    <li className={styles.item}>
+    <li className={cn(styles.item, phase === "InGame" && styles.disabled)}>
       <span>{name}</span>
       <span>{numPlayers}</span>
       <div className={styles.actions}>
-        <button className={styles.action} onClick={onJoin}>
+        <button
+          className={styles.action}
+          onClick={onJoin}
+          disabled={phase === "InGame"}
+        >
           Join
         </button>
       </div>
