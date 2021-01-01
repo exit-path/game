@@ -24,8 +24,6 @@ import { Teleporter } from "./Teleporter";
 import { LevelFlags } from "../../shared/level";
 
 export class Level extends lib.flash.display.MovieClip {
-  public declare arrayMode: boolean;
-
   public declare bouncers: Bouncer[];
 
   public declare canvas: BitmapCanvas;
@@ -116,7 +114,6 @@ export class Level extends lib.flash.display.MovieClip {
     this.lastX = 0;
     this.lastY = 0;
     this.checkPointID = 0;
-    this.arrayMode = false;
     this.levelWidth = 400;
     this.maxWidth = 0;
     this.levelHeight = 800;
@@ -275,7 +272,9 @@ export class Level extends lib.flash.display.MovieClip {
     this.maxHeight = 0;
     this.canvas.init(3000, 3000);
     this.addChild(this.canvas);
-    for (const [curTileHolder, tileType] of this.toPush) {
+
+    const pendingTiles: Tile[] = [];
+    for (const [holder, tileType] of this.toPush) {
       let tile: Tile;
       if (this.levelType == "SP") {
         tile = new Tile();
@@ -283,16 +282,16 @@ export class Level extends lib.flash.display.MovieClip {
         tile = new TileOpaque();
       }
 
-      if (curTileHolder.rotation % 90 === 0) {
-        curTileHolder.addChild(tile);
+      if (holder.rotation % 90 === 0 && holder.rotation !== 0) {
+        holder.addChild(tile);
         const bounds = tile.getBounds(this.canvas);
-        curTileHolder.removeChild(tile);
+        holder.removeChild(tile);
         tile.x = Math.round(bounds.x);
         tile.y = Math.round(bounds.y);
       } else {
-        tile.x = Math.round(curTileHolder.x);
-        tile.y = Math.round(curTileHolder.y);
-        tile.rotation = curTileHolder.rotation;
+        tile.x = Math.round(holder.x);
+        tile.y = Math.round(holder.y);
+        tile.rotation = holder.rotation;
       }
 
       if (tile.x > this.maxWidth) {
@@ -305,35 +304,30 @@ export class Level extends lib.flash.display.MovieClip {
       if (tile.typeOf === 3) {
         this.halfTiles.push(tile);
       } else if (
-        curTileHolder.rotation % 90 == 0 &&
-        !(tile.typeOf === 99 && curTileHolder.name.startsWith("t"))
+        holder.rotation % 90 == 0 &&
+        !(tile.typeOf === 99 && holder.name.startsWith("t"))
       ) {
         this.tiles.push(tile);
         tile.init();
       }
 
-      this.addChild(tile);
+      pendingTiles.push(tile);
       if (tileType != 4) {
         if (this.levelType == "SP") {
           Anim.colourMe(tile, this.levelColour);
         }
       }
-      tile.gotoAndStop(tile.typeOf);
       switch (tileType) {
         case 1:
-        case 99:
           if (tile.x < 3000) {
-            this.addChild(tile);
-            if (tileType === 1) {
-              this.canvas.drawMovieClip(
-                tile,
-                tile.x,
-                tile.y,
-                0,
-                tile.transform.colorTransform
-              );
-              tile.visible = false;
-            }
+            this.canvas.drawMovieClip(
+              tile,
+              tile.x,
+              tile.y,
+              0,
+              tile.transform.colorTransform
+            );
+            tile.visible = false;
           }
           break;
 
@@ -345,26 +339,24 @@ export class Level extends lib.flash.display.MovieClip {
           this.endPoint = tile;
           break;
       }
-      if (this.arrayMode) {
-        this.tArr[Math.round(curTileHolder.y / 25)][
-          Math.round(curTileHolder.x / 25)
-        ] = tileType;
-        if (tileType == 1) {
-          if (tile.x < 3000) {
-            this.canvas.drawMovieClip(tile, tile.x, tile.y);
-            this.removeChild(tile);
-            tile = null;
-          }
-        }
-      }
-      if (tileType != 99) {
-        this.removeChild(curTileHolder);
+    }
+    for (const tile of pendingTiles) {
+      this.addChild(tile);
+    }
+    for (const [holder, type] of this.toPush) {
+      if (type != 99) {
+        this.removeChild(holder);
       }
     }
+    for (const tile of pendingTiles) {
+      if (tile.currentFrame !== tile.typeOf) {
+        tile.gotoAndStop(tile.typeOf);
+      } else {
+        tile.stop();
+      }
+    }
+
     this.toPush.splice(0, this.toPush.length);
-    if (this.arrayMode) {
-      this.tiles.splice(0, this.tiles.length);
-    }
     for (let i = 0; i < this.teleporters.length; i++) {
       this.teleporters[i].init();
     }
@@ -378,17 +370,6 @@ export class Level extends lib.flash.display.MovieClip {
 
   public kill(): any {
     this.canvas.kill();
-  }
-
-  public killTiles(): any {
-    for (var i: any = 0; i < this.tiles.length; i++) {
-      if (this.tiles[i].typeOf == 99) {
-        this.removeChild(this.tiles[i]);
-        this.tiles[i] = null;
-        this.tiles.splice(i, 1);
-        i--;
-      }
-    }
   }
 
   public ping(): any {}

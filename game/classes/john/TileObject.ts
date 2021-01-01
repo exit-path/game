@@ -944,11 +944,7 @@ export class TileObject extends lib.flash.display.MovieClip {
     this.lastX = this.x;
     this.lastY = this.y;
     this.normalVertical();
-    if (this.curLevel.arrayMode) {
-      this.bounding2();
-    } else {
-      this.bounding();
-    }
+    this.bounding();
     if (this.typeOf == "egg") {
       this.y = Math.floor(this.y);
     }
