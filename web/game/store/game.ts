@@ -161,6 +161,10 @@ export class GameStore {
           ?.reportCheckpoint(event.id)
           .catch((e) => console.log(e));
         break;
+
+      case "give-kudo":
+        this.multiplayer?.giveKudo(event.targetId).catch((e) => console.log(e));
+        break;
     }
   }
 }

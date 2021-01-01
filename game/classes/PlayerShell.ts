@@ -79,6 +79,9 @@ export class PlayerShell extends lib.flash.display.MovieClip {
 
   public declare yV: number;
 
+  public xpRound: number = 0;
+  public kudoReceived: number = 0;
+
   public constructor() {
     super();
     this.completedLevel = false;

@@ -3,6 +3,7 @@ import { Runner } from "./Runner";
 import { Text2 } from "./john/Text2";
 import { Anim } from "./john/Anim";
 import { PlayerShell } from "./PlayerShell";
+import { SoundBox } from "./john/SoundBox";
 
 export class LevelEndBox extends lib.flash.display.MovieClip {
   public declare backdrop: lib.flash.display.MovieClip;
@@ -12,8 +13,6 @@ export class LevelEndBox extends lib.flash.display.MovieClip {
   public declare kudoImage: lib.flash.display.MovieClip;
 
   public declare kudos: lib.flash.text.TextField;
-
-  public declare kudosRound: number;
 
   public declare kudosThisRound: lib.flash.text.TextField;
 
@@ -31,21 +30,19 @@ export class LevelEndBox extends lib.flash.display.MovieClip {
 
   public declare skinner: Runner;
 
-  public declare totXP: number;
-
   public declare wins: lib.flash.text.TextField;
 
   public declare xp: lib.flash.text.TextField;
 
-  public declare xpRound: number;
-
   public declare xpThisRound: lib.flash.text.TextField;
+
+  private roundXP: number | null = null;
+  private roundKudos: number | null = null;
+
+  public isNew = false;
 
   public constructor() {
     super();
-    this.kudosRound = 0;
-    this.totXP = 0;
-    this.xpRound = 0;
   }
 
   public init(plyr: PlayerShell): any {
@@ -56,9 +53,9 @@ export class LevelEndBox extends lib.flash.display.MovieClip {
   public updateBox(): any {
     this.playerInfo.text = this.player.userName;
     this.xp.text = Text2.commaSnob(this.player.xp) + " XP";
-    this.totXP = this.player.xp;
-    this.levelTitle.text = this.parent.parent.parent["getRankByXP"](this.totXP);
-    this.levelNum.text = this.parent.parent.parent["getLevelByXP"](this.totXP);
+    const xp = this.player.xp;
+    this.levelTitle.text = this.parent.parent.parent["getRankByXP"](xp);
+    this.levelNum.text = this.parent.parent.parent["getLevelByXP"](xp);
     this.kudos.text = Text2.commaSnob(this.player.kudos);
     this.matchNum.text = Text2.commaSnob(this.player.matches) + " Matches";
     this.wins.text = Text2.commaSnob(this.player.wins) + " Wins";
@@ -69,17 +66,26 @@ export class LevelEndBox extends lib.flash.display.MovieClip {
     Anim.colourMe(this.backdrop, this.player.colour);
     Anim.colourMe(this.side, this.player.colour2);
     this.skinner.fuel();
-  }
 
-  public updateKudos(num: number): any {
-    this.kudosRound = this.kudosRound + num;
-    this.kudosThisRound.text = "+" + this.kudosRound;
-    if (num > 0) {
+    const { kudoReceived, xpRound } = this.player;
+    if (this.isNew) {
+      this.roundKudos = null;
+      this.kudosThisRound.text = " ";
+    } else if (this.roundKudos !== kudoReceived) {
+      if (kudoReceived > (this.roundKudos ?? kudoReceived)) {
+        SoundBox.playSound("GetKudos");
+        this.giveKudo.play();
+      }
+      this.roundKudos = kudoReceived;
+      this.kudosThisRound.text = kudoReceived > 0 ? "+" + kudoReceived : "0";
     }
-  }
 
-  public updateXP(num: number): any {
-    this.xpRound = this.xpRound + num;
-    this.xpThisRound.text = Text2.commaSnob(this.xpRound) + " XP";
+    if (this.isNew) {
+      this.roundXP = null;
+      this.xpThisRound.text = " ";
+    } else if (this.roundXP !== xpRound) {
+      this.roundXP = xpRound;
+      this.xpThisRound.text = Text2.commaSnob(xpRound) + " XP";
+    }
   }
 }

@@ -62,6 +62,14 @@ export type GamePlayerPosition = [
 
 export type GamePlayerCheckpoints = [id: number, ...checkpoints: number[]];
 
+export interface GamePlayerReward {
+  id: number;
+  placing: number;
+  matchXP: number;
+  availableKudos: number;
+  receivedKudos: number;
+}
+
 export interface RoomGameState {
   players: GamePlayer[];
   phase: "Lobby" | "InGame";
@@ -69,6 +77,7 @@ export interface RoomGameState {
   nextLevel: number;
   positions: GamePlayerPosition[];
   checkpoints: GamePlayerCheckpoints[];
+  rewards: GamePlayerReward[];
 }
 
 interface RoomGameStateDiff {
@@ -79,6 +88,7 @@ interface RoomGameStateDiff {
   nextLevel?: number;
   positions?: GamePlayerPosition[];
   checkpoints?: GamePlayerCheckpoints[];
+  rewards?: GamePlayerReward[];
 }
 
 export function applyGameStateDiff(
@@ -125,6 +135,17 @@ export function applyGameStateDiff(
         checkpoints.set(p[0], p);
       }
       state.checkpoints = Array.from(checkpoints.values());
+    }
+  }
+  if (diff.rewards != null) {
+    if (diff.rewards.length === 0) {
+      state.rewards = [];
+    } else {
+      const rewards = new Map(state.rewards.map((r) => [r.id, r]));
+      for (const r of diff.rewards) {
+        rewards.set(r.id, r);
+      }
+      state.rewards = Array.from(rewards.values());
     }
   }
 }

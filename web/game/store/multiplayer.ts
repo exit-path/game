@@ -156,4 +156,8 @@ export class MultiplayerStore {
   public async reportCheckpoint(id: number) {
     return await this.conn.send("ReportCheckpoint", id);
   }
+
+  public async giveKudo(targetId: string) {
+    return await this.conn.send("GiveKudo", targetId);
+  }
 }

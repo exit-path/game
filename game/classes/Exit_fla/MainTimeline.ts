@@ -481,7 +481,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       this.multiplayer.lobby.init(this.multiplayer.tubes);
       this.multiplayer.tubes.locate = "Lobby";
       this.multiplayer.addChild(this.multiplayer.tubes);
-      this.multiplayer.lobby.returnFromGame();
     }
     if (e.sender == "MainMenu") {
       this.killAgiLogin();

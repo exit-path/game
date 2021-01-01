@@ -1,5 +1,4 @@
 import lib from "swf-lib";
-import { StopWatch } from "./john/StopWatch";
 import { Relay } from "./john/Relay";
 
 export class EndCountdown extends lib.flash.display.MovieClip {

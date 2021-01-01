@@ -1,10 +1,10 @@
 import lib from "swf-lib";
 import { PlayerShell } from "./PlayerShell";
 import { Relay } from "./john/Relay";
-import { PlayerBar } from "./PlayerBar";
 import { ExternalEvent } from "./ExternalEvent";
 import type { Multiplayer } from "./Multiplayer";
 import { SoundBox } from "./john/SoundBox";
+import { AchEvent } from "./AchEvent";
 
 interface PlayerData {
   displayName: string;
@@ -36,6 +36,14 @@ export type GamePlayerPosition = [
 
 export type GamePlayerCheckpoints = [id: number, ...checkpoints: number[]];
 
+export interface GamePlayerReward {
+  id: number;
+  placing: number;
+  matchXP: number;
+  availableKudos: number;
+  receivedKudos: number;
+}
+
 interface RoomState {
   players: GamePlayer[];
   phase: "Lobby" | "InGame";
@@ -43,6 +51,7 @@ interface RoomState {
   nextLevel: number;
   positions: GamePlayerPosition[];
   checkpoints: GamePlayerCheckpoints[];
+  rewards: GamePlayerReward[];
 }
 
 export class Tubes extends lib.flash.display.MovieClip {
@@ -51,13 +60,14 @@ export class Tubes extends lib.flash.display.MovieClip {
   public room: RoomState;
   public playerId: string;
   public readonly players: PlayerShell[] = [];
-  public readonly rankedPlayers: PlayerShell[] = [];
   public readonly playerMap = new Map<number, PlayerShell>();
   public readonly positionVersions = new Map<number, number>();
 
   private ticks: number = 0;
   private lastReportedPosition: GamePlayerPosition | null = null;
   private lastReportTick: number = 0;
+
+  private lastXP: number = null;
 
   public get player() {
     return this.room.players.find((p) => p.id === this.playerId)?.data;
@@ -76,7 +86,6 @@ export class Tubes extends lib.flash.display.MovieClip {
     this.playerId = playerId;
 
     this.players.length = 0;
-    this.rankedPlayers.length = 0;
     this.playerMap.clear();
     this.positionVersions.clear();
 
@@ -98,7 +107,6 @@ export class Tubes extends lib.flash.display.MovieClip {
         shell.placing = this.players.length;
         this.playerMap.set(localId, shell);
         this.players.push(shell);
-        this.rankedPlayers.push(shell);
 
         this.multiplayer.lobby?.addBar();
       }
@@ -114,6 +122,34 @@ export class Tubes extends lib.flash.display.MovieClip {
       shell.handType = data.handType;
       if (shell.isPlayer) {
         playerShell = shell;
+
+        if (this.multiplayer.lobby) {
+          const oldXP = this.lastXP ?? data.xp;
+          this.lastXP = data.xp;
+          this.multiplayer.lobby.checkLevelUp(oldXP, data.xp);
+        }
+
+        let needSave = false;
+        if (this.multiplayer.playerObject.xp !== shell.xp) {
+          this.multiplayer.playerObject.xp = shell.xp;
+          needSave = true;
+        }
+        if (this.multiplayer.playerObject.kudos !== shell.kudos) {
+          this.multiplayer.playerObject.kudos = shell.kudos;
+          needSave = true;
+        }
+        if (this.multiplayer.playerObject.wins !== shell.wins) {
+          this.multiplayer.playerObject.wins = shell.wins;
+          needSave = true;
+        }
+        if (this.multiplayer.playerObject.matches !== shell.matches) {
+          this.multiplayer.playerObject.matches = shell.matches;
+          needSave = true;
+        }
+
+        if (needSave) {
+          this.dispatchEvent(new Relay(Relay.GOTO, "SaveGame"));
+        }
       }
     }
     for (let i = 0; i < this.players.length; i++) {
@@ -126,9 +162,23 @@ export class Tubes extends lib.flash.display.MovieClip {
       this.multiplayer.game?.tRemovePlayer(shell.id);
 
       this.players.splice(i, 1);
-      this.rankedPlayers.splice(this.rankedPlayers.indexOf(shell), 1);
       this.playerMap.delete(shell.id);
     }
+
+    for (const reward of this.room.rewards) {
+      const shell = this.playerMap.get(reward.id);
+      if (!shell) {
+        continue;
+      }
+
+      shell.placing = reward.placing;
+      shell.kudosToGive = reward.availableKudos;
+      shell.xpRound = reward.matchXP;
+      shell.kudoReceived = reward.receivedKudos;
+    }
+
+    this.checkAcheievements();
+
     for (let i = 0; i < this.players.length; i++) {
       this.multiplayer.lobby?.updateBar(i);
     }
@@ -139,6 +189,15 @@ export class Tubes extends lib.flash.display.MovieClip {
           this.multiplayer.game?.endCountdown?.endNow();
           break;
         }
+
+        for (const pos of this.room.positions) {
+          const shell = this.playerMap.get(pos[0]);
+          if (!shell) {
+            continue;
+          }
+          shell.time = pos[6];
+        }
+
         if (this.multiplayer.lobby.timeToGo !== this.room.timer) {
           this.multiplayer.lobby.timeToGo = this.room.timer;
           if (this.room.timer <= 5) {
@@ -149,7 +208,10 @@ export class Tubes extends lib.flash.display.MovieClip {
 
       case "InGame":
         if (this.locate != "Game") {
-          playerShell.kudosToGive = 0;
+          for (const player of this.players) {
+            player.time = 0;
+          }
+
           SoundBox.playSound("Boop2");
           this.dispatchEvent(new Relay(Relay.GOTO, "Lobby", "StartGame"));
           break;
@@ -263,21 +325,18 @@ export class Tubes extends lib.flash.display.MovieClip {
     );
   }
 
-  public onEndGame(placings: PlayerBar[]) {
-    this.rankedPlayers.length = 0;
-    for (let i = 0; i < placings.length; i++) {
-      const player = this.playerMap.get(placings[i].player.id);
-      if (!player) {
-        continue;
-      }
-      player.placing = i;
-      this.rankedPlayers.push(player);
+  public giveKudo(player: PlayerShell) {
+    const targetId = this.room.players.find((p) => p.localId === player.id)?.id;
+    if (!targetId) {
+      return;
     }
+    this.dispatchEvent(
+      new ExternalEvent({
+        type: "give-kudo",
+        targetId,
+      })
+    );
   }
-
-  public giveKudo(player: PlayerShell) {}
-
-  public onPlayerLevelUp(level: number, levelName: string) {}
 
   public isPlayerMuted(player: PlayerShell): boolean {
     return false;
@@ -286,4 +345,87 @@ export class Tubes extends lib.flash.display.MovieClip {
   public unMutePlayer(player: PlayerShell) {}
 
   public mutePlayer(player: PlayerShell) {}
+
+  private checkAcheievements() {
+    const shell = this.players.find((shell) => shell.isPlayer);
+
+    if (this.player.wins >= 1) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 24));
+    }
+    if (this.player.wins >= 10) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 25));
+    }
+    if (this.player.wins >= 100) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 26));
+    }
+
+    if (this.player.kudos >= 10) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 27));
+    }
+    if (this.player.kudos >= 100) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 28));
+    }
+    if (this.player.kudos >= 250) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 29));
+    }
+
+    if (this.player.matches >= 5) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 30));
+    }
+    if (this.player.matches >= 25) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 31));
+    }
+    if (this.player.matches >= 100) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 32));
+    }
+    if (this.player.matches >= 250) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 33));
+    }
+
+    const reward = this.room.rewards.find((r) => r.id === shell.id);
+    if (reward?.receivedKudos >= 5) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 34));
+    }
+    if (reward?.receivedKudos >= 7) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 35));
+    }
+
+    const level = this.multiplayer.getLevelByXP(this.player.xp);
+    if (level >= 3) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 36));
+    }
+    if (level >= 5) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 37));
+    }
+    if (level >= 8) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 38));
+    }
+    if (level >= 10) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 39));
+    }
+    if (level >= 15) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 40));
+    }
+    if (level >= 20) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 41));
+    }
+    if (level >= 25) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 42));
+    }
+    if (level >= 30) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 43));
+    }
+    if (level >= 35) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 44));
+    }
+    if (level >= 38) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 45));
+    }
+    if (level >= 39) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 46));
+    }
+    if (level >= 40) {
+      this.dispatchEvent(new AchEvent(AchEvent.SEND, 47));
+    }
+  }
 }

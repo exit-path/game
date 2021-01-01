@@ -413,7 +413,6 @@ export class Game extends lib.flash.display.MovieClip {
       this.finalPlacingArray.push(playerBar);
       tempArray.splice(remI, 1);
     }
-    this.tubes.onEndGame(this.finalPlacingArray);
   }
 
   public endEnding(): any {

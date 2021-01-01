@@ -4,7 +4,6 @@ import { StopWatch } from "./john/StopWatch";
 import { Tubes } from "./Tubes";
 import { Placing } from "./Placing";
 import { Relay } from "./john/Relay";
-import { AchEvent } from "./AchEvent";
 import { Text2 } from "./john/Text2";
 import { Anim } from "./john/Anim";
 import { PlayerShell } from "./PlayerShell";
@@ -22,21 +21,11 @@ export class Lobby extends lib.flash.display.MovieClip {
 
   public declare levelUpWindow: LevelUpWindow;
 
-  private declare newLevel: number;
-
-  private declare newXP: number;
-
   public declare nextInfo: lib.flash.text.TextField;
-
-  private declare oldLevel: number;
-
-  private declare oldXP: number;
 
   public declare players: PlayerShell[];
 
   public declare ranking: any[];
-
-  public declare returning: boolean;
 
   public declare sendButton: lib.flash.display.SimpleButton;
 
@@ -60,12 +49,7 @@ export class Lobby extends lib.flash.display.MovieClip {
 
   public constructor() {
     super();
-    this.newXP = 0;
-    this.oldLevel = 0;
     this.timeToGo = 5;
-    this.newLevel = 0;
-    this.returning = false;
-    this.oldXP = 0;
     this.players = new Array<any>();
     this.bars = new Array<any>();
     this.ranking = new Array<any>();
@@ -77,12 +61,8 @@ export class Lobby extends lib.flash.display.MovieClip {
     var bar: Placing = new Placing();
     this.addChild(bar);
     this.bars.push(bar);
-    bar.kudosButton.addEventListener(
-      lib.flash.events.MouseEvent.CLICK,
-      this.giveKudo,
-      false,
-      0,
-      true
+    bar.kudosButton.addEventListener(lib.flash.events.MouseEvent.CLICK, () =>
+      this.giveKudo(bar)
     );
     bar.kudosButton.visible = false;
     if (this.levelUpWindow && this.contains(this.levelUpWindow)) {
@@ -94,50 +74,15 @@ export class Lobby extends lib.flash.display.MovieClip {
     this.dispatchEvent(new Relay(Relay.GOTO, "Lobby", "Back"));
   }
 
-  public exchangeKudos(to: string, from: string): any {
-    for (var i: any = 0; i < this.players.length; i++) {
-      if (this.players[i].userName == to) {
-        this.bars[i].boxy.giveKudo.play();
-        this.bars[i].boxy.updateXP(25);
-        this.bars[i].boxy.updateKudos(1);
-        if (this.players[i].isPlayer) {
-          if (this.bars[i].boxy.kudosRound >= 5) {
-            this.dispatchEvent(new AchEvent(AchEvent.SEND, 34));
-          }
-          if (this.bars[i].boxy.kudosRound >= 7) {
-            this.dispatchEvent(new AchEvent(AchEvent.SEND, 35));
-          }
-        }
-        return;
-      }
-    }
-  }
-
   public frame1(): any {
     this.stop();
     this.dispatchEvent(new Relay(Relay.SEND, "Results", "Init"));
   }
 
-  public giveKudo(e: lib.flash.events.MouseEvent): any {
-    var j: any = NaN;
-    for (var i: any = 0; i < this.bars.length; i++) {
-      if (
-        this.bars[i] ==
-        (e.currentTarget as lib.flash.display.DisplayObject).parent
-      ) {
-        this.tubes.giveKudo(this.players[i]);
-      }
-      if (this.players[i].isPlayer) {
-        this.players[i].kudosToGive--;
-        this.kudosLeft.text = "Kudos To Give: " + this.players[i].kudosToGive;
-        if (this.players[i].kudosToGive <= 0) {
-          for (j = 0; j < this.bars.length; j++) {
-            this.bars[j].kudosButton.visible = false;
-          }
-          this.kudosLeft.text = "Kudos To Give: 0";
-        }
-      }
-    }
+  private giveKudo(bar: Placing) {
+    this.tubes.giveKudo(bar.boxy.player);
+    const index = this.players.findIndex((p) => p.isPlayer);
+    this.players[index].kudosToGive--;
   }
 
   public init(tubers: Tubes): any {
@@ -241,159 +186,46 @@ export class Lobby extends lib.flash.display.MovieClip {
       0.3
     );
     this.levelRank.text = curRank;
+
+    const player = this.players.find((shell) => shell.isPlayer);
+    if (this.tubes.room.rewards.some((r) => r.id === player.id)) {
+      this.kudosLeft.text = "Kudos To Give: " + player.kudosToGive;
+    }
+    for (const disp of this.bars) {
+      disp.kudosButton.visible =
+        !disp.boxy.player.isPlayer &&
+        !disp.boxy.isNew &&
+        player.kudosToGive > 0;
+    }
   }
 
   public removeBar(pos: number): any {
-    this.bars[pos].kudosButton.removeEventListener(
-      lib.flash.events.MouseEvent.CLICK,
-      this.giveKudo
-    );
     this.removeChild(this.bars[pos]);
     this.bars[pos] = null;
     this.bars.splice(pos, 1);
   }
 
-  public reRank(): any {}
-
-  public returnFromGame(): any {
-    this.returning = true;
-    for (var i: any = 0; i < this.players.length; i++) {
-      this.players[i].matches++;
-      if (this.players[i].isPlayer) {
-        this.oldXP = this.tubes.player.xp;
-        this.oldLevel = this.parent["getLevelByXP"](this.tubes.player.xp);
-        this.tubes.player.matches++;
-        this.dispatchEvent(new AchEvent(AchEvent.SEND, 15));
-        this.bars[i].kudosButton.visible = false;
-      } else {
-        this.bars[i].kudosButton.visible = true;
-      }
-      if (this.players[i].placing == 0) {
-        this.players[i].kudosToGive = this.players[i].kudosToGive + 3;
-        this.players[i].xp = this.players[i].xp + 250;
-        this.players[i].wins++;
-        this.updateBar(i);
-        this.bars[i].boxy.updateXP(250);
-        this.bars[i].boxy.kudosThisRound.text = "0";
-        if (this.players[i].isPlayer) {
-          this.tubes.player.xp = this.tubes.player.xp + 250;
-          this.tubes.player.wins++;
-          if (this.tubes.player.wins >= 1) {
-            this.dispatchEvent(new AchEvent(AchEvent.SEND, 24));
-          }
-          if (this.tubes.player.wins >= 10) {
-            this.dispatchEvent(new AchEvent(AchEvent.SEND, 25));
-          }
-          if (this.tubes.player.wins >= 100) {
-            this.dispatchEvent(new AchEvent(AchEvent.SEND, 26));
-          }
-        }
-      } else if (this.players[i].placing == 1) {
-        this.players[i].kudosToGive = this.players[i].kudosToGive + 2;
-        this.players[i].xp = this.players[i].xp + 150;
-        this.updateBar(i);
-        this.bars[i].boxy.updateXP(150);
-        this.bars[i].boxy.kudosThisRound.text = "0";
-        if (this.players[i].isPlayer) {
-          this.tubes.player.xp = this.tubes.player.xp + 150;
-        }
-      } else if (this.players[i].placing == 2) {
-        this.players[i].kudosToGive = this.players[i].kudosToGive + 1;
-        this.players[i].xp = this.players[i].xp + 100;
-        this.updateBar(i);
-        this.bars[i].boxy.updateXP(100);
-        this.bars[i].boxy.kudosThisRound.text = "0";
-        if (this.players[i].isPlayer) {
-          this.tubes.player.xp = this.tubes.player.xp + 100;
-        }
-      } else {
-        this.players[i].kudosToGive = this.players[i].kudosToGive + 0;
-        this.players[i].xp = this.players[i].xp + 25;
-        this.tubes.player.xp = this.tubes.player.xp + 25;
-        this.updateBar(i);
-        this.bars[i].boxy.updateXP(25);
-        this.bars[i].boxy.kudosThisRound.text = "0";
-        if (this.players[i].isPlayer) {
-          this.tubes.player.xp = this.tubes.player.xp + 25;
-        }
-      }
-    }
-    var levelTitle: string = this.parent["getRankByXP"](this.tubes.player.xp);
-    var levelNum: number = this.parent["getLevelByXP"](this.tubes.player.xp);
-    if (levelNum > this.oldLevel) {
-      this.levelUpWindow = new LevelUpWindow();
-      this.levelUpWindow.init(levelNum, levelTitle);
-      this.addChild(this.levelUpWindow);
-      for (i = 0; i < this.players[i]; i++) {
-        if (this.players[i].isPlayer) {
-          this.updateBar(i);
-        }
-      }
-      this.tubes.onPlayerLevelUp(levelNum, levelTitle);
-    }
-    this.dispatchEvent(new Relay(Relay.GOTO, "SaveGame"));
-    var matches: number = this.tubes.player.matches;
-    if (matches >= 5) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 30));
-    }
-    if (matches >= 25) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 31));
-    }
-    if (matches >= 100) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 32));
-    }
-    if (matches >= 250) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 33));
-    }
-    if (levelNum >= 3) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 36));
-    }
-    if (levelNum >= 5) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 37));
-    }
-    if (levelNum >= 8) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 38));
-    }
-    if (levelNum >= 10) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 39));
-    }
-    if (levelNum >= 15) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 40));
-    }
-    if (levelNum >= 20) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 41));
-    }
-    if (levelNum >= 25) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 42));
-    }
-    if (levelNum >= 30) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 43));
-    }
-    if (levelNum >= 35) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 44));
-    }
-    if (levelNum >= 38) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 45));
-    }
-    if (levelNum >= 39) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 46));
-    }
-    if (levelNum >= 40) {
-      this.dispatchEvent(new AchEvent(AchEvent.SEND, 47));
-    }
-  }
-
   public sendMessage(e: lib.flash.events.MouseEvent = null): any {}
 
   public sortPlayers(): any {
-    var j: any = NaN;
-    for (var i: any = 0; i < this.players.length; i++) {
+    const placings = new Map(
+      this.tubes.room.rewards.map((r) => [r.id, r.placing])
+    );
+    const lastRank = placings.size + 1;
+    const rankedPlayers = this.players
+      .slice()
+      .sort(
+        (a, b) =>
+          (placings.get(a.id) ?? lastRank + a.id) -
+          (placings.get(b.id) ?? lastRank + b.id)
+      );
+    for (let i = 0; i < this.players.length; i++) {
       this.bars[i].x = 50;
-      for (j = 0; j < this.tubes.rankedPlayers.length; j++) {
-        if (this.tubes.rankedPlayers[j] == this.players[i]) {
-          this.bars[i].y = Anim.ease(this.bars[i].y, 100 + j * 50, 0.3);
-        }
-      }
+      this.bars[i].y = Anim.ease(
+        this.bars[i].y,
+        100 + rankedPlayers.indexOf(this.players[i]) * 50,
+        0.3
+      );
     }
   }
 
@@ -406,26 +238,20 @@ export class Lobby extends lib.flash.display.MovieClip {
     }
     disp.x = 50;
     disp.boxy.init(player);
-    disp.placingNum.text = String(player.placing + 1);
-    if (player.completedLevel) {
-      disp.timeDisp.text = this.timer.getRealTime(player.time);
-    } else if (this.returning) {
-      disp.timeDisp.text = "No Finish";
+    if (this.tubes.room.rewards.some((r) => r.id === player.id)) {
+      disp.timeDisp.text =
+        player.time > 0 ? this.timer.getRealTime(player.time) : "No Finish";
+      disp.placingNum.text = String(player.placing);
       disp.boxy.kudoImage.visible = true;
+      disp.boxy.isNew = false;
     } else {
       disp.timeDisp.text = "New!";
-      disp.boxy.xpThisRound.text = " ";
-      disp.boxy.kudosThisRound.text = " ";
+      disp.placingNum.text = "-";
       disp.boxy.kudoImage.visible = false;
+      disp.boxy.isNew = true;
     }
     if (player.isPlayer == true) {
-      if (i == 0) {
-      }
       disp.playerBorder.visible = true;
-      disp.kudosButton.visible = false;
-      if (player.kudosToGive > 0) {
-        this.kudosLeft.text = "Kudos To Give: " + player.kudosToGive;
-      }
       disp.sMute.visible = false;
     } else {
       disp.playerBorder.visible = false;
@@ -438,17 +264,16 @@ export class Lobby extends lib.flash.display.MovieClip {
     disp.boxy.updateBox();
   }
 
-  public updateKudosToGive(): any {
-    for (var i: any = 0; i < this.players.length; i++) {
-      if (this.players[i].isPlayer) {
-        if (this.players[i].kudosToGive > 0) {
-          this.kudosLeft.text = "Kudos To Give: " + this.players[i].kudosToGive;
-        } else {
-          this.kudosLeft.text = "Kudos To Give: 0";
-        }
-        return;
-      }
-      this.bars[i].kudosButton.visible = true;
+  public checkLevelUp(oldXP: number, newXP: number) {
+    const oldLevel: number = this.parent["getLevelByXP"](oldXP);
+    const newLevel: number = this.parent["getLevelByXP"](newXP);
+    if (newLevel <= oldLevel) {
+      return;
     }
+
+    const levelTitle: string = this.parent["getRankByXP"](newXP);
+    this.levelUpWindow = new LevelUpWindow();
+    this.levelUpWindow.init(newLevel, levelTitle);
+    this.addChild(this.levelUpWindow);
   }
 }
