@@ -11,7 +11,7 @@ type ModalInstanceProps =
 
 type ModalEnterUserLevelProps = {
   type: "enter-user-level";
-  onEnterLevel: (level: Level) => void;
+  onEnterLevel: (level: number | Level) => void;
 };
 
 type ModalConnectMultiplayerProps = {

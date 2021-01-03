@@ -4,8 +4,8 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "../../game/store";
 import { ModalInstance } from "../../game/store/modal";
 import { ConnectMultiplayer } from "./modals/ConnectMultiplayer";
-import { EnterUserLevel } from "./modals/EnterUserLevel";
 import { RoomSelection } from "./modals/RoomSelection";
+import { SelectLevel } from "./modals/SelectLevel";
 import styles from "./ModalContainer.module.scss";
 
 interface Props {
@@ -33,7 +33,7 @@ const Instance = observer<InstanceProps>(function Instance(props) {
   switch (props.modal.type) {
     case "enter-user-level":
       children = (
-        <EnterUserLevel
+        <SelectLevel
           className={styles.dialog}
           modalId={props.modal.id}
           onEnterLevel={props.modal.onEnterLevel}

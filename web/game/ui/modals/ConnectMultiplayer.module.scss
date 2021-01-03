@@ -4,14 +4,12 @@
   .form {
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: stretch;
-    justify-items: stretch;
   }
 
   .address {
-    resize: none;
     font-family: $font-family-monospace;
-    word-break: break-all;
   }
 }
 
@@ -19,4 +17,8 @@
   display: block;
   margin: $modal-inner-padding;
   flex: 1;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

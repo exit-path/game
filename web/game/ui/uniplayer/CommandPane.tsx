@@ -20,8 +20,12 @@ export const CommandPane = observer<CommandPaneProps>(function CommandPane(
       onEnterLevel: (level) => {
         game.focus();
         game.stage?.__withContext(() => {
-          game.main?.setUserLevel(level);
-          game.main?.startPracticeLevel(999);
+          if (typeof level === "number") {
+            game.main?.startPracticeLevel(level);
+          } else {
+            game.main?.setUserLevel(level);
+            game.main?.startPracticeLevel(999);
+          }
         })();
       },
     });

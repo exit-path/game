@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../store";
-import styles from "./EnterUserLevel.module.scss";
+import styles from "./ConnectMultiplayer.module.scss";
 
 interface Props {
   className?: string;

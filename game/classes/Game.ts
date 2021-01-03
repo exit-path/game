@@ -852,8 +852,7 @@ export class Game extends lib.flash.display.MovieClip {
     this.skyLine.ping();
     this.uiPanel.ping(this.camera, this.player);
     this.level.setPlayer(this.player);
-    this.levelStart.x = -this.camera.camX;
-    this.levelStart.y = -this.camera.camY;
+    this.goAhead = true;
   }
 
   public initSounds(): any {

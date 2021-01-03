@@ -1150,7 +1150,6 @@ export class MainTimeline extends lib.flash.display.MovieClip {
     this.multiplayer.game.mode = "PRACTICE";
     this.multiplayer.addChild(this.multiplayer.game);
     this.multiplayer.game.init(null, this.playerObj, level);
-    this.multiplayer.game.countdownStart();
     this.multiplayer.game.initPractice();
   }
 

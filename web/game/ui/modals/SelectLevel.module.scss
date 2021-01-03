@@ -1,0 +1,45 @@
+@import "../../../theme.scss";
+
+.dialog {
+  .form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gameLevel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .levelSelector {
+    width: auto;
+    flex: 1;
+    margin-left: 16px;
+  }
+
+  .userLevel {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .codeArea {
+    margin-top: 16px;
+    flex: 1 1 0;
+    resize: none;
+    font-family: $font-family-monospace;
+    word-break: break-all;
+  }
+}
+
+.feedback {
+  display: block;
+  margin: $modal-inner-padding;
+  flex: 1;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
