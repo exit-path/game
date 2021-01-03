@@ -476,15 +476,17 @@ export class Player extends TileObject {
       for (i = 0; i < this.curLevel.teleporters.length; i++) {
         if (this.hitTestObject(this.curLevel.teleporters[i])) {
           this.teleporting = true;
-          this.x = this.curLevel.teleporters[i].partner.x;
-          this.y = this.curLevel.teleporters[i].partner.y;
-          this.parent["emitBeam"](
-            this.curLevel.teleporters[i].x - 17,
-            this.curLevel.teleporters[i].y,
-            25
-          );
-          this.parent["emitBeam"](this.x - 17, this.y, 25);
-          SoundBox.playSound("WhooshSound");
+          if (this.curLevel.teleporters[i].partner) {
+            this.x = this.curLevel.teleporters[i].partner.x;
+            this.y = this.curLevel.teleporters[i].partner.y;
+            this.parent["emitBeam"](
+              this.curLevel.teleporters[i].x - 17,
+              this.curLevel.teleporters[i].y,
+              25
+            );
+            this.parent["emitBeam"](this.x - 17, this.y, 25);
+            SoundBox.playSound("WhooshSound");
+          }
           return;
         }
       }

@@ -3,7 +3,7 @@ import { Button, Form, Modal } from "react-bootstrap";
 import { ResolverResult, useForm } from "react-hook-form";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
-import { Level, parse } from "../../../../shared/level";
+import { Level, parse, validate } from "../../../../shared/level";
 import { useStore } from "../../store";
 import styles from "./SelectLevel.module.scss";
 
@@ -86,7 +86,8 @@ export const SelectLevel = observer<Props>(function SelectLevel(props) {
       return { values, errors: {} };
     } else {
       try {
-        parse(values.levelCode.replace(levelCodeTrimRegex, ""));
+        const level = parse(values.levelCode.replace(levelCodeTrimRegex, ""));
+        validate(level);
         return { values, errors: {} };
       } catch (e) {
         return {
