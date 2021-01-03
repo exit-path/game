@@ -3,14 +3,14 @@ import { Button, Form, Modal } from "react-bootstrap";
 import { ResolverResult, useForm } from "react-hook-form";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
-import { Level, parse, validate } from "../../../../shared/level";
+import { parse, validate } from "../../../../shared/level";
 import { useStore } from "../../store";
 import styles from "./SelectLevel.module.scss";
 
 interface Props {
   className?: string;
   modalId: number;
-  onEnterLevel: (level: Level | number) => void;
+  onEnterLevel: (level: string | number) => void;
 }
 
 interface FormData {
@@ -19,7 +19,7 @@ interface FormData {
   levelCode: string;
 }
 
-const levelCodeTrimRegex = /^\s*(!custom)?|\s*$|\r|\n/g;
+const levelCodeTrimRegex = /^\s*(!custom\s*)?|\s*$|\r|\n/g;
 
 const builtinGameLevels = {
   0: "Getting Out 1",
@@ -127,7 +127,7 @@ export const SelectLevel = observer<Props>(function SelectLevel(props) {
       if (data.levelType === "game-level") {
         onEnterLevel(Number(data.gameLevel) ?? 0);
       } else {
-        onEnterLevel(parse(data.levelCode.replace(levelCodeTrimRegex, "")));
+        onEnterLevel(data.levelCode.replace(levelCodeTrimRegex, ""));
       }
     },
     [modal, modalId, onEnterLevel]

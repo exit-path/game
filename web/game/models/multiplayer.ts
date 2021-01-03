@@ -84,6 +84,7 @@ export interface RoomGameState {
   timer: number;
   nextLevel: number;
   nextLevelName: string;
+  nextLevelCode: string;
   positions: GamePlayerPosition[];
   checkpoints: GamePlayerCheckpoints[];
   rewards: GamePlayerReward[];
@@ -96,6 +97,7 @@ interface RoomGameStateDiff {
   timer?: number;
   nextLevel?: number;
   nextLevelName?: string;
+  nextLevelCode?: string;
   positions?: GamePlayerPosition[];
   checkpoints?: GamePlayerCheckpoints[];
   rewards?: GamePlayerReward[];
@@ -124,6 +126,9 @@ export function applyGameStateDiff(
   }
   if (diff.nextLevel != null) {
     state.nextLevel = diff.nextLevel;
+  }
+  if (diff.nextLevelCode != null) {
+    state.nextLevelCode = diff.nextLevelCode;
   }
   if (diff.nextLevelName != null) {
     state.nextLevelName = diff.nextLevelName;

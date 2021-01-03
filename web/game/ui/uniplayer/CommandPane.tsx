@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
+import { parse } from "../../../../shared/level";
 import { useStore } from "../../store";
 import styles from "./CommandPane.module.scss";
 
@@ -16,14 +17,14 @@ export const CommandPane = observer<CommandPaneProps>(function CommandPane(
 
   const onPractice = useCallback(() => {
     modal.present({
-      type: "enter-user-level",
+      type: "select-level",
       onEnterLevel: (level) => {
         game.focus();
         game.stage?.__withContext(() => {
           if (typeof level === "number") {
             game.main?.startPracticeLevel(level);
           } else {
-            game.main?.setUserLevel(level);
+            game.main?.setUserLevel(parse(level));
             game.main?.startPracticeLevel(999);
           }
         })();

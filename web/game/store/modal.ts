@@ -1,17 +1,16 @@
 import { makeAutoObservable } from "mobx";
-import { Level } from "../../../shared/level";
 import type { RootStore } from "./root";
 
 export type ModalInstance = { id: number } & ModalInstanceProps;
 
 type ModalInstanceProps =
-  | ModalEnterUserLevelProps
+  | ModalSelectLevelProps
   | ModalConnectMultiplayerProps
   | ModalRoomSelectionProps;
 
-type ModalEnterUserLevelProps = {
-  type: "enter-user-level";
-  onEnterLevel: (level: number | Level) => void;
+type ModalSelectLevelProps = {
+  type: "select-level";
+  onEnterLevel: (level: number | string) => void;
 };
 
 type ModalConnectMultiplayerProps = {
@@ -31,6 +30,7 @@ export class ModalStore {
     for (const { type } of this.instances) {
       switch (type) {
         case "room-selection":
+        case "select-level":
           continue;
         default:
           return true;

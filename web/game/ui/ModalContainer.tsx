@@ -31,7 +31,7 @@ interface InstanceProps {
 const Instance = observer<InstanceProps>(function Instance(props) {
   let children: JSX.Element;
   switch (props.modal.type) {
-    case "enter-user-level":
+    case "select-level":
       children = (
         <SelectLevel
           className={styles.dialog}

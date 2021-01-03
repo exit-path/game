@@ -5,6 +5,8 @@ import { ExternalEvent } from "./ExternalEvent";
 import type { Multiplayer } from "./Multiplayer";
 import { SoundBox } from "./john/SoundBox";
 import { AchEvent } from "./AchEvent";
+import { main } from "./global";
+import { parse } from "../../shared/level";
 
 interface PlayerData {
   displayName: string;
@@ -49,6 +51,7 @@ interface RoomState {
   phase: "Lobby" | "InGame";
   timer: number;
   nextLevel: number;
+  nextLevelCode: string;
   positions: GamePlayerPosition[];
   checkpoints: GamePlayerCheckpoints[];
   rewards: GamePlayerReward[];
@@ -214,6 +217,9 @@ export class Tubes extends lib.flash.display.MovieClip {
             player.time = 0;
           }
           this.positionVersions.clear();
+          if (this.room.nextLevelCode.length > 0) {
+            main().setUserLevel(parse(this.room.nextLevelCode));
+          }
 
           SoundBox.playSound("Boop2");
           this.dispatchEvent(new Relay(Relay.GOTO, "Lobby", "StartGame"));

@@ -203,4 +203,8 @@ export class MultiplayerStore {
     }
     return await this.conn.send("SendMessage", text);
   }
+
+  public async setNextLevel(level: string) {
+    return await this.conn.send("SetNextLevel", level);
+  }
 }
