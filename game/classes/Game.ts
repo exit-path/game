@@ -845,6 +845,13 @@ export class Game extends lib.flash.display.MovieClip {
         this.skin.y = this.player.y;
       }
     }
+
+    this.bg.ping();
+    this.skyLine.ping();
+    this.uiPanel.ping(this.camera, this.player);
+    this.level.setPlayer(this.player);
+    this.levelStart.x = -this.camera.camX;
+    this.levelStart.y = -this.camera.camY;
   }
 
   public initPractice() {
@@ -1034,9 +1041,7 @@ export class Game extends lib.flash.display.MovieClip {
     if (this.mode === "MP") {
       this.tUpdateFriendsENT();
     }
-    if (this.endCountdown) {
-      this.endCountdown.ping(0 - this.x, 0 - this.y);
-    }
+    this.endCountdown?.ping(-this.x, -this.y);
     if (!this.goAhead) {
       this.skin.x = this.player.x;
       this.skin.y = this.player.y;
