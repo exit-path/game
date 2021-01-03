@@ -16,6 +16,8 @@ export class GameStore {
 
   multiplayer: MultiplayerStore | null = null;
 
+  isInSPMenu = false;
+
   constructor(readonly root: RootStore) {
     makeAutoObservable(this);
 
@@ -97,19 +99,6 @@ export class GameStore {
 
   private handleExternalEvent(event: ExternalEventProps) {
     switch (event.type) {
-      case "sp-user-level":
-        this.root.modal.present({
-          type: "enter-user-level",
-          onEnterLevel: (level) => {
-            this.focus();
-            this.stage?.__withContext(() => {
-              this.main?.setUserLevel(level);
-              this.main?.startPracticeLevel(999);
-            })();
-          },
-        });
-        break;
-
       case "connect-multiplayer":
         this.root.modal.present({
           type: "connect-multiplayer",
@@ -164,6 +153,14 @@ export class GameStore {
 
       case "give-kudo":
         this.multiplayer?.giveKudo(event.targetId).catch((e) => console.log(e));
+        break;
+
+      case "sp-menu-start":
+        this.isInSPMenu = true;
+        break;
+
+      case "sp-menu-end":
+        this.isInSPMenu = false;
         break;
     }
   }

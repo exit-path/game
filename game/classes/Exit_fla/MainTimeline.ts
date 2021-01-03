@@ -780,6 +780,9 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.game = null;
           this.startMenus();
           this.addChild(this.multiplayer);
+          this.multiplayer.singlePlayerMenu = new SinglePlayerMenu();
+          this.multiplayer.addChild(this.multiplayer.singlePlayerMenu);
+          this.multiplayer.singlePlayerMenu.init(this.playerObj);
           this.startLowMenu();
           break;
       }
@@ -1139,6 +1142,10 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public startPracticeLevel(level: number) {
     this.endMenus();
+    this.multiplayer.singlePlayerMenu.kill();
+    this.multiplayer.removeChild(this.multiplayer.singlePlayerMenu);
+    this.multiplayer.singlePlayerMenu = null;
+
     this.multiplayer.game = new Game();
     this.multiplayer.game.mode = "PRACTICE";
     this.multiplayer.addChild(this.multiplayer.game);

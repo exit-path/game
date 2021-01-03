@@ -7,7 +7,9 @@ export type ExternalEventProps =
   | { type: "disconnect-multiplayer" }
   | { type: "report-position"; position: GamePlayerPosition }
   | { type: "report-checkpoint"; id: number }
-  | { type: "give-kudo"; targetId: string };
+  | { type: "give-kudo"; targetId: string }
+  | { type: "sp-menu-start" }
+  | { type: "sp-menu-end" };
 
 export class ExternalEvent extends lib.flash.events.Event {
   static readonly TYPE = "external-event";

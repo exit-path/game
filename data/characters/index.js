@@ -3612,6 +3612,3 @@ bundle.linkages[181] = "FlowReady";
 bundle.linkages[180] = "FinalC";
 bundle.linkages[179] = "FinalB";
 bundle.linkages[178] = "FinalA";
-
-import customizeBundle from "../custom";
-customizeBundle(bundle);

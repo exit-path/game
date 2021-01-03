@@ -12,8 +12,6 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
 
   public declare currentProgress: lib.flash.text.TextField;
 
-  public declare userLevelButton: lib.flash.display.SimpleButton;
-
   public declare customizeButton: lib.flash.display.SimpleButton;
 
   public declare deleteSure: lib.flash.display.MovieClipT<{
@@ -91,13 +89,6 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
       0,
       true
     );
-    this.userLevelButton.addEventListener(
-      lib.flash.events.MouseEvent.CLICK,
-      this.buttons,
-      false,
-      0,
-      true
-    );
   }
 
   public buttons(e: lib.flash.events.MouseEvent): any {
@@ -124,9 +115,6 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
         this.dispatchEvent(
           new Relay(Relay.GOTO, "SinglePlayerMenu", "CharacterSelection")
         );
-        break;
-      case this.userLevelButton:
-        this.dispatchEvent(new ExternalEvent({ type: "sp-user-level" }));
         break;
       case this.deleteSure.yesButton:
         this.dispatchEvent(new Relay(Relay.GOTO, "SinglePlayerMenu", "Delete"));
@@ -164,6 +152,12 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
     this.runnerBar.runner.headType = this.playerObject.headType;
     this.runnerBar.runner.handType = this.playerObject.handType;
     this.runnerBar.runner.fuel();
+
+    this.dispatchEvent(
+      new ExternalEvent({
+        type: "sp-menu-start",
+      })
+    );
   }
 
   public kill(): any {
@@ -194,6 +188,12 @@ export class SinglePlayerMenu extends lib.flash.display.MovieClip {
     this.deleteSure.noButton.removeEventListener(
       lib.flash.events.MouseEvent.CLICK,
       this.buttons
+    );
+
+    this.dispatchEvent(
+      new ExternalEvent({
+        type: "sp-menu-end",
+      })
     );
   }
 }
