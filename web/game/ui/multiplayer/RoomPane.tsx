@@ -19,14 +19,19 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
 
   const [modalId, setModalId] = useState<number | null>(null);
   const onEditLevel = useCallback(() => {
-    const modalId = modal.present({
-      type: "select-level",
-      onEnterLevel: (level) => {
-        game.multiplayer?.setNextLevel(String(level));
-      },
-    });
-    setModalId(modalId);
-  }, [modal, game]);
+    if (modal.instances.some((i) => i.id === modalId)) {
+      return;
+    }
+
+    setModalId(
+      modal.present({
+        type: "select-level",
+        onEnterLevel: (level) => {
+          game.multiplayer?.setNextLevel(String(level));
+        },
+      })
+    );
+  }, [modal, modalId, game]);
 
   const isInGame = room.id !== "lobby" && gameState.phase === "InGame";
   useEffect(() => {

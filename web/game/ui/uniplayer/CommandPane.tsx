@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import cn from "classnames";
 import { observer } from "mobx-react-lite";
 import { parse } from "../../../../shared/level";
@@ -15,22 +15,30 @@ export const CommandPane = observer<CommandPaneProps>(function CommandPane(
   const { modal, game } = useStore();
   const { className } = props;
 
+  const [modalId, setModalId] = useState<number | null>(null);
+
   const onPractice = useCallback(() => {
-    modal.present({
-      type: "select-level",
-      onEnterLevel: (level) => {
-        game.focus();
-        game.stage?.__withContext(() => {
-          if (typeof level === "number") {
-            game.main?.startPracticeLevel(level);
-          } else {
-            game.main?.setUserLevel(parse(level));
-            game.main?.startPracticeLevel(999);
-          }
-        })();
-      },
-    });
-  }, [modal, game]);
+    if (modal.instances.some((i) => i.id === modalId)) {
+      return;
+    }
+
+    setModalId(
+      modal.present({
+        type: "select-level",
+        onEnterLevel: (level) => {
+          game.focus();
+          game.stage?.__withContext(() => {
+            if (typeof level === "number") {
+              game.main?.startPracticeLevel(level);
+            } else {
+              game.main?.setUserLevel(parse(level));
+              game.main?.startPracticeLevel(999);
+            }
+          })();
+        },
+      })
+    );
+  }, [modal, modalId, game]);
 
   return (
     <div className={cn(className, styles.pane)}>
