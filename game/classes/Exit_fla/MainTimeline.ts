@@ -809,6 +809,18 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.singlePlayerMenu.init(this.playerObj);
           this.startLowMenu();
           break;
+        case "QuitMP":
+          this.multiplayer.game.killS();
+          this.multiplayer.removeChild(this.multiplayer.game);
+          this.multiplayer.game = null;
+          this.multiplayer.tubes.disconnect();
+          this.multiplayer.removeChild(this.multiplayer.tubes);
+          this.multiplayer.tubes = null;
+          this.startMenus();
+          this.addChild(this.multiplayer);
+          this.multiplayer.multiplayerMenu = new MultiplayerMenu();
+          this.multiplayer.addChild(this.multiplayer.multiplayerMenu);
+          this.multiplayer.multiplayerMenu.init(this.playerObj);
       }
     }
   }

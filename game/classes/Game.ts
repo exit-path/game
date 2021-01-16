@@ -450,6 +450,8 @@ export class Game extends lib.flash.display.MovieClip {
       this.dispatchEvent(new Relay(Relay.GOTO, "Game", "SinglePlayerMenu"));
     } else if (this.mode === "PRACTICE") {
       this.dispatchEvent(new Relay(Relay.GOTO, "Game", "EndPractice"));
+    } else if (this.mode === "MP") {
+      this.dispatchEvent(new Relay(Relay.GOTO, "Game", "QuitMP"));
     }
   }
 
@@ -793,7 +795,7 @@ export class Game extends lib.flash.display.MovieClip {
     );
     if (this.mode === "MP") {
       this.uiPanel.pauseButton.visible = false;
-      this.uiPanel.exitButton.visible = false;
+      this.uiPanel.exitButton.visible = true;
     } else if (this.mode === "PRACTICE") {
       this.uiPanel.pauseButton.visible = false;
     }

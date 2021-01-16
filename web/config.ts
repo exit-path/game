@@ -11,5 +11,10 @@ export const mpServers: MPServer[] = [
 ];
 
 export const versions: string[][] = [
-  ["v0.1.0", "Supports spectators", "Allow changing username in 'Modify' menu"],
+  [
+    "v0.1.0",
+    "Supports spectators",
+    "Allow changing username in 'Modify' menu",
+    "Support quitting to menu while in Multiplayer game",
+  ],
 ];
