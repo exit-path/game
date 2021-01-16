@@ -174,8 +174,12 @@ export class MultiplayerStore {
     return await this.conn.invoke<{ error?: string }>("CreateGameRoom", name);
   }
 
-  public async joinRoom(roomId: string) {
-    return await this.conn.invoke<{ error?: string }>("JoinRoom", roomId);
+  public async joinRoom(roomId: string, asSpectator: boolean) {
+    return await this.conn.invoke<{ error?: string }>(
+      "JoinRoom",
+      roomId,
+      asSpectator
+    );
   }
 
   public async reportPosition(

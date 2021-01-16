@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import cn from "classnames";
 import { reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 import { Relay } from "../../../../game/classes/john/Relay";
@@ -19,7 +18,18 @@ const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
 
   const onJoin = useCallback(() => {
     game.multiplayer
-      ?.joinRoom(id)
+      ?.joinRoom(id, true)
+      .catch((e) => ({ error: String(e) }))
+      .then(({ error }) => {
+        if (error) {
+          game.multiplayer?.logMessage(`Cannot join room: ${error}`, 0xff0000);
+        }
+      });
+  }, [id, game]);
+
+  const onSpectate = useCallback(() => {
+    game.multiplayer
+      ?.joinRoom(id, true)
       .catch((e) => ({ error: String(e) }))
       .then(({ error }) => {
         if (error) {
@@ -29,9 +39,11 @@ const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
   }, [id, game]);
 
   return (
-    <li className={cn(styles.item, phase === "InGame" && styles.disabled)}>
-      <span>{name}</span>
-      <span>{numPlayers}</span>
+    <li className={styles.item}>
+      <span className={phase === "InGame" ? styles.disabled : ""}>{name}</span>
+      <span className={phase === "InGame" ? styles.disabled : ""}>
+        {numPlayers}
+      </span>
       <div className={styles.actions}>
         <button
           className={styles.action}
@@ -39,6 +51,9 @@ const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
           disabled={phase === "InGame"}
         >
           Join
+        </button>
+        <button className={styles.action} onClick={onSpectate}>
+          Spectate
         </button>
       </div>
     </li>

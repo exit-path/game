@@ -738,7 +738,7 @@ export class Game extends lib.flash.display.MovieClip {
     if (this.mode !== "MP") {
       this.uiPanel.placing.visible = false;
     } else {
-      this.uiPanel.placing.visible = true;
+      this.uiPanel.placing.visible = !!this.tubes?.player;
     }
     this.bg.init(2000, 800);
     this.addChild(this.bg);
@@ -852,6 +852,12 @@ export class Game extends lib.flash.display.MovieClip {
     this.level.setPlayer(this.player);
     this.levelStart.x = -this.camera.camX;
     this.levelStart.y = -this.camera.camY;
+
+    if (!this.tubes.player) {
+      this.player.completedLevel = true;
+      this.skin.visible = false;
+      this.finishLevel();
+    }
   }
 
   public initPractice() {

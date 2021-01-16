@@ -63,9 +63,6 @@ export class QuickPlayLobby extends lib.flash.display.MovieClip {
   }
 
   public ping(e: lib.flash.events.Event): any {
-    if (this.gameReady) {
-      this.dispatchEvent(new Relay(Relay.GOTO, "QuickPlayLobby", "OpenLobby"));
-    }
     if (this.step == 0) {
       this.connectionMeter.matcher.width = Anim.ease(
         this.connectionMeter.matcher.width,

@@ -76,7 +76,7 @@ export class Tubes extends lib.flash.display.MovieClip {
     return this.room.players.find((p) => p.id === this.playerId)?.data;
   }
 
-  private get multiplayer() {
+  get multiplayer() {
     return this.parent as Multiplayer;
   }
 
@@ -99,7 +99,7 @@ export class Tubes extends lib.flash.display.MovieClip {
   public ping() {
     this.ticks++;
 
-    let playerShell: PlayerShell;
+    let playerShell: PlayerShell | null = null;
     let needSave = false;
     for (const { id, localId, data } of this.room.players) {
       let shell = this.playerMap.get(localId);
@@ -189,7 +189,11 @@ export class Tubes extends lib.flash.display.MovieClip {
     switch (this.room.phase) {
       case "Lobby":
         if (this.locate != "Lobby") {
-          if (this.multiplayer.game && !this.multiplayer.game.levelEnd) {
+          if (this.locate === "QPL") {
+            this.dispatchEvent(
+              new Relay(Relay.GOTO, "QuickPlayLobby", "OpenLobby")
+            );
+          } else if (this.multiplayer.game && !this.multiplayer.game.levelEnd) {
             this.multiplayer.game.endMPGame();
           }
           break;
@@ -222,7 +226,13 @@ export class Tubes extends lib.flash.display.MovieClip {
           }
 
           SoundBox.playSound("Boop2");
-          this.dispatchEvent(new Relay(Relay.GOTO, "Lobby", "StartGame"));
+          this.dispatchEvent(
+            new Relay(
+              Relay.GOTO,
+              this.locate === "QPL" ? "QuickPlayLobby" : "Lobby",
+              "StartGame"
+            )
+          );
           break;
         } else if (this.multiplayer.game.levelNum !== this.room.nextLevel) {
           if (this.multiplayer.game && !this.multiplayer.game.levelEnd) {
@@ -231,36 +241,41 @@ export class Tubes extends lib.flash.display.MovieClip {
           break;
         }
 
-        const position: GamePlayerPosition = [
-          playerShell.id,
-          this.ticks,
-          Math.round(playerShell.xPos),
-          Math.round(playerShell.yPos),
-          playerShell.fr,
-          playerShell.xScale,
-          playerShell.time,
-        ];
-        let needReport = false;
-        if (this.lastReportedPosition && this.ticks > this.lastReportTick + 6) {
-          for (let i = 2; i < position.length; i++) {
-            if (position[i] !== this.lastReportedPosition[i]) {
-              needReport = true;
-              break;
+        if (playerShell) {
+          const position: GamePlayerPosition = [
+            playerShell.id,
+            this.ticks,
+            Math.round(playerShell.xPos),
+            Math.round(playerShell.yPos),
+            playerShell.fr,
+            playerShell.xScale,
+            playerShell.time,
+          ];
+          let needReport = false;
+          if (
+            this.lastReportedPosition &&
+            this.ticks > this.lastReportTick + 6
+          ) {
+            for (let i = 2; i < position.length; i++) {
+              if (position[i] !== this.lastReportedPosition[i]) {
+                needReport = true;
+                break;
+              }
             }
+          } else if (!this.lastReportedPosition) {
+            needReport = true;
           }
-        } else if (!this.lastReportedPosition) {
-          needReport = true;
-        }
 
-        if (needReport) {
-          this.lastReportedPosition = position;
-          this.lastReportTick = this.ticks;
-          this.dispatchEvent(
-            new ExternalEvent({
-              type: "report-position",
-              position,
-            })
-          );
+          if (needReport) {
+            this.lastReportedPosition = position;
+            this.lastReportTick = this.ticks;
+            this.dispatchEvent(
+              new ExternalEvent({
+                type: "report-position",
+                position,
+              })
+            );
+          }
         }
 
         for (const [id, v, x, y, fr, sx, t] of this.room.positions) {
@@ -362,6 +377,9 @@ export class Tubes extends lib.flash.display.MovieClip {
 
   private checkAcheievements() {
     const shell = this.players.find((shell) => shell.isPlayer);
+    if (!shell) {
+      return;
+    }
 
     if (this.player.wins >= 1) {
       this.dispatchEvent(new AchEvent(AchEvent.SEND, 24));

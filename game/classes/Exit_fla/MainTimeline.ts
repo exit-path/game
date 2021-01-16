@@ -690,10 +690,18 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.quickPlayLobby.kill();
           this.multiplayer.removeChild(this.multiplayer.quickPlayLobby);
           this.multiplayer.quickPlayLobby = null;
-          this.multiplayer.game.reset();
+          this.multiplayer.tubes.locate = "Game";
+          this.multiplayer.game = new Game();
+          this.multiplayer.game.mode = "MP";
           this.multiplayer.addChild(this.multiplayer.game);
+          this.multiplayer.game.init(
+            this.multiplayer.tubes,
+            this.playerObj,
+            this.multiplayer.tubes.room.nextLevel
+          );
           this.multiplayer.game.countdownStart();
           this.multiplayer.addChild(this.multiplayer.tubes);
+          this.multiplayer.game.initMP();
           break;
         case "OpenLobby":
           this.endUIBackground();

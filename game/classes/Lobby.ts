@@ -144,7 +144,7 @@ export class Lobby extends lib.flash.display.MovieClip {
   }
 
   public ping(e: lib.flash.events.Event = null): any {
-    if (!this.parent || !this.tubes.player) {
+    if (!this.parent) {
       return;
     }
     if (this.players.length > 1) {
@@ -154,29 +154,31 @@ export class Lobby extends lib.flash.display.MovieClip {
       this.nextInfo.text = "Waiting for more players...";
     }
     this.sortPlayers();
-    this.xpDisp.text = Text2.commaSnob(this.tubes.player.xp) + " XP";
-    var curLevel: number = this.parent["getLevelByXP"](this.tubes.player.xp);
-    var curRank: string = this.parent["getRankByXP"](this.tubes.player.xp);
+    const playerData = this.tubes.player ?? this.tubes.multiplayer.playerObject;
+    this.xpDisp.text = Text2.commaSnob(playerData.xp) + " XP";
+    var curLevel: number = this.parent["getLevelByXP"](playerData.xp);
+    var curRank: string = this.parent["getRankByXP"](playerData.xp);
     var nextLevelXP: number = this.parent["ranks"][curLevel + 1];
     var curLevelXP: number = this.parent["ranks"][curLevel];
-    var nextXP: number = nextLevelXP - this.tubes.player.xp;
+    var nextXP: number = nextLevelXP - playerData.xp;
     this.xpAndLevel.text = String(curLevel);
     this.xpTill.text = Text2.commaSnob(nextXP) + " XP until the next Level";
     this.xpBar.barIn.scaleX = Anim.ease(
       this.xpBar.barIn.scaleX,
-      (this.tubes.player.xp - curLevelXP) / (nextLevelXP - curLevelXP),
+      (playerData.xp - curLevelXP) / (nextLevelXP - curLevelXP),
       0.3
     );
     this.levelRank.text = curRank;
 
     const player = this.players.find((shell) => shell.isPlayer);
-    if (this.tubes.room.rewards.some((r) => r.id === player.id)) {
+    if (player && this.tubes.room.rewards.some((r) => r.id === player.id)) {
       this.kudosLeft.text = "Kudos To Give: " + player.kudosToGive;
     }
     for (const disp of this.bars) {
       disp.kudosButton.visible =
         !disp.boxy.player.isPlayer &&
         !disp.boxy.isNew &&
+        player &&
         player.kudosToGive > 0;
     }
   }

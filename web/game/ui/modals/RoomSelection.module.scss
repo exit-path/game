@@ -62,7 +62,7 @@
       overflow: hidden;
     }
 
-    &.disabled {
+    .disabled {
       color: #808080;
     }
 
@@ -93,6 +93,7 @@
       }
 
       &:disabled {
+        color: #808080;
         cursor: not-allowed;
       }
     }
