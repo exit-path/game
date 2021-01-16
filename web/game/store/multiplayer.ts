@@ -92,10 +92,20 @@ export class MultiplayerStore {
       },
       body: JSON.stringify({
         player,
+        version: 1,
       }),
       credentials: "include",
     });
     if (resp.status !== 200) {
+      let message: string | null = null;
+      try {
+        const { error } = await resp.json();
+        message = error ?? null;
+      } catch {}
+
+      if (message) {
+        throw new Error(`Access to server is denied: ${message}`);
+      }
       throw new Error("Access to server is denied");
     }
     const { token } = await resp.json();
