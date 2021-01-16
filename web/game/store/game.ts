@@ -6,6 +6,7 @@ import {
   ExternalEventProps,
 } from "../../../game/classes/ExternalEvent";
 import { Relay } from "../../../game/classes/john/Relay";
+import { versions } from "../../config";
 import { MultiplayerStore } from "./multiplayer";
 import type { RootStore } from "./root";
 
@@ -66,6 +67,7 @@ export class GameStore {
     this.container?.appendChild(this.stage.__canvas.container);
 
     this.root.controller?.onGameStarted();
+    this.checkVersion();
   }
 
   dispose() {
@@ -163,5 +165,27 @@ export class GameStore {
         this.isInSPMenu = false;
         break;
     }
+  }
+
+  private checkVersion() {
+    const newVersions: Record<string, string[]> = {};
+    const lastVersion = localStorage.getItem("LastGameClientVersion");
+    const gameVersions = versions.map((v) => v[0]);
+    let seenLastVersion = !gameVersions.includes(lastVersion ?? "");
+    for (const [version, ...changes] of versions) {
+      if (seenLastVersion) {
+        newVersions[version] = changes;
+      } else if (version === lastVersion) {
+        seenLastVersion = true;
+      }
+    }
+
+    if (Object.keys(newVersions).length > 0) {
+      this.root.modal.present({ type: "whats-new", newVersions });
+    }
+    localStorage.setItem(
+      "LastGameClientVersion",
+      gameVersions[gameVersions.length - 1]
+    );
   }
 }

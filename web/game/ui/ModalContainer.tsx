@@ -6,6 +6,7 @@ import { ModalInstance } from "../../game/store/modal";
 import { ConnectMultiplayer } from "./modals/ConnectMultiplayer";
 import { RoomSelection } from "./modals/RoomSelection";
 import { SelectLevel } from "./modals/SelectLevel";
+import { WhatsNew } from "./modals/WhatsNew";
 import styles from "./ModalContainer.module.scss";
 
 interface Props {
@@ -52,6 +53,15 @@ const Instance = observer<InstanceProps>(function Instance(props) {
     case "room-selection":
       children = (
         <RoomSelection className={styles.dialog} modalId={props.modal.id} />
+      );
+      break;
+    case "whats-new":
+      children = (
+        <WhatsNew
+          className={styles.dialog}
+          modalId={props.modal.id}
+          newVersions={props.modal.newVersions}
+        />
       );
       break;
   }

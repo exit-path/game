@@ -6,7 +6,8 @@ export type ModalInstance = { id: number } & ModalInstanceProps;
 type ModalInstanceProps =
   | ModalSelectLevelProps
   | ModalConnectMultiplayerProps
-  | ModalRoomSelectionProps;
+  | ModalRoomSelectionProps
+  | ModalWhatsNewProps;
 
 type ModalSelectLevelProps = {
   type: "select-level";
@@ -20,6 +21,11 @@ type ModalConnectMultiplayerProps = {
 
 type ModalRoomSelectionProps = {
   type: "room-selection";
+};
+
+type ModalWhatsNewProps = {
+  type: "whats-new";
+  newVersions: Record<string, string[]>;
 };
 
 export class ModalStore {
