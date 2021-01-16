@@ -9,7 +9,9 @@ export type ExternalEventProps =
   | { type: "report-checkpoint"; id: number }
   | { type: "give-kudo"; targetId: string }
   | { type: "sp-menu-start" }
-  | { type: "sp-menu-end" };
+  | { type: "sp-menu-end" }
+  | { type: "modify-start" }
+  | { type: "modify-end" };
 
 export class ExternalEvent extends lib.flash.events.Event {
   static readonly TYPE = "external-event";

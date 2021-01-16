@@ -18,6 +18,7 @@ export class GameStore {
   multiplayer: MultiplayerStore | null = null;
 
   isInSPMenu = false;
+  isInModify = false;
 
   constructor(readonly root: RootStore) {
     makeAutoObservable(this);
@@ -163,6 +164,14 @@ export class GameStore {
 
       case "sp-menu-end":
         this.isInSPMenu = false;
+        break;
+
+      case "modify-start":
+        this.isInModify = true;
+        break;
+
+      case "modify-end":
+        this.isInModify = false;
         break;
     }
   }

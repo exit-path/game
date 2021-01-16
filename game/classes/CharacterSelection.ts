@@ -1,4 +1,5 @@
 import lib from "swf-lib";
+import { ExternalEvent } from "./ExternalEvent";
 import { ColorPicker } from "./fl/controls/ColorPicker";
 import { ColorPickerEvent } from "./fl/events/ColorPickerEvent";
 import { Relay } from "./john/Relay";
@@ -217,11 +218,16 @@ export class CharacterSelection extends lib.flash.display.MovieClip {
       lib.flash.events.MouseEvent.CLICK,
       this.backButt
     );
+    this.dispatchEvent(
+      new ExternalEvent({
+        type: "modify-end",
+      })
+    );
   }
 
   public ping(e: lib.flash.events.Event = null): any {
     this.runnerBar.runner.setColours();
-    this.playerObject.userName = this.tagOf.text;
+    this.tagOf.text = this.playerObject.userName;
   }
 
   public roll(e: ColorPickerEvent = null): any {

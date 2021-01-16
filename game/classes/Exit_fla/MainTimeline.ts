@@ -26,6 +26,7 @@ import { PlayerObject } from "../PlayerObject";
 import { Level } from "../Level";
 import { LevelUser } from "../LevelUser";
 import { Level as UserLevel } from "../../../shared/level";
+import { ExternalEvent } from "../ExternalEvent";
 
 export class MainTimeline extends lib.flash.display.MovieClip {
   public declare achievements: Ach[];
@@ -521,6 +522,11 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.characterSelection = new CharacterSelection(this.playerObj);
           this.addChild(this.characterSelection);
           this.charSelectFromMainMenu = true;
+          this.dispatchEvent(
+            new ExternalEvent({
+              type: "modify-start",
+            })
+          );
       }
     }
     if (e.sender == "MultiplayerMenu") {
@@ -556,6 +562,11 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.addChild(this.multiplayer.characterSelection);
           this.charSelectFromMainMenu = false;
           this.charSelectFromMulti = true;
+          this.dispatchEvent(
+            new ExternalEvent({
+              type: "modify-start",
+            })
+          );
       }
     }
     if (e.sender == "Tubes") {
@@ -641,6 +652,11 @@ export class MainTimeline extends lib.flash.display.MovieClip {
           this.multiplayer.addChild(this.multiplayer.characterSelection);
           this.charSelectFromMainMenu = false;
           this.charSelectFromMulti = false;
+          this.dispatchEvent(
+            new ExternalEvent({
+              type: "modify-start",
+            })
+          );
       }
     }
     if (e.sender == "CharacterSelection") {
@@ -830,7 +846,9 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public loadGamez(): any {
-    this.playerObj.userName = this.getRandomName();
+    this.playerObj.userName = String(
+      this.savedGame.data.saveObj.userName ?? this.getRandomName()
+    );
     this.playerObj.colour = Number(this.savedGame.data.saveObj.colour);
     this.playerObj.colour2 = Number(this.savedGame.data.saveObj.colour2);
     this.playerObj.headType = Number(this.savedGame.data.saveObj.headType);
@@ -1018,6 +1036,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
 
   public saveGame(): any {
     var saveObj: any = new Object();
+    saveObj.userName = String(this.playerObj.userName);
     saveObj.colour = String(this.playerObj.colour);
     saveObj.colour2 = String(this.playerObj.colour2);
     saveObj.headType = String(this.playerObj.headType);
