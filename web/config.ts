@@ -10,6 +10,13 @@ export const mpServers: MPServer[] = [
   },
 ];
 
+if (process.env.NODE_ENV === "development") {
+  mpServers.splice(0, 0, {
+    name: "Dev server",
+    address: "http://localhost:5000",
+  });
+}
+
 export const versions: string[][] = [
   [
     "v0.1.0",
