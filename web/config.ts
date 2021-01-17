@@ -24,4 +24,5 @@ export const versions: string[][] = [
     "Allow changing username in 'Modify' menu",
     "Support quitting to menu while in Multiplayer game",
   ],
+  ["v0.2.0", "Fix always joining room as spectator"],
 ];

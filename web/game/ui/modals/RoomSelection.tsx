@@ -18,7 +18,7 @@ const RoomItem = observer<RoomItemProps>(function RoomItem(props) {
 
   const onJoin = useCallback(() => {
     game.multiplayer
-      ?.joinRoom(id, true)
+      ?.joinRoom(id, false)
       .catch((e) => ({ error: String(e) }))
       .then(({ error }) => {
         if (error) {
