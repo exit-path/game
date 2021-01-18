@@ -25,4 +25,5 @@ export const versions: string[][] = [
     "Support quitting to menu while in Multiplayer game",
   ],
   ["v0.2.0", "Fix always joining room as spectator"],
+  ["v0.3.0", "Press 'F' toggle Focus mode"],
 ];

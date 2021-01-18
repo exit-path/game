@@ -1,14 +1,12 @@
 import lib from "swf-lib";
 import { ColorPickerEvent } from "../events/ColorPickerEvent";
 
-const colorPickerWidth = 22;
-const colorPickerHeight = 22;
+const colorPickerWidth = 22 * 20;
+const colorPickerHeight = 22 * 20;
 
 function makeColorPickerElement(): HTMLInputElement {
   const input = document.createElement("input");
   input.type = "color";
-  input.style.setProperty("width", `${colorPickerWidth}px`, "important");
-  input.style.setProperty("height", `${colorPickerHeight}px`, "important");
   input.style.setProperty("padding", "0", "important");
   input.style.setProperty("margin", "0", "important");
   input.style.setProperty("border", "none", "important");
@@ -21,6 +19,8 @@ export class ColorPicker extends lib.flash.display.DisplayObject {
   private readonly elem = makeColorPickerElement();
   private renderX: number | null = null;
   private renderY: number | null = null;
+  private renderWidth: number | null = null;
+  private renderHeight: number | null = null;
   private value = 0xffffff;
 
   get selectedColor() {
@@ -48,8 +48,12 @@ export class ColorPicker extends lib.flash.display.DisplayObject {
 
   private layout() {
     const bounds = this.getBounds(this.stage);
-    const x = bounds.x;
-    const y = bounds.y;
+    const canvas = this.stage.__canvas;
+    const clientRect = canvas.element.getClientRects()[0];
+    const width = (bounds.width * clientRect.width) / canvas.width;
+    const height = (bounds.height * clientRect.height) / canvas.height;
+    const x = (bounds.x * clientRect.width) / canvas.width;
+    const y = (bounds.y * clientRect.height) / canvas.height;
     if (this.renderX !== x) {
       this.elem.style.setProperty("left", `${x}px`);
       this.renderX = x;
@@ -57,6 +61,14 @@ export class ColorPicker extends lib.flash.display.DisplayObject {
     if (this.renderY !== y) {
       this.elem.style.setProperty("top", `${y}px`);
       this.renderY = y;
+    }
+    if (this.renderWidth !== width) {
+      this.elem.style.setProperty("width", `${width}px`);
+      this.renderWidth = width;
+    }
+    if (this.renderHeight !== height) {
+      this.elem.style.setProperty("height", `${height}px`);
+      this.renderHeight = height;
     }
   }
 

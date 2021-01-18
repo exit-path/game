@@ -67,6 +67,11 @@ export class GameStore {
     this.stage.__canvas.container.remove();
     this.container?.appendChild(this.stage.__canvas.container);
 
+    this.stage.__canvas.container.style.width = "100%";
+    this.stage.__canvas.container.style.height = "100%";
+    this.stage.__canvas.element.style.width = "100%";
+    this.stage.__canvas.element.style.height = "100%";
+
     this.root.controller?.onGameStarted();
     this.checkVersion();
   }

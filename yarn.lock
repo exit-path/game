@@ -972,10 +972,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@kiootic/swf-lib@0.5.1":
-  version "0.5.1"
-  resolved "https://npm.pkg.github.com/download/@kiootic/swf-lib/0.5.1/f7ad306a9c1e7259324eab322c5ec49ad1512da19347c5228695c9ed27a99d4b#9c4049b8595a1b70c919bd8a5710f891a73ab8b7"
-  integrity sha512-Yqk9jxiBMaPiTE5u0lHtx0Enhqh5N1XUXSU3LW7F+BT3VZkUxPnUVkm4KRzN1q5KcOlohHZU1pSjBzB7p2lWbg==
+"@kiootic/swf-lib@0.5.2":
+  version "0.5.2"
+  resolved "https://npm.pkg.github.com/download/@kiootic/swf-lib/0.5.2/b2c844f07662f904aa3fd832fb4b6b26e9988bebb41b79024449d3e1bfee7051#b1017357a47ec048c7f71c2c36e93a2e48c9e419"
+  integrity sha512-Eq5rkkMtedm2B3cYeI3DaVdKe5sS9GeTAk1ifjfS8rXErVHoPMWvg+B3scckQfc1KXlQautZ41HTFIy132SHBg==
   dependencies:
     gl-matrix "3.3.0"
 
