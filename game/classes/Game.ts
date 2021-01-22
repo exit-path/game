@@ -46,6 +46,7 @@ import { StadiumC } from "./StadiumC";
 import { StadiumB } from "./StadiumB";
 import { PlayerShell } from "./PlayerShell";
 import { PlayerObject } from "./PlayerObject";
+import { LevelFlags } from "../../shared/level";
 
 export class Game extends lib.flash.display.MovieClip {
   public declare bg: BitmapCanvas;
@@ -183,6 +184,8 @@ export class Game extends lib.flash.display.MovieClip {
   public declare yCamY: number;
 
   public declare youArrows: any[];
+
+  private isPressingKill = false;
 
   public constructor() {
     super();
@@ -1065,6 +1068,17 @@ export class Game extends lib.flash.display.MovieClip {
       this.uiPanel.pauseButton.visible = false;
       return;
     }
+
+    const isPressingKill = Key.isDown(lib.flash.ui.Keyboard.K);
+    if (
+      isPressingKill &&
+      !this.isPressingKill &&
+      this.level.flags & LevelFlags.AllowSuicide
+    ) {
+      this.player.kill();
+    }
+    this.isPressingKill = isPressingKill;
+
     if (!this.player.rewinding) {
       this.player.ping();
       this.skin.ping();

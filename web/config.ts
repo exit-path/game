@@ -26,5 +26,10 @@ export const versions: string[][] = [
   ],
   ["v0.2.0", "Fix always joining room as spectator"],
   ["v0.3.0", "Press 'F' toggle Focus mode"],
-  ["v0.3.1", "Fix multiplayer game start countdown timing", "Fix activating focus mode while in chat"],
+  [
+    "v0.3.1",
+    "Fix multiplayer game start countdown timing",
+    "Fix activating focus mode while in chat",
+    "Press K to die (return to start/last checkpoint)",
+  ],
 ];

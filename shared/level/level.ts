@@ -11,7 +11,7 @@ export enum LevelFlags {
   FlowModeMask = 3,
 
   IsProtected = 4,
-  AllowRewind = 8,
+  AllowSuicide = 8,
   AllowSuspend = 16,
   ShowTeleporterName = 32,
 }
