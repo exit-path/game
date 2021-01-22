@@ -9,6 +9,8 @@ export class startBox_308 extends lib.flash.display.MovieClip {
   public constructor() {
     super();
     this.addFrameScript(
+      0,
+      this.frame1,
       18,
       this.frame19,
       24,
@@ -22,28 +24,31 @@ export class startBox_308 extends lib.flash.display.MovieClip {
     );
   }
 
+  frame1() {
+    setTimeout(
+      this.stage.__withContext(() => this.gotoAndPlay(20)),
+      4000
+    );
+    setTimeout(
+      this.stage.__withContext(() => this.gotoAndPlay(36)),
+      5000
+    );
+    setTimeout(
+      this.stage.__withContext(() => this.gotoAndPlay(55)),
+      6000
+    );
+  }
+
   public frame19(): any {
     this.stop();
-    setTimeout(
-      this.stage.__withContext(() => this.play()),
-      500
-    );
   }
 
   public frame25(): any {
     this.stop();
-    setTimeout(
-      this.stage.__withContext(() => this.play()),
-      500
-    );
   }
 
   public frame44(): any {
     this.stop();
-    setTimeout(
-      this.stage.__withContext(() => this.play()),
-      500
-    );
   }
 
   public frame56(): any {
