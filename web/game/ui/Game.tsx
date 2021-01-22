@@ -39,11 +39,16 @@ export const Game: React.FC<GameProps> = observer(function Game(props) {
   }, [controller, root]);
 
   const [isFocusMode, setIsFocusMode] = useState(false);
-  const onKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key.toUpperCase() === "F") {
-      setIsFocusMode((v) => !v);
-    }
-  }, []);
+  const onKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.target === root.game.stage?.__canvas.element) {
+        if (e.key.toUpperCase() === "F") {
+          setIsFocusMode((v) => !v);
+        }
+      }
+    },
+    [root]
+  );
 
   const [gameWrapper, setGameWrapper] = useState<HTMLElement | null>(null);
   const [gameStyles, setGameStyles] = useState<React.CSSProperties>({});
