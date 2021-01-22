@@ -3,6 +3,8 @@ import { Player } from "./Player";
 import { YouArrow } from "./YouArrow";
 import { Key } from "./john/Key";
 import { Anim } from "./john/Anim";
+import { Game } from "./Game";
+import { LevelFlags } from "../../shared/level";
 
 export class Skin extends lib.flash.display.MovieClip {
   public declare checkPoints: any[];
@@ -97,6 +99,11 @@ export class Skin extends lib.flash.display.MovieClip {
   }
 
   public handleSkin(): any {
+    const game = this.parent as Game;
+    if (game.isPaused && !(game.level.flags & LevelFlags.PauseUnaffectPlayer)) {
+      return;
+    }
+
     if (this.player.hitHalf) {
       this.duck();
     } else if (!this.player.jumpLevel) {

@@ -10,6 +10,7 @@ import { Anim } from "./john/Anim";
 import { Tile } from "./Tile";
 import { main } from "./global";
 import { LevelFlags } from "../../shared/level";
+import type { Game } from "./Game";
 
 export class Player extends TileObject {
   public declare beltSpeed: number;
@@ -330,9 +331,15 @@ export class Player extends TileObject {
     this.playerSize = 1;
     this.typeOf = "deadaphant";
     this.thudTresh = 10;
-    this.movePlayer();
-    this.handleHalfTiles();
-    this.updateTileInteraction();
+
+    const game = this.parent as Game;
+    if (!game.isPaused) {
+      this.movePlayer();
+    }
+    if (!game.isPaused || game.level.flags & LevelFlags.PauseUnaffectPlayer) {
+      this.handleHalfTiles();
+      this.updateTileInteraction();
+    }
     this.spikeInteraction();
     this.levelInteraction();
     this.teleporterInteraction();

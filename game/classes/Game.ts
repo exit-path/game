@@ -796,12 +796,6 @@ export class Game extends lib.flash.display.MovieClip {
       0,
       true
     );
-    if (this.mode === "MP") {
-      this.uiPanel.pauseButton.visible = false;
-      this.uiPanel.exitButton.visible = true;
-    } else if (this.mode === "PRACTICE") {
-      this.uiPanel.pauseButton.visible = false;
-    }
     this.camera.init(this);
     this.camera.lockX = this.level.lockCamX;
     this.camera.lockY = this.level.lockCamY;
@@ -1045,7 +1039,7 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public ping(e: lib.flash.events.Event = null): any {
-    if (this.isPaused) {
+    if (this.isPaused && this.mode === "SP") {
       return;
     }
     this.tryFrame++;
@@ -1127,6 +1121,11 @@ export class Game extends lib.flash.display.MovieClip {
           this.collectSign();
         }
       }
+    }
+
+    const isPressingPause = Key.isDown(lib.flash.ui.Keyboard.P);
+    if (isPressingPause && this.mode !== "SP") {
+      this.isPaused = !this.isPaused;
     }
   }
 

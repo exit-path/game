@@ -31,5 +31,6 @@ export const versions: string[][] = [
     "Fix multiplayer game start countdown timing",
     "Fix activating focus mode while in chat",
     "Press K to die (return to start/last checkpoint)",
+    "Press P to pause/unpause",
   ],
 ];

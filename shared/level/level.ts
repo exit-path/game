@@ -12,7 +12,7 @@ export enum LevelFlags {
 
   IsProtected = 4,
   AllowSuicide = 8,
-  AllowSuspend = 16,
+  PauseUnaffectPlayer = 16,
   ShowTeleporterName = 32,
 }
 
