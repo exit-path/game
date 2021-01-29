@@ -6,11 +6,11 @@ export class startBox_308 extends lib.flash.display.MovieClip {
     nameOf: lib.flash.text.TextField;
   }>;
 
+  private frameCounter = 0;
+
   public constructor() {
     super();
     this.addFrameScript(
-      0,
-      this.frame1,
       18,
       this.frame19,
       24,
@@ -22,22 +22,24 @@ export class startBox_308 extends lib.flash.display.MovieClip {
       82,
       this.frame83
     );
+    this.addEventListener(lib.flash.events.Event.ENTER_FRAME, this.ping);
   }
 
-  frame1() {
-    setTimeout(
-      this.stage.__withContext(() => this.gotoAndPlay(20)),
-      4000
-    );
-    setTimeout(
-      this.stage.__withContext(() => this.gotoAndPlay(36)),
-      5000
-    );
-    setTimeout(
-      this.stage.__withContext(() => this.gotoAndPlay(55)),
-      6000
-    );
-  }
+  ping = () => {
+    const stage = this.stage;
+    if (!stage) {
+      return;
+    }
+    this.frameCounter++;
+    if (this.frameCounter == 30 * 4) {
+      this.gotoAndPlay(20);
+    } else if (this.frameCounter == 30 * 5) {
+      this.gotoAndPlay(36);
+    }else if (this.frameCounter == 30 * 6) {
+      this.gotoAndPlay(55);
+      this.removeEventListener(lib.flash.events.Event.ENTER_FRAME, this.ping);
+    }
+  };
 
   public frame19(): any {
     this.stop();
