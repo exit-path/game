@@ -458,6 +458,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
       lib.flash.net.navigateToURL(this.exitPathLink, "_blank");
     }
     if (e.sender == "endIntro") {
+      this.removeChild(this.agIntro);
       this.mainMenu = new MainMenu(this.agDomain);
       this.startMenus();
       this.addChild(this.mainMenu);
