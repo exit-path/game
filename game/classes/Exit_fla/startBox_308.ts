@@ -35,7 +35,7 @@ export class startBox_308 extends lib.flash.display.MovieClip {
       this.gotoAndPlay(20);
     } else if (this.frameCounter == 30 * 5) {
       this.gotoAndPlay(36);
-    }else if (this.frameCounter == 30 * 6) {
+    } else if (this.frameCounter == 30 * 6) {
       this.gotoAndPlay(55);
       this.removeEventListener(lib.flash.events.Event.ENTER_FRAME, this.ping);
     }

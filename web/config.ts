@@ -33,8 +33,5 @@ export const versions: string[][] = [
     "Press K to die (return to start/last checkpoint)",
     "Press P to pause/unpause",
   ],
-  [
-    "v0.3.2",
-    "Make game start countdown deterministic",
-  ],
+  ["v0.3.2", "Make game start countdown deterministic"],
 ];
