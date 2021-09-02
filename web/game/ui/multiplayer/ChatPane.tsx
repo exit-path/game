@@ -49,7 +49,8 @@ const MessageList = observer<MessageListProps>(function MessageList(props) {
   const onScroll = useCallback((e: React.UIEvent<HTMLElement>) => {
     const elem = e.currentTarget;
     isAtBottom.current =
-      elem.scrollHeight - elem.scrollTop === elem.clientHeight;
+      elem.scrollHeight - elem.scrollTop <= elem.clientHeight + 1;
+    console.log(isAtBottom.current);
   }, []);
 
   const length = multiplayer.messages.length;

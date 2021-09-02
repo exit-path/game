@@ -34,4 +34,5 @@ export const versions: string[][] = [
     "Press P to pause/unpause",
   ],
   ["v0.3.2", "Make game start countdown deterministic"],
+  ["v0.3.3", "Fix message scrolling when page is zoomed"],
 ];
