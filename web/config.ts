@@ -39,4 +39,5 @@ export const versions: string[][] = [
     "Fix message scrolling when page is zoomed",
     "Allow resizing the game area",
   ],
+  ["v0.3.4", "Show spectators in separate list"],
 ];

@@ -4,6 +4,7 @@ export interface RemotePlayer {
   id: string;
   name: string;
   color: number;
+  isSpectator: boolean;
 }
 
 export interface RemoteRoom {

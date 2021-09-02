@@ -81,9 +81,21 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
         )}
       </div>
       <ul className={styles.playerList}>
-        {room.players.map((p) => (
-          <PlayerItem key={p.id} player={p} />
-        ))}
+        {room.players
+          .filter((p) => !p.isSpectator)
+          .map((p) => (
+            <PlayerItem key={p.id} player={p} />
+          ))}
+        {room.players.some((p) => p.isSpectator) && (
+          <>
+            <li className={styles.spectatorHeader}>Spectators</li>
+            {room.players
+              .filter((p) => p.isSpectator)
+              .map((p) => (
+                <PlayerItem key={p.id} player={p} />
+              ))}
+          </>
+        )}
       </ul>
     </div>
   );
