@@ -215,10 +215,10 @@ export class MultiplayerStore {
     if (!this.conn.connectionId) {
       return;
     }
-    return await this.conn.send("SendMessage", text);
+    return await this.conn.invoke("SendMessage", text);
   }
 
   public async setNextLevel(level: string) {
-    return await this.conn.send("SetNextLevel", level);
+    return await this.conn.invoke("SetNextLevel", level);
   }
 }

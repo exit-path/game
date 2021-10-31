@@ -14,7 +14,7 @@ export interface RoomPaneProps {
 
 export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
   const { className, multiplayer, room } = props;
-  const { modal } = useStore();
+  const { game, modal } = useStore();
   const gameState = room.state as RoomGameState;
 
   const [modalId, setModalId] = useState<number | null>(null);
@@ -51,7 +51,8 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
   }, []);
   const onCloseMenu = useCallback(() => {
     setIsMenuOpened(false);
-  }, []);
+    game.focus();
+  }, [game]);
   useEffect(() => {
     if (!isMenuOpened) {
       return;
@@ -184,6 +185,21 @@ const Menu = observer<MenuProps>(function Menu(props) {
     onCloseMenu();
   }, [multiplayer, onCloseMenu]);
 
+  const restartLevel = useCallback(
+    async (level: string) => {
+      await multiplayer.sendMessage("/endgame");
+      await multiplayer.setNextLevel(level);
+      await new Promise((resolve) => setTimeout(() => resolve(0), 500));
+      await multiplayer.sendMessage("/start");
+    },
+    [multiplayer]
+  );
+  const onRestartLevel = useCallback(() => {
+    const level = gameState.nextLevelCode || String(gameState.nextLevel);
+    restartLevel(level);
+    onCloseMenu();
+  }, [gameState, restartLevel, onCloseMenu]);
+
   return (
     <ul className={styles.menu}>
       {gameState.phase === "Lobby" && (
@@ -217,6 +233,15 @@ const Menu = observer<MenuProps>(function Menu(props) {
               onClick={onEndGame}
             >
               End Game
+            </button>
+          </li>
+          <li className={styles.menuCommand}>
+            <button
+              type="button"
+              className={styles.menuCommandBtn}
+              onClick={onRestartLevel}
+            >
+              Restart Level
             </button>
           </li>
         </>

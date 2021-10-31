@@ -45,4 +45,5 @@ export const versions: string[][] = [
     "Reset internal achievement state when clearing data",
     "Add dropdown menu for multiplayer commands",
   ],
+  ["v0.3.6", "Add menu command for restarting level"],
 ];
