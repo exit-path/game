@@ -13,8 +13,8 @@ export interface RoomPaneProps {
 }
 
 export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
-  const { className, room } = props;
-  const { modal, game } = useStore();
+  const { className, multiplayer, room } = props;
+  const { modal } = useStore();
   const gameState = room.state as RoomGameState;
 
   const [modalId, setModalId] = useState<number | null>(null);
@@ -27,11 +27,11 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
       modal.present({
         type: "select-level",
         onEnterLevel: (level) => {
-          game.multiplayer?.setNextLevel(String(level));
+          multiplayer?.setNextLevel(String(level));
         },
       })
     );
-  }, [modal, modalId, game]);
+  }, [modal, modalId, multiplayer]);
 
   const isInGame = room.id !== "lobby" && gameState.phase === "InGame";
   useEffect(() => {
@@ -40,6 +40,34 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
       setModalId(null);
     }
   }, [isInGame, modal, modalId]);
+
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [
+    menuContainerElement,
+    setMenuContainerElement,
+  ] = useState<HTMLElement | null>(null);
+  const onOpenMenu = useCallback(() => {
+    setIsMenuOpened(true);
+  }, []);
+  const onCloseMenu = useCallback(() => {
+    setIsMenuOpened(false);
+  }, []);
+  useEffect(() => {
+    if (!isMenuOpened) {
+      return;
+    }
+
+    const onDocumentClick = (e: Event) => {
+      if (
+        e.target instanceof Element &&
+        !menuContainerElement?.contains(e.target)
+      ) {
+        setIsMenuOpened(false);
+      }
+    };
+    document.addEventListener("click", onDocumentClick);
+    return () => document.removeEventListener("click", onDocumentClick);
+  }, [isMenuOpened, menuContainerElement]);
 
   return (
     <div className={cn(className, styles.pane)}>
@@ -60,23 +88,53 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
             >
               {gameState.nextLevelName}
             </label>
-            {gameState.phase === "Lobby" && (
-              <button
-                className={styles.editLevel}
-                type="button"
-                onClick={onEditLevel}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="16"
-                  width="16"
-                  viewBox="0 0 24 24"
+            <div className={styles.levelBtnList}>
+              {gameState.phase === "Lobby" && (
+                <button
+                  className={styles.levelBtn}
+                  type="button"
+                  onClick={onEditLevel}
                 >
-                  <path d="M0 0h24v24H0z" fill="none" />
-                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
-                </svg>
-              </button>
-            )}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                  </svg>
+                </button>
+              )}
+              <div
+                ref={setMenuContainerElement}
+                className={cn(
+                  styles.menuContainer,
+                  isMenuOpened && styles.menuContainerOpened
+                )}
+              >
+                <button
+                  className={cn(styles.levelBtn, styles.menuBtn)}
+                  type="button"
+                  onClick={onOpenMenu}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                  </svg>
+                </button>
+                <Menu
+                  multiplayer={multiplayer}
+                  room={room}
+                  onCloseMenu={onCloseMenu}
+                />
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -98,6 +156,72 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
         )}
       </ul>
     </div>
+  );
+});
+
+interface MenuProps {
+  multiplayer: MultiplayerStore;
+  room: Room;
+  onCloseMenu: () => void;
+}
+
+const Menu = observer<MenuProps>(function Menu(props) {
+  const { multiplayer, room, onCloseMenu } = props;
+  const gameState = room.state as RoomGameState;
+
+  const onResetCountdown = useCallback(() => {
+    multiplayer.sendMessage("/resettime");
+    onCloseMenu();
+  }, [multiplayer, onCloseMenu]);
+
+  const onStartGame = useCallback(() => {
+    multiplayer.sendMessage("/start");
+    onCloseMenu();
+  }, [multiplayer, onCloseMenu]);
+
+  const onEndGame = useCallback(() => {
+    multiplayer.sendMessage("/endgame");
+    onCloseMenu();
+  }, [multiplayer, onCloseMenu]);
+
+  return (
+    <ul className={styles.menu}>
+      {gameState.phase === "Lobby" && (
+        <>
+          <li className={styles.menuCommand}>
+            <button
+              type="button"
+              className={styles.menuCommandBtn}
+              onClick={onResetCountdown}
+            >
+              Reset Countdown
+            </button>
+          </li>
+          <li className={styles.menuCommand}>
+            <button
+              type="button"
+              className={styles.menuCommandBtn}
+              onClick={onStartGame}
+            >
+              Start Game
+            </button>
+          </li>
+        </>
+      )}
+      {gameState.phase === "InGame" && (
+        <>
+          <li className={styles.menuCommand}>
+            <button
+              type="button"
+              className={styles.menuCommandBtn}
+              onClick={onEndGame}
+            >
+              End Game
+            </button>
+          </li>
+        </>
+      )}
+    </ul>
   );
 });
 
