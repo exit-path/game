@@ -40,4 +40,5 @@ export const versions: string[][] = [
     "Allow resizing the game area",
   ],
   ["v0.3.4", "Show spectators in separate list"],
+  ["v0.3.5", "Reset internal achievement state when clearing data"],
 ];

@@ -192,12 +192,9 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public deleteAllData(): any {
-    var saveObj: any = new Object();
-    this.savedGame.data.saveObj = saveObj;
-    this.savedGame.data.hasSaved = false;
-    this.savedGame.flush();
-    this.loadGame();
+    this.newGame();
     this.saveGame();
+    this.loadGamez();
   }
 
   public endMenus(): any {
