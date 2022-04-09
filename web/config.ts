@@ -46,4 +46,5 @@ export const versions: string[][] = [
     "Add dropdown menu for multiplayer commands",
   ],
   ["v0.3.6", "Add menu command for restarting level"],
+  ["v0.3.7", "Disable in-game commands for spectators"],
 ];

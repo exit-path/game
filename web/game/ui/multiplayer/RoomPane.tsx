@@ -170,6 +170,10 @@ const Menu = observer<MenuProps>(function Menu(props) {
   const { multiplayer, room, onCloseMenu } = props;
   const gameState = room.state as RoomGameState;
 
+  const id = multiplayer.conn.connectionId;
+  const isSpectator =
+    room.players.find((p) => p.id === id)?.isSpectator ?? true;
+
   const onResetCountdown = useCallback(() => {
     multiplayer.sendMessage("/resettime");
     onCloseMenu();
@@ -231,6 +235,7 @@ const Menu = observer<MenuProps>(function Menu(props) {
               type="button"
               className={styles.menuCommandBtn}
               onClick={onEndGame}
+              disabled={isSpectator}
             >
               End Game
             </button>
@@ -240,6 +245,7 @@ const Menu = observer<MenuProps>(function Menu(props) {
               type="button"
               className={styles.menuCommandBtn}
               onClick={onRestartLevel}
+              disabled={isSpectator}
             >
               Restart Level
             </button>

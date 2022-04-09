@@ -125,6 +125,9 @@
     &:hover {
       background: rgba(#808080, 0.2);
     }
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }
 
