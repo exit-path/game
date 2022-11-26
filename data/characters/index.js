@@ -3612,3 +3612,7 @@ bundle.linkages[181] = "FlowReady";
 bundle.linkages[180] = "FinalC";
 bundle.linkages[179] = "FinalB";
 bundle.linkages[178] = "FinalA";
+
+import character10001 from "./10001.json";
+bundle.shapes[10001] = character10001;
+bundle.linkages[10001] = "Beam";

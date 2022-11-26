@@ -133,7 +133,7 @@ export { PopSpikes } from "./PopSpikes";
 export { QuickPlayLobby } from "./QuickPlayLobby";
 export { Rewind } from "./Rewind";
 export { Robot } from "./Robot";
-export { Runner } from "./Runner";
+export { Runner, Beam } from "./Runner";
 export { Scratcher } from "./Scratcher";
 export { scrollBar } from "./scrollBar";
 export { SinglePlayerMenu } from "./SinglePlayerMenu";

@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import cn from "classnames";
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
+import { Beam } from "../../../game/classes";
 import { Controller } from "../controller";
 import { useStore } from "../store";
 import { BottomPane } from "./BottomPane";
@@ -44,6 +45,8 @@ export const Game: React.FC<GameProps> = observer(function Game(props) {
       if (e.target === root.game.stage?.__canvas.element) {
         if (e.key.toUpperCase() === "F") {
           setIsFocusMode((v) => !v);
+        } else if (e.key.toUpperCase() === "B") {
+          Beam.isVisible = !Beam.isVisible;
         }
       }
     },
