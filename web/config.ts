@@ -6,6 +6,10 @@ export interface MPServer {
 export const mpServers: MPServer[] = [
   {
     name: "Primary server",
+    address: "https://exit-path.fly.dev",
+  },
+  {
+    name: "Secondary server",
     address: "https://exit-path.kiootic.xyz",
   },
 ];
