@@ -12,7 +12,8 @@
           "characterId": 263,
           "matrix": [1, 0, 0, 1, 0, 0],
           "clipDepth": 7,
-          "filters": []
+          "filters": [],
+          "name": "mask"
         },
         {
           "kind": 0,

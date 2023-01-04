@@ -372,7 +372,13 @@ export class Level extends lib.flash.display.MovieClip {
     this.canvas.kill();
   }
 
-  public ping(): any {}
+  public ping(): any {
+    for (const cp of this.checkPoints) {
+      for (const flag of cp.checkPointFlags) {
+        flag.ping();
+      }
+    }
+  }
 
   public preInitCheck(): any {}
 

@@ -1103,6 +1103,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.setRank();
     }
     this.level.setPlayer(this.player);
+    this.level.ping();
     this.level.uniqueLevelPing();
     this.skyLine.ping();
     this.handleCheering();
