@@ -466,30 +466,38 @@ export class TileObject extends lib.flash.display.MovieClip {
     this.cbmy = yPos - 1;
     this.cmx = this.ctmx;
     this.cmy = this.clmy;
-    var pTL: number = this.curLevel.tArr[Math.floor(this.ctly / this.tileSize)][
-      Math.floor(this.ctlx / this.tileSize)
-    ];
-    var pTR: number = this.curLevel.tArr[Math.floor(this.ctry / this.tileSize)][
-      Math.floor(this.ctrx / this.tileSize)
-    ];
-    var pBR: number = this.curLevel.tArr[Math.floor(this.cbry / this.tileSize)][
-      Math.floor(this.cbrx / this.tileSize)
-    ];
-    var pBL: number = this.curLevel.tArr[Math.floor(this.cbly / this.tileSize)][
-      Math.floor(this.cblx / this.tileSize)
-    ];
-    var pTM: number = this.curLevel.tArr[Math.floor(this.ctmy / this.tileSize)][
-      Math.floor(this.ctmx / this.tileSize)
-    ];
-    var pLM: number = this.curLevel.tArr[Math.floor(this.clmy / this.tileSize)][
-      Math.floor(this.clmx / this.tileSize)
-    ];
-    var pBM: number = this.curLevel.tArr[Math.floor(this.cbmy / this.tileSize)][
-      Math.floor(this.cbmx / this.tileSize)
-    ];
-    var pRM: number = this.curLevel.tArr[Math.floor(this.crmy / this.tileSize)][
-      Math.floor(this.crmx / this.tileSize)
-    ];
+    var pTL: number =
+      this.curLevel.tArr[Math.floor(this.ctly / this.tileSize)][
+        Math.floor(this.ctlx / this.tileSize)
+      ];
+    var pTR: number =
+      this.curLevel.tArr[Math.floor(this.ctry / this.tileSize)][
+        Math.floor(this.ctrx / this.tileSize)
+      ];
+    var pBR: number =
+      this.curLevel.tArr[Math.floor(this.cbry / this.tileSize)][
+        Math.floor(this.cbrx / this.tileSize)
+      ];
+    var pBL: number =
+      this.curLevel.tArr[Math.floor(this.cbly / this.tileSize)][
+        Math.floor(this.cblx / this.tileSize)
+      ];
+    var pTM: number =
+      this.curLevel.tArr[Math.floor(this.ctmy / this.tileSize)][
+        Math.floor(this.ctmx / this.tileSize)
+      ];
+    var pLM: number =
+      this.curLevel.tArr[Math.floor(this.clmy / this.tileSize)][
+        Math.floor(this.clmx / this.tileSize)
+      ];
+    var pBM: number =
+      this.curLevel.tArr[Math.floor(this.cbmy / this.tileSize)][
+        Math.floor(this.cbmx / this.tileSize)
+      ];
+    var pRM: number =
+      this.curLevel.tArr[Math.floor(this.crmy / this.tileSize)][
+        Math.floor(this.crmx / this.tileSize)
+      ];
     if (pTL > 0) {
       if (pTL == 1) {
         this.guyTL = true;

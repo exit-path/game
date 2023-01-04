@@ -7,7 +7,8 @@ export class SoundBox {
 
   public static handleMute(): any {
     SoundBox.muted = !SoundBox.muted;
-    var s: lib.flash.media.SoundTransform = new lib.flash.media.SoundTransform();
+    var s: lib.flash.media.SoundTransform =
+      new lib.flash.media.SoundTransform();
     if (SoundBox.muted) {
       s.volume = 0;
     } else {

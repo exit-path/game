@@ -79,35 +79,35 @@ export const SelectLevel = observer<Props>(function SelectLevel(props) {
   const { modalId, onEnterLevel } = props;
   const { modal } = useStore();
 
-  const resolveForm = useCallback((values: FormData): ResolverResult<
-    FormData
-  > => {
-    if (values.levelType === "game-level") {
-      return { values, errors: {} };
-    } else {
-      try {
-        const level = parse(values.levelCode.replace(levelCodeTrimRegex, ""));
-        validate(level);
+  const resolveForm = useCallback(
+    (values: FormData): ResolverResult<FormData> => {
+      if (values.levelType === "game-level") {
         return { values, errors: {} };
-      } catch (e) {
-        return {
-          values: {},
-          errors: { levelCode: { type: "validate", message: String(e) } },
-        };
+      } else {
+        try {
+          const level = parse(values.levelCode.replace(levelCodeTrimRegex, ""));
+          validate(level);
+          return { values, errors: {} };
+        } catch (e) {
+          return {
+            values: {},
+            errors: { levelCode: { type: "validate", message: String(e) } },
+          };
+        }
       }
-    }
-  }, []);
-
-  const { register, handleSubmit, errors, formState, setValue } = useForm<
-    FormData
-  >({
-    defaultValues: {
-      levelType: "game-level",
-      gameLevel: "0",
-      levelCode: "",
     },
-    resolver: resolveForm,
-  });
+    []
+  );
+
+  const { register, handleSubmit, errors, formState, setValue } =
+    useForm<FormData>({
+      defaultValues: {
+        levelType: "game-level",
+        gameLevel: "0",
+        levelCode: "",
+      },
+      resolver: resolveForm,
+    });
 
   const onClose = useCallback(() => {
     modal.dismiss(modalId);

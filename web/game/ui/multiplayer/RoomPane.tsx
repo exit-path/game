@@ -42,10 +42,8 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
   }, [isInGame, modal, modalId]);
 
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const [
-    menuContainerElement,
-    setMenuContainerElement,
-  ] = useState<HTMLElement | null>(null);
+  const [menuContainerElement, setMenuContainerElement] =
+    useState<HTMLElement | null>(null);
   const onOpenMenu = useCallback(() => {
     setIsMenuOpened(true);
   }, []);

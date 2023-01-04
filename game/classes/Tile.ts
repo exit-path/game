@@ -48,6 +48,5 @@ export class Tile extends lib.flash.display.MovieClip {
     this.name = "tile" + this.posX + "x" + this.posY;
   }
 
-  public pingTreadmill(): void {
-  }
+  public pingTreadmill(): void {}
 }

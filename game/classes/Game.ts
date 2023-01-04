@@ -329,7 +329,8 @@ export class Game extends lib.flash.display.MovieClip {
     this.levelStart.gotoAndPlay(1);
     this.addChild(this.levelStart);
     if (this.uiPanel && this.contains(this.uiPanel)) {
-      this.levelStart.startBox.levelName.nameOf.text = this.uiPanel.levName.text;
+      this.levelStart.startBox.levelName.nameOf.text =
+        this.uiPanel.levName.text;
     }
   }
 
