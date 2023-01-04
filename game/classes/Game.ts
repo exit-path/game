@@ -47,6 +47,7 @@ import { StadiumB } from "./StadiumB";
 import { PlayerShell } from "./PlayerShell";
 import { PlayerObject } from "./PlayerObject";
 import { LevelFlags } from "../../shared/level";
+import { ExternalEvent } from "./ExternalEvent";
 
 export class Game extends lib.flash.display.MovieClip {
   public declare bg: BitmapCanvas;
@@ -414,6 +415,8 @@ export class Game extends lib.flash.display.MovieClip {
       this.finalPlacingArray.push(playerBar);
       tempArray.splice(remI, 1);
     }
+
+    this.dispatchEvent(new ExternalEvent({ type: "mp-game-end" }));
   }
 
   public endEnding(): any {
@@ -858,6 +861,7 @@ export class Game extends lib.flash.display.MovieClip {
       this.skin.visible = false;
       this.finishLevel();
     }
+    this.dispatchEvent(new ExternalEvent({ type: "mp-game-init" }));
   }
 
   public initPractice() {

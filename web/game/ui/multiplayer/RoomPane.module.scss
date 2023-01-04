@@ -143,6 +143,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 48px;
   padding: 4px 16px;
@@ -167,4 +168,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.checkpointsCount {
+  flex: 0;
+  white-space: nowrap;
 }

@@ -3,6 +3,7 @@ import cn from "classnames";
 import { observer } from "mobx-react-lite";
 import { RemotePlayer, Room, RoomGameState } from "../../models/multiplayer";
 import { useStore } from "../../store";
+import { GameStore } from "../../store/game";
 import { MultiplayerStore } from "../../store/multiplayer";
 import styles from "./RoomPane.module.scss";
 
@@ -141,7 +142,12 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
         {room.players
           .filter((p) => !p.isSpectator)
           .map((p) => (
-            <PlayerItem key={p.id} player={p} />
+            <PlayerItem
+              key={p.id}
+              player={p}
+              game={game}
+              state={isInGame ? gameState : null}
+            />
           ))}
         {room.players.some((p) => p.isSpectator) && (
           <>
@@ -149,7 +155,12 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
             {room.players
               .filter((p) => p.isSpectator)
               .map((p) => (
-                <PlayerItem key={p.id} player={p} />
+                <PlayerItem
+                  key={p.id}
+                  player={p}
+                  game={game}
+                  state={isInGame ? gameState : null}
+                />
               ))}
           </>
         )}
@@ -256,20 +267,36 @@ const Menu = observer<MenuProps>(function Menu(props) {
 
 interface PlayerItemProps {
   player: RemotePlayer;
+  game: GameStore;
+  state: RoomGameState | null;
 }
 
 const PlayerItem = observer<PlayerItemProps>(function PlayerItem(props) {
-  const { name, color } = props.player;
+  const { id, name, color } = props.player;
+  const { checkpoints, players, phase } = props.state ?? {};
   const nameStyle = React.useMemo(
     () => ({ color: "#" + color.toString(16).padStart(6, "0") }),
     [color]
   );
+
+  const localID = players?.find((p) => p.id === id)?.localId;
+  const numCheckpointsTaken =
+    (checkpoints?.find((cp) => cp[0] === localID)?.length ?? 1) - 1;
+
+  const numCheckpointsInGame = props.game.numCheckpoints;
 
   return (
     <li className={styles.playerItem} title={name}>
       <span className={styles.playerName} style={nameStyle}>
         {name}
       </span>
+      {numCheckpointsInGame != null &&
+        numCheckpointsInGame > 0 &&
+        phase === "InGame" && (
+          <span className={styles.checkpointsCount}>
+            {numCheckpointsTaken}/{numCheckpointsInGame} &#9873;
+          </span>
+        )}
     </li>
   );
 });

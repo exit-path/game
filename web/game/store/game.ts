@@ -19,6 +19,7 @@ export class GameStore {
 
   isInSPMenu = false;
   isInModify = false;
+  numCheckpoints: number | null = null;
 
   constructor(readonly root: RootStore) {
     makeAutoObservable(this);
@@ -177,6 +178,15 @@ export class GameStore {
 
       case "modify-end":
         this.isInModify = false;
+        break;
+
+      case "mp-game-init":
+        this.numCheckpoints =
+          this.main?.multiplayer?.game?.level?.checkPoints?.length ?? 0;
+        break;
+
+      case "mp-game-end":
+        this.numCheckpoints = null;
         break;
     }
   }

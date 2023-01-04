@@ -11,7 +11,9 @@ export type ExternalEventProps =
   | { type: "sp-menu-start" }
   | { type: "sp-menu-end" }
   | { type: "modify-start" }
-  | { type: "modify-end" };
+  | { type: "modify-end" }
+  | { type: "mp-game-init" }
+  | { type: "mp-game-end" };
 
 export class ExternalEvent extends lib.flash.events.Event {
   static readonly TYPE = "external-event";
