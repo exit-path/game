@@ -42,6 +42,8 @@ export class Level extends lib.flash.display.MovieClip {
 
   public declare halfTiles: Tile[];
 
+  public treadmills: Tile[] = [];
+
   public declare laserCannons: LaserCannon[];
 
   public declare laserGuns: LaserGun[];
@@ -338,6 +340,11 @@ export class Level extends lib.flash.display.MovieClip {
         case 4:
           this.endPoint = tile;
           break;
+
+        case 5:
+        case 6:
+          this.treadmills.push(tile);
+          break;
       }
     }
     for (const tile of pendingTiles) {
@@ -360,6 +367,9 @@ export class Level extends lib.flash.display.MovieClip {
     for (let i = 0; i < this.teleporters.length; i++) {
       this.teleporters[i].init();
     }
+    for (const treadmill of this.treadmills) {
+      treadmill.pingTreadmill();
+    }
     this.uniqueLevelInit();
   }
 
@@ -377,6 +387,9 @@ export class Level extends lib.flash.display.MovieClip {
       for (const flag of cp.checkPointFlags) {
         flag.ping();
       }
+    }
+    for (const treadmill of this.treadmills) {
+      treadmill.pingTreadmill();
     }
   }
 
