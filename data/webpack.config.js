@@ -9,7 +9,7 @@ class ExtractDataPlugin {
         function runModule(name) {
           const code = String(compilation.getAsset(name).source.source());
           const exports = {};
-          new Function("exports", code)(exports);
+          new Function("exports", code)(exports, require);
           return exports;
         }
 
@@ -50,6 +50,7 @@ module.exports = {
   output: {
     filename: "[name].js",
     libraryTarget: "commonjs",
+    chunkFormat: "commonjs",
     path: path.resolve(__dirname, "dist"),
   },
   module: {

@@ -13,14 +13,13 @@ const config = {
   mode: isProduction ? "production" : "development",
   entry: "./web/index.tsx",
   devtool: isProduction ? "source-map" : "cheap-module-source-map",
-  target: "web", // FIXME: https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/235
+  target: "browserslist",
   output: {
     filename: "static/[name].[contenthash:8].js",
     assetModuleFilename: "static/assets/[hash][ext][query]",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    contentBase: "./static",
     hot: true,
   },
   optimization: {
@@ -90,12 +89,6 @@ const config = {
     new HtmlWebpackPlugin({
       template: "web/index.html",
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: "static" },
-      ],
-    }),
-    !isProduction && new webpack.HotModuleReplacementPlugin(),
     !isProduction &&
       new ReactRefreshWebpackPlugin({
         exclude: /(node_modules|swf-lib)/,
