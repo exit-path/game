@@ -52,4 +52,8 @@ export const versions: string[][] = [
   ["v0.3.6", "Add menu command for restarting level"],
   ["v0.3.7", "Disable in-game commands for spectators"],
   ["v0.4.0", "Press 'B' to toggle player beam"],
+  [
+    "v0.5.0",
+    "Use reduced rendering for treadmills and checkpoints if quality is lowered",
+  ],
 ];
