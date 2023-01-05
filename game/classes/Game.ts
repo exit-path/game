@@ -21,7 +21,7 @@ import { UIPanel } from "./UIPanel";
 import { InsideA } from "./InsideA";
 import { InsideC } from "./InsideC";
 import { InsideB } from "./InsideB";
-import { Runner } from "./Runner";
+import { Beam, Runner } from "./Runner";
 import { SoundBox } from "./john/SoundBox";
 import { AchEvent } from "./AchEvent";
 import { StartBeam } from "./StartBeam";
@@ -188,6 +188,8 @@ export class Game extends lib.flash.display.MovieClip {
 
   private isPressingKill = false;
 
+  readonly beam = new Beam();
+
   public constructor() {
     super();
     this.xCamX = 375;
@@ -242,6 +244,8 @@ export class Game extends lib.flash.display.MovieClip {
     this.updaters = new Array<any>(0, 0, 0, 0, 0, 0, 0, 0);
     this.finalPlacingArray = new Array<any>();
     this.playerSkins = new Array<any>();
+
+    this.beam.visible = false;
   }
 
   public added(e: lib.flash.events.Event): any {
@@ -1037,6 +1041,7 @@ export class Game extends lib.flash.display.MovieClip {
     this.addChild(this.morgue);
     this.addChild(this.uiPanel);
     this.addChild(this.emit);
+    this.addChild(this.beam);
   }
 
   public pauseOut(e: lib.flash.events.MouseEvent = null): any {
@@ -1133,6 +1138,14 @@ export class Game extends lib.flash.display.MovieClip {
     if (isPressingPause && this.mode !== "SP") {
       this.isPaused = !this.isPaused;
     }
+
+    this.beam.x = this.skin.x;
+    this.beam.y = this.skin.y;
+    this.beam.visible = Beam.isVisible;
+    const transform = new lib.flash.geom.ColorTransform();
+    transform.alphaMultiplier = 0.5;
+    transform.color = this.skin.colour;
+    this.beam.transform.colorTransform = transform;
   }
 
   public qualityOut(e: lib.flash.events.MouseEvent = null): any {
