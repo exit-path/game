@@ -547,7 +547,9 @@ export class Game extends lib.flash.display.MovieClip {
             true
           )
         );
-        this.bg.drawMovieClip(this.skin, 1, 2, 3, tempTrans);
+        if (this.stage.quality === "HIGH") {
+          this.bg.drawMovieClip(this.skin, 1, 2, 3, tempTrans);
+        }
       } else {
         this.camera.ping(this.player.x, this.player.y);
         this.skin.filters = new Array<any>();
@@ -893,7 +895,9 @@ export class Game extends lib.flash.display.MovieClip {
       this.dispatchEvent(new AchEvent(AchEvent.SEND, 14));
     }
     this.deathScreens = 0;
-    this.morgue.addDeadBody(this.player, this.player.colour);
+    if (this.stage.quality === "HIGH") {
+      this.morgue.addDeadBody(this.player, this.player.colour);
+    }
     this.player.flowPoints = 0;
     this.player.burningFlow = false;
     this.skin.filters = new Array<any>();
@@ -1096,7 +1100,12 @@ export class Game extends lib.flash.display.MovieClip {
     this.emit.ping();
     this.ghosting.ping(this.tryFrame);
     this.hotKeys();
-    this.bg.ping();
+    if (this.stage.quality === "HIGH") {
+      this.bg.visible = true;
+      this.bg.ping();
+    } else {
+      this.bg.visible = false;
+    }
     this.morgue.ping();
     if (!this.levelFinished) {
       if (this.levelNum != 30) {
@@ -1191,9 +1200,11 @@ export class Game extends lib.flash.display.MovieClip {
       if (!flagForRewind && this.skin.hitTestObject(this.level.startPoint)) {
         flagForRewind = true;
       }
-      colourTransform = new lib.flash.geom.ColorTransform();
-      colourTransform.alphaMultiplier = 0.2;
-      this.bg.drawMovieClip(this.skin, 1, 2, 3, colourTransform, "normal");
+      if (this.stage.quality === "HIGH") {
+        colourTransform = new lib.flash.geom.ColorTransform();
+        colourTransform.alphaMultiplier = 0.2;
+        this.bg.drawMovieClip(this.skin, 1, 2, 3, colourTransform, "normal");
+      }
     }
     if (flagForRewind) {
       this.stopRewinding();

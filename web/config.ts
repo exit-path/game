@@ -56,4 +56,5 @@ export const versions: string[][] = [
     "v0.5.0",
     "Use reduced rendering for treadmills and checkpoints if quality is lowered",
   ],
+  ["v0.5.1", "Use reduced visual effects if quality is lowered"],
 ];
