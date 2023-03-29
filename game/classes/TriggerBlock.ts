@@ -35,7 +35,9 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
     this.typeTrigger = this.name;
     if ((this.typeTrigger.includes("LCK") && this.typeTrigger.includes("2")) || this.typeTrigger.includes("POP")|| this.typeTrigger.includes("SHW")){
       super.init();
-      this.name += "SHW";
+      if (this.typeTrigger.includes("SHW")) {
+        this.name += "SHW";
+      }
     }
     if (this.typeTrigger.includes("POP")) {
       var values = this.typeTrigger.slice(3).split(',');
