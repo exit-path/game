@@ -22,6 +22,7 @@ import { Grinder } from "./Grinder";
 import { Plate } from "./Plate";
 import { Teleporter } from "./Teleporter";
 import { LevelFlags } from "../../shared/level";
+import { TriggerBlock } from "./TriggerBlock";
 
 export class Level extends lib.flash.display.MovieClip {
   public declare bouncers: Bouncer[];
@@ -86,6 +87,8 @@ export class Level extends lib.flash.display.MovieClip {
 
   public declare tiles: Tile[];
 
+  public declare triggers: TriggerBlock[];
+
   public declare timeRank: string;
 
   public declare timeString: string;
@@ -136,6 +139,7 @@ export class Level extends lib.flash.display.MovieClip {
     this.fallingSpikes = new Array();
     this.grinders = new Array();
     this.bouncers = new Array();
+    this.triggers = new Array();
     this.laserCannons = new Array();
     this.checkPoints = new Array();
     super.__preInit();
@@ -151,8 +155,8 @@ export class Level extends lib.flash.display.MovieClip {
     this.checkPoints.push(checkPoint);
   }
 
-  public applyObstacleColour(mov: lib.flash.display.MovieClip): any {
-    Anim.colourMe(mov, this.obstacleColour);
+  public applyObstacleColour(mov: lib.flash.display.MovieClip, color :number = this.obstacleColour): any {
+    Anim.colourMe(mov, color);
   }
 
   public createArray(): any {
@@ -166,6 +170,30 @@ export class Level extends lib.flash.display.MovieClip {
     }
     this.canvas.init(3000, 3000);
     this.addChild(this.canvas);
+  }
+
+  public createTrigger(mov: TriggerBlock) {
+    this.triggers.push(mov);
+    this.addChild(mov);
+    if (mov.name.includes("LCK") && mov.name.includes("1")) {
+      mov.color = 0xffff0000;
+      //this.toPush.push([mov, 0]);
+    } else if (mov.name.includes("LCK") && mov.name.includes("2")) {
+      mov.color = 0xFFFFFF00;
+      //this.toPush.push([mov, 0]);
+    } else if (mov.name.includes("INF")){
+      mov.color = 0xFF0000ff;
+    } else if (mov.name.includes("NRM")){
+      mov.color = 0xFF0080ff;
+    } else if (mov.name.includes("NOF")){
+      mov.color = 0xFF00ffff;
+    } else if (mov.name.includes("SHW") && mov.name.includes("2")){
+      mov.color = 0x00000000;
+    } else if (mov.name.includes("SHW") && mov.name.includes("1")){
+      mov.color = 0xffff0000;
+    }
+    this.applyObstacleColour(mov, mov.color);
+    console.log(mov.name);
   }
 
   public createBouncer(mov: Bouncer) {
@@ -369,6 +397,9 @@ export class Level extends lib.flash.display.MovieClip {
     }
     for (const treadmill of this.treadmills) {
       treadmill.pingTreadmill();
+    }
+    for (const trigger of this.triggers) {
+      trigger.init();
     }
     this.uniqueLevelInit();
   }

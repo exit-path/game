@@ -3427,6 +3427,13 @@ bundle.buttons[1170] = character1170;
 import character1174 from "./1174.json";
 bundle.buttons[1174] = character1174;
 
+/* trigger block */
+import character1188 from "./1188.json";
+bundle.shapes[1188] = character1188;
+
+import character1189 from "./1189.json";
+bundle.sprites[1189] = character1189;
+
 bundle.linkages[173] = "Exit_fla.introLoader_43";
 bundle.linkages[160] = "Exit_fla.runner_head_17";
 bundle.linkages[78] = "fl.controls.ColorPicker";
@@ -3437,6 +3444,7 @@ bundle.linkages[33] = "Ticker";
 bundle.linkages[21] = "AGIntro";
 bundle.linkages[20] = "Exit_fla.ag_intro_mc_459";
 bundle.linkages[0] = "Exit_fla.MainTimeline";
+bundle.linkages[1189] = "TriggerBlock";
 bundle.linkages[1187] = "Exit_fla.hideMe_48";
 bundle.linkages[1186] = "WhiteSquare";
 bundle.linkages[1184] = "YouArrow";

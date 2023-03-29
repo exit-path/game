@@ -136,6 +136,30 @@ export class Player extends TileObject {
     }
   }
 
+  public triggerInteraction(): any {
+    for (var i: any = 0; i < this.curLevel.triggers.length; i++) {
+      if (this.curLevel.triggers[i].typeTrigger.includes("POP")) {
+        this.curLevel.triggers[i].popCheck(this.curLevel);
+      }
+      if (this.hitTestObject(this.curLevel.triggers[i])) {
+        if (this.curLevel.triggers[i].typeTrigger == "INF") {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowAlways;
+        } else if (this.curLevel.triggers[i].typeTrigger == "NRM") {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowNormal;
+        } 
+        else if (this.curLevel.triggers[i].typeTrigger == "NOF")  {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowDisabled;
+        } else {
+          if (this.curLevel.triggers[i].dst != null){
+            this.curLevel.triggers[i].triggered = true;
+            this.curLevel.applyObstacleColour(this.curLevel.triggers[i], 0xff00ff00);
+            this.curLevel.triggers[i].dst.triggerLCK(this.curLevel);
+          }
+        }
+      }
+    }
+  }
+
   public doTheJump(): any {
     this.jumpCounter++;
     this.holdUp = true;
@@ -344,6 +368,7 @@ export class Player extends TileObject {
     this.levelInteraction();
     this.teleporterInteraction();
     this.checkPointInteraction();
+    this.triggerInteraction();
   }
 
   public spikeInteraction(): any {
