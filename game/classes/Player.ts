@@ -149,11 +149,20 @@ export class Player extends TileObject {
         } 
         else if (this.curLevel.triggers[i].typeTrigger == "NOF")  {
           main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowDisabled;
+          if (this.burningFlow) {
+            this.parent["stopBurningFlowMusic"]();
+          }
+          this.burningFlow = false;
+        } else if (this.curLevel.triggers[i].typeTrigger.includes("STF")) {
+          var flowVal = +this.curLevel.triggers[i].typeTrigger.slice(3);
+          this.flowPoints = flowVal;
         } else {
-          if (this.curLevel.triggers[i].dst != null){
+          if (this.curLevel.triggers[i].dst.length!=0){
             this.curLevel.triggers[i].triggered = true;
             this.curLevel.applyObstacleColour(this.curLevel.triggers[i], 0xff00ff00);
-            this.curLevel.triggers[i].dst.triggerLCK(this.curLevel);
+            for (var tr of this.curLevel.triggers[i].dst) {
+              tr.triggerDEL(this.curLevel);
+            }
           }
         }
       }

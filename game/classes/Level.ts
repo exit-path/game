@@ -175,10 +175,10 @@ export class Level extends lib.flash.display.MovieClip {
   public createTrigger(mov: TriggerBlock) {
     this.triggers.push(mov);
     this.addChild(mov);
-    if (mov.name.includes("LCK") && mov.name.includes("1")) {
+    if (mov.name.includes("DEL") && mov.name.includes("1")) {
       mov.color = 0xffff0000;
       //this.toPush.push([mov, 0]);
-    } else if (mov.name.includes("LCK") && mov.name.includes("2")) {
+    } else if (mov.name.includes("DEL") && mov.name.includes("2")) {
       mov.color = 0xFFFFFF00;
       //this.toPush.push([mov, 0]);
     } else if (mov.name.includes("INF")){
@@ -191,6 +191,10 @@ export class Level extends lib.flash.display.MovieClip {
       mov.color = 0x00000000;
     } else if (mov.name.includes("SHW") && mov.name.includes("1")){
       mov.color = 0xffff0000;
+    } else if (mov.name.includes("POP")){
+      mov.color = 0x00000000;
+    } else if (mov.name.includes("STF")) {
+      mov.color = 0xFFff66ff;
     }
     this.applyObstacleColour(mov, mov.color);
     console.log(mov.name);
