@@ -193,8 +193,9 @@ export class Player extends TileObject {
         /* trigger to emit beams */
         else if (trigger.typeTrigger.includes("BEM")) {
           (this.parent as Game).emitBeam(this.x,this.y,this.width);
-        }
-        else {
+        } else if (trigger.typeTrigger.includes("COL")) {
+          this.curLevel.colorBG = trigger.typeTrigger.slice(3) == "RND" ? Math.random()*0xFFFFFFFF : +trigger.typeTrigger.slice(3);
+        } else {
           if (this.curLevel.triggers[i].dst.length!=0){
             this.curLevel.triggers[i].triggered = true;
             this.curLevel.applyObstacleColour(this.curLevel.triggers[i], 0xff00ff00);
@@ -298,7 +299,7 @@ export class Player extends TileObject {
       }
     }
   }
-
+  
   public hitBlock(mov: lib.flash.display.MovieClip): any {}
 
   public initPlayer(): any {
@@ -466,7 +467,7 @@ export class Player extends TileObject {
         if (newX != 0) {
           this.xVel = newX;
         }
-        this.yVel = newY;
+        this.yVel = newY * bouncer.bouncyness;
         this.yLove = this.yVel > 0 ? -1 : 1;
 
         bouncer.bounces++;

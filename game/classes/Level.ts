@@ -106,6 +106,8 @@ export class Level extends lib.flash.display.MovieClip {
   public lockCamX = false;
 
   public lockCamY = true;
+ 
+  public colorBG: number;
 
   public constructor() {
     super();

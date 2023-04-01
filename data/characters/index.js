@@ -1072,6 +1072,9 @@ bundle.shapes[1045] = character1045;
 import character1049 from "./1049.json";
 bundle.shapes[1049] = character1049;
 
+import character10002 from "./10002.json";
+bundle.shapes[10002] = character10002;
+
 import character1053 from "./1053.json";
 bundle.shapes[1053] = character1053;
 

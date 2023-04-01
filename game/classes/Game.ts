@@ -1053,6 +1053,7 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public ping(e: lib.flash.events.Event = null): any {
+    Anim.colourMe(this.skyLine, this.level.colorBG);
     if (this.isPaused && this.mode === "SP") {
       return;
     }

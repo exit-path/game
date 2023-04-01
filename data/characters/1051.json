@@ -1,5 +1,5 @@
 {
-  "numFrames": 7,
+  "numFrames": 8,
   "frames": [
     {
       "frame": 1,
@@ -275,6 +275,26 @@
           "version": 3,
           "moveCharacter": false,
           "characterId": 1050,
+          "matrix": [1, 0, 0, 1, 0, 0],
+          "ratio": 6,
+          "filters": [],
+          "cacheAsBitmap": true
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "actions": [
+        {
+          "kind": 1,
+          "depth": 3
+        },
+        {
+          "kind": 0,
+          "depth": 1,
+          "version": 3,
+          "moveCharacter": true,
+          "characterId": 10002,
           "matrix": [1, 0, 0, 1, 0, 0],
           "ratio": 6,
           "filters": [],
