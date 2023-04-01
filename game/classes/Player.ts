@@ -178,8 +178,10 @@ export class Player extends TileObject {
           this.jumpLevel = true;
           this.yLove = 0;
         } else if (trigger.typeTrigger.includes("GRV")) {
-          this.yGrav= +trigger.typeTrigger.slice(3);
-          trigger.typeTrigger = "z";
+          var newG = +trigger.typeTrigger.slice(3);
+          if (newG * this.yGrav < 0) 
+            (this.parent as Game).skin.rotation = ((this.parent as Game).skin.rotation + 180)%360;
+          this.yGrav = newG;
         }
         /* trigger that sets a random skin */
         else if (trigger.typeTrigger.includes("SKN")) {
@@ -369,18 +371,35 @@ export class Player extends TileObject {
       this.scaleY = 1;
     }
     if (Key.isDown(Key.LEFT)) {
-      if (!this.holdDown) {
-        if (this.xVel > 0 - this.playerXMax) {
-          this.xVel = this.xVel - this.xAcc;
+     /* if(this.yGrav >= 0) {*/
+        if (!this.holdDown) {
+          if (this.xVel > 0 - this.playerXMax) {
+            this.xVel = this.xVel - this.xAcc;
+          }
         }
-      }
+      /*} else {
+        if (!this.holdDown) {
+          if (this.xVel < this.playerXMax) {
+            this.xVel = this.xVel + this.xAcc;
+          }
+        }
+      }*/
     } else if (Key.isDown(Key.RIGHT)) {
-      if (!this.holdDown) {
-        if (this.xVel < this.playerXMax) {
-          this.xVel = this.xVel + this.xAcc;
+      /*if(this.yGrav >= 0) {*/
+        if (!this.holdDown) {
+          if (this.xVel < this.playerXMax) {
+            this.xVel = this.xVel + this.xAcc;
+          }
         }
-      }
+      /*} else {
+        if (!this.holdDown) {
+          if (this.xVel > 0 - this.playerXMax) {
+            this.xVel = this.xVel - this.xAcc;
+          }
+        }
+      }*/
     }
+  
     if (Key.isDown(Key.LEFT) || Key.isDown(Key.RIGHT)) {
       this.xF = 1;
       if (this.holdDown && !this.hitHalf) {
