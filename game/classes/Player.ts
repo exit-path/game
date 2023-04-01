@@ -10,7 +10,7 @@ import { Anim } from "./john/Anim";
 import { Tile } from "./Tile";
 import { main } from "./global";
 import { LevelFlags } from "../../shared/level";
-import type { Game } from "./Game";
+import { Game } from "./Game";
 
 export class Player extends TileObject {
   public declare beltSpeed: number;
@@ -138,25 +138,63 @@ export class Player extends TileObject {
 
   public triggerInteraction(): any {
     for (var i: any = 0; i < this.curLevel.triggers.length; i++) {
-      if (this.curLevel.triggers[i].typeTrigger.includes("POP")) {
-        this.curLevel.triggers[i].popCheck(this.curLevel);
+      var trigger = this.curLevel.triggers[i];
+      /* check all pop triggers for pop on/off */
+      if (trigger.typeTrigger.includes("POP")) {
+        trigger.popCheck(this.curLevel);
       }
-      if (this.hitTestObject(this.curLevel.triggers[i])) {
-        if (this.curLevel.triggers[i].typeTrigger == "INF") {
+      if (this.hitTestObject(trigger)) {
+        /* Change flow mode flow mode */
+        if (trigger.typeTrigger.includes("INF") && trigger.effectOn) {
           main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowAlways;
-        } else if (this.curLevel.triggers[i].typeTrigger == "NRM") {
-          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowNormal;
-        } 
-        else if (this.curLevel.triggers[i].typeTrigger == "NOF")  {
-          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowDisabled;
-          if (this.burningFlow) {
-            this.parent["stopBurningFlowMusic"]();
+          // unable to use it again
+          if (trigger.typeTrigger.includes("SNG")) {
+            trigger.effectOn = false;
+            this.curLevel.applyObstacleColour(trigger, 0xFF660000);
           }
-          this.burningFlow = false;
-        } else if (this.curLevel.triggers[i].typeTrigger.includes("STF")) {
-          var flowVal = +this.curLevel.triggers[i].typeTrigger.slice(3);
+        } else if (trigger.typeTrigger.includes("NRM") && trigger.effectOn) {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowNormal;
+            if (trigger.typeTrigger.includes("SNG")) {
+              trigger.effectOn = false;
+              this.curLevel.applyObstacleColour(trigger, 0xFF660000);
+            }
+        } else if (trigger.typeTrigger.includes("NOF") && trigger.effectOn)  {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowDisabled;
+            if (this.burningFlow)
+              this.parent["stopBurningFlowMusic"]();
+            this.burningFlow = false;
+            if (trigger.typeTrigger.includes("SNG")) {
+              trigger.effectOn = false;
+              this.curLevel.applyObstacleColour(trigger, 0xFF660000);
+            }
+        } 
+        /* set the value of flow points */
+        else if (trigger.typeTrigger.includes("STF")) {
+          var flowVal = +trigger.typeTrigger.slice(3);
           this.flowPoints = flowVal;
-        } else {
+        } 
+        /* trigger that resets jump on collision */
+        else if (trigger.typeTrigger.includes("JMP")) {
+          this.jumpLevel = true;
+          this.yLove = 0;
+        } else if (trigger.typeTrigger.includes("GRV")) {
+          this.yGrav= +trigger.typeTrigger.slice(3);
+          trigger.typeTrigger = "z";
+        }
+        /* trigger that sets a random skin */
+        else if (trigger.typeTrigger.includes("SKN")) {
+          const game = this.parent as Game;
+          this.headType = Math.floor(Math.random() * 24);
+          this.handType = Math.floor(Math.random() * 24);
+          this.colour = Math.floor(Math.random() * 0xFFFFFF);
+          this.colour2 = Math.floor(Math.random() * 0xFFFFFF);
+          game.addSkin();
+        } 
+        /* trigger to emit beams */
+        else if (trigger.typeTrigger.includes("BEM")) {
+          (this.parent as Game).emitBeam(this.x,this.y,this.width);
+        }
+        else {
           if (this.curLevel.triggers[i].dst.length!=0){
             this.curLevel.triggers[i].triggered = true;
             this.curLevel.applyObstacleColour(this.curLevel.triggers[i], 0xff00ff00);
@@ -176,7 +214,7 @@ export class Player extends TileObject {
       SoundBox.playSound("JumpSound");
       this.playerJump = true;
       this.jumpLevel = false;
-      this.yVel = this.hops;
+      this.yVel = this.yGrav<0 ? -this.hops : this.hops;
       this.yLove = 1;
       this.parent["playerObject"].jumps++;
       if (this.parent["playerObject"].jumps >= 1000) {
@@ -291,6 +329,9 @@ export class Player extends TileObject {
       (height <= 550 && this.y > 550) ||
       (height > 550 && this.y > height + 50)
     ) {
+      this.kill();
+    }
+    if (this.yGrav<0 && this.y < this.curLevel.minHeight-50) {
       this.kill();
     }
     if (this.hitTestObject(this.curLevel.endPoint)) {

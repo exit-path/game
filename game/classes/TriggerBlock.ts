@@ -24,16 +24,20 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
 
   public declare activatedSHW :boolean;
 
+  public declare effectOn : boolean;
+
+  public txt = new lib.flash.text.TextField();
   
   public constructor() {
     super();
+    this.effectOn = true;
     this.dst=[];
     this.firstPop = true;
     this.triggered = false;
     this.activatedSHW = false;
     this.parent["createTrigger"](this);
     this.typeTrigger = this.name;
-    if ((this.typeTrigger.includes("DEL") && this.typeTrigger.includes("2")) || this.typeTrigger.includes("POP")|| this.typeTrigger.includes("SHW")){
+    if ((this.typeTrigger.includes("DEL") && this.typeTrigger.includes("2")) || this.typeTrigger.includes("POP")|| this.typeTrigger.includes("SHW") || this.typeTrigger.includes("JMP")){
       super.init();
       if (this.typeTrigger.includes("SHW")) {
         this.name += "SHW";
@@ -44,7 +48,7 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
       this.popStart = +values[0];
       this.popCycleOn = +values[1];
       this.popCycleOff = +values[2];
-      this.frameCount = 0;
+      this.frameCount = -1;
       this.name += "DEPOP";
       console.log(this.popStart+" "+this.popCycleOn+" "+this.popCycleOff);
     }
@@ -75,6 +79,24 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
          
       }
     }
+  }
+
+  public addText() {
+    this.txt.__container.layoutBounds[2] = 1000;
+    this.txt.__container.layoutBounds[3] = 1000;
+    this.txt.__container.defaultTextFormat.color = 0xffffffff;
+    this.txt.__container.defaultTextFormat.font = "Bitstream Vera Sans";
+    this.txt.__container.defaultTextFormat.size = 22;
+    this.txt.__container.layout();
+    if(this.name.includes("SHW"))
+      this.txt.text = "S"+this.name[4];
+    else if (this.name.includes("DEL"))
+      this.txt.text = "D"+this.name[4];
+    this.txt.x +=3;
+    this.txt.y += 5;
+    this.txt.width = this.width;
+    this.txt.height = this.height;
+    this.addChild(this.txt);
   }
 
   public triggerDEL(level) {
@@ -113,7 +135,7 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
       this.firstPop = false;
       this.frameCount = this.popCycleOff-1;
     } 
-    if (!this.firstPop) {
+    else if (!this.firstPop) {
       this.frameCount %= (this.popCycleOn + this.popCycleOff);
       if(this.frameCount==this.popCycleOff) {
         this.name = this.name.slice(0,-5);

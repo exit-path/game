@@ -66,6 +66,8 @@ export class Level extends lib.flash.display.MovieClip {
   public declare maxWidth: number;
 
   public declare maxHeight: number;
+  
+  public declare minHeight: number;
 
   public declare obstacleColour: number;
 
@@ -110,6 +112,7 @@ export class Level extends lib.flash.display.MovieClip {
   }
 
   __preInit() {
+    this.minHeight=10000000;
     this.tMaxX = 100;
     this.tMaxY = 50;
     this.levelName = "Multiplayer";
@@ -178,9 +181,16 @@ export class Level extends lib.flash.display.MovieClip {
     if (mov.name.includes("DEL") && mov.name.includes("1")) {
       mov.color = 0xffff0000;
       //this.toPush.push([mov, 0]);
+      if(mov.name.includes("SDEL")) {
+        mov.addText();
+        mov.name = mov.name.slice(1);
+      }
     } else if (mov.name.includes("DEL") && mov.name.includes("2")) {
       mov.color = 0xFFFFFF00;
-      //this.toPush.push([mov, 0]);
+      if(mov.name.includes("SDEL")) {
+        mov.addText();
+        mov.name = mov.name.slice(1);
+      }
     } else if (mov.name.includes("INF")){
       mov.color = 0xFF0000ff;
     } else if (mov.name.includes("NRM")){
@@ -189,15 +199,26 @@ export class Level extends lib.flash.display.MovieClip {
       mov.color = 0xFF00ffff;
     } else if (mov.name.includes("SHW") && mov.name.includes("2")){
       mov.color = 0x00000000;
+      if(mov.name.includes("SSHW")) {
+        mov.addText();
+        mov.name = mov.name.slice(1);
+      }
     } else if (mov.name.includes("SHW") && mov.name.includes("1")){
       mov.color = 0xffff0000;
+      if(mov.name.includes("SSHW")) {
+        mov.addText();
+        mov.name = mov.name.slice(1);
+      }
     } else if (mov.name.includes("POP")){
       mov.color = 0x00000000;
     } else if (mov.name.includes("STF")) {
       mov.color = 0xFFff66ff;
+    } else if (mov.name.includes("JMP")) {
+      mov.color = 0xFF4d4d4d;
+    } else if (mov.name.includes("GRV")) {
+      mov.color = 0xFFefc997
     }
     this.applyObstacleColour(mov, mov.color);
-    console.log(mov.name);
   }
 
   public createBouncer(mov: Bouncer) {
@@ -333,6 +354,9 @@ export class Level extends lib.flash.display.MovieClip {
       }
       if (tile.y > this.maxHeight) {
         this.maxHeight = tile.y;
+      }
+      if (tile.y < this.minHeight) {
+        this.minHeight = tile.y;
       }
       tile.typeOf = tileType;
       if (tile.typeOf === 3) {
