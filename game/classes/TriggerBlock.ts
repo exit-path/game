@@ -50,7 +50,6 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
       this.popCycleOff = +values[2];
       this.frameCount = -1;
       this.name += "DEPOP";
-      console.log(this.popStart+" "+this.popCycleOn+" "+this.popCycleOff);
     }
     this.letter = this.typeTrigger.substr(3, 1);
   }
@@ -64,7 +63,6 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
                 this.dst.push(i as TriggerBlock);
               }
             }
-            console.log(this.dst);
         }
     }
     else if (this.typeTrigger.includes("SHW")){
@@ -75,8 +73,6 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
               this.dst.push(i as TriggerBlock);
             }
           }
-          console.log(this.dst);
-         
       }
     }
   }
@@ -109,7 +105,7 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
         }
       }
       level.applyObstacleColour(this, 0x00000000);
-      this.name="zizi";
+      this.name="zzzz";
     } else if (this.typeTrigger.includes("SHW") ) {
       for (var i: any = 0; i < level.triggers.length; i++) {
         var triggerSrc = level.triggers[i];
@@ -117,21 +113,17 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
           return;
         }
       }
-      console.log(this.name);
       level.applyObstacleColour(this, 0xFFFFFF00);
       if (this.activatedSHW == false) {
         this.name = this.name.slice(0,-3);
         this.activatedSHW = true;
       }
-      console.log(this.name);
     }
   }
 
   public popCheck(level) {
     this.frameCount = (this.frameCount+1)
-    //console.log(this.frameCount);
     if(this.firstPop && this.frameCount == this.popStart) {
-      console.log("START"+this.frameCount);
       this.firstPop = false;
       this.frameCount = this.popCycleOff-1;
     } 
@@ -139,7 +131,6 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
       this.frameCount %= (this.popCycleOn + this.popCycleOff);
       if(this.frameCount==this.popCycleOff) {
         this.name = this.name.slice(0,-5);
-        //console.log(this.name);
         level.applyObstacleColour(this, 0xFFFFFFFF);
       } if(this.frameCount==0) {
         this.name+="DEPOP"
