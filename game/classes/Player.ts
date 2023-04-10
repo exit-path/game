@@ -177,12 +177,14 @@ export class Player extends TileObject {
         else if (trigger.typeTrigger.includes("JMP")) {
           this.jumpLevel = true;
           this.yLove = 0;
-        } else if (trigger.typeTrigger.includes("GRV")) {
+        /* Not fully working, keep for later
+      } else if (trigger.typeTrigger.includes("GRV")) {
           var newG = +trigger.typeTrigger.slice(3);
           if (newG * this.yGrav < 0) 
             (this.parent as Game).skin.rotation = ((this.parent as Game).skin.rotation + 180)%360;
+          (this.parent as Game).player. += 150;
           this.yGrav = newG;
-        }
+      */}
         /* trigger that sets a random skin */
         else if (trigger.typeTrigger.includes("SKN")) {
           const game = this.parent as Game;

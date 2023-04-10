@@ -88,6 +88,8 @@ export class TriggerBlock extends Tile /*lib.flash.display.MovieClip*/ {
       this.txt.text = "S"+this.name[4];
     else if (this.name.includes("DEL"))
       this.txt.text = "D"+this.name[4];
+    else if (this.name.includes("SKN"))
+      this.txt.text = " ? ";
     this.txt.x +=3;
     this.txt.y += 5;
     this.txt.width = this.width;

@@ -211,6 +211,10 @@ export class Level extends lib.flash.display.MovieClip {
         mov.addText();
         mov.name = mov.name.slice(1);
       }
+    }  else if (mov.name.includes("SKN")) {
+      mov.addText();
+    } else if (mov.name.includes("BEM")) {
+      mov.color = 0xFF9932CC;
     } else if (mov.name.includes("POP")){
       mov.color = 0x00000000;
     } else if (mov.name.includes("STF")) {
