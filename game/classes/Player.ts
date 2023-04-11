@@ -488,7 +488,7 @@ export class Player extends TileObject {
         if (newX != 0) {
           this.xVel = newX;
         }
-        this.yVel = newY * bouncer.bouncyness;
+        this.yVel = newY /** bouncer.bouncyness*/;
         this.yLove = this.yVel > 0 ? -1 : 1;
 
         bouncer.bounces++;
