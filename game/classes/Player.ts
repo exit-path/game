@@ -198,7 +198,7 @@ export class Player extends TileObject {
         else if (trigger.typeTrigger.includes("BEM")) {
           (this.parent as Game).emitBeam(this.x,this.y,this.width);
         } else if (trigger.typeTrigger.includes("COL")) {
-          this.curLevel.colorBG = trigger.typeTrigger.slice(3) == "RND" ? Math.random()*0xFFFFFFFF : +trigger.typeTrigger.slice(3);
+          this.curLevel.colorBG = trigger.typeTrigger.slice(3) == "RND" ? Math.random()*0xFFFFFFFF : (parseInt(trigger.typeTrigger.slice(3),16)||0);
         } else {
           if (this.curLevel.triggers[i].dst.length!=0){
             this.curLevel.triggers[i].triggered = true;
