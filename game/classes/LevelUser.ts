@@ -18,6 +18,7 @@ import { Teleporter } from "./Teleporter";
 import { TreadmillLeftHolder } from "./TreadmillLeftHolder";
 import { TreadmillRightHolder } from "./TreadmillRightHolder";
 import { TextPanel } from "./TextPanel";
+import { TriggerBlock } from "./TriggerBlock";
 
 export class LevelUser extends Level {
   public constructor(userLevel: UserLevel) {
@@ -93,6 +94,8 @@ export class LevelUser extends Level {
         return new TreadmillRightHolder();
       case "text":
         return new TextPanel();
+      case "trigger":
+        return new TriggerBlock();
     }
   }
 }

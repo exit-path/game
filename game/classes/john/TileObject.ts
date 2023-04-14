@@ -933,7 +933,7 @@ export class TileObject extends lib.flash.display.MovieClip {
         this.holdCounter = 0;
       }
       if (this.yLove == 0 && this.yVel < 1.5) {
-        this.yLove = 3;
+        //this.yLove = 3;
       }
       if (this.yLove == 0) {
         this.playerJump = false;

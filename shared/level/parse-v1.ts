@@ -26,6 +26,7 @@ const typeMap: Record<number, LevelObjectType> = {
   11: "left-treadmill",
   10: "right-treadmill",
   17: 'text',
+  18: 'trigger'
 }
 
 const typesWithText = new Set<LevelObjectType>([
@@ -34,6 +35,7 @@ const typesWithText = new Set<LevelObjectType>([
   "swinging-axe",
   "bouncer",
   "teleporter",
+  "trigger",
   "text",
 ]);
 

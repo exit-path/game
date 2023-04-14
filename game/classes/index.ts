@@ -165,6 +165,7 @@ export { TileOpaque } from "./TileOpaque";
 export { TimeOutWindow } from "./TimeOutWindow";
 export { TreadmillLeftHolder } from "./TreadmillLeftHolder";
 export { TreadmillRightHolder } from "./TreadmillRightHolder";
+export { TriggerBlock } from "./TriggerBlock";
 export { Tubes } from "./Tubes";
 export { Turnstile } from "./Turnstile";
 export { UIBackground } from "./UIBackground";

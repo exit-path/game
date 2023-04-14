@@ -26,6 +26,7 @@ const typeMap: Record<string, LevelObjectType> = {
   "<": "left-treadmill",
   ">": "right-treadmill",
   "q": 'text',
+  "r": 'trigger'
 }
 
 export function parseV0(data: string): Level {

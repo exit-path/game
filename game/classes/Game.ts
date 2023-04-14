@@ -136,7 +136,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   public declare mode: "SP" | "MP" | "PRACTICE";
 
-  private declare skin: Runner;
+  public declare skin: Runner;
 
   public declare skinLayer: lib.flash.display.MovieClip;
 
@@ -338,7 +338,7 @@ export class Game extends lib.flash.display.MovieClip {
         this.uiPanel.levName.text;
     }
   }
-
+  
   public createNewLevel(): any {
     this.levelFinished = false;
     this.tryFrame = 0;
@@ -1053,6 +1053,9 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public ping(e: lib.flash.events.Event = null): any {
+    if (this.level.colorBG != null) {
+      Anim.colourMe(this.skyLine, this.level.colorBG);
+    }
     if (this.isPaused && this.mode === "SP") {
       return;
     }

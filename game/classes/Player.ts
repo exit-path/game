@@ -10,7 +10,7 @@ import { Anim } from "./john/Anim";
 import { Tile } from "./Tile";
 import { main } from "./global";
 import { LevelFlags } from "../../shared/level";
-import type { Game } from "./Game";
+import { Game } from "./Game";
 
 export class Player extends TileObject {
   public declare beltSpeed: number;
@@ -136,6 +136,82 @@ export class Player extends TileObject {
     }
   }
 
+  public triggerInteraction(): any {
+    for (var i: any = 0; i < this.curLevel.triggers.length; i++) {
+      var trigger = this.curLevel.triggers[i];
+      /* check all pop triggers for pop on/off */
+      if (trigger.typeTrigger.includes("POP")) {
+        trigger.popCheck(this.curLevel);
+      }
+      if (this.hitTestObject(trigger)) {
+        /* Change flow mode flow mode */
+        if (trigger.typeTrigger.includes("INF") && trigger.effectOn) {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowAlways;
+          // unable to use it again
+          if (trigger.typeTrigger.includes("SNG")) {
+            trigger.effectOn = false;
+            this.curLevel.applyObstacleColour(trigger, 0xFF660000);
+          }
+        } else if (trigger.typeTrigger.includes("NRM") && trigger.effectOn) {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowNormal;
+            if (trigger.typeTrigger.includes("SNG")) {
+              trigger.effectOn = false;
+              this.curLevel.applyObstacleColour(trigger, 0xFF660000);
+            }
+        } else if (trigger.typeTrigger.includes("NOF") && trigger.effectOn)  {
+          main().multiplayer.game.level.flags = main().multiplayer.game.level.flags & (~ LevelFlags.FlowModeMask ) | LevelFlags.FlowDisabled;
+            if (this.burningFlow)
+              this.parent["stopBurningFlowMusic"]();
+            this.burningFlow = false;
+            if (trigger.typeTrigger.includes("SNG")) {
+              trigger.effectOn = false;
+              this.curLevel.applyObstacleColour(trigger, 0xFF660000);
+            }
+        } 
+        /* set the value of flow points */
+        else if (trigger.typeTrigger.includes("STF")) {
+          var flowVal = +trigger.typeTrigger.slice(3);
+          this.flowPoints = flowVal;
+        } 
+        /* trigger that resets jump on collision */
+        else if (trigger.typeTrigger.includes("JMP")) {
+          this.jumpLevel = true;
+          this.yLove = 0;
+        /* Not fully working, keep for later
+      } else if (trigger.typeTrigger.includes("GRV")) {
+          var newG = +trigger.typeTrigger.slice(3);
+          if (newG * this.yGrav < 0) 
+            (this.parent as Game).skin.rotation = ((this.parent as Game).skin.rotation + 180)%360;
+          (this.parent as Game).player. += 150;
+          this.yGrav = newG;
+      */}
+        /* trigger that sets a random skin */
+        else if (trigger.typeTrigger.includes("SKN")) {
+          const game = this.parent as Game;
+          this.headType = Math.floor(Math.random() * 24);
+          this.handType = Math.floor(Math.random() * 24);
+          this.colour = Math.floor(Math.random() * 0xFFFFFF);
+          this.colour2 = Math.floor(Math.random() * 0xFFFFFF);
+          game.addSkin();
+        } 
+        /* trigger to emit beams */
+        else if (trigger.typeTrigger.includes("BEM")) {
+          (this.parent as Game).emitBeam(this.x,this.y,this.width);
+        } else if (trigger.typeTrigger.includes("COL")) {
+          this.curLevel.colorBG = trigger.typeTrigger.slice(3) == "RND" ? Math.random()*0xFFFFFFFF : (parseInt(trigger.typeTrigger.slice(3),16)||0);
+        } else {
+          if (this.curLevel.triggers[i].dst.length!=0){
+            this.curLevel.triggers[i].triggered = true;
+            this.curLevel.applyObstacleColour(this.curLevel.triggers[i], 0xff00ff00);
+            for (var tr of this.curLevel.triggers[i].dst) {
+              tr.triggerDEL(this.curLevel);
+            }
+          }
+        }
+      }
+    }
+  }
+
   public doTheJump(): any {
     this.jumpCounter++;
     this.holdUp = true;
@@ -143,7 +219,7 @@ export class Player extends TileObject {
       SoundBox.playSound("JumpSound");
       this.playerJump = true;
       this.jumpLevel = false;
-      this.yVel = this.hops;
+      this.yVel = this.yGrav<0 ? -this.hops : this.hops;
       this.yLove = 1;
       this.parent["playerObject"].jumps++;
       if (this.parent["playerObject"].jumps >= 1000) {
@@ -227,7 +303,7 @@ export class Player extends TileObject {
       }
     }
   }
-
+  
   public hitBlock(mov: lib.flash.display.MovieClip): any {}
 
   public initPlayer(): any {
@@ -258,6 +334,9 @@ export class Player extends TileObject {
       (height <= 550 && this.y > 550) ||
       (height > 550 && this.y > height + 50)
     ) {
+      this.kill();
+    }
+    if (this.yGrav<0 && this.y < this.curLevel.minHeight-50) {
       this.kill();
     }
     if (this.hitTestObject(this.curLevel.endPoint)) {
@@ -294,18 +373,35 @@ export class Player extends TileObject {
       this.scaleY = 1;
     }
     if (Key.isDown(Key.LEFT)) {
-      if (!this.holdDown) {
-        if (this.xVel > 0 - this.playerXMax) {
-          this.xVel = this.xVel - this.xAcc;
+     /* if(this.yGrav >= 0) {*/
+        if (!this.holdDown) {
+          if (this.xVel > 0 - this.playerXMax) {
+            this.xVel = this.xVel - this.xAcc;
+          }
         }
-      }
+      /*} else {
+        if (!this.holdDown) {
+          if (this.xVel < this.playerXMax) {
+            this.xVel = this.xVel + this.xAcc;
+          }
+        }
+      }*/
     } else if (Key.isDown(Key.RIGHT)) {
-      if (!this.holdDown) {
-        if (this.xVel < this.playerXMax) {
-          this.xVel = this.xVel + this.xAcc;
+      /*if(this.yGrav >= 0) {*/
+        if (!this.holdDown) {
+          if (this.xVel < this.playerXMax) {
+            this.xVel = this.xVel + this.xAcc;
+          }
         }
-      }
+      /*} else {
+        if (!this.holdDown) {
+          if (this.xVel > 0 - this.playerXMax) {
+            this.xVel = this.xVel - this.xAcc;
+          }
+        }
+      }*/
     }
+  
     if (Key.isDown(Key.LEFT) || Key.isDown(Key.RIGHT)) {
       this.xF = 1;
       if (this.holdDown && !this.hitHalf) {
@@ -344,6 +440,7 @@ export class Player extends TileObject {
     this.levelInteraction();
     this.teleporterInteraction();
     this.checkPointInteraction();
+    this.triggerInteraction();
   }
 
   public spikeInteraction(): any {
@@ -391,7 +488,7 @@ export class Player extends TileObject {
         if (newX != 0) {
           this.xVel = newX;
         }
-        this.yVel = newY;
+        this.yVel = newY /** bouncer.bouncyness*/;
         this.yLove = this.yVel > 0 ? -1 : 1;
 
         bouncer.bounces++;

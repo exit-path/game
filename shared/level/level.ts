@@ -40,4 +40,5 @@ export type LevelObjectType =
   | "teleporter"
   | "left-treadmill"
   | "right-treadmill"
-  | "text";
+  | "text"
+  | "trigger";
