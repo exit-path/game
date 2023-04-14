@@ -57,4 +57,5 @@ export const versions: string[][] = [
     "Use reduced rendering for treadmills and checkpoints if quality is lowered",
   ],
   ["v0.5.1", "Use reduced visual effects if quality is lowered"],
+  ["v0.6.0", "Add new trigger blocks (@klementc)"],
 ];
