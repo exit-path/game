@@ -39,7 +39,6 @@ export function parseV0(data: string): Level {
   const objects: LevelObject[] = [];
   for (let i = 0; i < count; i++) {
     const binType = String.fromCodePoint(reader.readByte());
-    console.log("Tile: "+binType);
     const type = typeMap[binType];
     if (!type) {
       throw new Error(`Unknown level object type: ${JSON.stringify(binType)}`);

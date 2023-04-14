@@ -10,7 +10,6 @@ export class Bouncer extends lib.flash.display.MovieClip {
     this.bounces = 0;
     var tmp = +this.name;
     this.bouncyness = (! isNaN(tmp)) ? tmp : 1;
-    console.log("b: "+this.bouncyness)
     this.addFrameScript(0, this.frame1);
     this.parent["createBouncer"](this);
   }
