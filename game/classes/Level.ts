@@ -66,7 +66,7 @@ export class Level extends lib.flash.display.MovieClip {
   public declare maxWidth: number;
 
   public declare maxHeight: number;
-  
+
   public declare minHeight: number;
 
   public declare obstacleColour: number;
@@ -106,7 +106,7 @@ export class Level extends lib.flash.display.MovieClip {
   public lockCamX = false;
 
   public lockCamY = true;
- 
+
   public colorBG: number;
 
   public constructor() {
@@ -114,7 +114,7 @@ export class Level extends lib.flash.display.MovieClip {
   }
 
   __preInit() {
-    this.minHeight=10000000;
+    this.minHeight = 10000000;
     this.tMaxX = 100;
     this.tMaxY = 50;
     this.levelName = "Multiplayer";
@@ -160,7 +160,10 @@ export class Level extends lib.flash.display.MovieClip {
     this.checkPoints.push(checkPoint);
   }
 
-  public applyObstacleColour(mov: lib.flash.display.MovieClip, color :number = this.obstacleColour): any {
+  public applyObstacleColour(
+    mov: lib.flash.display.MovieClip,
+    color: number = this.obstacleColour
+  ): any {
     Anim.colourMe(mov, color);
   }
 
@@ -183,46 +186,46 @@ export class Level extends lib.flash.display.MovieClip {
     if (mov.name.includes("DEL") && mov.name.includes("1")) {
       mov.color = 0xffff0000;
       //this.toPush.push([mov, 0]);
-      if(mov.name.includes("SDEL")) {
+      if (mov.name.includes("SDEL")) {
         mov.addText();
         mov.name = mov.name.slice(1);
       }
     } else if (mov.name.includes("DEL") && mov.name.includes("2")) {
-      mov.color = 0xFFFFFF00;
-      if(mov.name.includes("SDEL")) {
+      mov.color = 0xffffff00;
+      if (mov.name.includes("SDEL")) {
         mov.addText();
         mov.name = mov.name.slice(1);
       }
-    } else if (mov.name.includes("INF")){
-      mov.color = 0xFF0000ff;
-    } else if (mov.name.includes("NRM")){
-      mov.color = 0xFF0080ff;
-    } else if (mov.name.includes("NOF")){
-      mov.color = 0xFF00ffff;
-    } else if (mov.name.includes("SHW") && mov.name.includes("2")){
+    } else if (mov.name.includes("INF")) {
+      mov.color = 0xff0000ff;
+    } else if (mov.name.includes("NRM")) {
+      mov.color = 0xff0080ff;
+    } else if (mov.name.includes("NOF")) {
+      mov.color = 0xff00ffff;
+    } else if (mov.name.includes("SHW") && mov.name.includes("2")) {
       mov.color = 0x00000000;
-      if(mov.name.includes("SSHW")) {
+      if (mov.name.includes("SSHW")) {
         mov.addText();
         mov.name = mov.name.slice(1);
       }
-    } else if (mov.name.includes("SHW") && mov.name.includes("1")){
+    } else if (mov.name.includes("SHW") && mov.name.includes("1")) {
       mov.color = 0xffff0000;
-      if(mov.name.includes("SSHW")) {
+      if (mov.name.includes("SSHW")) {
         mov.addText();
         mov.name = mov.name.slice(1);
       }
-    }  else if (mov.name.includes("SKN")) {
+    } else if (mov.name.includes("SKN")) {
       mov.addText();
     } else if (mov.name.includes("BEM")) {
-      mov.color = 0xFF9932CC;
-    } else if (mov.name.includes("POP")){
+      mov.color = 0xff9932cc;
+    } else if (mov.name.includes("POP")) {
       mov.color = 0x00000000;
     } else if (mov.name.includes("STF")) {
-      mov.color = 0xFFff66ff;
+      mov.color = 0xffff66ff;
     } else if (mov.name.includes("JMP")) {
-      mov.color = 0xFF4d4d4d;
+      mov.color = 0xff4d4d4d;
     } else if (mov.name.includes("GRV")) {
-      mov.color = 0xFFefc997
+      mov.color = 0xffefc997;
     }
     this.applyObstacleColour(mov, mov.color);
   }
