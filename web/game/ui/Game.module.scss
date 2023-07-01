@@ -20,6 +20,10 @@
       "side   game   ...." minmax(0, 1fr)
       "bottom bottom bottom" 150px /
       0 minmax(0, 1fr) 0;
+
+    .game {
+      place-self: center;
+    }
   }
 }
 
@@ -50,7 +54,7 @@
   padding: 16px;
   overflow: hidden;
   &:hover {
-    resize: vertical;
+    resize: both;
   }
 
   .gameContainer {
