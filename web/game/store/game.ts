@@ -58,6 +58,7 @@ export class GameStore {
 
     stage.__withContext(() => {
       const main: MainTimeline = library.instantiateCharacter(0);
+      main.keybindings = this.root.keybindings;
       main.addEventListener(ExternalEvent.TYPE, (e: ExternalEvent) =>
         this.handleExternalEvent(e.props)
       );

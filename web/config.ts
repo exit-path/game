@@ -58,4 +58,5 @@ export const versions: string[][] = [
   ],
   ["v0.5.1", "Use reduced visual effects if quality is lowered"],
   ["v0.6.0", "Add new trigger blocks (@klementc)"],
+  ["v0.7.0", "Add configuration for keybindings"],
 ];

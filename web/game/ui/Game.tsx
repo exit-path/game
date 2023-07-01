@@ -43,9 +43,10 @@ export const Game: React.FC<GameProps> = observer(function Game(props) {
   const onKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.target === root.game.stage?.__canvas.element) {
-        if (e.key.toUpperCase() === "F") {
+        if (e.nativeEvent.code === root.keybindings.focus) {
           setIsFocusMode((v) => !v);
-        } else if (e.key.toUpperCase() === "B") {
+        }
+        if (e.nativeEvent.code === root.keybindings.beam) {
           Beam.isVisible = !Beam.isVisible;
         }
       }

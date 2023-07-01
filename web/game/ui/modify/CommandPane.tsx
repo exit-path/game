@@ -11,7 +11,7 @@ export interface CommandPaneProps {
 export const CommandPane = observer<CommandPaneProps>(function CommandPane(
   props
 ) {
-  const { game } = useStore();
+  const { game, modal } = useStore();
   const { className } = props;
 
   const onChangeName = useCallback(() => {
@@ -24,11 +24,18 @@ export const CommandPane = observer<CommandPaneProps>(function CommandPane(
     }
   }, [game]);
 
+  const onKeybindings = useCallback(() => {
+    modal.present({ type: "keybindings" });
+  }, [modal]);
+
   return (
     <div className={cn(className, styles.pane)}>
       <h2 className={styles.title}>Commands</h2>
       <button type="button" className={styles.action} onClick={onChangeName}>
         Change user name
+      </button>
+      <button type="button" className={styles.action} onClick={onKeybindings}>
+        Keybindings
       </button>
     </div>
   );

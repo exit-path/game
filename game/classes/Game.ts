@@ -1080,7 +1080,9 @@ export class Game extends lib.flash.display.MovieClip {
       return;
     }
 
-    const isPressingKill = Key.isDown(lib.flash.ui.Keyboard.K);
+    const isPressingKill = Key.isDown(
+      lib.flash.ui.Keyboard.codeMap[main().keybindings.kill]
+    );
     if (
       isPressingKill &&
       !this.isPressingKill &&
@@ -1146,7 +1148,9 @@ export class Game extends lib.flash.display.MovieClip {
       }
     }
 
-    const isPressingPause = Key.isDown(lib.flash.ui.Keyboard.P);
+    const isPressingPause = Key.isDown(
+      lib.flash.ui.Keyboard.codeMap[main().keybindings.pause]
+    );
     if (isPressingPause && this.mode !== "SP") {
       this.isPaused = !this.isPaused;
     }

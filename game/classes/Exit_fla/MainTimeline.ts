@@ -27,6 +27,7 @@ import { Level } from "../Level";
 import { LevelUser } from "../LevelUser";
 import { Level as UserLevel } from "../../../shared/level";
 import { ExternalEvent } from "../ExternalEvent";
+import { Keybindings } from "../global";
 
 export class MainTimeline extends lib.flash.display.MovieClip {
   public declare achievements: Ach[];
@@ -128,6 +129,10 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   public declare urlStart: number;
 
   userLevel: UserLevel | null = null;
+  keybindings: Keybindings = {
+    kill: "KeyK",
+    pause: "KeyP",
+  };
 
   public constructor() {
     super();
