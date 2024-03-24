@@ -162,8 +162,8 @@ export class RecorderStore {
 
         const mt = this.root.game.instance;
         this.replayRecords.push({
-          playerX: mt.multiplayer.game.player.x,
-          playerY: mt.multiplayer.game.player.y,
+          playerX: mt.multiplayer.game!.player.x,
+          playerY: mt.multiplayer.game!.player.y,
           otherX: 0,
           otherY: 0,
           a: 0,
