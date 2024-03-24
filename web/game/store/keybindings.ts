@@ -6,6 +6,7 @@ export const defaultKeybindings = {
   pause: "KeyP",
   focus: "KeyF",
   beam: "KeyB",
+  restart: "KeyJ",
 };
 
 export class Keybindings {
@@ -13,6 +14,7 @@ export class Keybindings {
   pause = defaultKeybindings.pause;
   focus = defaultKeybindings.focus;
   beam = defaultKeybindings.beam;
+  restart = defaultKeybindings.restart;
 
   constructor(readonly root: RootStore) {
     makeAutoObservable(this);
@@ -32,6 +34,7 @@ export class Keybindings {
     this.pause = String(keybindings?.pause ?? defaultKeybindings.pause);
     this.focus = String(keybindings?.focus ?? defaultKeybindings.focus);
     this.beam = String(keybindings?.beam ?? defaultKeybindings.beam);
+    this.restart = String(keybindings?.retart ?? defaultKeybindings.restart);
   }
 
   private save() {
@@ -40,6 +43,7 @@ export class Keybindings {
       pause: this.pause,
       focus: this.focus,
       beam: this.beam,
+      restart: this.restart,
     };
     localStorage.setItem("KeyBindings", JSON.stringify(keybindings));
   }
@@ -49,5 +53,6 @@ export class Keybindings {
     this.pause = defaultKeybindings.pause;
     this.focus = defaultKeybindings.focus;
     this.beam = defaultKeybindings.beam;
+    this.restart = defaultKeybindings.restart;
   }
 }

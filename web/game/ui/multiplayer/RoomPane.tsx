@@ -69,6 +69,11 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
     return () => document.removeEventListener("click", onDocumentClick);
   }, [isMenuOpened, menuContainerElement]);
 
+  const handleOnRestartLevel = useCallback(() => {
+    const level = gameState.nextLevelCode || String(gameState.nextLevel);
+    multiplayer.restartLevel(level);
+  }, [multiplayer, gameState]);
+
   return (
     <div className={cn(className, styles.pane)}>
       <div className={styles.info}>
@@ -131,6 +136,7 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
                 <Menu
                   multiplayer={multiplayer}
                   room={room}
+                  onRestartLevel={handleOnRestartLevel}
                   onCloseMenu={onCloseMenu}
                 />
               </div>
@@ -172,11 +178,12 @@ export const RoomPane = observer<RoomPaneProps>(function RoomPane(props) {
 interface MenuProps {
   multiplayer: MultiplayerStore;
   room: Room;
+  onRestartLevel: () => void;
   onCloseMenu: () => void;
 }
 
 const Menu = observer<MenuProps>(function Menu(props) {
-  const { multiplayer, room, onCloseMenu } = props;
+  const { multiplayer, room, onRestartLevel, onCloseMenu } = props;
   const gameState = room.state as RoomGameState;
 
   const id = multiplayer.conn.connectionId;
@@ -198,20 +205,10 @@ const Menu = observer<MenuProps>(function Menu(props) {
     onCloseMenu();
   }, [multiplayer, onCloseMenu]);
 
-  const restartLevel = useCallback(
-    async (level: string) => {
-      await multiplayer.sendMessage("/endgame");
-      await multiplayer.setNextLevel(level);
-      await new Promise((resolve) => setTimeout(() => resolve(0), 500));
-      await multiplayer.sendMessage("/start");
-    },
-    [multiplayer]
-  );
-  const onRestartLevel = useCallback(() => {
-    const level = gameState.nextLevelCode || String(gameState.nextLevel);
-    restartLevel(level);
+  const handleRestartLevelOnClick = useCallback(() => {
+    onRestartLevel();
     onCloseMenu();
-  }, [gameState, restartLevel, onCloseMenu]);
+  }, [onRestartLevel, onCloseMenu]);
 
   return (
     <ul className={styles.menu}>
@@ -253,7 +250,7 @@ const Menu = observer<MenuProps>(function Menu(props) {
             <button
               type="button"
               className={styles.menuCommandBtn}
-              onClick={onRestartLevel}
+              onClick={handleRestartLevelOnClick}
               disabled={isSpectator}
             >
               Restart Level

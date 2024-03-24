@@ -221,4 +221,11 @@ export class MultiplayerStore {
   public async setNextLevel(level: string) {
     return await this.conn.invoke("SetNextLevel", level);
   }
+
+  public async restartLevel(level: string) {
+    await this.sendMessage("/endgame");
+    await this.setNextLevel(level);
+    await new Promise((resolve) => setTimeout(() => resolve(0), 500));
+    await this.sendMessage("/start");
+  }
 }

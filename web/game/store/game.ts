@@ -107,6 +107,12 @@ export class GameStore {
     })();
   }
 
+  runInContext(fn: () => void) {
+    this.stage?.__withContext(() => {
+      fn();
+    })();
+  }
+
   private handleExternalEvent(event: ExternalEventProps) {
     switch (event.type) {
       case "connect-multiplayer":

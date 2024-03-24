@@ -11,7 +11,7 @@ import { Tubes } from "./Tubes";
 export class Multiplayer extends lib.flash.display.MovieClip {
   public declare characterSelection: CharacterSelection;
 
-  public declare game: Game;
+  public declare game: Game | null;
 
   public declare isSinglePlayer: boolean;
 

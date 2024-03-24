@@ -30,10 +30,13 @@ export const Keybindings = observer<Props>(function WhatsNew(props) {
       </Modal.Header>
       <Modal.Body className={styles.body}>
         <table className={styles.table}>
-          <KeybindingEntry label="Respawn" keybinding="kill" />
-          <KeybindingEntry label="Toggle pause" keybinding="pause" />
-          <KeybindingEntry label="Toggle focus mode" keybinding="focus" />
-          <KeybindingEntry label="Toggle beam" keybinding="beam" />
+          <tbody>
+            <KeybindingEntry label="Respawn" keybinding="kill" />
+            <KeybindingEntry label="Toggle pause" keybinding="pause" />
+            <KeybindingEntry label="Toggle focus mode" keybinding="focus" />
+            <KeybindingEntry label="Toggle beam" keybinding="beam" />
+            <KeybindingEntry label="Restart level" keybinding="restart" />
+          </tbody>
         </table>
         <Button variant="secondary" type="button" onClick={onReset}>
           Reset

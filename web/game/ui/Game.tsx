@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import cn from "classnames";
+import { RoomGameState } from "game/models/multiplayer";
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { Beam } from "../../../game/classes";
+import { Relay } from "../../../game/classes/john/Relay";
 import { Controller } from "../controller";
 import { useStore } from "../store";
 import { BottomPane } from "./BottomPane";
@@ -48,6 +50,45 @@ export const Game: React.FC<GameProps> = observer(function Game(props) {
         }
         if (e.nativeEvent.code === root.keybindings.beam) {
           Beam.isVisible = !Beam.isVisible;
+        }
+        if (e.nativeEvent.code === root.keybindings.restart) {
+          const game = root.game.main?.multiplayer.game;
+          switch (game?.mode) {
+            case "MP":
+              const multiplayerRoom = root.game.multiplayer?.room;
+              if (multiplayerRoom != null && multiplayerRoom.id !== "lobby") {
+                const gameState = multiplayerRoom.state as RoomGameState;
+                const level =
+                  gameState.nextLevelCode || String(gameState.nextLevel);
+                root.game.multiplayer!.restartLevel(level);
+              }
+              break;
+
+            case "SP":
+              root.game.runInContext(() => game.exitOut());
+              root.game.dispatchMainEvent(
+                new Relay(Relay.GOTO, "SinglePlayerMenu", "Delete")
+              );
+
+              console.log(game?.mode);
+              setTimeout(() => {
+                root.game.dispatchMainEvent(
+                  new Relay(Relay.GOTO, "SinglePlayerMenu", "StartGame")
+                );
+              }, 100);
+              break;
+
+            case "PRACTICE":
+              root.game.runInContext(() => game.exitOut());
+
+              console.log(game?.mode);
+              setTimeout(() => {
+                root.game.runInContext(() => {
+                  root.game.main?.startPracticeLevel(game.levelNum);
+                });
+              }, 100);
+              break;
+          }
         }
       }
     },
