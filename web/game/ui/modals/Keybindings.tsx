@@ -47,6 +47,7 @@ export const Keybindings = observer<Props>(function WhatsNew(props) {
 });
 
 const keys = [
+  "<None>",
   "Digit0",
   "Digit1",
   "Digit2",
