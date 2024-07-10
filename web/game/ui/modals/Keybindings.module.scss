@@ -7,6 +7,10 @@
   vertical-align: middle;
 }
 
+.cell > * + * {
+  margin-left: 16px;
+}
+
 .entryLabel {
   margin: 0;
 }

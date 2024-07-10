@@ -680,7 +680,7 @@ export class Game extends lib.flash.display.MovieClip {
   }
 
   public hotKeys(): any {
-    if (Key.isDown(lib.flash.ui.Keyboard.SPACE)) {
+    if (Key.isDown(Key.FLOW)) {
       if (!this.spaceDown) {
         this.spaceDown = true;
       }

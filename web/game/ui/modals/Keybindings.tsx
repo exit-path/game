@@ -31,11 +31,43 @@ export const Keybindings = observer<Props>(function WhatsNew(props) {
       <Modal.Body className={styles.body}>
         <table className={styles.table}>
           <tbody>
-            <KeybindingEntry label="Respawn" keybinding="kill" />
-            <KeybindingEntry label="Toggle pause" keybinding="pause" />
-            <KeybindingEntry label="Toggle focus mode" keybinding="focus" />
-            <KeybindingEntry label="Toggle beam" keybinding="beam" />
-            <KeybindingEntry label="Restart level" keybinding="restart" />
+            <KeybindingEntry label="Respawn">
+              <KeybindingSelect keybinding="kill" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Toggle pause">
+              <KeybindingSelect keybinding="pause" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Toggle focus mode">
+              <KeybindingSelect keybinding="focus" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Toggle beam">
+              <KeybindingSelect keybinding="beam" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Restart level">
+              <KeybindingSelect keybinding="restart" />
+            </KeybindingEntry>
+            <tr />
+            <KeybindingEntry label="Move Left">
+              <KeybindingSelect keybinding="left1" />
+              <KeybindingSelect keybinding="left2" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Move Right">
+              <KeybindingSelect keybinding="right1" />
+              <KeybindingSelect keybinding="right2" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Jump">
+              <KeybindingSelect keybinding="up1" />
+              <KeybindingSelect keybinding="up2" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Crouch down">
+              <KeybindingSelect keybinding="down1" />
+              <KeybindingSelect keybinding="down2" />
+            </KeybindingEntry>
+            <KeybindingEntry label="FLOW">
+              <KeybindingSelect keybinding="flow1" />
+              <KeybindingSelect keybinding="flow2" />
+              <KeybindingSelect keybinding="flow3" />
+            </KeybindingEntry>
           </tbody>
         </table>
         <Button variant="secondary" type="button" onClick={onReset}>
@@ -151,39 +183,51 @@ const keys = [
 
 interface KeybindingEntryProps {
   label: string;
-  keybinding: keyof typeof defaultKeybindings;
+  children: React.ReactNode;
 }
 
 const KeybindingEntry = observer<KeybindingEntryProps>(function KeybindingEntry(
   props
 ) {
-  const { label, keybinding } = props;
-  const { keybindings } = useStore();
-  const key = keybindings[keybinding];
-
-  const onChange = useCallback(
-    (e: React.ChangeEvent<HTMLSelectElement>) => {
-      runInAction(() => {
-        keybindings[keybinding] = e.currentTarget.value;
-      });
-    },
-    [keybindings, keybinding]
-  );
+  const { label, children } = props;
 
   return (
     <tr>
       <th className={styles.cell}>
         <label className={styles.entryLabel}>{label}</label>
       </th>
-      <td>
-        <select value={key} onChange={onChange}>
-          {keys.map((key) => (
-            <option key={key} value={key}>
-              {key}
-            </option>
-          ))}
-        </select>
-      </td>
+      <td className={styles.cell}>{children}</td>
     </tr>
   );
 });
+
+interface KeybindingSelectProps {
+  keybinding: keyof typeof defaultKeybindings;
+}
+
+const KeybindingSelect = observer<KeybindingSelectProps>(
+  function KeybindingSelect(props) {
+    const { keybinding } = props;
+    const { keybindings } = useStore();
+    const key = keybindings[keybinding];
+
+    const onChange = useCallback(
+      (e: React.ChangeEvent<HTMLSelectElement>) => {
+        runInAction(() => {
+          keybindings[keybinding] = e.currentTarget.value;
+        });
+      },
+      [keybindings, keybinding]
+    );
+
+    return (
+      <select value={key} onChange={onChange}>
+        {keys.map((key) => (
+          <option key={key} value={key}>
+            {key}
+          </option>
+        ))}
+      </select>
+    );
+  }
+);

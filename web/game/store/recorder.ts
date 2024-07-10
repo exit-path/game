@@ -98,16 +98,14 @@ export class RecorderStore {
   }
 
   stopReplay() {
-    Key.keysDown = {};
+    Key.keysDown.clear();
     this._mode = null;
   }
 
   private exitFrame = action(() => {
     switch (this._mode) {
       case "recording": {
-        const shift =
-          Key.isDown(lib.flash.ui.Keyboard.SPACE) ||
-          Key.isDown(lib.flash.ui.Keyboard.SHIFT);
+        const shift = Key.isDown(Key.FLOW);
         const left = Key.isDown(Key.LEFT);
         const right = Key.isDown(Key.RIGHT);
         const up = Key.isDown(Key.UP);
@@ -137,27 +135,35 @@ export class RecorderStore {
           return;
         }
         if (this.replayIndex >= this.recording.length) {
-          Key.keysDown = {};
+          Key.keysDown.clear();
           this._mode = null;
           return;
         }
 
         const keys = this.recording[this.replayIndex++];
-        Key.keysDown = {};
+        Key.keysDown.clear();
         if (keys & 1) {
-          Key.keysDown[lib.flash.ui.Keyboard.SPACE] = true;
+          Key.keysDown.add(
+            lib.flash.ui.Keyboard.codeMap[Key.keybindings.flow1]
+          );
         }
         if (keys & 2) {
-          Key.keysDown[lib.flash.ui.Keyboard.LEFT] = true;
+          Key.keysDown.add(
+            lib.flash.ui.Keyboard.codeMap[Key.keybindings.left1]
+          );
         }
         if (keys & 4) {
-          Key.keysDown[lib.flash.ui.Keyboard.RIGHT] = true;
+          Key.keysDown.add(
+            lib.flash.ui.Keyboard.codeMap[Key.keybindings.right1]
+          );
         }
         if (keys & 8) {
-          Key.keysDown[lib.flash.ui.Keyboard.UP] = true;
+          Key.keysDown.add(lib.flash.ui.Keyboard.codeMap[Key.keybindings.up1]);
         }
         if (keys & 16) {
-          Key.keysDown[lib.flash.ui.Keyboard.DOWN] = true;
+          Key.keysDown.add(
+            lib.flash.ui.Keyboard.codeMap[Key.keybindings.down1]
+          );
         }
 
         const mt = this.root.game.instance;

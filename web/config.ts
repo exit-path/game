@@ -61,5 +61,9 @@ export const versions: string[][] = [
   ["v0.7.0", "Add configuration for keybindings"],
   ["v0.7.1", "Add restart level key", "Add disabling keybinding"],
   ["v0.7.2", "Add key repeat timer for pause key"],
-  ["v0.7.3", "Fix restart keybinding not saving correctly"],
+  [
+    "v0.7.3",
+    "Add keybindings for control keys",
+    "Fix restart keybinding not saving correctly",
+  ],
 ];

@@ -132,6 +132,18 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   keybindings: Keybindings = {
     kill: "KeyK",
     pause: "KeyP",
+
+    left1: "ArrowLeft",
+    left2: "KeyA",
+    right1: "ArrowRight",
+    right2: "KeyD",
+    up1: "ArrowUp",
+    up2: "KeyW",
+    down1: "ArrowDown",
+    down2: "KeyS",
+    flow1: "Space",
+    flow2: "ShiftLeft",
+    flow3: "ShiftRight",
   };
 
   public constructor() {
@@ -262,7 +274,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   }
 
   public frame3(): any {
-    Key.initialize(this.stage, true);
+    Key.initialize(this.stage);
     this.stop();
     this.myCountry = "Other";
     this.achievements = new Array<Ach>();

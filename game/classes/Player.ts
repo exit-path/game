@@ -247,12 +247,7 @@ export class Player extends TileObject {
       if (flowMode !== LevelFlags.FlowAlways) {
         this.flowPoints = this.flowPoints - 5;
       }
-      if (
-        !(
-          Key.isDown(lib.flash.ui.Keyboard.SPACE) ||
-          Key.isDown(lib.flash.ui.Keyboard.SHIFT)
-        )
-      ) {
+      if (!Key.isDown(Key.FLOW)) {
         this.burningFlow = false;
         this.parent["stopBurningFlowMusic"]();
       } else if (this.flowPoints <= 0) {
@@ -284,11 +279,7 @@ export class Player extends TileObject {
           this.fullFlow = false;
         }
       }
-      if (
-        (Key.isDown(lib.flash.ui.Keyboard.SPACE) ||
-          Key.isDown(lib.flash.ui.Keyboard.SHIFT)) &&
-        this.flowPoints >= 100
-      ) {
+      if (Key.isDown(Key.FLOW) && this.flowPoints >= 100) {
         this.burningFlow = true;
         this.parent["startBurningFlowMusic"]();
         SoundBox.playSound("Takeoff");
