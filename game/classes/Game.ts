@@ -187,6 +187,7 @@ export class Game extends lib.flash.display.MovieClip {
   public declare youArrows: any[];
 
   private isPressingKill = false;
+  private pauseKeyFrame = 0;
 
   readonly beam = new Beam();
 
@@ -1151,8 +1152,19 @@ export class Game extends lib.flash.display.MovieClip {
     const isPressingPause = Key.isDown(
       lib.flash.ui.Keyboard.codeMap[main().keybindings.pause]
     );
-    if (isPressingPause && this.mode !== "SP") {
-      this.isPaused = !this.isPaused;
+    if (this.mode !== "SP") {
+      let doTrigger: boolean;
+      if (isPressingPause) {
+        doTrigger = this.pauseKeyFrame === 0 || this.pauseKeyFrame > 15;
+        this.pauseKeyFrame++;
+      } else {
+        doTrigger = false;
+        this.pauseKeyFrame = 0;
+      }
+
+      if (doTrigger) {
+        this.isPaused = !this.isPaused;
+      }
     }
 
     this.beam.x = this.skin.x;
