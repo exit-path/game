@@ -34,7 +34,7 @@ export class Keybindings {
     this.pause = String(keybindings?.pause ?? defaultKeybindings.pause);
     this.focus = String(keybindings?.focus ?? defaultKeybindings.focus);
     this.beam = String(keybindings?.beam ?? defaultKeybindings.beam);
-    this.restart = String(keybindings?.retart ?? defaultKeybindings.restart);
+    this.restart = String(keybindings?.restart ?? defaultKeybindings.restart);
   }
 
   private save() {
