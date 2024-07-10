@@ -188,6 +188,7 @@ export class Game extends lib.flash.display.MovieClip {
 
   private isPressingKill = false;
   private pauseKeyFrame = 0;
+  private pauseNextFrame = false;
 
   readonly beam = new Beam();
 
@@ -1152,18 +1153,25 @@ export class Game extends lib.flash.display.MovieClip {
     const isPressingPause = Key.isDown(
       lib.flash.ui.Keyboard.codeMap[main().keybindings.pause]
     );
+    const isPressingResume = Key.isDown(
+      lib.flash.ui.Keyboard.codeMap[main().keybindings.resume]
+    );
     if (this.mode !== "SP") {
-      let doTrigger: boolean;
-      if (isPressingPause) {
-        doTrigger = this.pauseKeyFrame === 0 || this.pauseKeyFrame > 15;
-        this.pauseKeyFrame++;
-      } else {
-        doTrigger = false;
-        this.pauseKeyFrame = 0;
+      if (isPressingResume) {
+        this.isPaused = false;
       }
 
-      if (doTrigger) {
-        this.isPaused = !this.isPaused;
+      if (isPressingPause || this.pauseNextFrame) {
+        if (!this.isPaused) {
+          this.isPaused = true;
+          this.pauseNextFrame = false;
+        } else if (this.pauseKeyFrame === 0 || this.pauseKeyFrame > 10) {
+          this.isPaused = false;
+          this.pauseNextFrame = true;
+        }
+        this.pauseKeyFrame++;
+      } else {
+        this.pauseKeyFrame = 0;
       }
     }
 

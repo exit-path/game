@@ -132,6 +132,7 @@ export class MainTimeline extends lib.flash.display.MovieClip {
   keybindings: Keybindings = {
     kill: "KeyK",
     pause: "KeyP",
+    resume: "Escape",
 
     left1: "ArrowLeft",
     left2: "KeyA",

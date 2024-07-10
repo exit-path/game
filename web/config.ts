@@ -65,5 +65,6 @@ export const versions: string[][] = [
     "v0.7.3",
     "Add keybindings for control keys",
     "Fix restart keybinding not saving correctly",
+    "Add next frame function to pause key",
   ],
 ];

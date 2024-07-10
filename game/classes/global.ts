@@ -9,6 +9,7 @@ export function main(): MainTimeline {
 export interface Keybindings {
   kill: string;
   pause: string;
+  resume: string;
 
   left1: string;
   left2: string;

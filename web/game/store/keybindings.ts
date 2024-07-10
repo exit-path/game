@@ -4,6 +4,7 @@ import type { RootStore } from "./root";
 export const defaultKeybindings = {
   kill: "KeyK",
   pause: "KeyP",
+  resume: "Escape",
   focus: "KeyF",
   beam: "KeyB",
   restart: "KeyJ",
@@ -24,6 +25,7 @@ export const defaultKeybindings = {
 export class Keybindings {
   kill = defaultKeybindings.kill;
   pause = defaultKeybindings.pause;
+  resume = defaultKeybindings.resume;
   focus = defaultKeybindings.focus;
   beam = defaultKeybindings.beam;
   restart = defaultKeybindings.restart;
@@ -56,6 +58,7 @@ export class Keybindings {
 
     this.kill = String(keybindings?.kill ?? defaultKeybindings.kill);
     this.pause = String(keybindings?.pause ?? defaultKeybindings.pause);
+    this.resume = String(keybindings?.resume ?? defaultKeybindings.resume);
     this.focus = String(keybindings?.focus ?? defaultKeybindings.focus);
     this.beam = String(keybindings?.beam ?? defaultKeybindings.beam);
     this.restart = String(keybindings?.restart ?? defaultKeybindings.restart);
@@ -77,6 +80,7 @@ export class Keybindings {
     const keybindings = {
       kill: this.kill,
       pause: this.pause,
+      resume: this.resume,
       focus: this.focus,
       beam: this.beam,
       restart: this.restart,
@@ -98,6 +102,7 @@ export class Keybindings {
   reset() {
     this.kill = defaultKeybindings.kill;
     this.pause = defaultKeybindings.pause;
+    this.resume = defaultKeybindings.resume;
     this.focus = defaultKeybindings.focus;
     this.beam = defaultKeybindings.beam;
     this.restart = defaultKeybindings.restart;

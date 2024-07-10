@@ -34,8 +34,11 @@ export const Keybindings = observer<Props>(function WhatsNew(props) {
             <KeybindingEntry label="Respawn">
               <KeybindingSelect keybinding="kill" />
             </KeybindingEntry>
-            <KeybindingEntry label="Toggle pause">
+            <KeybindingEntry label="Pause / Next Frame">
               <KeybindingSelect keybinding="pause" />
+            </KeybindingEntry>
+            <KeybindingEntry label="Resume">
+              <KeybindingSelect keybinding="resume" />
             </KeybindingEntry>
             <KeybindingEntry label="Toggle focus mode">
               <KeybindingSelect keybinding="focus" />
