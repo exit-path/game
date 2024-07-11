@@ -101,6 +101,7 @@ const keys = [
   "KeyF",
   "KeyG",
   "KeyH",
+  "KeyI",
   "KeyJ",
   "KeyK",
   "KeyL",
