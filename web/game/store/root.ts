@@ -4,6 +4,7 @@ import { GameStore } from "./game";
 import { Keybindings } from "./keybindings";
 import { LibraryStore } from "./library";
 import { ModalStore } from "./modal";
+import { Preferences } from "./preferences";
 import { RecorderStore } from "./recorder";
 
 const library = new LibraryStore();
@@ -14,6 +15,7 @@ export class RootStore {
   readonly modal = new ModalStore(this);
   readonly recorder = new RecorderStore(this);
   readonly keybindings = new Keybindings(this);
+  readonly preferences = new Preferences(this);
   controller: Controller | null = null;
 
   constructor() {

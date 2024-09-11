@@ -5,6 +5,7 @@ import { useStore } from "../../game/store";
 import { ModalInstance } from "../../game/store/modal";
 import { ConnectMultiplayer } from "./modals/ConnectMultiplayer";
 import { Keybindings } from "./modals/Keybindings";
+import { Preferences } from "./modals/Preferences";
 import { RoomSelection } from "./modals/RoomSelection";
 import { SelectLevel } from "./modals/SelectLevel";
 import { WhatsNew } from "./modals/WhatsNew";
@@ -69,6 +70,12 @@ const Instance = observer<InstanceProps>(function Instance(props) {
       children = (
         <Keybindings className={styles.dialog} modalId={props.modal.id} />
       );
+      break;
+    case "preferences":
+      children = (
+        <Preferences className={styles.dialog} modalId={props.modal.id} />
+      );
+      break;
   }
   return <div className={styles.overlay}>{children}</div>;
 });

@@ -64,7 +64,9 @@ export class MultiplayerStore {
           : null,
       (phase, prev) => {
         if (prev === "Lobby" && phase === "InGame") {
-          this.messages.length = 0;
+          if (root.preferences.clearChatOnGameStart) {
+            this.messages.length = 0;
+          }
         }
       },
       { name: "clearMessages" }

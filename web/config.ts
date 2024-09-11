@@ -68,4 +68,5 @@ export const versions: string[][] = [
     "Add next frame function to pause key",
   ],
   ["v0.7.4", "Fix missing key I for keybindings"],
+  ["v0.8.0", "Add preferences settings for chat clear behavior"],
 ];

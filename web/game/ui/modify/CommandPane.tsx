@@ -28,6 +28,10 @@ export const CommandPane = observer<CommandPaneProps>(function CommandPane(
     modal.present({ type: "keybindings" });
   }, [modal]);
 
+  const onPreferences = useCallback(() => {
+    modal.present({ type: "preferences" });
+  }, [modal]);
+
   return (
     <div className={cn(className, styles.pane)}>
       <h2 className={styles.title}>Commands</h2>
@@ -36,6 +40,9 @@ export const CommandPane = observer<CommandPaneProps>(function CommandPane(
       </button>
       <button type="button" className={styles.action} onClick={onKeybindings}>
         Keybindings
+      </button>
+      <button type="button" className={styles.action} onClick={onPreferences}>
+        Preferences
       </button>
     </div>
   );

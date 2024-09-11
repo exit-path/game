@@ -8,7 +8,8 @@ type ModalInstanceProps =
   | ModalConnectMultiplayerProps
   | ModalRoomSelectionProps
   | ModalWhatsNewProps
-  | ModalKeybindingsProps;
+  | ModalKeybindingsProps
+  | ModalPreferencesProps;
 
 type ModalSelectLevelProps = {
   type: "select-level";
@@ -31,6 +32,10 @@ type ModalWhatsNewProps = {
 
 type ModalKeybindingsProps = {
   type: "keybindings";
+};
+
+type ModalPreferencesProps = {
+  type: "preferences";
 };
 
 export class ModalStore {
