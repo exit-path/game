@@ -3627,3 +3627,51 @@ bundle.linkages[178] = "FinalA";
 import character10001 from "./10001.json";
 bundle.shapes[10001] = character10001;
 bundle.linkages[10001] = "Beam";
+
+import character10120 from "./10120.json";
+bundle.sprites[10120] = character10120;
+bundle.linkages[10120] = "Level120";
+
+import character10121 from "./10121.json";
+bundle.sprites[10121] = character10121;
+bundle.linkages[10121] = "Level121";
+
+import character10122 from "./10122.json";
+bundle.sprites[10122] = character10122;
+bundle.linkages[10122] = "Level122";
+
+import character10123 from "./10123.json";
+bundle.sprites[10123] = character10123;
+bundle.linkages[10123] = "Level123";
+
+import character10124 from "./10124.json";
+bundle.sprites[10124] = character10124;
+bundle.linkages[10124] = "Level124";
+
+import character10125 from "./10125.json";
+bundle.sprites[10125] = character10125;
+bundle.linkages[10125] = "Level125";
+
+import character10126 from "./10126.json";
+bundle.sprites[10126] = character10126;
+bundle.linkages[10126] = "Level126";
+
+import character10127 from "./10127.json";
+bundle.sprites[10127] = character10127;
+bundle.linkages[10127] = "Level127";
+
+import character10128 from "./10128.json";
+bundle.sprites[10128] = character10128;
+bundle.linkages[10128] = "Level128";
+
+import character10129 from "./10129.json";
+bundle.sprites[10129] = character10129;
+bundle.linkages[10129] = "Level129";
+
+import character10130 from "./10130.json";
+bundle.sprites[10130] = character10130;
+bundle.linkages[10130] = "Level130";
+
+import character10131 from "./10131.json";
+bundle.sprites[10131] = character10131;
+bundle.linkages[10131] = "Level131";
